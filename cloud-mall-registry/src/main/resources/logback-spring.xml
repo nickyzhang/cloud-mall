@@ -12,7 +12,7 @@
         <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
             <encoder>
                 <pattern>${LOG_PATTERN}</pattern>
-                <charset>utf8</charset>
+                <charset>UTF-8</charset>
             </encoder>
         </appender>
 
@@ -25,7 +25,7 @@
             </rollingPolicy>
             <encoder>
                 <pattern>${LOG_PATTERN}</pattern>
-                <charset>utf8</charset>
+                <charset>UTF-8</charset>
             </encoder>
         </appender>
         <logger name="com.cloud" level="info" />
@@ -35,12 +35,12 @@
         </root>
     </springProfile>
 
-    <springProfile name="prod">
+    <springProfile name="prod,uat">
         <!--控制台-->
         <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
             <encoder>
                 <pattern>${LOG_PATTERN}</pattern>
-                <charset>utf8</charset>
+                <charset>UTF-8</charset>
             </encoder>
         </appender>
         <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -51,7 +51,7 @@
             </rollingPolicy>
             <encoder>
                 <pattern>${LOG_PATTERN}</pattern>
-                <charset>utf8</charset>
+                <charset>UTF-8</charset>
             </encoder>
         </appender>
         <logger name="com.cloud" level="info" />
