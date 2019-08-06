@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>cloud-mall</artifactId>
+    <groupId>com.cloud</groupId>
+    <version>1.0.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>cloud-mall-user</artifactId>
+
+  <dependencies>
+    <!--基础依赖-->
+    <dependency>
+      <groupId>com.cloud</groupId>
+      <artifactId>cloud-mall-common-core</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.cloud</groupId>
+      <artifactId>cloud-mall-common-model</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.cloud</groupId>
+      <artifactId>cloud-mall-common-session</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.cloud</groupId>
+      <artifactId>cloud-mall-common-mq</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.cloud</groupId>
+      <artifactId>cloud-mall-common-httpclient</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.cloud</groupId>
+      <artifactId>cloud-mall-common-notification</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- Spring Cloud相关依赖-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+    </dependency>
+
+    <!--数据库连接相关-->
+    <!-- JDBC连接数据库，因为要用HikariCP，所以需要将SpringBoot中的tomcat-jdbc排除 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-jdbc</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!-- HikariCP 连接池依赖 -->
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+    <!-- MySQL连接依赖 -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.45</version>
+    </dependency>
+    <!-- Mybatis依赖 -->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+    <!-- 分页助手启动器 -->
+    <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter -->
+    <!--<dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper-spring-boot-starter</artifactId>
+      <version>1.2.5</version>
+    </dependency>-->
+
+    <!--QQ依赖-->
+    <dependency>
+      <groupId>net.gplatform</groupId>
+      <artifactId>Sdk4J</artifactId>
+      <version>2.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>

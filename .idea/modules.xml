@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cloud-id-gen/cloud-id-gen.iml" filepath="$PROJECT_DIR$/cloud-id-gen/cloud-id-gen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall.iml" filepath="$PROJECT_DIR$/cloud-mall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-apollo/cloud-mall-apollo.iml" filepath="$PROJECT_DIR$/cloud-mall-apollo/cloud-mall-apollo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-cart/cloud-mall-cart.iml" filepath="$PROJECT_DIR$/cloud-mall-cart/cloud-mall-cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-catalog/cloud-mall-catalog.iml" filepath="$PROJECT_DIR$/cloud-mall-catalog/cloud-mall-catalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common.iml" filepath="$PROJECT_DIR$/cloud-mall-common/cloud-mall-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-cache/cloud-mall-common-cache.iml" filepath="$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-cache/cloud-mall-common-cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-core/cloud-mall-common-core.iml" filepath="$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-core/cloud-mall-common-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-httpclient/cloud-mall-common-httpclient.iml" filepath="$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-httpclient/cloud-mall-common-httpclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-model/cloud-mall-common-model.iml" filepath="$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-model/cloud-mall-common-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-mq/cloud-mall-common-mq.iml" filepath="$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-mq/cloud-mall-common-mq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-notification/cloud-mall-common-notification.iml" filepath="$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-notification/cloud-mall-common-notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-redis/cloud-mall-common-redis.iml" filepath="$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-redis/cloud-mall-common-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-session/cloud-mall-common-session.iml" filepath="$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-session/cloud-mall-common-session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-config/cloud-mall-config.iml" filepath="$PROJECT_DIR$/cloud-mall-config/cloud-mall-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-inventory/cloud-mall-inventory.iml" filepath="$PROJECT_DIR$/cloud-mall-inventory/cloud-mall-inventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-order/cloud-mall-order.iml" filepath="$PROJECT_DIR$/cloud-mall-order/cloud-mall-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-pay/cloud-mall-pay.iml" filepath="$PROJECT_DIR$/cloud-mall-pay/cloud-mall-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-promotion/cloud-mall-promotion.iml" filepath="$PROJECT_DIR$/cloud-mall-promotion/cloud-mall-promotion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-registry/cloud-mall-registry.iml" filepath="$PROJECT_DIR$/cloud-mall-registry/cloud-mall-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-user/cloud-mall-user.iml" filepath="$PROJECT_DIR$/cloud-mall-user/cloud-mall-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-mall-web/cloud-mall-web.iml" filepath="$PROJECT_DIR$/cloud-mall-web/cloud-mall-web.iml" />
+    </modules>
+  </component>
+</project>

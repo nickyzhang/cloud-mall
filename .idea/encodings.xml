@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-id-gen" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-apollo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-cart" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-catalog" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-cache" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-httpclient" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-mq" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-notification" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-redis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-common/cloud-mall-common-session" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-inventory" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-pay" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-promotion" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-registry" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-mall-web" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

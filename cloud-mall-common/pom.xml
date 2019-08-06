@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>cloud-mall</artifactId>
+    <groupId>com.cloud</groupId>
+    <version>1.0.0</version>
+  </parent>
+  <packaging>pom</packaging>
+  <modules>
+    <module>cloud-mall-common-core</module>
+    <module>cloud-mall-common-httpclient</module>
+    <module>cloud-mall-common-redis</module>
+    <module>cloud-mall-common-mq</module>
+    <module>cloud-mall-common-session</module>
+    <module>cloud-mall-common-notification</module>
+    <module>cloud-mall-common-cache</module>
+      <module>cloud-mall-common-model</module>
+  </modules>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>cloud-mall-common</artifactId>
+
+</project>

@@ -1,0 +1,2 @@
+com\cloud\common\redis\config\RedisConfig.class
+com\cloud\common\redis\service\RedisService.class

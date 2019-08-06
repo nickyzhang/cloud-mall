@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+	<modules>
+		<module>cloud-id-gen</module>
+		<module>cloud-mall-common</module>
+		<module>cloud-mall-registry</module>
+		<module>cloud-mall-user</module>
+		<module>cloud-mall-config</module>
+		<module>cloud-mall-apollo</module>
+		<module>cloud-mall-catalog</module>
+		<module>cloud-mall-cart</module>
+		<module>cloud-mall-order</module>
+		<module>cloud-mall-pay</module>
+		<module>cloud-mall-promotion</module>
+		<module>cloud-mall-inventory</module>
+		<module>cloud-mall-web</module>
+	</modules>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.cloud</groupId>
+	<artifactId>cloud-mall</artifactId>
+	<version>1.0.0</version>
+	<name>cloud-mall</name>
+	<description>cloud mall</description>
+
+	<url>http://www.cloud.com</url>
+	<organization>
+		<name>Cloud, Co., Ltd.</name>
+		<url>http://www.cloud.com</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<name>nickyzhang</name>
+			<email>zhang.lehui@foxmail.com</email>
+			<organization>Cloud, Co., Ltd.</organization>
+			<organizationUrl>http://www.cloud.com</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring.cloud.version>Finchley.SR4</spring.cloud.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Finchley.SR4</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<distributionManagement>
+		<repository>
+			<id>release</id>
+			<url>http://192.168.3.101:9999/repository/cloud-release/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshot</id>
+			<url>http://192.168.3.101:9999/repository/cloud-snapshot/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<repositories>
+		<repository>
+			<id>release</id>
+			<name>Cloud Nexus Release</name>
+			<url>http://192.168.3.101:9999/repository/cloud-release/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<!--snapshots默认是关闭的,需要开启  -->
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>snapshot</id>
+			<name>Cloud Nexus Snapshot</name>
+			<url>http://192.168.3.101:9999/repository/cloud-snapshot/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<!--snapshots默认是关闭的,需要开启  -->
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<dependencies>
+		<!--Spring Boot 公共依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!--Lombok依赖-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!--日志依赖-->
+		<!--<dependency>-->
+			<!--<groupId>org.slf4j</groupId>-->
+			<!--<artifactId>slf4j-api</artifactId>-->
+			<!--<version>1.7.21</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>ch.qos.logback</groupId>-->
+			<!--<artifactId>logback-classic</artifactId>-->
+			<!--<version>1.2.3</version>-->
+			<!--<scope>compile</scope>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>ch.qos.logback</groupId>-->
+			<!--<artifactId>logback-core</artifactId>-->
+			<!--<version>1.2.3</version>-->
+			<!--<scope>compile</scope>-->
+		<!--</dependency>-->
+
+		<!--Swagger依赖-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+
+		<!--Wiremock依赖-->
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock</artifactId>
+			<version>2.10.1</version>
+			<type>pom</type>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<!--该插件限定maven打包时所使用的版本,避免出现版本不匹配的问题-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

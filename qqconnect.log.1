@@ -1,0 +1,1103 @@
+13928 DEBUG [2019-08-05 14:56:18]  Returning cached instance of singleton bean 'org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration'
+13933 DEBUG [2019-08-05 14:56:18]  Could not find default TaskScheduler bean
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.scheduling.TaskScheduler' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:989)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:987)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.resolveSchedulerBean(ScheduledAnnotationBeanPostProcessor.java:293)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.finishRegistration(ScheduledAnnotationBeanPostProcessor.java:234)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.onApplicationEvent(ScheduledAnnotationBeanPostProcessor.java:211)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.onApplicationEvent(ScheduledAnnotationBeanPostProcessor.java:102)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:400)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:354)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:888)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
+	at com.cloud.CloudUserApplication.main(CloudUserApplication.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+13935 DEBUG [2019-08-05 14:56:18]  Could not find default ScheduledExecutorService bean
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.util.concurrent.ScheduledExecutorService' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:989)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:987)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.resolveSchedulerBean(ScheduledAnnotationBeanPostProcessor.java:293)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.finishRegistration(ScheduledAnnotationBeanPostProcessor.java:255)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.onApplicationEvent(ScheduledAnnotationBeanPostProcessor.java:211)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.onApplicationEvent(ScheduledAnnotationBeanPostProcessor.java:102)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:400)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:354)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:888)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
+	at com.cloud.CloudUserApplication.main(CloudUserApplication.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+13939 INFO  [2019-08-05 14:56:18]  No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+13945 DEBUG [2019-08-05 14:56:18]  Looking for resource handler mappings
+13946 DEBUG [2019-08-05 14:56:18]  Returning cached instance of singleton bean 'faviconHandlerMapping'
+13946 DEBUG [2019-08-05 14:56:18]  Returning cached instance of singleton bean 'resourceHandlerMapping'
+13946 DEBUG [2019-08-05 14:56:18]  Found resource handler mapping: URL pattern="/**/favicon.ico", locations=[class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@2e00e54d]
+13946 DEBUG [2019-08-05 14:56:18]  Found resource handler mapping: URL pattern="/webjars/**", locations=[class path resource [META-INF/resources/webjars/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@671c405a]
+13946 DEBUG [2019-08-05 14:56:18]  Found resource handler mapping: URL pattern="/**", locations=[class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@28885c2a]
+13946 DEBUG [2019-08-05 14:56:18]  Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+13946 DEBUG [2019-08-05 14:56:18]  Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+13965 INFO  [2019-08-05 14:56:18]  Tomcat started on port(s): 10010 (http) with context path ''
+13966 DEBUG [2019-08-05 14:56:18]  Returning cached instance of singleton bean 'springApplicationAdminRegistrar'
+13966 DEBUG [2019-08-05 14:56:18]  Returning cached instance of singleton bean 'eurekaAutoServiceRegistration'
+13966 INFO  [2019-08-05 14:56:18]  Updating port to 10010
+13967 DEBUG [2019-08-05 14:56:18]  Adding PropertySource 'server.ports' with highest search precedence
+13967 DEBUG [2019-08-05 14:56:18]  Adding PropertySource 'server.ports' with highest search precedence
+13969 INFO  [2019-08-05 14:56:18]  Started CloudUserApplication in 13.936 seconds (JVM running for 15.468)
+13971 DEBUG [2019-08-05 14:56:18]  Returning cached instance of singleton bean 'conditionEvaluationDeltaLoggingListener'
+13971 DEBUG [2019-08-05 14:56:18]  Returning cached instance of singleton bean 'springApplicationAdminRegistrar'
+13971 DEBUG [2019-08-05 14:56:18]  Returning cached instance of singleton bean 'refreshEventListener'
+13972 DEBUG [2019-08-05 14:56:18]  Returning cached instance of singleton bean 'autoConfigurationReport'
+14282 DEBUG [2019-08-05 14:56:18]  Found key 'local.server.port' in PropertySource 'server.ports' with value of type Integer
+14290 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl.key-store' in any property source
+14292 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl.key_store' in any property source
+14293 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl_key-store' in any property source
+14294 DEBUG [2019-08-05 14:56:18]  Could not find key 'serverSslKeyStore' in any property source
+14295 DEBUG [2019-08-05 14:56:18]  Could not find key 'serversslkeystore' in any property source
+14296 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL.KEY-STORE' in any property source
+14296 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL.KEY_STORE' in any property source
+14298 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL_KEY-STORE' in any property source
+14298 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVERSSLKEYSTORE' in any property source
+14299 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl.key-store' in any property source
+14300 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl_key-store' in any property source
+14301 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl.key_store' in any property source
+14302 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl_key_store' in any property source
+14303 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl_key_store' in any property source
+14305 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl.keyStore' in any property source
+14305 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl.keyStore' in any property source
+14306 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl_keyStore' in any property source
+14307 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl_keyStore' in any property source
+14308 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl.keystore' in any property source
+14308 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl.keystore' in any property source
+14309 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl_keystore' in any property source
+14310 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl_keystore' in any property source
+14311 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl.KEY-STORE' in any property source
+14312 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl.KEY-STORE' in any property source
+14313 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl_KEY-STORE' in any property source
+14313 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl_KEY-STORE' in any property source
+14314 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl.KEY_STORE' in any property source
+14315 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl.KEY_STORE' in any property source
+14316 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl_KEY_STORE' in any property source
+14316 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl_KEY_STORE' in any property source
+14317 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl.KEYSTORE' in any property source
+14318 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl.KEYSTORE' in any property source
+14319 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ssl_KEYSTORE' in any property source
+14319 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ssl_KEYSTORE' in any property source
+14320 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL.key-store' in any property source
+14320 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL.key-store' in any property source
+14320 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL_key-store' in any property source
+14321 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL_key-store' in any property source
+14321 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL.key_store' in any property source
+14322 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL.key_store' in any property source
+14322 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL_key_store' in any property source
+14322 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL_key_store' in any property source
+14323 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL.keyStore' in any property source
+14323 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL.keyStore' in any property source
+14324 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL_keyStore' in any property source
+14324 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL_keyStore' in any property source
+14324 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL.keystore' in any property source
+14325 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL.keystore' in any property source
+14325 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL_keystore' in any property source
+14326 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL_keystore' in any property source
+14326 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL.KEY-STORE' in any property source
+14326 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL.KEY-STORE' in any property source
+14327 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL_KEY-STORE' in any property source
+14328 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL_KEY-STORE' in any property source
+14328 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL.KEY_STORE' in any property source
+14329 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL.KEY_STORE' in any property source
+14329 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL_KEY_STORE' in any property source
+14330 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL_KEY_STORE' in any property source
+14330 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL.KEYSTORE' in any property source
+14331 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL.KEYSTORE' in any property source
+14331 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SSL_KEYSTORE' in any property source
+14332 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SSL_KEYSTORE' in any property source
+14332 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl.key-store' in any property source
+14333 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl.key-store' in any property source
+14333 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl_key-store' in any property source
+14334 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl_key-store' in any property source
+14334 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl.key_store' in any property source
+14334 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl.key_store' in any property source
+14335 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl_key_store' in any property source
+14335 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl_key_store' in any property source
+14336 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl.keyStore' in any property source
+14336 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl.keyStore' in any property source
+14337 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl_keyStore' in any property source
+14337 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl_keyStore' in any property source
+14338 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl.keystore' in any property source
+14338 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl.keystore' in any property source
+14339 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl_keystore' in any property source
+14339 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl_keystore' in any property source
+14340 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl.KEY-STORE' in any property source
+14340 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl.KEY-STORE' in any property source
+14341 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl_KEY-STORE' in any property source
+14341 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl_KEY-STORE' in any property source
+14342 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl.KEY_STORE' in any property source
+14342 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl.KEY_STORE' in any property source
+14342 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl_KEY_STORE' in any property source
+14343 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl_KEY_STORE' in any property source
+14343 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl.KEYSTORE' in any property source
+14344 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl.KEYSTORE' in any property source
+14344 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ssl_KEYSTORE' in any property source
+14345 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ssl_KEYSTORE' in any property source
+14345 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL.key-store' in any property source
+14346 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL.key-store' in any property source
+14346 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL_key-store' in any property source
+14346 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL_key-store' in any property source
+14347 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL.key_store' in any property source
+14347 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL.key_store' in any property source
+14348 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL_key_store' in any property source
+14348 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL_key_store' in any property source
+14348 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL.keyStore' in any property source
+14349 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL.keyStore' in any property source
+14349 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL_keyStore' in any property source
+14350 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL_keyStore' in any property source
+14350 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL.keystore' in any property source
+14351 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL.keystore' in any property source
+14351 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL_keystore' in any property source
+14351 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL_keystore' in any property source
+14352 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL.KEY-STORE' in any property source
+14352 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL_KEY-STORE' in any property source
+14353 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL.KEY_STORE' in any property source
+14354 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL_KEY_STORE' in any property source
+14354 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL_KEY_STORE' in any property source
+14355 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL.KEYSTORE' in any property source
+14355 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL.KEYSTORE' in any property source
+14355 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SSL_KEYSTORE' in any property source
+14356 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SSL_KEYSTORE' in any property source
+14356 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet.context-path' in any property source
+14357 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet.context_path' in any property source
+14358 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet_context-path' in any property source
+14358 DEBUG [2019-08-05 14:56:18]  Could not find key 'serverServletContextPath' in any property source
+14358 DEBUG [2019-08-05 14:56:18]  Could not find key 'serverservletcontextpath' in any property source
+14359 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET.CONTEXT-PATH' in any property source
+14359 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET.CONTEXT_PATH' in any property source
+14360 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET_CONTEXT-PATH' in any property source
+14360 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVERSERVLETCONTEXTPATH' in any property source
+14360 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet.context-path' in any property source
+14361 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet_context-path' in any property source
+14361 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet.context_path' in any property source
+14362 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet_context_path' in any property source
+14362 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet_context_path' in any property source
+14362 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet.contextPath' in any property source
+14363 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet.contextPath' in any property source
+14363 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet_contextPath' in any property source
+14363 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet_contextPath' in any property source
+14364 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet.contextpath' in any property source
+14364 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet.contextpath' in any property source
+14365 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet_contextpath' in any property source
+14365 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet_contextpath' in any property source
+14365 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet.CONTEXT-PATH' in any property source
+14366 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet.CONTEXT-PATH' in any property source
+14366 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet_CONTEXT-PATH' in any property source
+14367 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet_CONTEXT-PATH' in any property source
+14367 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet.CONTEXT_PATH' in any property source
+14367 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet.CONTEXT_PATH' in any property source
+14368 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet_CONTEXT_PATH' in any property source
+14368 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet_CONTEXT_PATH' in any property source
+14369 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet.CONTEXTPATH' in any property source
+14370 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet.CONTEXTPATH' in any property source
+14370 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet_CONTEXTPATH' in any property source
+14371 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet_CONTEXTPATH' in any property source
+14371 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET.context-path' in any property source
+14372 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET.context-path' in any property source
+14372 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET_context-path' in any property source
+14372 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET_context-path' in any property source
+14373 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET.context_path' in any property source
+14373 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET.context_path' in any property source
+14373 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET_context_path' in any property source
+14374 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET_context_path' in any property source
+14374 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET.contextPath' in any property source
+14375 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET.contextPath' in any property source
+14375 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET_contextPath' in any property source
+14375 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET_contextPath' in any property source
+14375 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET.contextpath' in any property source
+14376 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET.contextpath' in any property source
+14376 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET_contextpath' in any property source
+14376 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET_contextpath' in any property source
+14377 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET.CONTEXT-PATH' in any property source
+14377 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET.CONTEXT-PATH' in any property source
+14377 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET_CONTEXT-PATH' in any property source
+14377 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET_CONTEXT-PATH' in any property source
+14378 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET.CONTEXT_PATH' in any property source
+14378 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET.CONTEXT_PATH' in any property source
+14379 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET_CONTEXT_PATH' in any property source
+14379 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET_CONTEXT_PATH' in any property source
+14379 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET.CONTEXTPATH' in any property source
+14379 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET.CONTEXTPATH' in any property source
+14380 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET_CONTEXTPATH' in any property source
+14380 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET_CONTEXTPATH' in any property source
+14380 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet.context-path' in any property source
+14381 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet.context-path' in any property source
+14381 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet_context-path' in any property source
+14381 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet_context-path' in any property source
+14381 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet.context_path' in any property source
+14382 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet.context_path' in any property source
+14382 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet_context_path' in any property source
+14382 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet_context_path' in any property source
+14382 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet.contextPath' in any property source
+14383 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet.contextPath' in any property source
+14383 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet_contextPath' in any property source
+14383 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet_contextPath' in any property source
+14384 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet.contextpath' in any property source
+14384 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet.contextpath' in any property source
+14384 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet_contextpath' in any property source
+14385 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet_contextpath' in any property source
+14385 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet.CONTEXT-PATH' in any property source
+14385 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet.CONTEXT-PATH' in any property source
+14386 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet_CONTEXT-PATH' in any property source
+14386 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet_CONTEXT-PATH' in any property source
+14386 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet.CONTEXT_PATH' in any property source
+14387 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet.CONTEXT_PATH' in any property source
+14387 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet_CONTEXT_PATH' in any property source
+14387 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet_CONTEXT_PATH' in any property source
+14388 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet.CONTEXTPATH' in any property source
+14388 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet.CONTEXTPATH' in any property source
+14388 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet_CONTEXTPATH' in any property source
+14388 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet_CONTEXTPATH' in any property source
+14389 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET.context-path' in any property source
+14389 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET.context-path' in any property source
+14389 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET_context-path' in any property source
+14390 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET_context-path' in any property source
+14390 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET.context_path' in any property source
+14390 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET.context_path' in any property source
+14391 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET_context_path' in any property source
+14391 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET_context_path' in any property source
+14391 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET.contextPath' in any property source
+14391 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET.contextPath' in any property source
+14392 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET_contextPath' in any property source
+14392 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET_contextPath' in any property source
+14392 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET.contextpath' in any property source
+14393 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET.contextpath' in any property source
+14393 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET_contextpath' in any property source
+14393 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET_contextpath' in any property source
+14393 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET.CONTEXT-PATH' in any property source
+14394 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET_CONTEXT-PATH' in any property source
+14394 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET.CONTEXT_PATH' in any property source
+14395 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET_CONTEXT_PATH' in any property source
+14395 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET_CONTEXT_PATH' in any property source
+14395 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET.CONTEXTPATH' in any property source
+14395 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET.CONTEXTPATH' in any property source
+14396 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET_CONTEXTPATH' in any property source
+14396 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET_CONTEXTPATH' in any property source
+14396 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet.path' in any property source
+14397 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet_path' in any property source
+14397 DEBUG [2019-08-05 14:56:18]  Could not find key 'serverServletPath' in any property source
+14397 DEBUG [2019-08-05 14:56:18]  Could not find key 'serverservletpath' in any property source
+14398 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET.PATH' in any property source
+14398 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET_PATH' in any property source
+14398 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVERSERVLETPATH' in any property source
+14398 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet.path' in any property source
+14399 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet_path' in any property source
+14399 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet.PATH' in any property source
+14399 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet.PATH' in any property source
+14400 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.servlet_PATH' in any property source
+14400 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_servlet_PATH' in any property source
+14400 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET.path' in any property source
+14401 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET.path' in any property source
+14401 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET_path' in any property source
+14401 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET_path' in any property source
+14402 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET.PATH' in any property source
+14402 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET.PATH' in any property source
+14402 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.SERVLET_PATH' in any property source
+14403 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_SERVLET_PATH' in any property source
+14403 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet.path' in any property source
+14403 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet.path' in any property source
+14404 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet_path' in any property source
+14404 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet_path' in any property source
+14404 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet.PATH' in any property source
+14405 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet.PATH' in any property source
+14405 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.servlet_PATH' in any property source
+14405 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_servlet_PATH' in any property source
+14405 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET.path' in any property source
+14405 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET.path' in any property source
+14406 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET_path' in any property source
+14406 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET_path' in any property source
+14406 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_SERVLET.PATH' in any property source
+14407 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.SERVLET_PATH' in any property source
+14407 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.address' in any property source
+14407 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_address' in any property source
+14408 DEBUG [2019-08-05 14:56:18]  Could not find key 'serverAddress' in any property source
+14408 DEBUG [2019-08-05 14:56:18]  Could not find key 'serveraddress' in any property source
+14408 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.ADDRESS' in any property source
+14408 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_ADDRESS' in any property source
+14409 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVERADDRESS' in any property source
+14409 DEBUG [2019-08-05 14:56:18]  Could not find key 'server.ADDRESS' in any property source
+14409 DEBUG [2019-08-05 14:56:18]  Could not find key 'server_ADDRESS' in any property source
+14410 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER.address' in any property source
+14410 DEBUG [2019-08-05 14:56:18]  Could not find key 'SERVER_address' in any property source
+18536 DEBUG [2019-08-05 14:56:22]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+18536 DEBUG [2019-08-05 14:56:22]  [{}->http://192.168.3.24:20000] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+18536 DEBUG [2019-08-05 14:56:22]  Getting free connection [{}->http://192.168.3.24:20000][null]
+18536 DEBUG [2019-08-05 14:56:22]  Stale connection check
+18542 DEBUG [2019-08-05 14:56:22]  CookieSpec selected: default
+18542 DEBUG [2019-08-05 14:56:22]  Auth cache not set in the context
+18542 DEBUG [2019-08-05 14:56:22]  Target auth state: UNCHALLENGED
+18542 DEBUG [2019-08-05 14:56:22]  Proxy auth state: UNCHALLENGED
+18542 DEBUG [2019-08-05 14:56:22]  Attempt 1 to execute request
+18542 DEBUG [2019-08-05 14:56:22]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+18543 DEBUG [2019-08-05 14:56:22]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+18543 DEBUG [2019-08-05 14:56:22]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+18543 DEBUG [2019-08-05 14:56:22]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+18543 DEBUG [2019-08-05 14:56:22]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+18543 DEBUG [2019-08-05 14:56:22]   >> "Accept-Encoding: gzip[\r][\n]"
+18543 DEBUG [2019-08-05 14:56:22]   >> "Content-Length: 0[\r][\n]"
+18543 DEBUG [2019-08-05 14:56:22]   >> "Host: 192.168.3.24:20000[\r][\n]"
+18543 DEBUG [2019-08-05 14:56:22]   >> "Connection: Keep-Alive[\r][\n]"
+18543 DEBUG [2019-08-05 14:56:22]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+18543 DEBUG [2019-08-05 14:56:22]   >> "[\r][\n]"
+18543 DEBUG [2019-08-05 14:56:22]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+18543 DEBUG [2019-08-05 14:56:22]  >> DiscoveryIdentity-Name: DefaultClient
+18543 DEBUG [2019-08-05 14:56:22]  >> DiscoveryIdentity-Version: 1.4
+18543 DEBUG [2019-08-05 14:56:22]  >> DiscoveryIdentity-Id: 192.168.3.24
+18543 DEBUG [2019-08-05 14:56:22]  >> Accept-Encoding: gzip
+18543 DEBUG [2019-08-05 14:56:22]  >> Content-Length: 0
+18543 DEBUG [2019-08-05 14:56:22]  >> Host: 192.168.3.24:20000
+18543 DEBUG [2019-08-05 14:56:22]  >> Connection: Keep-Alive
+18543 DEBUG [2019-08-05 14:56:22]  >> User-Agent: Java-EurekaClient/v1.9.3
+18547 DEBUG [2019-08-05 14:56:22]   << "HTTP/1.1 200 [\r][\n]"
+18547 DEBUG [2019-08-05 14:56:22]   << "Content-Type: application/xml[\r][\n]"
+18547 DEBUG [2019-08-05 14:56:22]   << "Content-Length: 0[\r][\n]"
+18547 DEBUG [2019-08-05 14:56:22]   << "Date: Mon, 05 Aug 2019 06:56:22 GMT[\r][\n]"
+18547 DEBUG [2019-08-05 14:56:22]   << "[\r][\n]"
+18547 DEBUG [2019-08-05 14:56:22]  Receiving response: HTTP/1.1 200 
+18547 DEBUG [2019-08-05 14:56:22]  << HTTP/1.1 200 
+18547 DEBUG [2019-08-05 14:56:22]  << Content-Type: application/xml
+18547 DEBUG [2019-08-05 14:56:22]  << Content-Length: 0
+18547 DEBUG [2019-08-05 14:56:22]  << Date: Mon, 05 Aug 2019 06:56:22 GMT
+18547 DEBUG [2019-08-05 14:56:22]  Connection can be kept alive indefinitely
+18548 DEBUG [2019-08-05 14:56:22]  Released connection is reusable.
+18548 DEBUG [2019-08-05 14:56:22]  Releasing connection [{}->http://192.168.3.24:20000][null]
+18548 DEBUG [2019-08-05 14:56:22]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+18548 DEBUG [2019-08-05 14:56:22]  Notifying no-one, there are no waiting threads
+23550 DEBUG [2019-08-05 14:56:27]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+23550 DEBUG [2019-08-05 14:56:27]  [{}->http://192.168.3.24:20000] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+23550 DEBUG [2019-08-05 14:56:27]  Getting free connection [{}->http://192.168.3.24:20000][null]
+23550 DEBUG [2019-08-05 14:56:27]  Stale connection check
+23551 DEBUG [2019-08-05 14:56:27]  CookieSpec selected: default
+23551 DEBUG [2019-08-05 14:56:27]  Auth cache not set in the context
+23551 DEBUG [2019-08-05 14:56:27]  Target auth state: UNCHALLENGED
+23551 DEBUG [2019-08-05 14:56:27]  Proxy auth state: UNCHALLENGED
+23551 DEBUG [2019-08-05 14:56:27]  Attempt 1 to execute request
+23551 DEBUG [2019-08-05 14:56:27]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+23552 DEBUG [2019-08-05 14:56:27]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+23552 DEBUG [2019-08-05 14:56:27]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+23552 DEBUG [2019-08-05 14:56:27]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+23552 DEBUG [2019-08-05 14:56:27]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+23552 DEBUG [2019-08-05 14:56:27]   >> "Accept-Encoding: gzip[\r][\n]"
+23552 DEBUG [2019-08-05 14:56:27]   >> "Content-Length: 0[\r][\n]"
+23552 DEBUG [2019-08-05 14:56:27]   >> "Host: 192.168.3.24:20000[\r][\n]"
+23552 DEBUG [2019-08-05 14:56:27]   >> "Connection: Keep-Alive[\r][\n]"
+23552 DEBUG [2019-08-05 14:56:27]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+23552 DEBUG [2019-08-05 14:56:27]   >> "[\r][\n]"
+23552 DEBUG [2019-08-05 14:56:27]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+23552 DEBUG [2019-08-05 14:56:27]  >> DiscoveryIdentity-Name: DefaultClient
+23552 DEBUG [2019-08-05 14:56:27]  >> DiscoveryIdentity-Version: 1.4
+23552 DEBUG [2019-08-05 14:56:27]  >> DiscoveryIdentity-Id: 192.168.3.24
+23552 DEBUG [2019-08-05 14:56:27]  >> Accept-Encoding: gzip
+23552 DEBUG [2019-08-05 14:56:27]  >> Content-Length: 0
+23552 DEBUG [2019-08-05 14:56:27]  >> Host: 192.168.3.24:20000
+23552 DEBUG [2019-08-05 14:56:27]  >> Connection: Keep-Alive
+23552 DEBUG [2019-08-05 14:56:27]  >> User-Agent: Java-EurekaClient/v1.9.3
+23553 DEBUG [2019-08-05 14:56:27]   << "HTTP/1.1 200 [\r][\n]"
+23553 DEBUG [2019-08-05 14:56:27]   << "Content-Type: application/xml[\r][\n]"
+23553 DEBUG [2019-08-05 14:56:27]   << "Content-Length: 0[\r][\n]"
+23553 DEBUG [2019-08-05 14:56:27]   << "Date: Mon, 05 Aug 2019 06:56:27 GMT[\r][\n]"
+23553 DEBUG [2019-08-05 14:56:27]   << "[\r][\n]"
+23553 DEBUG [2019-08-05 14:56:27]  Receiving response: HTTP/1.1 200 
+23553 DEBUG [2019-08-05 14:56:27]  << HTTP/1.1 200 
+23553 DEBUG [2019-08-05 14:56:27]  << Content-Type: application/xml
+23553 DEBUG [2019-08-05 14:56:27]  << Content-Length: 0
+23553 DEBUG [2019-08-05 14:56:27]  << Date: Mon, 05 Aug 2019 06:56:27 GMT
+23553 DEBUG [2019-08-05 14:56:27]  Connection can be kept alive indefinitely
+23553 DEBUG [2019-08-05 14:56:27]  Released connection is reusable.
+23553 DEBUG [2019-08-05 14:56:27]  Releasing connection [{}->http://192.168.3.24:20000][null]
+23553 DEBUG [2019-08-05 14:56:27]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+23553 DEBUG [2019-08-05 14:56:27]  Notifying no-one, there are no waiting threads
+28554 DEBUG [2019-08-05 14:56:32]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+28554 DEBUG [2019-08-05 14:56:32]  [{}->http://192.168.3.24:20000] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+28554 DEBUG [2019-08-05 14:56:32]  Getting free connection [{}->http://192.168.3.24:20000][null]
+28555 DEBUG [2019-08-05 14:56:32]  Stale connection check
+28556 DEBUG [2019-08-05 14:56:32]  CookieSpec selected: default
+28556 DEBUG [2019-08-05 14:56:32]  Auth cache not set in the context
+28556 DEBUG [2019-08-05 14:56:32]  Target auth state: UNCHALLENGED
+28556 DEBUG [2019-08-05 14:56:32]  Proxy auth state: UNCHALLENGED
+28556 DEBUG [2019-08-05 14:56:32]  Attempt 1 to execute request
+28556 DEBUG [2019-08-05 14:56:32]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+28557 DEBUG [2019-08-05 14:56:32]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+28557 DEBUG [2019-08-05 14:56:32]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+28557 DEBUG [2019-08-05 14:56:32]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+28557 DEBUG [2019-08-05 14:56:32]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+28557 DEBUG [2019-08-05 14:56:32]   >> "Accept-Encoding: gzip[\r][\n]"
+28557 DEBUG [2019-08-05 14:56:32]   >> "Content-Length: 0[\r][\n]"
+28557 DEBUG [2019-08-05 14:56:32]   >> "Host: 192.168.3.24:20000[\r][\n]"
+28557 DEBUG [2019-08-05 14:56:32]   >> "Connection: Keep-Alive[\r][\n]"
+28557 DEBUG [2019-08-05 14:56:32]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+28557 DEBUG [2019-08-05 14:56:32]   >> "[\r][\n]"
+28557 DEBUG [2019-08-05 14:56:32]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+28557 DEBUG [2019-08-05 14:56:32]  >> DiscoveryIdentity-Name: DefaultClient
+28557 DEBUG [2019-08-05 14:56:32]  >> DiscoveryIdentity-Version: 1.4
+28557 DEBUG [2019-08-05 14:56:32]  >> DiscoveryIdentity-Id: 192.168.3.24
+28557 DEBUG [2019-08-05 14:56:32]  >> Accept-Encoding: gzip
+28557 DEBUG [2019-08-05 14:56:32]  >> Content-Length: 0
+28557 DEBUG [2019-08-05 14:56:32]  >> Host: 192.168.3.24:20000
+28558 DEBUG [2019-08-05 14:56:32]  >> Connection: Keep-Alive
+28558 DEBUG [2019-08-05 14:56:32]  >> User-Agent: Java-EurekaClient/v1.9.3
+28559 DEBUG [2019-08-05 14:56:32]   << "HTTP/1.1 200 [\r][\n]"
+28560 DEBUG [2019-08-05 14:56:32]   << "Content-Type: application/xml[\r][\n]"
+28560 DEBUG [2019-08-05 14:56:32]   << "Content-Length: 0[\r][\n]"
+28560 DEBUG [2019-08-05 14:56:32]   << "Date: Mon, 05 Aug 2019 06:56:32 GMT[\r][\n]"
+28560 DEBUG [2019-08-05 14:56:32]   << "[\r][\n]"
+28560 DEBUG [2019-08-05 14:56:32]  Receiving response: HTTP/1.1 200 
+28560 DEBUG [2019-08-05 14:56:32]  << HTTP/1.1 200 
+28560 DEBUG [2019-08-05 14:56:32]  << Content-Type: application/xml
+28560 DEBUG [2019-08-05 14:56:32]  << Content-Length: 0
+28560 DEBUG [2019-08-05 14:56:32]  << Date: Mon, 05 Aug 2019 06:56:32 GMT
+28560 DEBUG [2019-08-05 14:56:32]  Connection can be kept alive indefinitely
+28560 DEBUG [2019-08-05 14:56:32]  Released connection is reusable.
+28560 DEBUG [2019-08-05 14:56:32]  Releasing connection [{}->http://192.168.3.24:20000][null]
+28560 DEBUG [2019-08-05 14:56:32]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+28560 DEBUG [2019-08-05 14:56:32]  Notifying no-one, there are no waiting threads
+33562 DEBUG [2019-08-05 14:56:37]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+33562 DEBUG [2019-08-05 14:56:37]  [{}->http://192.168.3.24:20000] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+33562 DEBUG [2019-08-05 14:56:37]  Getting free connection [{}->http://192.168.3.24:20000][null]
+33562 DEBUG [2019-08-05 14:56:37]  Stale connection check
+33564 DEBUG [2019-08-05 14:56:37]  CookieSpec selected: default
+33564 DEBUG [2019-08-05 14:56:37]  Auth cache not set in the context
+33564 DEBUG [2019-08-05 14:56:37]  Target auth state: UNCHALLENGED
+33564 DEBUG [2019-08-05 14:56:37]  Proxy auth state: UNCHALLENGED
+33564 DEBUG [2019-08-05 14:56:37]  Attempt 1 to execute request
+33564 DEBUG [2019-08-05 14:56:37]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+33564 DEBUG [2019-08-05 14:56:37]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+33564 DEBUG [2019-08-05 14:56:37]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+33564 DEBUG [2019-08-05 14:56:37]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+33564 DEBUG [2019-08-05 14:56:37]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+33564 DEBUG [2019-08-05 14:56:37]   >> "Accept-Encoding: gzip[\r][\n]"
+33564 DEBUG [2019-08-05 14:56:37]   >> "Content-Length: 0[\r][\n]"
+33564 DEBUG [2019-08-05 14:56:37]   >> "Host: 192.168.3.24:20000[\r][\n]"
+33564 DEBUG [2019-08-05 14:56:37]   >> "Connection: Keep-Alive[\r][\n]"
+33564 DEBUG [2019-08-05 14:56:37]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+33564 DEBUG [2019-08-05 14:56:37]   >> "[\r][\n]"
+33564 DEBUG [2019-08-05 14:56:37]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+33564 DEBUG [2019-08-05 14:56:37]  >> DiscoveryIdentity-Name: DefaultClient
+33564 DEBUG [2019-08-05 14:56:37]  >> DiscoveryIdentity-Version: 1.4
+33565 DEBUG [2019-08-05 14:56:37]  >> DiscoveryIdentity-Id: 192.168.3.24
+33565 DEBUG [2019-08-05 14:56:37]  >> Accept-Encoding: gzip
+33565 DEBUG [2019-08-05 14:56:37]  >> Content-Length: 0
+33565 DEBUG [2019-08-05 14:56:37]  >> Host: 192.168.3.24:20000
+33565 DEBUG [2019-08-05 14:56:37]  >> Connection: Keep-Alive
+33565 DEBUG [2019-08-05 14:56:37]  >> User-Agent: Java-EurekaClient/v1.9.3
+33566 DEBUG [2019-08-05 14:56:37]   << "HTTP/1.1 200 [\r][\n]"
+33566 DEBUG [2019-08-05 14:56:37]   << "Content-Type: application/xml[\r][\n]"
+33566 DEBUG [2019-08-05 14:56:37]   << "Content-Length: 0[\r][\n]"
+33566 DEBUG [2019-08-05 14:56:37]   << "Date: Mon, 05 Aug 2019 06:56:37 GMT[\r][\n]"
+33566 DEBUG [2019-08-05 14:56:37]   << "[\r][\n]"
+33566 DEBUG [2019-08-05 14:56:37]  Receiving response: HTTP/1.1 200 
+33566 DEBUG [2019-08-05 14:56:37]  << HTTP/1.1 200 
+33566 DEBUG [2019-08-05 14:56:37]  << Content-Type: application/xml
+33566 DEBUG [2019-08-05 14:56:37]  << Content-Length: 0
+33566 DEBUG [2019-08-05 14:56:37]  << Date: Mon, 05 Aug 2019 06:56:37 GMT
+33566 DEBUG [2019-08-05 14:56:37]  Connection can be kept alive indefinitely
+33566 DEBUG [2019-08-05 14:56:37]  Released connection is reusable.
+33566 DEBUG [2019-08-05 14:56:37]  Releasing connection [{}->http://192.168.3.24:20000][null]
+33566 DEBUG [2019-08-05 14:56:37]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+33566 DEBUG [2019-08-05 14:56:37]  Notifying no-one, there are no waiting threads
+38567 DEBUG [2019-08-05 14:56:42]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+38567 DEBUG [2019-08-05 14:56:42]  [{}->http://192.168.3.24:20000] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+38567 DEBUG [2019-08-05 14:56:42]  Getting free connection [{}->http://192.168.3.24:20000][null]
+38567 DEBUG [2019-08-05 14:56:42]  Stale connection check
+38569 DEBUG [2019-08-05 14:56:42]  CookieSpec selected: default
+38569 DEBUG [2019-08-05 14:56:42]  Auth cache not set in the context
+38569 DEBUG [2019-08-05 14:56:42]  Target auth state: UNCHALLENGED
+38569 DEBUG [2019-08-05 14:56:42]  Proxy auth state: UNCHALLENGED
+38569 DEBUG [2019-08-05 14:56:42]  Attempt 1 to execute request
+38569 DEBUG [2019-08-05 14:56:42]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+38569 DEBUG [2019-08-05 14:56:42]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+38569 DEBUG [2019-08-05 14:56:42]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+38569 DEBUG [2019-08-05 14:56:42]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+38569 DEBUG [2019-08-05 14:56:42]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+38569 DEBUG [2019-08-05 14:56:42]   >> "Accept-Encoding: gzip[\r][\n]"
+38569 DEBUG [2019-08-05 14:56:42]   >> "Content-Length: 0[\r][\n]"
+38569 DEBUG [2019-08-05 14:56:42]   >> "Host: 192.168.3.24:20000[\r][\n]"
+38570 DEBUG [2019-08-05 14:56:42]   >> "Connection: Keep-Alive[\r][\n]"
+38570 DEBUG [2019-08-05 14:56:42]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+38570 DEBUG [2019-08-05 14:56:42]   >> "[\r][\n]"
+38570 DEBUG [2019-08-05 14:56:42]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+38570 DEBUG [2019-08-05 14:56:42]  >> DiscoveryIdentity-Name: DefaultClient
+38570 DEBUG [2019-08-05 14:56:42]  >> DiscoveryIdentity-Version: 1.4
+38570 DEBUG [2019-08-05 14:56:42]  >> DiscoveryIdentity-Id: 192.168.3.24
+38570 DEBUG [2019-08-05 14:56:42]  >> Accept-Encoding: gzip
+38570 DEBUG [2019-08-05 14:56:42]  >> Content-Length: 0
+38570 DEBUG [2019-08-05 14:56:42]  >> Host: 192.168.3.24:20000
+38570 DEBUG [2019-08-05 14:56:42]  >> Connection: Keep-Alive
+38570 DEBUG [2019-08-05 14:56:42]  >> User-Agent: Java-EurekaClient/v1.9.3
+38571 DEBUG [2019-08-05 14:56:42]   << "HTTP/1.1 200 [\r][\n]"
+38571 DEBUG [2019-08-05 14:56:42]   << "Content-Type: application/xml[\r][\n]"
+38571 DEBUG [2019-08-05 14:56:42]   << "Content-Length: 0[\r][\n]"
+38571 DEBUG [2019-08-05 14:56:42]   << "Date: Mon, 05 Aug 2019 06:56:42 GMT[\r][\n]"
+38571 DEBUG [2019-08-05 14:56:42]   << "[\r][\n]"
+38571 DEBUG [2019-08-05 14:56:42]  Receiving response: HTTP/1.1 200 
+38571 DEBUG [2019-08-05 14:56:42]  << HTTP/1.1 200 
+38571 DEBUG [2019-08-05 14:56:42]  << Content-Type: application/xml
+38571 DEBUG [2019-08-05 14:56:42]  << Content-Length: 0
+38571 DEBUG [2019-08-05 14:56:42]  << Date: Mon, 05 Aug 2019 06:56:42 GMT
+38571 DEBUG [2019-08-05 14:56:42]  Connection can be kept alive indefinitely
+38572 DEBUG [2019-08-05 14:56:42]  Released connection is reusable.
+38572 DEBUG [2019-08-05 14:56:42]  Releasing connection [{}->http://192.168.3.24:20000][null]
+38572 DEBUG [2019-08-05 14:56:42]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+38572 DEBUG [2019-08-05 14:56:42]  Notifying no-one, there are no waiting threads
+42930 DEBUG [2019-08-05 14:56:47]  Closing connections idle longer than 30000 SECONDS
+42930 DEBUG [2019-08-05 14:56:47]  Closing connections idle longer than 30000 SECONDS
+43534 DEBUG [2019-08-05 14:56:47]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+43534 DEBUG [2019-08-05 14:56:47]  [{}->http://192.168.3.24:20000] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+43534 DEBUG [2019-08-05 14:56:47]  Getting free connection [{}->http://192.168.3.24:20000][null]
+43534 DEBUG [2019-08-05 14:56:47]  Stale connection check
+43536 DEBUG [2019-08-05 14:56:47]  CookieSpec selected: default
+43536 DEBUG [2019-08-05 14:56:47]  Auth cache not set in the context
+43536 DEBUG [2019-08-05 14:56:47]  Target auth state: UNCHALLENGED
+43536 DEBUG [2019-08-05 14:56:47]  Proxy auth state: UNCHALLENGED
+43536 DEBUG [2019-08-05 14:56:47]  Attempt 1 to execute request
+43536 DEBUG [2019-08-05 14:56:47]  Sending request: GET /eureka/apps/delta HTTP/1.1
+43536 DEBUG [2019-08-05 14:56:47]   >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+43536 DEBUG [2019-08-05 14:56:47]   >> "Accept: application/json[\r][\n]"
+43536 DEBUG [2019-08-05 14:56:47]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+43536 DEBUG [2019-08-05 14:56:47]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+43536 DEBUG [2019-08-05 14:56:47]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+43536 DEBUG [2019-08-05 14:56:47]   >> "Accept-Encoding: gzip[\r][\n]"
+43536 DEBUG [2019-08-05 14:56:47]   >> "Host: 192.168.3.24:20000[\r][\n]"
+43537 DEBUG [2019-08-05 14:56:47]   >> "Connection: Keep-Alive[\r][\n]"
+43537 DEBUG [2019-08-05 14:56:47]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+43537 DEBUG [2019-08-05 14:56:47]   >> "[\r][\n]"
+43537 DEBUG [2019-08-05 14:56:47]  >> GET /eureka/apps/delta HTTP/1.1
+43537 DEBUG [2019-08-05 14:56:47]  >> Accept: application/json
+43537 DEBUG [2019-08-05 14:56:47]  >> DiscoveryIdentity-Name: DefaultClient
+43537 DEBUG [2019-08-05 14:56:47]  >> DiscoveryIdentity-Version: 1.4
+43537 DEBUG [2019-08-05 14:56:47]  >> DiscoveryIdentity-Id: 192.168.3.24
+43537 DEBUG [2019-08-05 14:56:47]  >> Accept-Encoding: gzip
+43537 DEBUG [2019-08-05 14:56:47]  >> Host: 192.168.3.24:20000
+43537 DEBUG [2019-08-05 14:56:47]  >> Connection: Keep-Alive
+43537 DEBUG [2019-08-05 14:56:47]  >> User-Agent: Java-EurekaClient/v1.9.3
+43573 DEBUG [2019-08-05 14:56:47]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+43573 DEBUG [2019-08-05 14:56:47]  [{}->http://192.168.3.24:20000] total kept alive: 0, total issued: 1, total allocated: 1 out of 200
+43573 DEBUG [2019-08-05 14:56:47]  No free connections [{}->http://192.168.3.24:20000][null]
+43573 DEBUG [2019-08-05 14:56:47]  Available capacity: 49 out of 50 [{}->http://192.168.3.24:20000][null]
+43573 DEBUG [2019-08-05 14:56:47]  Creating new connection [{}->http://192.168.3.24:20000]
+43573 DEBUG [2019-08-05 14:56:47]  Connecting to 192.168.3.24:20000
+43574 DEBUG [2019-08-05 14:56:47]  CookieSpec selected: default
+43574 DEBUG [2019-08-05 14:56:47]  Auth cache not set in the context
+43574 DEBUG [2019-08-05 14:56:47]  Target auth state: UNCHALLENGED
+43574 DEBUG [2019-08-05 14:56:47]  Proxy auth state: UNCHALLENGED
+43574 DEBUG [2019-08-05 14:56:47]  Attempt 1 to execute request
+43574 DEBUG [2019-08-05 14:56:47]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+43574 DEBUG [2019-08-05 14:56:47]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+43574 DEBUG [2019-08-05 14:56:47]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+43574 DEBUG [2019-08-05 14:56:47]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+43574 DEBUG [2019-08-05 14:56:47]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+43575 DEBUG [2019-08-05 14:56:47]   >> "Accept-Encoding: gzip[\r][\n]"
+43575 DEBUG [2019-08-05 14:56:47]   >> "Content-Length: 0[\r][\n]"
+43575 DEBUG [2019-08-05 14:56:47]   >> "Host: 192.168.3.24:20000[\r][\n]"
+43575 DEBUG [2019-08-05 14:56:47]   >> "Connection: Keep-Alive[\r][\n]"
+43575 DEBUG [2019-08-05 14:56:47]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+43575 DEBUG [2019-08-05 14:56:47]   >> "[\r][\n]"
+43575 DEBUG [2019-08-05 14:56:47]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+43575 DEBUG [2019-08-05 14:56:47]  >> DiscoveryIdentity-Name: DefaultClient
+43575 DEBUG [2019-08-05 14:56:47]  >> DiscoveryIdentity-Version: 1.4
+43575 DEBUG [2019-08-05 14:56:47]  >> DiscoveryIdentity-Id: 192.168.3.24
+43575 DEBUG [2019-08-05 14:56:47]  >> Accept-Encoding: gzip
+43575 DEBUG [2019-08-05 14:56:47]  >> Content-Length: 0
+43575 DEBUG [2019-08-05 14:56:47]  >> Host: 192.168.3.24:20000
+43575 DEBUG [2019-08-05 14:56:47]  >> Connection: Keep-Alive
+43575 DEBUG [2019-08-05 14:56:47]  >> User-Agent: Java-EurekaClient/v1.9.3
+43651 DEBUG [2019-08-05 14:56:47]   << "HTTP/1.1 200 [\r][\n]"
+43651 DEBUG [2019-08-05 14:56:47]   << "HTTP/1.1 200 [\r][\n]"
+43651 DEBUG [2019-08-05 14:56:47]   << "Content-Encoding: gzip[\r][\n]"
+43651 DEBUG [2019-08-05 14:56:47]   << "Content-Type: application/json[\r][\n]"
+43651 DEBUG [2019-08-05 14:56:47]   << "Content-Length: 557[\r][\n]"
+43651 DEBUG [2019-08-05 14:56:47]   << "Date: Mon, 05 Aug 2019 06:56:47 GMT[\r][\n]"
+43651 DEBUG [2019-08-05 14:56:47]   << "[\r][\n]"
+43651 DEBUG [2019-08-05 14:56:47]   << "Content-Type: application/xml[\r][\n]"
+43651 DEBUG [2019-08-05 14:56:47]  Receiving response: HTTP/1.1 200 
+43651 DEBUG [2019-08-05 14:56:47]   << "Content-Length: 0[\r][\n]"
+43651 DEBUG [2019-08-05 14:56:47]  << HTTP/1.1 200 
+43652 DEBUG [2019-08-05 14:56:47]  << Content-Encoding: gzip
+43652 DEBUG [2019-08-05 14:56:47]  << Content-Type: application/json
+43652 DEBUG [2019-08-05 14:56:47]   << "Date: Mon, 05 Aug 2019 06:56:47 GMT[\r][\n]"
+43652 DEBUG [2019-08-05 14:56:47]  << Content-Length: 557
+43652 DEBUG [2019-08-05 14:56:47]  << Date: Mon, 05 Aug 2019 06:56:47 GMT
+43652 DEBUG [2019-08-05 14:56:47]   << "[\r][\n]"
+43652 DEBUG [2019-08-05 14:56:47]  Connection can be kept alive indefinitely
+43652 DEBUG [2019-08-05 14:56:47]  Receiving response: HTTP/1.1 200 
+43652 DEBUG [2019-08-05 14:56:47]  << HTTP/1.1 200 
+43652 DEBUG [2019-08-05 14:56:47]  << Content-Type: application/xml
+43652 DEBUG [2019-08-05 14:56:47]  << Content-Length: 0
+43652 DEBUG [2019-08-05 14:56:47]  << Date: Mon, 05 Aug 2019 06:56:47 GMT
+43652 DEBUG [2019-08-05 14:56:47]   << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]SM[0x8f][0xda]0[0x10][0xfd]/[0xd6][0x1e]!$[0xe1];[0xa7]Ed[0xf][0xa8],[0xa0][0xa5]i[0xf]U[0x85]\g n[0x1d];[0xb2][0x1d]v[0x11][0xe2][0xbf]w[0x1c]7[0xdb][0xc2][0xae][0xaa]V9[0xc4][0x9e]y[0xf3]f[0xe6][0xcd][0xf8]LhU[0x9][0xce][0xa8][0xe5]J[0x1a][0x92][0x9c][0xc9][0x11][0xb4]q[0xe7][0xdd].[0x7]a)I[0xc8]p@:[0xe][0x86][0xa6][0x82][0x9a][0x82][0xa9][0x1c][0xd0][0x9a]mv[0xd1][0xce];[0xda]x[0x92]|9[0x13]IK[0xe7][0x9e]/[0xd7]Y[0xda]}[0x9c]-[0x97][0xdd]l[0xfb][0xf0][0x84]@.[0x8d][0xa5][0x92]A[0x83]j/[0x8b][0x1c][0xb1]B1*[0x2]&T[0x9d][0x7]L[0x95]Is[0xea][0x96]T[0x88]nm@'Q[0x18]F!2[0x14][0xca][0xd8][0x95][0xa7][0xbf][0x9][0xf1]u[0xbc][0x9f][0xb6][0x9a][0xe5][0xb9]FW4[0x8d][0x83]h4[0x9][0xfa]A[0xec][0x1a][0xc2][0xfc][0xb6]6M#xS[0xd8][0xb6][0xe6]y[0xe]r[0xfb]j_}X[0xad]?[0xaf][0xd0]Y)m[0x9d]4w[0xc4][0x97][0xd2]![0xf7] [0xe9]7[0x1][0xae]x[0xab]k [0x17][0xe4][0x3]Vk[0xd8][0xfc][0x86][0xe][0x6][0xfd]+[0xe0][0x9e][\n]"
+43652 DEBUG [2019-08-05 14:56:47]  Connection can be kept alive indefinitely
+43652 DEBUG [2019-08-05 14:56:47]   << "[0xd3] [0x99][0xaa][0xa5][0xd5]'[0xd7]z[0xd4]!9[0xb5]t[0xe][0xd2][0x82]^[0xc8][0xbd]r[0xb1][0xf7]LP[0xe3]*[0xc0][0xc6][0x2][0x9]v/[0xf8]K[0x80][0xed]q[0xf4][0x7][0x8b]V8[0xbc][0xdc][0xa5][0xb0][0xa7][0xb5][0xb0][0xe9]5E[0xa7][0x9d][0xc1][0xe3]i[0xfd],]F[0x1][0xd4]@K[0xaf]A[0xc2]3[0x15][0xb][0x87]?[0xba][0xff][0x16][0x18]f[0x1b]b)[0xb5]n[0xe6][0xd8][0x9a]"[0xb4]i8pc[0xbd][0xfd]#/[0x1][0xb3][0x97][0x95]s[0x8d][0x6][0xd3][0xc9]$[0x1a]OFa[0x8c][0x9][0xa8][0xb1]O[0x9e][0xf7]-([0xe][0xfb][0xf1][0x8][0xa9][0xe0][0xc8][0xd9][\r]M[0xe8]t[0xd3]h[0x87][0xac]z[0x13]8[0x1e][0xf7][0x87][0xd3]i[0x88][0xf5][0x97]`[0xa9][0xd3][0xc9][0x95]_RI[0xf]Pb[0xbb][0x81][0x9f][0xb]i[0xd7][0xe3]{[0xf9][0xd2][0x9a]F1[0xaa][0xef]:/T[0x9][0x1b][0xc4]gZ[0xa0][0xb9][0xb0][0xb6]Jz[0xbd][0xdb]}k[0x8]z[0xaf];[0xf1][0x8f]x[0xca]lM[0xad][0xd2]=[0xee]E/[0x80][\n]"
+43653 DEBUG [2019-08-05 14:56:47]   << "[[0xcc][0xb]`?[0xfe]'[0xda][0x87]a[0xfc][0xd1]o*[0xf8][0xd1]_?[0x1][0xd2][0xee][0xd7][0xa7][0xbf][0x83][0xb8][0x99]+[0xa5]s.q^[0xf2][0x90]r[0xc3][0xdc]b[0x9f][0xb6][0xa8]1[0xe8][0xd7][0x1d][0xf4][0xf3][0xca]*[0x94][0x14][0xf2]?d'WS[0xfd][0x5]K[0xb9][0xb6][0xa7]wA[0xe3][0xf1]`[0xea][0x1e][0x9e][0x1f][0xea][0xa9]r+7K[0xd3][0x87][0x94]\[0xbe][0xe2]w[0xf9][0x9].[0xd2][0xc3][0xdc]\[0x4][0x0][0x0]"
+43653 DEBUG [2019-08-05 14:56:47]  Released connection is reusable.
+43653 DEBUG [2019-08-05 14:56:47]  Releasing connection [{}->http://192.168.3.24:20000][null]
+43654 DEBUG [2019-08-05 14:56:47]  Released connection is reusable.
+43655 DEBUG [2019-08-05 14:56:47]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+43655 DEBUG [2019-08-05 14:56:47]  Releasing connection [{}->http://192.168.3.24:20000][null]
+43655 DEBUG [2019-08-05 14:56:47]  Notifying no-one, there are no waiting threads
+43655 DEBUG [2019-08-05 14:56:47]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+43655 DEBUG [2019-08-05 14:56:47]  Notifying no-one, there are no waiting threads
+48656 DEBUG [2019-08-05 14:56:52]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+48656 DEBUG [2019-08-05 14:56:52]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+48657 DEBUG [2019-08-05 14:56:52]  Getting free connection [{}->http://192.168.3.24:20000][null]
+48657 DEBUG [2019-08-05 14:56:52]  Stale connection check
+48658 DEBUG [2019-08-05 14:56:52]  CookieSpec selected: default
+48659 DEBUG [2019-08-05 14:56:52]  Auth cache not set in the context
+48659 DEBUG [2019-08-05 14:56:52]  Target auth state: UNCHALLENGED
+48659 DEBUG [2019-08-05 14:56:52]  Proxy auth state: UNCHALLENGED
+48659 DEBUG [2019-08-05 14:56:52]  Attempt 1 to execute request
+48659 DEBUG [2019-08-05 14:56:52]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+48659 DEBUG [2019-08-05 14:56:52]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+48659 DEBUG [2019-08-05 14:56:52]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+48659 DEBUG [2019-08-05 14:56:52]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+48659 DEBUG [2019-08-05 14:56:52]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+48659 DEBUG [2019-08-05 14:56:52]   >> "Accept-Encoding: gzip[\r][\n]"
+48659 DEBUG [2019-08-05 14:56:52]   >> "Content-Length: 0[\r][\n]"
+48659 DEBUG [2019-08-05 14:56:52]   >> "Host: 192.168.3.24:20000[\r][\n]"
+48659 DEBUG [2019-08-05 14:56:52]   >> "Connection: Keep-Alive[\r][\n]"
+48659 DEBUG [2019-08-05 14:56:52]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+48659 DEBUG [2019-08-05 14:56:52]   >> "[\r][\n]"
+48659 DEBUG [2019-08-05 14:56:52]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+48659 DEBUG [2019-08-05 14:56:52]  >> DiscoveryIdentity-Name: DefaultClient
+48659 DEBUG [2019-08-05 14:56:52]  >> DiscoveryIdentity-Version: 1.4
+48659 DEBUG [2019-08-05 14:56:52]  >> DiscoveryIdentity-Id: 192.168.3.24
+48659 DEBUG [2019-08-05 14:56:52]  >> Accept-Encoding: gzip
+48659 DEBUG [2019-08-05 14:56:52]  >> Content-Length: 0
+48660 DEBUG [2019-08-05 14:56:52]  >> Host: 192.168.3.24:20000
+48660 DEBUG [2019-08-05 14:56:52]  >> Connection: Keep-Alive
+48660 DEBUG [2019-08-05 14:56:52]  >> User-Agent: Java-EurekaClient/v1.9.3
+48662 DEBUG [2019-08-05 14:56:52]   << "HTTP/1.1 200 [\r][\n]"
+48663 DEBUG [2019-08-05 14:56:52]   << "Content-Type: application/xml[\r][\n]"
+48663 DEBUG [2019-08-05 14:56:52]   << "Content-Length: 0[\r][\n]"
+48663 DEBUG [2019-08-05 14:56:52]   << "Date: Mon, 05 Aug 2019 06:56:52 GMT[\r][\n]"
+48663 DEBUG [2019-08-05 14:56:52]   << "[\r][\n]"
+48663 DEBUG [2019-08-05 14:56:52]  Receiving response: HTTP/1.1 200 
+48663 DEBUG [2019-08-05 14:56:52]  << HTTP/1.1 200 
+48663 DEBUG [2019-08-05 14:56:52]  << Content-Type: application/xml
+48663 DEBUG [2019-08-05 14:56:52]  << Content-Length: 0
+48663 DEBUG [2019-08-05 14:56:52]  << Date: Mon, 05 Aug 2019 06:56:52 GMT
+48663 DEBUG [2019-08-05 14:56:52]  Connection can be kept alive indefinitely
+48663 DEBUG [2019-08-05 14:56:52]  Released connection is reusable.
+48663 DEBUG [2019-08-05 14:56:52]  Releasing connection [{}->http://192.168.3.24:20000][null]
+48663 DEBUG [2019-08-05 14:56:52]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+48663 DEBUG [2019-08-05 14:56:52]  Notifying no-one, there are no waiting threads
+53665 DEBUG [2019-08-05 14:56:57]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+53665 DEBUG [2019-08-05 14:56:57]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+53665 DEBUG [2019-08-05 14:56:57]  Getting free connection [{}->http://192.168.3.24:20000][null]
+53665 DEBUG [2019-08-05 14:56:57]  Stale connection check
+53666 DEBUG [2019-08-05 14:56:57]  CookieSpec selected: default
+53667 DEBUG [2019-08-05 14:56:57]  Auth cache not set in the context
+53667 DEBUG [2019-08-05 14:56:57]  Target auth state: UNCHALLENGED
+53667 DEBUG [2019-08-05 14:56:57]  Proxy auth state: UNCHALLENGED
+53667 DEBUG [2019-08-05 14:56:57]  Attempt 1 to execute request
+53667 DEBUG [2019-08-05 14:56:57]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+53667 DEBUG [2019-08-05 14:56:57]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+53667 DEBUG [2019-08-05 14:56:57]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+53667 DEBUG [2019-08-05 14:56:57]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+53667 DEBUG [2019-08-05 14:56:57]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+53667 DEBUG [2019-08-05 14:56:57]   >> "Accept-Encoding: gzip[\r][\n]"
+53667 DEBUG [2019-08-05 14:56:57]   >> "Content-Length: 0[\r][\n]"
+53667 DEBUG [2019-08-05 14:56:57]   >> "Host: 192.168.3.24:20000[\r][\n]"
+53667 DEBUG [2019-08-05 14:56:57]   >> "Connection: Keep-Alive[\r][\n]"
+53667 DEBUG [2019-08-05 14:56:57]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+53667 DEBUG [2019-08-05 14:56:57]   >> "[\r][\n]"
+53667 DEBUG [2019-08-05 14:56:57]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+53667 DEBUG [2019-08-05 14:56:57]  >> DiscoveryIdentity-Name: DefaultClient
+53667 DEBUG [2019-08-05 14:56:57]  >> DiscoveryIdentity-Version: 1.4
+53667 DEBUG [2019-08-05 14:56:57]  >> DiscoveryIdentity-Id: 192.168.3.24
+53667 DEBUG [2019-08-05 14:56:57]  >> Accept-Encoding: gzip
+53667 DEBUG [2019-08-05 14:56:57]  >> Content-Length: 0
+53668 DEBUG [2019-08-05 14:56:57]  >> Host: 192.168.3.24:20000
+53668 DEBUG [2019-08-05 14:56:57]  >> Connection: Keep-Alive
+53668 DEBUG [2019-08-05 14:56:57]  >> User-Agent: Java-EurekaClient/v1.9.3
+53669 DEBUG [2019-08-05 14:56:57]   << "HTTP/1.1 200 [\r][\n]"
+53669 DEBUG [2019-08-05 14:56:57]   << "Content-Type: application/xml[\r][\n]"
+53669 DEBUG [2019-08-05 14:56:57]   << "Content-Length: 0[\r][\n]"
+53669 DEBUG [2019-08-05 14:56:57]   << "Date: Mon, 05 Aug 2019 06:56:57 GMT[\r][\n]"
+53669 DEBUG [2019-08-05 14:56:57]   << "[\r][\n]"
+53669 DEBUG [2019-08-05 14:56:57]  Receiving response: HTTP/1.1 200 
+53669 DEBUG [2019-08-05 14:56:57]  << HTTP/1.1 200 
+53669 DEBUG [2019-08-05 14:56:57]  << Content-Type: application/xml
+53669 DEBUG [2019-08-05 14:56:57]  << Content-Length: 0
+53669 DEBUG [2019-08-05 14:56:57]  << Date: Mon, 05 Aug 2019 06:56:57 GMT
+53669 DEBUG [2019-08-05 14:56:57]  Connection can be kept alive indefinitely
+53669 DEBUG [2019-08-05 14:56:57]  Released connection is reusable.
+53670 DEBUG [2019-08-05 14:56:57]  Releasing connection [{}->http://192.168.3.24:20000][null]
+53670 DEBUG [2019-08-05 14:56:57]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+53670 DEBUG [2019-08-05 14:56:57]  Notifying no-one, there are no waiting threads
+55799 DEBUG [2019-08-05 14:57:00]  Returning cached instance of singleton bean 'sessionRepository'
+55800 DEBUG [2019-08-05 14:57:00]  Cleaning up sessions expiring at Mon Aug 05 14:57:00 CST 2019
+55809 DEBUG [2019-08-05 14:57:00]  Opening RedisConnection
+55814 DEBUG [2019-08-05 14:57:00]  Closing Redis Connection
+55816 DEBUG [2019-08-05 14:57:00]  Opening RedisConnection
+55821 DEBUG [2019-08-05 14:57:00]  Closing Redis Connection
+58671 DEBUG [2019-08-05 14:57:02]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+58672 DEBUG [2019-08-05 14:57:02]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+58672 DEBUG [2019-08-05 14:57:02]  Getting free connection [{}->http://192.168.3.24:20000][null]
+58672 DEBUG [2019-08-05 14:57:02]  Stale connection check
+58673 DEBUG [2019-08-05 14:57:02]  CookieSpec selected: default
+58673 DEBUG [2019-08-05 14:57:02]  Auth cache not set in the context
+58673 DEBUG [2019-08-05 14:57:02]  Target auth state: UNCHALLENGED
+58673 DEBUG [2019-08-05 14:57:02]  Proxy auth state: UNCHALLENGED
+58673 DEBUG [2019-08-05 14:57:02]  Attempt 1 to execute request
+58673 DEBUG [2019-08-05 14:57:02]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+58674 DEBUG [2019-08-05 14:57:02]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+58674 DEBUG [2019-08-05 14:57:02]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+58674 DEBUG [2019-08-05 14:57:02]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+58674 DEBUG [2019-08-05 14:57:02]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+58674 DEBUG [2019-08-05 14:57:02]   >> "Accept-Encoding: gzip[\r][\n]"
+58674 DEBUG [2019-08-05 14:57:02]   >> "Content-Length: 0[\r][\n]"
+58674 DEBUG [2019-08-05 14:57:02]   >> "Host: 192.168.3.24:20000[\r][\n]"
+58674 DEBUG [2019-08-05 14:57:02]   >> "Connection: Keep-Alive[\r][\n]"
+58674 DEBUG [2019-08-05 14:57:02]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+58674 DEBUG [2019-08-05 14:57:02]   >> "[\r][\n]"
+58674 DEBUG [2019-08-05 14:57:02]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+58674 DEBUG [2019-08-05 14:57:02]  >> DiscoveryIdentity-Name: DefaultClient
+58674 DEBUG [2019-08-05 14:57:02]  >> DiscoveryIdentity-Version: 1.4
+58674 DEBUG [2019-08-05 14:57:02]  >> DiscoveryIdentity-Id: 192.168.3.24
+58674 DEBUG [2019-08-05 14:57:02]  >> Accept-Encoding: gzip
+58674 DEBUG [2019-08-05 14:57:02]  >> Content-Length: 0
+58674 DEBUG [2019-08-05 14:57:02]  >> Host: 192.168.3.24:20000
+58674 DEBUG [2019-08-05 14:57:02]  >> Connection: Keep-Alive
+58674 DEBUG [2019-08-05 14:57:02]  >> User-Agent: Java-EurekaClient/v1.9.3
+58676 DEBUG [2019-08-05 14:57:02]   << "HTTP/1.1 200 [\r][\n]"
+58676 DEBUG [2019-08-05 14:57:02]   << "Content-Type: application/xml[\r][\n]"
+58676 DEBUG [2019-08-05 14:57:02]   << "Content-Length: 0[\r][\n]"
+58676 DEBUG [2019-08-05 14:57:02]   << "Date: Mon, 05 Aug 2019 06:57:02 GMT[\r][\n]"
+58676 DEBUG [2019-08-05 14:57:02]   << "[\r][\n]"
+58676 DEBUG [2019-08-05 14:57:02]  Receiving response: HTTP/1.1 200 
+58676 DEBUG [2019-08-05 14:57:02]  << HTTP/1.1 200 
+58676 DEBUG [2019-08-05 14:57:02]  << Content-Type: application/xml
+58676 DEBUG [2019-08-05 14:57:02]  << Content-Length: 0
+58676 DEBUG [2019-08-05 14:57:02]  << Date: Mon, 05 Aug 2019 06:57:02 GMT
+58676 DEBUG [2019-08-05 14:57:02]  Connection can be kept alive indefinitely
+58677 DEBUG [2019-08-05 14:57:02]  Released connection is reusable.
+58677 DEBUG [2019-08-05 14:57:02]  Releasing connection [{}->http://192.168.3.24:20000][null]
+58677 DEBUG [2019-08-05 14:57:02]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+58677 DEBUG [2019-08-05 14:57:02]  Notifying no-one, there are no waiting threads
+63678 DEBUG [2019-08-05 14:57:07]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+63679 DEBUG [2019-08-05 14:57:07]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+63679 DEBUG [2019-08-05 14:57:07]  Getting free connection [{}->http://192.168.3.24:20000][null]
+63679 DEBUG [2019-08-05 14:57:07]  Stale connection check
+63680 DEBUG [2019-08-05 14:57:07]  CookieSpec selected: default
+63680 DEBUG [2019-08-05 14:57:07]  Auth cache not set in the context
+63680 DEBUG [2019-08-05 14:57:07]  Target auth state: UNCHALLENGED
+63680 DEBUG [2019-08-05 14:57:07]  Proxy auth state: UNCHALLENGED
+63680 DEBUG [2019-08-05 14:57:07]  Attempt 1 to execute request
+63680 DEBUG [2019-08-05 14:57:07]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+63680 DEBUG [2019-08-05 14:57:07]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+63680 DEBUG [2019-08-05 14:57:07]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+63680 DEBUG [2019-08-05 14:57:07]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+63680 DEBUG [2019-08-05 14:57:07]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+63680 DEBUG [2019-08-05 14:57:07]   >> "Accept-Encoding: gzip[\r][\n]"
+63680 DEBUG [2019-08-05 14:57:07]   >> "Content-Length: 0[\r][\n]"
+63680 DEBUG [2019-08-05 14:57:07]   >> "Host: 192.168.3.24:20000[\r][\n]"
+63680 DEBUG [2019-08-05 14:57:07]   >> "Connection: Keep-Alive[\r][\n]"
+63680 DEBUG [2019-08-05 14:57:07]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+63680 DEBUG [2019-08-05 14:57:07]   >> "[\r][\n]"
+63680 DEBUG [2019-08-05 14:57:07]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+63680 DEBUG [2019-08-05 14:57:07]  >> DiscoveryIdentity-Name: DefaultClient
+63681 DEBUG [2019-08-05 14:57:07]  >> DiscoveryIdentity-Version: 1.4
+63681 DEBUG [2019-08-05 14:57:07]  >> DiscoveryIdentity-Id: 192.168.3.24
+63681 DEBUG [2019-08-05 14:57:07]  >> Accept-Encoding: gzip
+63681 DEBUG [2019-08-05 14:57:07]  >> Content-Length: 0
+63681 DEBUG [2019-08-05 14:57:07]  >> Host: 192.168.3.24:20000
+63681 DEBUG [2019-08-05 14:57:07]  >> Connection: Keep-Alive
+63681 DEBUG [2019-08-05 14:57:07]  >> User-Agent: Java-EurekaClient/v1.9.3
+63682 DEBUG [2019-08-05 14:57:07]   << "HTTP/1.1 200 [\r][\n]"
+63682 DEBUG [2019-08-05 14:57:07]   << "Content-Type: application/xml[\r][\n]"
+63682 DEBUG [2019-08-05 14:57:07]   << "Content-Length: 0[\r][\n]"
+63682 DEBUG [2019-08-05 14:57:07]   << "Date: Mon, 05 Aug 2019 06:57:07 GMT[\r][\n]"
+63682 DEBUG [2019-08-05 14:57:07]   << "[\r][\n]"
+63682 DEBUG [2019-08-05 14:57:07]  Receiving response: HTTP/1.1 200 
+63682 DEBUG [2019-08-05 14:57:07]  << HTTP/1.1 200 
+63682 DEBUG [2019-08-05 14:57:07]  << Content-Type: application/xml
+63682 DEBUG [2019-08-05 14:57:07]  << Content-Length: 0
+63682 DEBUG [2019-08-05 14:57:07]  << Date: Mon, 05 Aug 2019 06:57:07 GMT
+63682 DEBUG [2019-08-05 14:57:07]  Connection can be kept alive indefinitely
+63682 DEBUG [2019-08-05 14:57:07]  Released connection is reusable.
+63682 DEBUG [2019-08-05 14:57:07]  Releasing connection [{}->http://192.168.3.24:20000][null]
+63682 DEBUG [2019-08-05 14:57:07]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+63682 DEBUG [2019-08-05 14:57:07]  Notifying no-one, there are no waiting threads
+68683 DEBUG [2019-08-05 14:57:12]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+68683 DEBUG [2019-08-05 14:57:12]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+68683 DEBUG [2019-08-05 14:57:12]  Getting free connection [{}->http://192.168.3.24:20000][null]
+68683 DEBUG [2019-08-05 14:57:12]  Stale connection check
+68685 DEBUG [2019-08-05 14:57:12]  CookieSpec selected: default
+68685 DEBUG [2019-08-05 14:57:12]  Auth cache not set in the context
+68685 DEBUG [2019-08-05 14:57:12]  Target auth state: UNCHALLENGED
+68685 DEBUG [2019-08-05 14:57:12]  Proxy auth state: UNCHALLENGED
+68685 DEBUG [2019-08-05 14:57:12]  Attempt 1 to execute request
+68685 DEBUG [2019-08-05 14:57:12]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+68685 DEBUG [2019-08-05 14:57:12]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+68685 DEBUG [2019-08-05 14:57:12]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+68685 DEBUG [2019-08-05 14:57:12]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+68685 DEBUG [2019-08-05 14:57:12]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+68685 DEBUG [2019-08-05 14:57:12]   >> "Accept-Encoding: gzip[\r][\n]"
+68685 DEBUG [2019-08-05 14:57:12]   >> "Content-Length: 0[\r][\n]"
+68685 DEBUG [2019-08-05 14:57:12]   >> "Host: 192.168.3.24:20000[\r][\n]"
+68685 DEBUG [2019-08-05 14:57:12]   >> "Connection: Keep-Alive[\r][\n]"
+68685 DEBUG [2019-08-05 14:57:12]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+68685 DEBUG [2019-08-05 14:57:12]   >> "[\r][\n]"
+68685 DEBUG [2019-08-05 14:57:12]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+68685 DEBUG [2019-08-05 14:57:12]  >> DiscoveryIdentity-Name: DefaultClient
+68685 DEBUG [2019-08-05 14:57:12]  >> DiscoveryIdentity-Version: 1.4
+68685 DEBUG [2019-08-05 14:57:12]  >> DiscoveryIdentity-Id: 192.168.3.24
+68685 DEBUG [2019-08-05 14:57:12]  >> Accept-Encoding: gzip
+68686 DEBUG [2019-08-05 14:57:12]  >> Content-Length: 0
+68686 DEBUG [2019-08-05 14:57:12]  >> Host: 192.168.3.24:20000
+68686 DEBUG [2019-08-05 14:57:12]  >> Connection: Keep-Alive
+68686 DEBUG [2019-08-05 14:57:12]  >> User-Agent: Java-EurekaClient/v1.9.3
+68808 DEBUG [2019-08-05 14:57:13]   << "HTTP/1.1 200 [\r][\n]"
+68808 DEBUG [2019-08-05 14:57:13]   << "Content-Type: application/xml[\r][\n]"
+68808 DEBUG [2019-08-05 14:57:13]   << "Content-Length: 0[\r][\n]"
+68808 DEBUG [2019-08-05 14:57:13]   << "Date: Mon, 05 Aug 2019 06:57:13 GMT[\r][\n]"
+68808 DEBUG [2019-08-05 14:57:13]   << "[\r][\n]"
+68808 DEBUG [2019-08-05 14:57:13]  Receiving response: HTTP/1.1 200 
+68808 DEBUG [2019-08-05 14:57:13]  << HTTP/1.1 200 
+68808 DEBUG [2019-08-05 14:57:13]  << Content-Type: application/xml
+68808 DEBUG [2019-08-05 14:57:13]  << Content-Length: 0
+68808 DEBUG [2019-08-05 14:57:13]  << Date: Mon, 05 Aug 2019 06:57:13 GMT
+68808 DEBUG [2019-08-05 14:57:13]  Connection can be kept alive indefinitely
+68808 DEBUG [2019-08-05 14:57:13]  Released connection is reusable.
+68808 DEBUG [2019-08-05 14:57:13]  Releasing connection [{}->http://192.168.3.24:20000][null]
+68808 DEBUG [2019-08-05 14:57:13]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+68808 DEBUG [2019-08-05 14:57:13]  Notifying no-one, there are no waiting threads
+72931 DEBUG [2019-08-05 14:57:17]  Closing connections idle longer than 30000 SECONDS
+72931 DEBUG [2019-08-05 14:57:17]  Closing connections idle longer than 30000 SECONDS
+73659 DEBUG [2019-08-05 14:57:17]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+73659 DEBUG [2019-08-05 14:57:17]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+73659 DEBUG [2019-08-05 14:57:17]  Getting free connection [{}->http://192.168.3.24:20000][null]
+73659 DEBUG [2019-08-05 14:57:17]  Stale connection check
+73660 DEBUG [2019-08-05 14:57:17]  CookieSpec selected: default
+73660 DEBUG [2019-08-05 14:57:17]  Auth cache not set in the context
+73660 DEBUG [2019-08-05 14:57:17]  Target auth state: UNCHALLENGED
+73660 DEBUG [2019-08-05 14:57:17]  Proxy auth state: UNCHALLENGED
+73660 DEBUG [2019-08-05 14:57:17]  Attempt 1 to execute request
+73660 DEBUG [2019-08-05 14:57:17]  Sending request: GET /eureka/apps/delta HTTP/1.1
+73660 DEBUG [2019-08-05 14:57:17]   >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+73660 DEBUG [2019-08-05 14:57:17]   >> "Accept: application/json[\r][\n]"
+73660 DEBUG [2019-08-05 14:57:17]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+73660 DEBUG [2019-08-05 14:57:17]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+73660 DEBUG [2019-08-05 14:57:17]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+73660 DEBUG [2019-08-05 14:57:17]   >> "Accept-Encoding: gzip[\r][\n]"
+73661 DEBUG [2019-08-05 14:57:17]   >> "Host: 192.168.3.24:20000[\r][\n]"
+73661 DEBUG [2019-08-05 14:57:17]   >> "Connection: Keep-Alive[\r][\n]"
+73661 DEBUG [2019-08-05 14:57:17]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+73661 DEBUG [2019-08-05 14:57:17]   >> "[\r][\n]"
+73661 DEBUG [2019-08-05 14:57:17]  >> GET /eureka/apps/delta HTTP/1.1
+73661 DEBUG [2019-08-05 14:57:17]  >> Accept: application/json
+73661 DEBUG [2019-08-05 14:57:17]  >> DiscoveryIdentity-Name: DefaultClient
+73661 DEBUG [2019-08-05 14:57:17]  >> DiscoveryIdentity-Version: 1.4
+73661 DEBUG [2019-08-05 14:57:17]  >> DiscoveryIdentity-Id: 192.168.3.24
+73661 DEBUG [2019-08-05 14:57:17]  >> Accept-Encoding: gzip
+73661 DEBUG [2019-08-05 14:57:17]  >> Host: 192.168.3.24:20000
+73661 DEBUG [2019-08-05 14:57:17]  >> Connection: Keep-Alive
+73661 DEBUG [2019-08-05 14:57:17]  >> User-Agent: Java-EurekaClient/v1.9.3
+73666 DEBUG [2019-08-05 14:57:17]   << "HTTP/1.1 200 [\r][\n]"
+73666 DEBUG [2019-08-05 14:57:17]   << "Content-Encoding: gzip[\r][\n]"
+73666 DEBUG [2019-08-05 14:57:17]   << "Content-Type: application/json[\r][\n]"
+73666 DEBUG [2019-08-05 14:57:17]   << "Content-Length: 557[\r][\n]"
+73666 DEBUG [2019-08-05 14:57:17]   << "Date: Mon, 05 Aug 2019 06:57:17 GMT[\r][\n]"
+73666 DEBUG [2019-08-05 14:57:17]   << "[\r][\n]"
+73666 DEBUG [2019-08-05 14:57:17]  Receiving response: HTTP/1.1 200 
+73666 DEBUG [2019-08-05 14:57:17]  << HTTP/1.1 200 
+73666 DEBUG [2019-08-05 14:57:17]  << Content-Encoding: gzip
+73666 DEBUG [2019-08-05 14:57:17]  << Content-Type: application/json
+73666 DEBUG [2019-08-05 14:57:17]  << Content-Length: 557
+73666 DEBUG [2019-08-05 14:57:17]  << Date: Mon, 05 Aug 2019 06:57:17 GMT
+73667 DEBUG [2019-08-05 14:57:17]  Connection can be kept alive indefinitely
+73667 DEBUG [2019-08-05 14:57:17]   << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]SM[0x8f][0xda]0[0x10][0xfd]/[0xd6][0x1e]!$[0xe1];[0xa7]Ed[0xf][0xa8],[0xa0][0xa5]i[0xf]U[0x85]\g n[0x1d];[0xb2][0x1d]v[0x11][0xe2][0xbf]w[0x1c]7[0xdb][0xc2][0xae][0xaa]V9[0xc4][0x9e]y[0xf3]f[0xe6][0xcd][0xf8]LhU[0x9][0xce][0xa8][0xe5]J[0x1a][0x92][0x9c][0xc9][0x11][0xb4]q[0xe7][0xdd].[0x7]a)I[0xc8]p@:[0xe][0x86][0xa6][0x82][0x9a][0x82][0xa9][0x1c][0xd0][0x9a]mv[0xd1][0xce];[0xda]x[0x92]|9[0x13]IK[0xe7][0x9e]/[0xd7]Y[0xda]}[0x9c]-[0x97][0xdd]l[0xfb][0xf0][0x84]@.[0x8d][0xa5][0x92]A[0x83]j/[0x8b][0x1c][0xb1]B1*[0x2]&T[0x9d][0x7]L[0x95]Is[0xea][0x96]T[0x88]nm@'Q[0x18]F!2[0x14][0xca][0xd8][0x95][0xa7][0xbf][0x9][0xf1]u[0xbc][0x9f][0xb6][0x9a][0xe5][0xb9]FW4[0x8d][0x83]h4[0x9][0xfa]A[0xec][0x1a][0xc2][0xfc][0xb6]6M#xS[0xd8][0xb6][0xe6]y[0xe]r[0xfb]j_}X[0xad]?[0xaf][0xd0]Y)m[0x9d]4w[0xc4][0x97][0xd2]![0xf7] [0xe9]7[0x1][0xae]x[0xab]k [0x17][0xe4][0x3]Vk[0xd8][0xfc][0x86][0xe][0x6][0xfd]+[0xe0][0x9e][\n]"
+73667 DEBUG [2019-08-05 14:57:17]   << "[0xd3] [0x99][0xaa][0xa5][0xd5]'[0xd7]z[0xd4]!9[0xb5]t[0xe][0xd2][0x82]^[0xc8][0xbd]r[0xb1][0xf7]LP[0xe3]*[0xc0][0xc6][0x2][0x9]v/[0xf8]K[0x80][0xed]q[0xf4][0x7][0x8b]V8[0xbc][0xdc][0xa5][0xb0][0xa7][0xb5][0xb0][0xe9]5E[0xa7][0x9d][0xc1][0xe3]i[0xfd],]F[0x1][0xd4]@K[0xaf]A[0xc2]3[0x15][0xb][0x87]?[0xba][0xff][0x16][0x18]f[0x1b]b)[0xb5]n[0xe6][0xd8][0x9a]"[0xb4]i8pc[0xbd][0xfd]#/[0x1][0xb3][0x97][0x95]s[0x8d][0x6][0xd3][0xc9]$[0x1a]OFa[0x8c][0x9][0xa8][0xb1]O[0x9e][0xf7]-([0xe][0xfb][0xf1][0x8][0xa9][0xe0][0xc8][0xd9][\r]M[0xe8]t[0xd3]h[0x87][0xac]z[0x13]8[0x1e][0xf7][0x87][0xd3]i[0x88][0xf5][0x97]`[0xa9][0xd3][0xc9][0x95]_RI[0xf]Pb[0xbb][0x81][0x9f][0xb]i[0xd7][0xe3]{[0xf9][0xd2][0x9a]F1[0xaa][0xef]:/T[0x9][0x1b][0xc4]gZ[0xa0][0xb9][0xb0][0xb6]Jz[0xbd][0xdb]}k[0x8]z[0xaf];[0xf1][0x8f]x[0xca]lM[0xad][0xd2]=[0xee]E/[0x80][\n]"
+73667 DEBUG [2019-08-05 14:57:17]   << "[[0xcc][0xb]`?[0xfe]'[0xda][0x87]a[0xfc][0xd1]o*[0xf8][0xd1]_?[0x1][0xd2][0xee][0xd7][0xa7][0xbf][0x83][0xb8][0x99]+[0xa5]s.q^[0xf2][0x90]r[0xc3][0xdc]b[0x9f][0xb6][0xa8]1[0xe8][0xd7][0x1d][0xf4][0xf3][0xca]*[0x94][0x14][0xf2]?d'WS[0xfd][0x5]K[0xb9][0xb6][0xa7]wA[0xe3][0xf1]`[0xea][0x1e][0x9e][0x1f][0xea][0xa9]r+7K[0xd3][0x87][0x94]\[0xbe][0xe2]w[0xf9][0x9].[0xd2][0xc3][0xdc]\[0x4][0x0][0x0]"
+73669 DEBUG [2019-08-05 14:57:17]  Released connection is reusable.
+73669 DEBUG [2019-08-05 14:57:17]  Releasing connection [{}->http://192.168.3.24:20000][null]
+73669 DEBUG [2019-08-05 14:57:17]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+73669 DEBUG [2019-08-05 14:57:17]  Notifying no-one, there are no waiting threads
+73811 DEBUG [2019-08-05 14:57:18]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+73812 DEBUG [2019-08-05 14:57:18]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+73812 DEBUG [2019-08-05 14:57:18]  Getting free connection [{}->http://192.168.3.24:20000][null]
+73812 DEBUG [2019-08-05 14:57:18]  Stale connection check
+73814 DEBUG [2019-08-05 14:57:18]  CookieSpec selected: default
+73814 DEBUG [2019-08-05 14:57:18]  Auth cache not set in the context
+73814 DEBUG [2019-08-05 14:57:18]  Target auth state: UNCHALLENGED
+73814 DEBUG [2019-08-05 14:57:18]  Proxy auth state: UNCHALLENGED
+73815 DEBUG [2019-08-05 14:57:18]  Attempt 1 to execute request
+73815 DEBUG [2019-08-05 14:57:18]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+73815 DEBUG [2019-08-05 14:57:18]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+73815 DEBUG [2019-08-05 14:57:18]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+73815 DEBUG [2019-08-05 14:57:18]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+73815 DEBUG [2019-08-05 14:57:18]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+73815 DEBUG [2019-08-05 14:57:18]   >> "Accept-Encoding: gzip[\r][\n]"
+73815 DEBUG [2019-08-05 14:57:18]   >> "Content-Length: 0[\r][\n]"
+73815 DEBUG [2019-08-05 14:57:18]   >> "Host: 192.168.3.24:20000[\r][\n]"
+73815 DEBUG [2019-08-05 14:57:18]   >> "Connection: Keep-Alive[\r][\n]"
+73815 DEBUG [2019-08-05 14:57:18]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+73815 DEBUG [2019-08-05 14:57:18]   >> "[\r][\n]"
+73815 DEBUG [2019-08-05 14:57:18]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+73816 DEBUG [2019-08-05 14:57:18]  >> DiscoveryIdentity-Name: DefaultClient
+73816 DEBUG [2019-08-05 14:57:18]  >> DiscoveryIdentity-Version: 1.4
+73816 DEBUG [2019-08-05 14:57:18]  >> DiscoveryIdentity-Id: 192.168.3.24
+73816 DEBUG [2019-08-05 14:57:18]  >> Accept-Encoding: gzip
+73816 DEBUG [2019-08-05 14:57:18]  >> Content-Length: 0
+73816 DEBUG [2019-08-05 14:57:18]  >> Host: 192.168.3.24:20000
+73816 DEBUG [2019-08-05 14:57:18]  >> Connection: Keep-Alive
+73816 DEBUG [2019-08-05 14:57:18]  >> User-Agent: Java-EurekaClient/v1.9.3
+73817 DEBUG [2019-08-05 14:57:18]   << "HTTP/1.1 200 [\r][\n]"
+73817 DEBUG [2019-08-05 14:57:18]   << "Content-Type: application/xml[\r][\n]"
+73817 DEBUG [2019-08-05 14:57:18]   << "Content-Length: 0[\r][\n]"
+73817 DEBUG [2019-08-05 14:57:18]   << "Date: Mon, 05 Aug 2019 06:57:17 GMT[\r][\n]"
+73818 DEBUG [2019-08-05 14:57:18]   << "[\r][\n]"
+73818 DEBUG [2019-08-05 14:57:18]  Receiving response: HTTP/1.1 200 
+73818 DEBUG [2019-08-05 14:57:18]  << HTTP/1.1 200 
+73818 DEBUG [2019-08-05 14:57:18]  << Content-Type: application/xml
+73818 DEBUG [2019-08-05 14:57:18]  << Content-Length: 0
+73818 DEBUG [2019-08-05 14:57:18]  << Date: Mon, 05 Aug 2019 06:57:17 GMT
+73818 DEBUG [2019-08-05 14:57:18]  Connection can be kept alive indefinitely
+73819 DEBUG [2019-08-05 14:57:18]  Released connection is reusable.
+73819 DEBUG [2019-08-05 14:57:18]  Releasing connection [{}->http://192.168.3.24:20000][null]
+73819 DEBUG [2019-08-05 14:57:18]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+73819 DEBUG [2019-08-05 14:57:18]  Notifying no-one, there are no waiting threads
+78821 DEBUG [2019-08-05 14:57:23]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+78821 DEBUG [2019-08-05 14:57:23]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+78821 DEBUG [2019-08-05 14:57:23]  Getting free connection [{}->http://192.168.3.24:20000][null]
+78821 DEBUG [2019-08-05 14:57:23]  Stale connection check
+78823 DEBUG [2019-08-05 14:57:23]  CookieSpec selected: default
+78823 DEBUG [2019-08-05 14:57:23]  Auth cache not set in the context
+78823 DEBUG [2019-08-05 14:57:23]  Target auth state: UNCHALLENGED
+78823 DEBUG [2019-08-05 14:57:23]  Proxy auth state: UNCHALLENGED
+78823 DEBUG [2019-08-05 14:57:23]  Attempt 1 to execute request
+78823 DEBUG [2019-08-05 14:57:23]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+78823 DEBUG [2019-08-05 14:57:23]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+78823 DEBUG [2019-08-05 14:57:23]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+78823 DEBUG [2019-08-05 14:57:23]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+78823 DEBUG [2019-08-05 14:57:23]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+78823 DEBUG [2019-08-05 14:57:23]   >> "Accept-Encoding: gzip[\r][\n]"
+78823 DEBUG [2019-08-05 14:57:23]   >> "Content-Length: 0[\r][\n]"
+78823 DEBUG [2019-08-05 14:57:23]   >> "Host: 192.168.3.24:20000[\r][\n]"
+78823 DEBUG [2019-08-05 14:57:23]   >> "Connection: Keep-Alive[\r][\n]"
+78823 DEBUG [2019-08-05 14:57:23]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+78823 DEBUG [2019-08-05 14:57:23]   >> "[\r][\n]"
+78823 DEBUG [2019-08-05 14:57:23]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+78823 DEBUG [2019-08-05 14:57:23]  >> DiscoveryIdentity-Name: DefaultClient
+78823 DEBUG [2019-08-05 14:57:23]  >> DiscoveryIdentity-Version: 1.4
+78823 DEBUG [2019-08-05 14:57:23]  >> DiscoveryIdentity-Id: 192.168.3.24
+78823 DEBUG [2019-08-05 14:57:23]  >> Accept-Encoding: gzip
+78823 DEBUG [2019-08-05 14:57:23]  >> Content-Length: 0
+78823 DEBUG [2019-08-05 14:57:23]  >> Host: 192.168.3.24:20000
+78824 DEBUG [2019-08-05 14:57:23]  >> Connection: Keep-Alive
+78824 DEBUG [2019-08-05 14:57:23]  >> User-Agent: Java-EurekaClient/v1.9.3
+78827 DEBUG [2019-08-05 14:57:23]   << "HTTP/1.1 200 [\r][\n]"
+78827 DEBUG [2019-08-05 14:57:23]   << "Content-Type: application/xml[\r][\n]"
+78827 DEBUG [2019-08-05 14:57:23]   << "Content-Length: 0[\r][\n]"
+78827 DEBUG [2019-08-05 14:57:23]   << "Date: Mon, 05 Aug 2019 06:57:23 GMT[\r][\n]"
+78827 DEBUG [2019-08-05 14:57:23]   << "[\r][\n]"
+78827 DEBUG [2019-08-05 14:57:23]  Receiving response: HTTP/1.1 200 
+78827 DEBUG [2019-08-05 14:57:23]  << HTTP/1.1 200 
+78827 DEBUG [2019-08-05 14:57:23]  << Content-Type: application/xml
+78827 DEBUG [2019-08-05 14:57:23]  << Content-Length: 0
+78827 DEBUG [2019-08-05 14:57:23]  << Date: Mon, 05 Aug 2019 06:57:23 GMT
+78827 DEBUG [2019-08-05 14:57:23]  Connection can be kept alive indefinitely
+78827 DEBUG [2019-08-05 14:57:23]  Released connection is reusable.
+78828 DEBUG [2019-08-05 14:57:23]  Releasing connection [{}->http://192.168.3.24:20000][null]
+78828 DEBUG [2019-08-05 14:57:23]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+78828 DEBUG [2019-08-05 14:57:23]  Notifying no-one, there are no waiting threads
+83829 DEBUG [2019-08-05 14:57:28]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+83829 DEBUG [2019-08-05 14:57:28]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+83829 DEBUG [2019-08-05 14:57:28]  Getting free connection [{}->http://192.168.3.24:20000][null]
+83829 DEBUG [2019-08-05 14:57:28]  Stale connection check
+83830 DEBUG [2019-08-05 14:57:28]  CookieSpec selected: default
+83831 DEBUG [2019-08-05 14:57:28]  Auth cache not set in the context
+83831 DEBUG [2019-08-05 14:57:28]  Target auth state: UNCHALLENGED
+83831 DEBUG [2019-08-05 14:57:28]  Proxy auth state: UNCHALLENGED
+83831 DEBUG [2019-08-05 14:57:28]  Attempt 1 to execute request
+83831 DEBUG [2019-08-05 14:57:28]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+83831 DEBUG [2019-08-05 14:57:28]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+83831 DEBUG [2019-08-05 14:57:28]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+83831 DEBUG [2019-08-05 14:57:28]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+83831 DEBUG [2019-08-05 14:57:28]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+83831 DEBUG [2019-08-05 14:57:28]   >> "Accept-Encoding: gzip[\r][\n]"
+83831 DEBUG [2019-08-05 14:57:28]   >> "Content-Length: 0[\r][\n]"
+83831 DEBUG [2019-08-05 14:57:28]   >> "Host: 192.168.3.24:20000[\r][\n]"
+83831 DEBUG [2019-08-05 14:57:28]   >> "Connection: Keep-Alive[\r][\n]"
+83831 DEBUG [2019-08-05 14:57:28]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+83831 DEBUG [2019-08-05 14:57:28]   >> "[\r][\n]"
+83832 DEBUG [2019-08-05 14:57:28]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+83832 DEBUG [2019-08-05 14:57:28]  >> DiscoveryIdentity-Name: DefaultClient
+83832 DEBUG [2019-08-05 14:57:28]  >> DiscoveryIdentity-Version: 1.4
+83832 DEBUG [2019-08-05 14:57:28]  >> DiscoveryIdentity-Id: 192.168.3.24
+83832 DEBUG [2019-08-05 14:57:28]  >> Accept-Encoding: gzip
+83832 DEBUG [2019-08-05 14:57:28]  >> Content-Length: 0
+83832 DEBUG [2019-08-05 14:57:28]  >> Host: 192.168.3.24:20000
+83832 DEBUG [2019-08-05 14:57:28]  >> Connection: Keep-Alive
+83832 DEBUG [2019-08-05 14:57:28]  >> User-Agent: Java-EurekaClient/v1.9.3
+83833 DEBUG [2019-08-05 14:57:28]   << "HTTP/1.1 200 [\r][\n]"
+83834 DEBUG [2019-08-05 14:57:28]   << "Content-Type: application/xml[\r][\n]"
+83834 DEBUG [2019-08-05 14:57:28]   << "Content-Length: 0[\r][\n]"
+83834 DEBUG [2019-08-05 14:57:28]   << "Date: Mon, 05 Aug 2019 06:57:28 GMT[\r][\n]"
+83834 DEBUG [2019-08-05 14:57:28]   << "[\r][\n]"
+83834 DEBUG [2019-08-05 14:57:28]  Receiving response: HTTP/1.1 200 
+83834 DEBUG [2019-08-05 14:57:28]  << HTTP/1.1 200 
+83834 DEBUG [2019-08-05 14:57:28]  << Content-Type: application/xml
+83834 DEBUG [2019-08-05 14:57:28]  << Content-Length: 0
+83834 DEBUG [2019-08-05 14:57:28]  << Date: Mon, 05 Aug 2019 06:57:28 GMT
+83834 DEBUG [2019-08-05 14:57:28]  Connection can be kept alive indefinitely
+83834 DEBUG [2019-08-05 14:57:28]  Released connection is reusable.
+83834 DEBUG [2019-08-05 14:57:28]  Releasing connection [{}->http://192.168.3.24:20000][null]
+83834 DEBUG [2019-08-05 14:57:28]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
+83834 DEBUG [2019-08-05 14:57:28]  Notifying no-one, there are no waiting threads
+88836 DEBUG [2019-08-05 14:57:33]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
+88836 DEBUG [2019-08-05 14:57:33]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+88836 DEBUG [2019-08-05 14:57:33]  Getting free connection [{}->http://192.168.3.24:20000][null]
+88836 DEBUG [2019-08-05 14:57:33]  Stale connection check
+88837 DEBUG [2019-08-05 14:57:33]  CookieSpec selected: default
+88838 DEBUG [2019-08-05 14:57:33]  Auth cache not set in the context
+88838 DEBUG [2019-08-05 14:57:33]  Target auth state: UNCHALLENGED
+88838 DEBUG [2019-08-05 14:57:33]  Proxy auth state: UNCHALLENGED
+88838 DEBUG [2019-08-05 14:57:33]  Attempt 1 to execute request
+88838 DEBUG [2019-08-05 14:57:33]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+88838 DEBUG [2019-08-05 14:57:33]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
+88838 DEBUG [2019-08-05 14:57:33]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+88838 DEBUG [2019-08-05 14:57:33]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+88838 DEBUG [2019-08-05 14:57:33]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+88838 DEBUG [2019-08-05 14:57:33]   >> "Accept-Encoding: gzip[\r][\n]"
+88838 DEBUG [2019-08-05 14:57:33]   >> "Content-Length: 0[\r][\n]"
+88838 DEBUG [2019-08-05 14:57:33]   >> "Host: 192.168.3.24:20000[\r][\n]"
+88838 DEBUG [2019-08-05 14:57:33]   >> "Connection: Keep-Alive[\r][\n]"
+88838 DEBUG [2019-08-05 14:57:33]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+88838 DEBUG [2019-08-05 14:57:33]   >> "[\r][\n]"
+88838 DEBUG [2019-08-05 14:57:33]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
+88838 DEBUG [2019-08-05 14:57:33]  >> DiscoveryIdentity-Name: DefaultClient
+88838 DEBUG [2019-08-05 14:57:33]  >> DiscoveryIdentity-Version: 1.4
