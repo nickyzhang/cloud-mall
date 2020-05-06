@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.CategoryMapper">
+	<resultMap id="CategoryMap" type="Category">
+		<id property="id" column="cat_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="parentId" column="parent_id" javaType="long" jdbcType="BIGINT" />
+		<result property="name" column="cat_name" />
+		<result property="description" column="cat_desc" />
+		<result property="imagePath" column="image_path" />
+		<result property="displayOrder" column="display_order" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<!--MyBatis3做数据持久层，在字段中有Date和DateTime类型，在插入数据时只要将实体的属性设置成Timestamp就会对应mysql的DateTime类型，Date会对应mysql的Date类型。-->
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!--根据category id查询category信息 -->
+	<select id="find" parameterType="long" resultMap="CategoryMap">
+		SELECT * FROM cloud_cat WHERE `cat_id` = #{id} AND `deleted` = 0
+	</select>
+	
+	<!--根据category name查询category信息 -->
+	<select id="findByName" resultMap="CategoryMap">
+		SELECT * FROM cloud_cat WHERE `cat_name` = #{name} AND `deleted` = 0
+	</select>
+
+	<!--查询所有category -->
+	<select id="findAll" resultMap="CategoryMap">
+		SELECT * FROM cloud_cat WHERE `deleted` = 0
+	</select>
+
+	<!--统计所有category数量 -->
+	<select id="count" resultType="long">
+		SELECT COUNT(1) FROM cloud_cat WHERE `deleted` = 0
+	</select>
+
+	<!--根据brand id查询category信息 -->
+	<select id="findCategoriesByBrandId" parameterType="long" resultMap="CategoryMap">
+		SELECT * FROM cloud_cat
+		WHERE `deleted` = 0 AND cat_id
+		IN (
+			SELECT cat_id
+			FROM cloud_cat_brand
+			WHERE brand_id = #{brandId} AND `deleted` = 0
+		)
+	</select>
+
+	<!--查找一个属性下的所有分类 -->
+	<select id="findCategoriesByAttributeNameId" resultMap="CategoryMap" parameterType="long">
+		SELECT * FROM cloud_cat
+		WHERE `deleted` = 0 AND cat_id
+		IN (
+			SELECT cat_id
+			FROM cloud_cat_attr_name
+			WHERE attr_name_id =#{attributeNameId} AND `deleted` = 0
+		)
+	</select>
+
+	<!-- 保存category信息 -->
+	<insert id="save" parameterType="Category">
+		INSERT INTO cloud_cat
+		(
+			`cat_id`,`parent_id`,`cat_name`,`cat_desc`,`image_path`,
+			`display_order`,`deleted`,`create_time`,`update_time`
+		)
+		VALUES
+		(
+			#{id},#{parentId},#{name},#{description},#{imagePath},
+			#{displayOrder},#{deleted},#{createTime},#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存category信息 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO
+			cloud_cat(`cat_id`,`parent_id`,`cat_name`,`cat_desc`,`image_path`,`display_order`,`deleted`,`create_time`,`update_time`)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.id},
+					#{element.parentId},
+					#{element.name},
+					#{element.description},
+					#{element.imagePath},
+					#{element.displayOrder},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+	<!-- 更新category信息 -->
+	<update id="update" parameterType="Category">
+		UPDATE cloud_cat
+		<set>
+			<if test="id != null">`cat_id` = #{id},</if>
+			<if test="parentId != null">`parent_id` = #{parentId},</if>
+			<if test="name != null">`cat_name` = #{name},</if>
+			<if test="description != null">`cat_desc` = #{description},</if>
+			<if test="imagePath != null">`image_path` = #{imagePath},</if>
+			<if test="displayOrder != null">`display_order` = #{displayOrder},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `cat_id` = #{id}
+	</update>
+
+	<!-- 删除category -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_cat SET `deleted` = 1 WHERE `cat_id` = #{id}
+	</delete>
+
+</mapper>

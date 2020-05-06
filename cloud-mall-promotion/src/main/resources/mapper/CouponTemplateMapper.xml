@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.CouponTemplateMapper">
+	<resultMap id="CouponTemplateMap" type="CouponTemplate">
+		<id property="templateId" column="template_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="templateNo" column="template_no" javaType="long" jdbcType="BIGINT" />
+		<result property="templateStatus" column="template_status" />
+		<result property="name" column="name" />
+		<result property="desc" column="desc"/>
+		<result property="imageUrl" column="image_url"/>
+		<result property="couponType" column="coupon_type" />
+		<result property="composition" column="composition" javaType="boolean" jdbcType="TINYINT" />
+		<result property="promotionMethod" column="promotion_method" />
+		<result property="memberType" column="member_type" />
+		<result property="platformType" column="platform_type" />
+		<result property="useScope" column="use_scope" />
+		<result property="promotionChannel" column="promotion_channel" />
+		<result property="launchMethod" column="launch_method" />
+		<result property="promotionPlatform" column="promotion_platform" />
+		<result property="faceValue" column="face_value" />
+		<result property="discount" column="discount" />
+		<result property="issueNum" column="issue_num" javaType="long" jdbcType="BIGINT" />
+		<result property="receiveNum" column="receive_num" javaType="long" jdbcType="BIGINT" />
+		<result property="receiveNumLimit" column="receive_num_limit" />
+		<result property="amountLimit" column="amount_limit" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+		<result property="usedNum" column="used_num" javaType="long" jdbcType="BIGINT" />
+		<result property="usedAmount" column="used_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+		<result property="issueTime" column="issue_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="expireTime" column="expire_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="validDays" column="valid_days" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	    <association property="promotionRule" column="rule_id" select="com.cloud.mapper.PromotionRuleMapper.find" />
+    </resultMap>
+
+	<sql id="Base_Column_List">
+		`template_id`,`template_no`,`template_status`,`name`,`desc`,`image_url`,
+		`coupon_type`,`composition`,`promotion_method`,`member_type`,`platform_type`,`use_scope`,
+		`promotion_channel`,`launch_method`,`promotion_platform`,`face_value`,`discount`,
+		`issue_num`,`receive_num`,`used_num`,`used_amount`,`amount_limit`,`receive_num_limit`,
+		`issue_time`,`expire_time`,`valid_days`,`deleted`,`create_time`,`update_time`,`rule_id`
+	</sql>
+
+	<!-- 根据优惠券模板ID查询优惠券模板信息 -->
+	<select id="find" parameterType="long" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `template_id` = #{templateId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据sku id查询优惠券模板信息 -->
+	<select id="findTemplateListBySkuId" parameterType="long" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `deleted` = 0 AND `template_id` IN (
+			SELECT template_id
+			FROM cloud_coupon_template_sku
+			WHERE `sku_id` = #{skuId} AND `deleted` = 0
+		)
+	</select>
+
+	<!-- 根据cat id查询优惠券模板信息 -->
+	<select id="findTemplateListByCatId" parameterType="long" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `deleted` = 0 AND `template_id` IN (
+			SELECT template_id
+			FROM cloud_coupon_template_cat
+			WHERE `cat_id` = #{catId} AND `deleted` = 0
+		)
+	</select>
+
+	<!-- 根据brand id查询优惠券模板信息 -->
+	<select id="findTemplateListByBrandId" parameterType="long" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `deleted` = 0 AND `template_id` IN (
+			SELECT template_id
+			FROM cloud_coupon_template_brand
+			WHERE `brand_id` = #{brandId} AND `deleted` = 0
+		)
+	</select>
+
+	<select id="findTemplateListBySkuIds" resultMap="CouponTemplateMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_coupon_template
+		<if test="skuIds != null">
+			WHERE `deleted` = 0 AND `template_id` IN (
+			SELECT template_id
+			FROM cloud_coupon_template_sku
+			WHERE `deleted` = 0 AND `sku_id` IN (
+			<foreach collection="skuIds" item="skuId" index="index" separator=",">
+				#{skuId}
+			</foreach>
+			)
+		</if>
+		)
+	</select>
+
+	<!-- 查询指定类型的优惠券模板信息 -->
+	<select id="findTemplateListCouponType" parameterType="int" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `coupon_type` = #{couponType} AND `deleted` = 0
+	</select>
+
+	<!-- 根据优惠券id查询优惠券模板信息 -->
+	<select id="findTemplateByCouponId" parameterType="long" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `deleted` = 0 AND `template_id` = (
+			SELECT template_id FROM cloud_coupon
+			WHERE `deleted` = 0 AND `coupon_id` = #{couponId}
+		)
+	</select>
+
+	<!-- 查询指定促销方式的优惠券模板信息 -->
+	<select id="findTemplateListPromotionMethod" parameterType="int" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `promotion_method` = #{promotionMethod} AND `deleted` = 0
+	</select>
+
+	<!-- 查询指定发行日期之后的的优惠券模板信息 -->
+	<select id="findTemplateListAfterIssueTime" parameterType="string" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE DATE_FORMAT(`issue_time`,'%Y-%m-%d %H:%i:%s') &gt;= #{issueTime}
+	</select>
+
+	<!-- 查询指定发行日期之前的的优惠券模板信息 -->
+	<select id="findTemplateListBeforeIssueTime" parameterType="string" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE DATE_FORMAT(`issue_time`,'%Y-%m-%d %H:%i:%s') &lt;= #{issueTime} AND `deleted` = 0
+	</select>
+
+	<!-- 查询指定发行时间范围的模板 -->
+	<select id="findTemplateListBetweenIssueTime" parameterType="map" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `deleted` = 0 AND DATE_FORMAT(`issue_time`,'%Y-%m-%d %H:%i:%s') BETWEEN #{startTime} AND #{endTime} ;
+	</select>
+
+	<!-- 查询所有到期或者下架的优惠券模板信心 -->
+	<select id="findExpiredTemplateList" resultMap="CouponTemplateMap">
+		<![CDATA[
+			SELECT * FROM cloud_coupon_template
+			WHERE DATE_FORMAT(`expire_time`,'%Y-%m-%d %H:%i:%s') >= now() AND `deleted` = 0
+		]]>
+	</select>
+
+	<!-- 查询所有优惠券模板 -->
+	<select id="findAll" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template WHERE `deleted` = 0
+	</select>
+
+	<!-- 获取已经被用户领取的某模板数量 -->
+	<select id="getReceivedCouponNum" parameterType="long" resultType="long">
+		SELECT receive_num FROM cloud_coupon_template
+		WHERE `deleted` = 0 AND `template_id` = #{templateId}
+	</select>
+
+	<!-- 获取已经被用户使用的优惠券数量 -->
+	<select id="getUsedCouponNum" parameterType="long" resultType="long">
+		SELECT used_num FROM cloud_coupon_template
+		WHERE `deleted` = 0 AND `template_id` = #{templateId}
+	</select>
+
+	<!-- 根据sku id查找有效的单品类的优惠券模板类型 -->
+	<select id="findAvailableTemplateListBySkuId" parameterType="long" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `deleted` = 0 AND DATE_FORMAT(`expire_time`,'%Y-%m-%d %H:%i:%s') >= NOW() AND `template_id` IN (
+			SELECT template_id
+			FROM cloud_coupon_template_sku
+			WHERE `sku_id` = #{skuId} AND `deleted` = 0
+		)
+	</select>
+
+	<!-- 根据cat id查找有效的单品类的优惠券模板类型 -->
+	<select id="findAvailableTemplateListByCatId" parameterType="long" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `deleted` = 0 AND DATE_FORMAT(`expire_time`,'%Y-%m-%d %H:%i:%s') >= NOW() AND `template_id` IN (
+			SELECT template_id
+			FROM cloud_coupon_template_cat
+			WHERE `cat_id` = #{catId} AND `deleted` = 0
+		)
+	</select>
+
+	<!-- 根据brand id查找有效的单品类的优惠券模板类型 -->
+	<select id="findAvailableTemplateListByBrandId" parameterType="long" resultMap="CouponTemplateMap">
+		SELECT * FROM cloud_coupon_template
+		WHERE `deleted` = 0 AND DATE_FORMAT(`expire_time`,'%Y-%m-%d %H:%i:%s') >= NOW() AND `template_id` IN (
+			SELECT template_id
+			FROM cloud_coupon_template_brand
+			WHERE `brand_id` = #{brandId} AND `deleted` = 0
+		)
+	</select>
+
+	<!-- 保存优惠券信息 -->
+	<insert id="save" parameterType="CouponTemplate">
+		INSERT INTO cloud_coupon_template
+		(<include refid="Base_Column_List" />)
+		VALUES(
+			#{templateId},#{templateNo},#{templateStatus},#{name},#{desc},#{imageUrl},
+			#{couponType},#{composition},#{promotionMethod},#{memberType},#{platformType},#{useScope},
+			#{promotionChannel},#{launchMethod},#{promotionPlatform},#{faceValue},#{discount},
+			#{issueNum},#{receiveNum},#{usedNum},#{usedAmount},#{amountLimit},#{receiveNumLimit},#{issueTime},
+			#{expireTime},#{validDays},#{deleted},#{createTime},#{updateTime},#{promotionRule.ruleId}
+		)
+	</insert>
+
+	<!-- 批量保存优惠券信息 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_coupon_template
+		(<include refid="Base_Column_List" />)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.templateId},
+					#{element.templateNo},
+					#{element.templateStatus},
+					#{element.name},
+					#{element.desc},
+					#{element.imageUrl},
+					#{element.couponType},
+					#{element.composition},
+					#{element.promotionMethod},
+					#{element.memberType},
+					#{element.platformType},
+					#{element.useScope},
+					#{element.promotionChannel},
+					#{element.launchMethod},
+					#{element.promotionPlatform},
+					#{element.faceValue},
+					#{element.discount},
+					#{element.issueNum},
+					#{element.receiveNum},
+					#{element.usedNum},
+					#{element.usedAmount},
+					#{element.amountLimit},
+					#{element.receiveNumLimit},
+					#{element.issueTime},
+					#{element.expireTime},
+					#{element.validDays},
+					#{deleted},
+					#{element.createTime},
+					#{element.updateTime},
+					#{element.promotionRule.ruleId}
+				)
+			</foreach>
+	</insert>
+
+
+	<!-- 更新优惠券信息 -->
+	<update id="update" parameterType="CouponTemplate">
+		UPDATE cloud_coupon_template
+		<set>
+			<if test="templateId != null">`template_id` = #{templateId},</if>
+			<if test="templateNo != null">`template_no` = #{templateNo},</if>
+			<if test="templateStatus != null">`template_status` = #{templateStatus},</if>
+			<if test="name != null">`name` = #{name},</if>
+			<if test="desc != null">`desc` = #{desc},</if>
+			<if test="imageUrl != null">`image_url` = #{imageUrl},</if>
+			<if test="couponType != null">`coupon_type` = #{couponType},</if>
+			<if test="composition != null">`composition` = #{composition},</if>
+			<if test="promotionMethod != null">`promotion_method` = #{promotionMethod},</if>
+			<if test="memberType != null">`member_type` = #{memberType},</if>
+			<if test="platformType != null">`platform_type` = #{platformType},</if>
+			<if test="useScope != null">`use_scope` = #{useScope},</if>
+			<if test="promotionChannel != null">`promotion_channel` = #{promotionChannel},</if>
+			<if test="launchMethod != null">`launch_method` = #{launchMethod},</if>
+			<if test="promotionPlatform != null">`promotion_platform` = #{promotionPlatform},</if>
+			<if test="faceValue != null">`face_value` = #{faceValue},</if>
+			<if test="discount != null">`discount` = #{discount},</if>
+			<if test="issueNum != null">`issue_num` = #{issueNum},</if>
+			<if test="receiveNum != null">`receive_num` = #{receiveNum},</if>
+			<if test="usedNum != null">`used_num` = #{usedNum},</if>
+			<if test="usedAmount != null">`used_amount` = #{usedAmount},</if>
+			<if test="amountLimit != null">`amount_limit` = #{amountLimit},</if>
+			<if test="receiveNumLimit != null">`receive_num_limit` = #{receiveNumLimit},</if>
+			<if test="issueTime != null">`issue_time` = #{issueTime},</if>
+			<if test="expireTime != null">`expire_time` = #{expireTime},</if>
+			<if test="validDays != null">`valid_days` = #{validDays},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime},</if>
+			<if test="promotionRule != null">`rule_id` = #{promotionRule.ruleId}</if>
+		</set>
+		WHERE `template_id` = #{templateId}
+	</update>
+
+	<!-- 删除优惠券 -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_coupon_template SET `deleted` = 1 WHERE `template_id` = #{templateId}
+	</delete>
+
+	<!-- 删除到期的优惠券 -->
+	<delete id="deleteAllExpiredTemplateList" parameterType="string">
+		<![CDATA[
+			UPDATE cloud_coupon_template SET `deleted` = 1
+			WHERE DATE_FORMAT(`expire_time`,'%Y-%m-%d %H:%i:%s') < #{currentTime} AND `deleted` = 0
+		]]>
+	</delete>
+</mapper>

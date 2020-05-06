@@ -1,19 +1,26 @@
 package com.cloud.service;
 
+import com.cloud.dto.user.UserDetailDTO;
 
-import com.cloud.model.user.UserDetail;
+import java.util.List;
 
 public interface UserDetailService {
 
-    public void save(UserDetail userDetail);
+    public int save(UserDetailDTO userDetailDTO);
 
-    public void deleteUserDetails(UserDetail userDetails);
+    public int deleteUserDetailsByUserId(Long userId);
 
-    public void deleteUserDetailsById(Long id);
+    public int deleteUserDetailsById(Long id);
 
-    public void update(UserDetail userDetails);
+    public int update(UserDetailDTO userDetailDTO);
 
-    public UserDetail findUserDetailsById(Long id);
+    public UserDetailDTO findUserDetailsById(Long id);
 
-    public UserDetail findUserDetailsByUserId(Long userId);
+    public UserDetailDTO findUserDetailsByUserId(Long userId);
+
+    public List<Long> findAllUserId();
+
+    public List<Long> findUserIdListByGender(String gender);
+
+    public int count();
 }

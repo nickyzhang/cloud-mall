@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.BrandMapper">
+	<resultMap id="BrandMap" type="Brand">
+		<id property="id" column="brand_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="chineseName" column="brand_chinese_name" />
+		<result property="englishName" column="brand_english_name" />
+		<result property="description" column="brand_desc" />
+		<result property="logo" column="brand_logo" />
+		<result property="origin" column="brand_origin" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<!--MyBatis3做数据持久层，在字段中有Date和DateTime类型，在插入数据时只要将实体的属性设置成Timestamp就会对应mysql的DateTime类型，Date会对应mysql的Date类型。-->
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!--根据id 查询品牌信息-->
+	<select id="find" parameterType="long" resultMap="BrandMap">
+		SELECT * FROM cloud_brand WHERE `brand_id` = #{id} AND `deleted` = 0
+	</select>
+
+	<select id="findBrandsByCategoryId" parameterType="long" resultMap="BrandMap">
+		SELECT * FROM cloud_brand
+		WHERE `deleted` = 0 AND brand_id
+		IN (
+			SELECT brand_id
+			FROM cloud_cat_brand
+			WHERE cat_id = #{categoryId} AND `deleted` = 0
+		)
+	</select>
+
+	<!-- 根据名字查询brand -->
+	<select id="findByName" resultMap="BrandMap">
+		SELECT * FROM cloud_brand
+		WHERE (`brand_chinese_name` = #{name} OR `brand_english_name` = #{name}) AND `deleted` = 0
+	</select>
+
+	<!-- 查询所有brand -->
+	<select id="findAll" resultMap="BrandMap">
+		SELECT * FROM cloud_brand WHERE `deleted` = 0
+	</select>
+
+	<select id="count" resultType="long">
+		SELECT COUNT(1) FROM cloud_brand WHERE `deleted` = 0
+	</select>
+
+	<!-- 添加brand-->
+	<insert id="save" parameterType="Brand">
+		INSERT INTO
+			cloud_brand(`brand_id`,`brand_chinese_name`,`brand_english_name`,`brand_desc`,`brand_logo`,`brand_origin`,`deleted`,`create_time`,`update_time`)
+		VALUES
+			(#{id},#{chineseName},#{englishName},#{description},#{logo},#{origin},#{deleted},#{createTime},#{updateTime})
+	</insert>
+
+	<!-- 批量保存brand -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO
+			cloud_brand(`brand_id`,`brand_chinese_name`,`brand_english_name`,`brand_desc`,`brand_logo`,`brand_origin`,`deleted`,`create_time`,`update_time`)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.id},
+					#{element.chineseName},
+					#{element.englishName},
+					#{element.description},
+					#{element.logo},
+					#{element.origin},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+	<!-- 更新brand -->
+	<update id="update" parameterType="Brand">
+		UPDATE cloud_brand
+		<set>
+			<if test="id != null">`brand_id` = #{id},</if>
+			<if test="chineseName != null">`brand_chinese_name` = #{chineseName},</if>
+			<if test="englishName != null">`brand_english_name` = #{englishName},</if>
+			<if test="description != null">`brand_desc` = #{description},</if>
+			<if test="logo != null">`brand_logo` = #{logo},</if>
+			<if test="origin != null">`brand_origin` = #{origin},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>,
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `brand_id` = #{id}
+	</update>
+
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_brand SET `deleted` = 1 WHERE `brand_id` = #{id}
+	</delete>
+</mapper>

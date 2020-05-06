@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.CategoryBrandMapper">
+	<resultMap id="CategoryBrandMap" type="CategoryBrand">
+		<result property="categoryId" column="cat_id" javaType="long" jdbcType="BIGINT" />
+		<result property="brandId" column="brand_id" javaType="long" jdbcType="BIGINT"  />
+        <result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+        <result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!--根据category id查询category信息 -->
+    <select id="findByCatId" parameterType="long" resultMap="CategoryBrandMap">
+        SELECT * FROM cloud_cat_brand WHERE `cat_id` = #{catId} AND `deleted` = 0
+    </select>
+
+    <!--根据brand id查询category信息 -->
+    <select id="findByBrandId" parameterType="long" resultMap="CategoryBrandMap">
+        SELECT * FROM cloud_cat_brand WHERE `brand_id` = #{brandId} AND `deleted` = 0
+    </select>
+
+    <!-- 保存category和brand的关系 -->
+    <insert id="saveCategoryBrand" parameterType="CategoryBrand">
+      INSERT INTO
+          cloud_cat_brand(`cat_id`,`brand_id`,`deleted`,`create_time`,`update_time`)
+      VALUES
+          (#{categoryId},#{brandId},#{deleted},#{createTime},#{updateTime})
+    </insert>
+
+    <!--删除brand 和 category 之间关系-->
+    <delete id="deleteCategoryBrand" parameterType="java.util.Map">
+        UPDATE cloud_cat_brand SET `deleted` = 1 WHERE `cat_id` = #{catId} AND `brand_id` = #{brandId}
+    </delete>
+
+    <!--删除brand 和 category 之间关系-->
+    <delete id="deleteCategoryBrandByCatId" parameterType="long">
+        UPDATE cloud_cat_brand SET `deleted` = 1  WHERE `cat_id` = #{catId}
+    </delete>
+
+    <!--删除brand 和 category 之间关系-->
+    <delete id="deleteCategoryBrandByBrandId" parameterType="long">
+        UPDATE cloud_cat_brand SET `deleted` = 1 WHERE `brand_id` = #{brandId}
+    </delete>
+</mapper>

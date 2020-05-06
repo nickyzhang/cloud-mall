@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.CouponTemplateSkuMapper">
+	<resultMap id="CouponTemplateSkuMap" type="CouponTemplateSku">
+		<result property="skuId" column="sku_id" javaType="long" jdbcType="BIGINT" />
+		<result property="templateId" column="template_id" javaType="long" jdbcType="BIGINT" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!-- 根据优惠券 ID查询 -->
+	<select id="findByTemplateId" parameterType="long" resultMap="CouponTemplateSkuMap">
+		SELECT * FROM cloud_coupon_template_sku
+		WHERE `template_id` = #{templateId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据sku的ID查询 -->
+	<select id="findBySkuId" parameterType="long" resultMap="CouponTemplateSkuMap">
+		SELECT * FROM cloud_coupon_template_sku
+		WHERE `sku_id` = #{skuId} AND `deleted` = 0
+	</select>
+
+	<!-- 保存优惠券和sku的关系 -->
+	<insert id="saveCouponTemplateSku" parameterType="CouponTemplateSku">
+		INSERT INTO
+			cloud_coupon_template_sku(`sku_id`,`template_id`,`deleted`,`create_time`,`update_time`)
+		VALUES
+			(#{skuId},#{templateId},#{deleted},#{createTime},#{updateTime})
+	</insert>
+
+	<!-- 删除优惠券和sku的关系-->
+	<delete id="deleteCouponTemplateSku" parameterType="java.util.Map">
+		UPDATE cloud_coupon_template_sku SET `deleted` = 1 WHERE `sku_id` = #{skuId} AND `template_id` = #{templateId}
+	</delete>
+
+	<!-- 删除优惠券和sku的关系 -->
+	<delete id="deleteCouponTemplateSkuBySkuId" parameterType="long">
+		UPDATE cloud_coupon_template_sku SET `deleted` = 1  WHERE `sku_id` = #{skuId} AND `deleted` = 0
+	</delete>
+
+	<!-- 删除优惠券和sku的关系 -->
+	<delete id="deleteCouponTemplateSkuByTemplateId" parameterType="long">
+		UPDATE cloud_coupon_template_sku SET `deleted` = 1 WHERE `template_id` = #{templateId} AND `deleted` = 0
+	</delete>
+</mapper>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.SkuMapper">
+	<resultMap id="skuMap" type="Sku">
+		<id property="id" column="sku_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="name" column="sku_name" />
+		<result property="description" column="sku_desc" />
+		<result property="code" column="sku_code" />
+		<result property="barCode" column="bar_code" />
+		<result property="costPrice" column="cost_price" />
+		<result property="listPrice" column="market_price" />
+		<result property="salePrice" column="sale_price" />
+		<result property="displayOrder" column="display_order" />
+		<result property="status" column="sku_status" />
+		<result property="startTime" column="start_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="endTime" column="end_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<association property="product" column="product_id" select="com.cloud.mapper.ProductMapper.find" />
+	</resultMap>
+
+	<!--根据id查询sku信息-->
+	<select id="find" parameterType="long" resultMap="skuMap">
+		SELECT * FROM cloud_sku WHERE `sku_id` = #{id} AND `deleted` = 0
+	</select>
+
+	<!--根据名字查询sku信息-->
+	<select id="findByName" resultMap="skuMap">
+		SELECT * FROM cloud_sku WHERE `sku_name` = #{name} AND `deleted` = 0
+	</select>
+
+	<!-- 查询所有sku -->
+	<select id="findAll" resultMap="skuMap">
+		SELECT * FROM cloud_sku WHERE `deleted` = 0
+	</select>
+
+	<!--根据product id查询sku信息-->
+	<select id="findSkuListByProductId" parameterType="long" resultMap="skuMap">
+		SELECT * FROM cloud_sku WHERE `product_id` = #{productId} AND `deleted` = 0
+	</select>
+
+	<!--根据bundle id查询sku信息-->
+	<select id="findSkuListByBundleId" parameterType="long" resultMap="skuMap">
+		SELECT *
+		FROM cloud_sku
+		WHERE `deleted` = 0 AND `sku_id`
+		IN (
+			SELECT sku_id
+			FROM cloud_sku_bundle
+			WHERE `bundle_id` = #{bundleId} AND `deleted` = 0
+		)
+	</select>
+
+	<!--统计表里所有sku的数量-->
+	<select id="count" resultType="long">
+		SELECT COUNT(1) FROM cloud_sku WHERE `deleted` = 0
+	</select>
+
+	<!-- 添加sku -->
+	<insert id="save" parameterType="Sku">
+		INSERT INTO cloud_sku
+		(
+			`sku_id`,`sku_name`,`sku_desc`,`sku_code`,`bar_code`,
+			`cost_price`,`market_price`,`sale_price`,`display_order`,`sku_status`,
+			`start_time`,`end_time`,`deleted`,`create_time`,`update_time`,`product_id`
+		)
+		VALUES
+		(
+			#{id},#{name},#{description},#{code},#{barCode},#{costPrice}
+			,#{listPrice},#{salePrice},#{displayOrder},#{status},
+			#{startTime},#{endTime},#{deleted},#{createTime},#{updateTime},#{product.id}
+		)
+	</insert>
+
+	<!-- 批量添加sku -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_sku
+		(
+			`sku_id`,`sku_name`,`sku_desc`,`sku_code`,`bar_code`,
+			`cost_price`,`market_price`,`sale_price`,`display_order`,`sku_status`,
+			`start_time`,`end_time`,`deleted`,`create_time`,`update_time`,`product_id`
+		)
+		VALUES
+		<foreach collection="list" item="element" separator=",">
+			(
+				#{element.id},
+				#{element.name},
+				#{element.description},
+				#{element.code},
+				#{element.barCode},
+				#{element.costPrice},
+				#{element.listPrice},
+				#{element.salePrice},
+				#{element.displayOrder},
+				#{element.status},
+				#{element.startTime},
+				#{element.endTime},
+				#{element.deleted},
+				#{element.createTime},
+				#{element.updateTime},
+				#{element.product.id}
+			)
+		</foreach>
+	</insert>
+
+
+	<!-- 更新sku -->
+	<update id="update" parameterType="Sku">
+		UPDATE cloud_sku
+		<set>
+			<if test="id != null">`sku_id` = #{id},</if>
+			<if test="name != null">`sku_name` = #{name},</if>
+			<if test="description != null">`sku_desc` = #{description},</if>
+			<if test="code != null">`sku_code` = #{code},</if>
+			<if test="barCode != null">`bar_code` = #{barCode},</if>
+			<if test="costPrice != null">`cost_price` = #{costPrice},</if>
+			<if test="listPrice != null">`market_price` = #{listPrice},</if>
+			<if test="salePrice != null">`sale_price` = #{salePrice},</if>
+			<if test="displayOrder != null">`display_order` = #{displayOrder},</if>
+			<if test="status != null">`sku_status` = #{status},</if>
+			<if test="startTime != null">`start_time` = #{startTime},</if>
+			<if test="endTime != null">`end_time` = #{endTime},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime},</if>
+			<if test="product != null">`product_id` = #{product.id}</if>
+		</set>
+		WHERE `sku_id` = #{id}
+	</update>
+
+	<!--删除sku -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_sku SET `deleted` = 1 WHERE `sku_id` = #{id}
+	</delete>
+
+
+	<!--批量删除删除sku -->
+	<delete id="batchDelete" parameterType="java.util.List">
+		UPDATE cloud_sku SET `deleted` = 1 WHERE `sku_id` IN
+		<foreach collection="list" item="element" open="(" separator="," close=")"  >
+			#{element.id}
+		</foreach>
+	</delete>
+</mapper>

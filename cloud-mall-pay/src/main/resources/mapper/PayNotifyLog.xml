@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.shop.pay.mapper.PayNotifyLogMapper">
+	<resultMap id="PayNotifyLogResult" type="PayNotifyLog">
+		<id property="id" column="id" javaType="long" jdbcType="BIGINT"/>
+		<result property="notifyId" column="notify_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderId" column="order_id" javaType="long" jdbcType="BIGINT" />
+		<result property="request" column="request" />
+		<result property="response" column="response" />
+		<result property="httpStatus" column="http_status" />
+        <result property="deleted" column="deleted" />
+		<result property="createTime" column="create_time" />
+		<result property="updateTime" column="update_time" />
+	</resultMap>
+
+    <sql id="Base_Column_List">
+        id,notify_id,order_id,request,response,http_status,
+        deleted,create_time,update_time
+    </sql>
+
+    <!-- 根据ID查询通知日志 -->
+    <select id="findById" parameterType="long" resultMap="PayNotifyLogResult">
+        SELECT <include refid="Base_Column_List" />
+        FROM cloud_pay_notify_log
+        WHERE `id` = #{id}
+    </select>
+
+    <!-- 根据订单ID查询通知日志 -->
+    <select id="findByOrderId" parameterType="long" resultMap="PayNotifyLogResult">
+        SELECT <include refid="Base_Column_List" />
+        FROM cloud_pay_notify_log
+        WHERE `order_id` = #{orderId}
+    </select>
+
+    <!-- 根据通知ID查询通知日志 -->
+    <select id="findByNotifyId" parameterType="long" resultMap="PayNotifyLogResult">
+        SELECT <include refid="Base_Column_List" />
+        FROM cloud_pay_notify_log
+        WHERE `notify_id` = #{notifyId}
+    </select>
+
+    <!--统计所有通知日志数量 -->
+    <select id="count" resultType="long">
+        SELECT COUNT(1) FROM cloud_pay_notify_log
+    </select>
+
+    <!-- 保存通知日志信息 -->
+    <insert id="save" parameterType="PayNotifyLog">
+        INSERT INTO cloud_pay_notify_log
+        (
+          `id`,`notify_id`,`order_id`,`request`,`response`,`http_status`,
+          `deleted`,`create_time`,`update_time`
+        )
+        VALUES
+        (
+          #{id},#{notifyId},#{orderId},#{request},#{response},#{httpStatus},
+          #{deleted},#{createTime},#{updateTime}
+        )
+    </insert>
+
+
+    <!-- 更新支付记录信息 -->
+    <update id="update" parameterType="PayNotifyLog">
+        UPDATE cloud_pay_notify_log
+        <set>
+            <if test="id != null">`id` = #{id},</if>
+            <if test="notifyId != null">`notify_id` = #{notifyId},</if>
+            <if test="orderId != null">`order_id` = #{orderId},</if>
+            <if test="request != null">`request` = #{request},</if>
+            <if test="response != null">`response` = #{response},</if>
+            <if test="httpStatus != null">`http_status` = #{httpStatus},</if>
+            <if test="extend1 != null">`deleted` = #{deleted},</if>
+            <if test="createTime != null">`create_time` = #{createTime},</if>
+            <if test="updateTime != null">`update_time` = #{updateTime}</if>
+        </set>
+        WHERE `id` = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM cloud_pay_notify_log WHERE `id` = #{id}
+    </delete>
+
+    <delete id="deleteByOrderId" parameterType="long">
+        DELETE FROM cloud_pay_notify_log WHERE `order_id` = #{orderId}
+    </delete>
+
+    <delete id="deleteByNotifyId" parameterType="long">
+        DELETE FROM cloud_pay_notify_log WHERE `notify_id` = #{notifyId}
+    </delete>
+</mapper>

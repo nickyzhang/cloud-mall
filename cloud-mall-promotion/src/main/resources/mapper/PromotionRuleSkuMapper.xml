@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.PromotionRuleSkuMapper">
+	<resultMap id="PromotionRuleSkuMap" type="PromotionRuleSku">
+		<result property="ruleId" column="rule_id" javaType="long" jdbcType="BIGINT" />
+		<result property="skuId" column="sku_id" javaType="long" jdbcType="BIGINT" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!-- 根据规则 ID查询 -->
+	<select id="findByRuleId" parameterType="long" resultMap="PromotionRuleSkuMap">
+		SELECT * FROM cloud_promotion_free_gift WHERE `rule_id` = #{ruleId}
+	</select>
+
+	<!-- 根据sku的ID查询 -->
+	<select id="findBySkuId" parameterType="long" resultMap="PromotionRuleSkuMap">
+		SELECT * FROM cloud_promotion_free_gift WHERE `sku_id` = #{skuId}
+	</select>
+
+	<!-- 保存规则和sku的关系 -->
+	<insert id="savePromotionRuleSku" parameterType="PromotionRuleSku">
+		INSERT INTO
+			cloud_promotion_free_gift(`sku_id`,`rule_id`,`deleted`,`create_time`,`update_time`)
+		VALUES
+			(#{skuId},#{ruleId},#{deleted},#{createTime},#{updateTime})
+	</insert>
+
+	<!-- 删除规则和sku的关系-->
+	<delete id="deletePromotionRuleSku" parameterType="java.util.Map">
+		UPDATE cloud_promotion_free_gift SET `deleted` = 1 WHERE `sku_id` = #{skuId} AND `rule_id` = #{ruleId}
+	</delete>
+
+	<!-- 删除规则和sku的关系 -->
+	<delete id="deletePromotionRuleSkuBySkuId" parameterType="long">
+		UPDATE cloud_promotion_free_gift SET `deleted` = 1  WHERE `sku_id` = #{skuId} AND `deleted` = 0
+	</delete>
+
+	<!-- 删除规则和sku的关系 -->
+	<delete id="deletePromotionRuleSkuByRuleId" parameterType="long">
+		UPDATE cloud_promotion_free_gift SET `deleted` = 1 WHERE `rule_id` = #{ruleId} AND `deleted` = 0
+	</delete>
+</mapper>

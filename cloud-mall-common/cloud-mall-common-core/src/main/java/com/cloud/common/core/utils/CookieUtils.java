@@ -35,6 +35,14 @@ public class CookieUtils {
         }
     }
 
+    public static void addCookie(HttpServletRequest request, HttpServletResponse response, String domain, String name, String value, int maxAge) {
+        try {
+            setCookie(request,response,domain,name,value,maxAge,Boolean.FALSE);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * 添加cookie
      * @param request
@@ -146,6 +154,34 @@ public class CookieUtils {
         }
 
         if (request != null) {
+            String domainName = getDomainName(request.getRequestURL().toString());
+            if (!"localhost".equals(domainName)) {
+                cookie.setDomain(domainName);
+            }
+        }
+        cookie.setPath("/");
+        response.addCookie(cookie);
+    }
+
+    public static void setCookie(
+            HttpServletRequest request, HttpServletResponse response,String domain,
+            String cookieName, String cookieValue, int maxAge, boolean encode) throws Exception {
+        if (StringUtils.isBlank(cookieValue)) {
+            cookieValue = SymbolConstants.EMPTY_SYMBOL;
+        }
+
+        if (encode) {
+            cookieValue = URLEncoder.encode(cookieValue, "UTF-8");
+        }
+
+        Cookie cookie = new Cookie(cookieName, cookieValue);
+        if (maxAge > 0) {
+            cookie.setMaxAge(maxAge);
+        }
+
+        if (StringUtils.isNotBlank(domain)) {
+            cookie.setDomain(domain);
+        } else if (request != null) {
             String domainName = getDomainName(request.getRequestURL().toString());
             if (!"localhost".equals(domainName)) {
                 cookie.setDomain(domainName);

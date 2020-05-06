@@ -79,7 +79,7 @@ public class ValidateUtils {
      * @return
      */
     public static boolean isPhone(String phone) {
-        Pattern pattern = Pattern.compile("^0[0-9]{2,3}[-|－][0-9]{7,8}([-|－][0-9]{1,4})?$");
+        Pattern pattern = Pattern.compile("^[1][3,4,5,7,8][0-9]{9}$");
         return pattern.matcher(phone).matches();
     }
 

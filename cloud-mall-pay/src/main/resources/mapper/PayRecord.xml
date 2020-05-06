@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.shop.pay.mapper.PayRecordMapper">
+	<resultMap id="PayRecordResult" type="PayRecord">
+		<id property="id" column="id" javaType="long" jdbcType="BIGINT"/>
+		<result property="tradeNo" column="trade_no" />
+		<result property="buyerId" column="buyer_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderId" column="order_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderNo" column="order_no" javaType="long" jdbcType="BIGINT" />
+		<result property="orderStatus" column="order_status" />
+		<result property="subject" column="subject" />
+		<result property="desc" column="description" />
+		<result property="payAmount" column="pay_amount" />
+		<result property="payChannel" column="pay_channel" />
+		<result property="payRatio" column="pay_ratio" />
+		<result property="merchantCost" column="merchant_cost" />
+		<result property="merchantIncome" column="merchant_income" />
+		<result property="merchantAccount" column="merchant_account" />
+		<result property="payTime" column="pay_time" />
+		<result property="refund" column="is_refund" />
+		<result property="refundAmount" column="refund_amount" />
+		<result property="notifyUrl" column="notify_url" />
+		<result property="notifyTime" column="notify_time" />
+		<result property="returnUrl" column="return_url" />
+		<result property="deleted" column="deleted" />
+		<result property="createTime" column="create_time" />
+		<result property="updateTime" column="update_time" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id,trade_no,buyer_id,order_id,order_no,order_status,subject,description,pay_amount,pay_channel,pay_ratio,merchant_cost,
+		merchant_income,merchant_account,pay_time,is_refund,refund_amount,notify_url,notify_time,return_url,
+		deleted,create_time,update_time
+	</sql>
+
+	<!-- 根据ID查询支付记录信息 -->
+	<select id="findById" parameterType="long" resultMap="PayRecordResult">
+		SELECT <include refid="Base_Column_List" />
+		FROM cloud_pay_record
+		WHERE `id` = #{id}
+		AND `deleted` = 0
+	</select>
+
+	<!-- 根据交易流水号查询支付记录信息 -->
+	<select id="findByTradeNo" parameterType="string" resultMap="PayRecordResult">
+		SELECT <include refid="Base_Column_List" />
+		FROM cloud_pay_record
+		WHERE `trade_no` = #{tradeNo}
+		AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单ID查询支付记录信息 -->
+	<select id="findByOrderId" parameterType="long" resultMap="PayRecordResult">
+		SELECT <include refid="Base_Column_List" />
+		FROM cloud_pay_record
+		WHERE `order_id` = #{orderId}
+		AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单号查询支付记录信息 -->
+	<select id="findByOrderNo" parameterType="long" resultMap="PayRecordResult">
+		SELECT <include refid="Base_Column_List" />
+		FROM cloud_pay_record
+		WHERE `order_no` = #{orderNo}
+		AND `deleted` = 0
+	</select>
+
+	<!--根据用户ID查询用户相关的支付记录信息 -->
+	<select id="findByBuyerId" parameterType="long" resultMap="PayRecordResult">
+		SELECT <include refid="Base_Column_List" />
+		FROM cloud_pay_record
+		WHERE `buyer_id` = #{buyerId}
+		AND `deleted` = 0
+	</select>
+
+
+	<!--统计所有支付记录数量 -->
+	<select id="count" resultType="long">
+		SELECT COUNT(1) FROM cloud_pay_record WHERE `deleted` = 0
+	</select>
+
+
+	<!-- 保存支付记录信息 -->
+	<insert id="save" parameterType="PayRecord">
+		INSERT INTO cloud_pay_record
+		(
+			`id`,`trade_no`,`buyer_id`,`order_id`,`order_no`,`order_status`,`subject`,`description`,`pay_amount`,`pay_channel`,
+			`pay_ratio`,`merchant_cost`,`merchant_income`,`merchant_account`,`pay_time`,`is_refund`,`refund_amount`,`notify_url`,
+			`notify_time`,`return_url`,`deleted`,`create_time`,`update_time`
+		)
+		VALUES
+		(
+			#{id},#{tradeNo},#{buyerId},#{orderId},#{orderNo},#{orderStatus},#{subject},#{desc},#{payAmount},#{payChannel},
+			#{payRatio},#{merchantCost},#{merchantIncome},#{merchantAccount},#{payTime},#{refund},#{refundAmount},#{notifyUrl},
+			#{notifyTime},#{returnUrl},#{deleted},#{createTime},#{updateTime}
+		)
+	</insert>
+
+
+	<!-- 更新支付记录信息 -->
+	<update id="update" parameterType="PayRecord">
+		UPDATE cloud_pay_record
+		<set>
+			<if test="id != null">`id` = #{id},</if>
+			<if test="tradeNo != null">`trade_no` = #{tradeNo},</if>
+			<if test="buyerId != null">`buyer_id` = #{buyerId},</if>
+			<if test="orderId != null">`order_id` = #{orderId},</if>
+			<if test="orderNo != null">`order_no` = #{orderNo},</if>
+			<if test="orderStatus != null">`order_status` = #{orderStatus},</if>
+			<if test="subject != null">`subject` = #{subject},</if>
+			<if test="desc != null">`description` = #{desc},</if>
+			<if test="payAmount != null">`pay_amount` = #{payAmount},</if>
+			<if test="payChannel != null">`pay_channel` = #{payChannel},</if>
+			<if test="payRatio != null">`pay_ratio` = #{payRatio},</if>
+			<if test="merchantCost != null">`merchant_cost` = #{merchantCost},</if>
+			<if test="merchantIncome != null">`merchant_income` = #{merchantIncome},</if>
+			<if test="merchantAccount != null">`merchant_account` = #{merchantAccount},</if>
+			<if test="payTime != null">`pay_time` = #{payTime},</if>
+			<if test="refund != null">`is_refund` = #{refund},</if>
+			<if test="refundAmount != null">`refund_amount` = #{refundAmount},</if>
+			<if test="notifyUrl != null">`notify_url` = #{notifyUrl},</if>
+			<if test="notifyTime != null">`notify_time` = #{notifyTime},</if>
+			<if test="returnUrl != null">`return_url` = #{returnUrl},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `id` = #{id}
+	</update>
+
+	<!-- 根据支付记录ID逻辑删除支付记录 -->
+	<update id="deleteById" parameterType="long">
+		UPDATE cloud_pay_record SET `deleted` = 1 WHERE `id` = #{id}
+	</update>
+
+	<!-- 根据订单ID逻辑删除支付记录 -->
+	<update id="deleteByOrderId" parameterType="long">
+		UPDATE cloud_pay_record SET `deleted` = 1 WHERE `order_id` = #{orderId}
+	</update>
+
+	<!-- 根据订单业务码逻辑删除支付记录 -->
+	<update id="deleteByOrderNo" parameterType="long">
+		UPDATE cloud_pay_record SET `deleted` = 1 WHERE `order_no` = #{orderNo}
+	</update>
+</mapper>

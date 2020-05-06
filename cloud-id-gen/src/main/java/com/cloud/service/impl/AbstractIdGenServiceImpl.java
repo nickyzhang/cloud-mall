@@ -1,7 +1,7 @@
 package com.cloud.service.impl;
 
 import com.cloud.api.model.Id;
-import com.cloud.api.service.IdGenService;
+import com.cloud.service.IdGenService;
 import com.cloud.service.converter.IdConverter;
 import com.cloud.service.converter.IdConverterImpl;
 import com.cloud.service.model.IdMeta;

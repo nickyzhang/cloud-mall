@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.ActivityMapper">
+	<resultMap id="ActivityMap" type="Activity">
+		<id property="activityId" column="activity_id" javaType="long" jdbcType="BIGINT" />
+		<result property="name" column="activity_name" />
+		<result property="description" column="activity_desc" />
+		<result property="imageUrl" column="image_url"/>
+		<result property="promotionLink" column="promotion_link" />
+		<result property="activityStatus" column="activity_status" />
+		<result property="activityType" column="activity_type" />
+		<result property="promotionMethod" column="promotion_method" />
+		<result property="memberType" column="member_type" />
+		<result property="promotionPlatform" column="promotion_platform" />
+		<result property="promotionChannel" column="promotion_channel" />
+		<result property="quantityLimit" column="quantity_limit" />
+		<result property="stockLimit" column="stock_limit" />
+		<result property="activityTags" column="activity_tags" />
+		<result property="startTime" column="start_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP"  />
+		<result property="endTime" column="end_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP"/>
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<association property="promotionRule" column="rule_id" select="com.cloud.mapper.PromotionRuleMapper.find" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		`activity_id`,
+		`rule_id`,
+		`activity_name`,
+		`activity_desc`,
+		`image_url`,
+		`promotion_link`,
+		`activity_status`,
+		`activity_type`,
+		`promotion_method`,
+		`member_type`,
+		`promotion_platform`,
+		`promotion_channel`,
+		`quantity_limit`,
+		`stock_limit`,
+		`activity_tags`,
+		`start_time`,
+		`end_time`,
+		`deleted`,
+		`create_time`,
+		`update_time`
+	</sql>
+
+	<!--根据活动ID查询促销活动信息 -->
+	<select id="find" parameterType="long" resultMap="ActivityMap">
+		SELECT
+		<include refid="Base_Column_List" />
+	  	FROM cloud_activity
+		WHERE `activity_id` = #{activityId} AND `deleted` = 0
+	</select>
+
+	<select id="findBySkuId" parameterType="long" resultMap="ActivityMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_activity
+		WHERE `deleted` = 0 AND `activity_id` IN (
+			SELECT activity_id
+			FROM cloud_activity_sku
+			WHERE `deleted` = 0 AND `sku_id` = #{skuId}
+		)
+	</select>
+
+	<select id="findActsBySkuIds" resultMap="ActivityMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_activity
+		<if test="skuIds != null">
+			WHERE `deleted` = 0 AND `activity_id` IN (
+			SELECT activity_id
+			FROM cloud_activity_sku
+			WHERE `deleted` = 0 AND `sku_id`IN (
+			<foreach collection="skuIds" item="skuId" index="index" separator=",">
+				#{skuId}
+			</foreach>
+			)
+		</if>
+		)
+	</select>
+
+	<!--根据规则类型查询促销活动信息 -->
+	<select id="findByActivityType" parameterType="int" resultMap="ActivityMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_activity
+		WHERE `activity_type` = #{activityType} AND `deleted` = 0
+	</select>
+
+	<!-- 根据时间范围查询促销活动 -->
+	<select id="findActivityListByTimeRange" parameterType="map" resultMap="ActivityMap">
+		<![CDATA[
+			SELECT * FROM cloud_activity
+			WHERE DATE_FORMAT(`start_time`,'%Y-%m-%d %H:%i:%s') > #{startTime}
+			AND DATE_FORMAT(`end_time`,'%Y-%m-%d %H:%i:%s') < #{endTime}
+			AND `deleted` = 0
+		]]>
+	</select>
+
+	<!--查询所有促销活动 -->
+	<select id="findAll" resultMap="ActivityMap">
+		SELECT <include refid="Base_Column_List" /> FROM cloud_activity WHERE `deleted` = 0
+	</select>
+
+	<!--统计所有促销活动数量 -->
+	<select id="count" resultType="long">
+		SELECT COUNT(1) FROM cloud_activity WHERE `deleted` = 0
+	</select>
+
+	<!-- 保存促销活动信息 -->
+	<insert id="save" parameterType="Activity">
+		INSERT INTO cloud_activity (<include refid="Base_Column_List" />)
+		VALUES
+		(
+			#{activityId},
+			#{promotionRule.ruleId},
+			#{name},
+			#{description},
+			#{imageUrl},
+			#{promotionLink},
+			#{activityStatus},
+			#{activityType},
+			#{promotionMethod},
+			#{memberType},
+			#{promotionPlatform},
+			#{promotionChannel},
+			#{quantityLimit},
+			#{stockLimit},
+			#{activityTags},
+			#{startTime},
+			#{endTime},
+			#{deleted},
+			#{createTime},
+			#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存促销活动信息 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_activity (<include refid="Base_Column_List" />)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.activityId},
+					#{element.promotionRule.ruleId},
+					#{element.name},
+					#{element.description},
+					#{element.imageUrl},
+					#{element.promotionLink},
+					#{element.activityStatus},
+					#{element.activityType},
+					#{element.promotionMethod},
+					#{element.memberType},
+					#{element.promotionPlatform},
+					#{element.promotionChannel},
+					#{element.quantityLimit},
+					#{element.stockLimit},
+					#{element.activityTags},
+					#{element.startTime},
+					#{element.endTime},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+
+	<!-- 更新促销信息 -->
+	<update id="update" parameterType="Activity">
+		UPDATE cloud_activity
+		<set>
+			<if test="activityId != null">`activity_id` = #{activityId},</if>
+			<if test="promotionRule != null">`rule_id` = #{promotionRule.ruleId},</if>
+			<if test="name != null">`activity_name` = #{name},</if>
+			<if test="description != null">`activity_desc` = #{description},</if>
+			<if test="imageUrl != null">`image_url` = #{imageUrl},</if>
+			<if test="promotionLink != null">`promotion_link` = #{promotionLink},</if>
+			<if test="activityStatus != null">`activity_status` = #{activityStatus},,</if>
+			<if test="activityType != null">`activity_type` = #{activityType},</if>
+			<if test="promotionMethod != null">`promotion_method` = #{promotionMethod},</if>
+			<if test="memberType != null">`member_type` = #{memberType},</if>
+			<if test="promotionPlatform != null">`promotion_platform` = #{promotionPlatform},</if>
+			<if test="promotionChannel != null">`promotion_channel` = #{promotionChannel},</if>
+			<if test="quantityLimit != null">`quantity_limit` = #{quantityLimit},</if>
+			<if test="stockLimit != null">`stock_limit` = #{stockLimit},</if>
+			<if test="activityTags != null">`activity_tags` = #{activityTags},</if>
+			<if test="startTime != null">`start_time` = #{startTime},</if>
+			<if test="end_time != null">`end_time` = #{end_time},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `activity_id` = #{activityId}
+	</update>
+
+	<!-- 删除促销活动 -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_activity SET `deleted` = 1 WHERE `activity_id` = #{activityId} AND `deleted` = 0
+	</delete>
+</mapper>

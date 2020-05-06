@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.ShoppingCartMapper">
+	<resultMap id="ShoppingCartMap" type="ShoppingCart">
+		<id property="cartId" column="cart_id" javaType="long" jdbcType="BIGINT" />
+		<result property="memberId" column="member_id" javaType="long" jdbcType="BIGINT" />
+		<result property="skuId" column="sku_id" javaType="long" jdbcType="BIGINT"  />
+		<result property="skuName" column="sku_name" />
+		<result property="skuPicture" column="sku_picture" />
+		<result property="unitPrice" column="unit_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+		<result property="beforeUnitPrice" column="before_unit_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+		<result property="priceChange" column="price_change" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+        <result property="quantity" column="quantity" />
+		<result property="totalPrice" column="total_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		`cart_id`,`member_id`,`sku_id`,`sku_name`,`sku_picture`,
+		`unit_price`,`before_unit_price`,`price_change`,`quantity`,
+        `total_price`, `deleted`,`create_time`,`update_time`
+	</sql>
+
+	<!-- 根据购物车ID查询购物车信息 -->
+	<select id="find" parameterType="long" resultMap="ShoppingCartMap">
+		SELECT
+		<include refid="Base_Column_List" />
+	  	FROM cloud_cart
+		WHERE `cart_id` = #{cartId} AND `deleted` = 0
+	</select>
+
+	<!-- 查询会员当前的所有购物车选项 -->
+	<select id="findCartByMemberId" parameterType="long" resultMap="ShoppingCartMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_cart
+		WHERE `member_id` = #{memberId} AND `deleted` = 0
+	</select>
+
+
+	<!--查询所有购物车 -->
+	<select id="findAll" resultMap="ShoppingCartMap">
+		SELECT <include refid="Base_Column_List" /> FROM cloud_cart WHERE `deleted` = 0
+	</select>
+
+	<!-- 保存促销活动信息 -->
+	<insert id="save" parameterType="ShoppingCart">
+		INSERT INTO cloud_cart (<include refid="Base_Column_List" />)
+		VALUES
+		(
+			#{cartId},
+			#{memberId},
+			#{skuId},
+			#{skuName},
+			#{skuPicture},
+			#{unitPrice},
+			#{beforeUnitPrice},
+            #{priceChange},
+			#{quantity},
+			#{totalPrice},
+			#{deleted},
+			#{createTime},
+			#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存购物车项信息 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_activity (<include refid="Base_Column_List" />)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.cartId},
+					#{element.memberId},
+					#{element.skuId},
+					#{element.skuName},
+					#{element.skuPicture},
+					#{element.unitPrice},
+					#{element.beforeUnitPrice},
+                    #{element.priceChange},
+					#{element.quantity},
+					#{element.totalPrice},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+
+	<!-- 更新购物车信息 -->
+	<update id="update" parameterType="ShoppingCart">
+		UPDATE cloud_cart
+		<set>
+			<if test="cartId != null">`cart_id` = #{cartId},</if>
+			<if test="memberId != null">`member_id` = #{memberId},</if>
+			<if test="skuId != null">`sku_id` = #{skuId},</if>
+			<if test="skuName != null">`sku_name` = #{skuName},</if>
+			<if test="skuPicture != null">`sku_picture` = #{skuPicture},</if>
+			<if test="unitPrice != null">`unit_price` = #{unitPrice},</if>
+			<if test="beforeUnitPrice != null">`before_unit_price` = #{beforeUnitPrice},,</if>
+            <if test="priceChange != null">`price_change` = #{priceChange},</if>
+            <if test="quantity != null">`quantity` = #{quantity},</if>
+			<if test="totalPrice != null">`total_price` = #{totalPrice},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `cart_id` = #{cartId}
+	</update>
+
+	<!-- 逻辑删除指定的购物车项 -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_cart SET `deleted` = 1 WHERE `cart_id` = #{cartId} AND `deleted` = 0
+	</delete>
+
+	<!-- 逻辑删除某客户的购物车项 -->
+	<delete id="deleteCartByMemberId" parameterType="long">
+		UPDATE cloud_cart SET `deleted` = 1 WHERE `member_id` = #{memberId} AND `deleted` = 0
+	</delete>
+
+	<!-- 逻辑删除指定Sku的购物车项 -->
+	<delete id="deleteCartBySkuId" parameterType="long">
+		UPDATE cloud_cart SET `deleted` = 1 WHERE `sku_id` = #{skuId} AND `deleted` = 0
+	</delete>
+</mapper>

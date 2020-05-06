@@ -1,4 +1,1 @@
-com\cloud\common\cache\service\config\RedisCacheConfig$1.class
-com\cloud\common\cache\service\config\RedisCacheConfig.class
 com\cloud\common\cache\service\CacheService.class
-com\cloud\common\cache\service\impl\RedisCacheService.class

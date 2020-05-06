@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.CouponMapper">
+	<resultMap id="CouponMap" type="Coupon">
+		<id property="couponId" column="coupon_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="userId" column="user_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="couponNo" column="coupon_no" />
+		<result property="couponStatus" column="coupon_status" />
+		<result property="receiveTime" column="receive_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="expiredTime" column="expired_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<association property="template" column="template_id" select="com.cloud.mapper.CouponTemplateMapper.find" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		`coupon_id`,`template_id`,`user_id`,`coupon_no`,`coupon_status`,
+		`expired_time`,`receive_time`,`deleted`,`create_time`,`update_time`
+	</sql>
+
+	<!--根据优惠券ID查询优惠券信息 -->
+	<select id="find" parameterType="long" resultMap="CouponMap">
+		SELECT <include refid="Base_Column_List" />
+		FROM cloud_coupon
+		WHERE `coupon_id` = #{couponId} AND `deleted` = 0
+	</select>
+
+	<!-- 查找用户所有的优惠券 -->
+	<select id="findCouponListByUserId" parameterType="long" resultMap="CouponMap">
+		SELECT <include refid="Base_Column_List" />
+		FROM cloud_coupon
+		WHERE `user_id` = #{userId} AND DATE_FORMAT(`expired_time`,'%Y-%m-%d %H:%i:%s') >= now() AND `deleted` = 0
+	</select>
+
+	<!-- 查找用户所有过期的优惠券 -->
+	<select id="findUnavailableCouponListByUserId" parameterType="long" resultMap="CouponMap">
+		SELECT <include refid="Base_Column_List" />
+		FROM cloud_coupon
+		WHERE `user_id` = #{userId} AND unix_timestamp(#{expiredTime}) &lt; unix_timestamp(now()) AND `deleted` = 0
+	</select>
+
+	<select id="getCouponNumByUserAndTemplate" parameterType="java.util.Map" resultType="int">
+		SELECT count(1)
+		FROM cloud_coupon
+		WHERE `user_id` = #{userId} AND `template_id`=#{templateId} AND `deleted` = 0
+	</select>
+
+	<!-- 保存优惠券信息 -->
+	<insert id="save" parameterType="Coupon">
+		INSERT INTO cloud_coupon
+		(<include refid="Base_Column_List" />)
+		VALUES (
+			#{couponId},#{template.templateId},#{userId},#{couponNo},#{couponStatus},
+			#{expiredTime},#{receiveTime},#{deleted},#{createTime},#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存优惠券信息 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_coupon
+		(<include refid="Base_Column_List" />)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.couponId},
+					#{element.template.templateId},
+					#{element.userId},
+					#{element.couponNo},
+					#{element.couponStatus},
+					#{element.expiredTime},
+					#{element.receiveTime},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+
+	<!-- 更新优惠券信息 -->
+	<update id="update" parameterType="Coupon">
+		UPDATE cloud_coupon
+		<set>
+			<if test="couponId != null">`coupon_id` = #{couponId},</if>
+			<if test="template != null">`template_id` = #{template.templateId},</if>
+			<if test="userId != null">`user_id` = #{userId},</if>
+			<if test="couponNo != null">`coupon_no` = #{couponNo},</if>
+			<if test="couponStatus != null">`coupon_status` = #{couponStatus},</if>
+			<if test="expiredTime != null">`expired_time` = #{expiredTime},</if>
+			<if test="receiveTime != null">`receive_time` = #{receiveTime},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `coupon_id` = #{couponId}
+	</update>
+
+	<!-- 删除优惠券 -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_coupon SET `deleted` = 1 WHERE `coupon_id` = #{couponId}
+	</delete>
+
+	<!-- 删除优惠券 -->
+	<delete id="batchDelete" parameterType="java.util.ArrayList">
+		UPDATE cloud_coupon SET `deleted` = 1 WHERE `coupon_id` IN
+		<foreach collection="list" item="element" separator=",">
+			#{element}
+		</foreach>
+	</delete>
+
+	<!-- 删除模板下的所有优惠券 -->
+	<delete id="deleteCouponByTemplateId" parameterType="long">
+		UPDATE cloud_coupon SET `deleted` = 1 WHERE `template_id` = #{templateId}
+	</delete>
+
+	<!-- 删除所有到期的优惠券 -->
+	<update id="deleteUnavailableCouponList">
+		<![CDATA[
+			UPDATE cloud_coupon SET `deleted` = 1 WHERE DATE_FORMAT(`expired_time`,'%Y-%m-%d %H:%i:%s') < Now()
+		]]>
+	</update>
+
+	<!-- 删除所有用户到期的优惠券 -->
+	<update id="deleteUnavailableCouponListByUserId">
+		<![CDATA[
+			UPDATE cloud_coupon SET `deleted` = 1 WHERE DATE_FORMAT(`expired_time`,'%Y-%m-%d %H:%i:%s') < Now() AND `user_id` = #{userId}
+		]]>
+	</update>
+</mapper>

@@ -5,7 +5,9 @@ import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
+@Mapper
 public interface UserDetailMapper {
 
     @Insert("INSERT INTO cloud_user_details(id,user_id,gender,age,birthday," +
@@ -25,13 +27,13 @@ public interface UserDetailMapper {
             @Result(column = "create_date",property = "createDate",javaType = LocalDateTime.class, jdbcType = JdbcType.TIMESTAMP),
             @Result(column = "update_date",property = "updateDate",javaType = LocalDateTime.class, jdbcType = JdbcType.TIMESTAMP)
     })
-    public void save(UserDetail userDetails);
+    public int save(UserDetail userDetails);
+
+    @Delete({"DELETE FROM cloud_user_details WHERE user_id = #{userId}"})
+    public int deleteUserDetailsByUserId(Long userId);
 
     @Delete({"DELETE FROM cloud_user_details WHERE id = #{id}"})
-    public void deleteUserDetails(UserDetail userDetails);
-
-    @Delete({"DELETE FROM cloud_user_details WHERE id = #{id}"})
-    public void deleteUserDetailsById(Long id);
+    public int deleteUserDetailsById(Long id);
 
 
     @Update("UPDATE cloud_user_details SET user_id=#{userId},gender=#{gender},age=#{age},"+
@@ -50,7 +52,7 @@ public interface UserDetailMapper {
             @Result(column = "create_date",property = "createDate",javaType = LocalDateTime.class, jdbcType = JdbcType.TIMESTAMP),
             @Result(column = "update_date",property = "updateDate",javaType = LocalDateTime.class, jdbcType = JdbcType.TIMESTAMP)
     })
-    public void update(UserDetail userDetails);
+    public int update(UserDetail userDetails);
 
     @Select("SELECT * FROM cloud_user_details WHERE id=#{id}")
     @Results({
@@ -83,4 +85,13 @@ public interface UserDetailMapper {
             @Result(column = "update_date",property = "updateDate",javaType = LocalDateTime.class, jdbcType = JdbcType.TIMESTAMP)
     })
     public UserDetail findUserDetailsByUserId(Long userId);
+
+    @Select("SELECT user_id FROM cloud_user")
+    public List<Long> findAllUserId();
+
+    @Select("SELECT user_id FROM cloud_user WHERE gender = #{gender}")
+    public List<Long> findUserIdListByGender(String gender);
+
+    @Select("SELECT count(1) FROM cloud_user")
+    public int count();
 }

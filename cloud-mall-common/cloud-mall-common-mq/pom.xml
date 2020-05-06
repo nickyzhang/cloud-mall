@@ -10,16 +10,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>cloud-mall-common-mq</artifactId>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.cloud</groupId>
-      <artifactId>cloud-mall-common-core</artifactId>
-      <version>1.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-amqp</artifactId>
-    </dependency>
-  </dependencies>
+  <packaging>pom</packaging>
+  <modules>
+    <module>cloud-mall-common-mq-rabbitmq</module>
+    <module>cloud-mall-common-mq-kafka</module>
+  </modules>
 </project>

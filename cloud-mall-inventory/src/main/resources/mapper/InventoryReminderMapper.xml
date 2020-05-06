@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.InventoryReminderMapper">
+	<resultMap id="inventoryReminderMap" type="com.cloud.model.inventory.InventoryReminder">
+		<id property="id" column="id" javaType="long" jdbcType="BIGINT"/>
+		<result property="skuId" column="sku_id" javaType="long" jdbcType="BIGINT" />
+		<result property="receiver" column="receiver" />
+		<result property="email" column="email" />
+		<result property="send_status" column="send_status" />
+		<result property="deleted" column="deleted" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		`id`,
+		`sku_id`,
+		`receiver`,
+		`email`,
+		`send_status`,
+		`deleted`,
+		`createDate`,
+		`updateDate`
+	</sql>
+
+	<!-- 根据id查询属性名 -->
+	<select id="findById" parameterType="long" resultMap="inventoryReminderMap">
+		SELECT
+			<include refid="Base_Column_List" />
+		FROM cloud_inventory_reminder
+		WHERE `id` = #{id} AND `deleted` = 0
+	</select>
+
+	<!-- 添加属性 -->
+	<insert id="save" parameterType="com.cloud.model.inventory.InventoryReminder">
+		INSERT INTO cloud_inventory_reminder
+		<include refid="Base_Column_List" />
+		VALUES (
+			#{element.id},
+			#{element.skuId},
+			#{element.receiver},
+			#{element.email},
+			#{element.sendStatus},
+			#{element.deleted},
+			#{element.createDate},
+			#{element.updateDate}
+		)
+	</insert>
+
+	<!-- 更新属性 -->
+	<update id="update" parameterType="com.cloud.model.inventory.InventoryReminder">
+		UPDATE cloud_inventory_reminder
+		<set>
+			<if test="id != null">`id` = #{id},</if>
+			<if test="skuId != null">`sku_id` = #{skuId},</if>
+			<if test="receiver != null">`receiver` = #{receiver},</if>
+			<if test="email != null">`email` = #{email},</if>
+			<if test="sendStatus != null">`send_status` = #{sendStatus},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>,
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `id` = #{id}
+	</update>
+
+	<!--删除属性-->
+	<delete id="delete" parameterType="com.cloud.model.inventory.InventoryReminder">
+		DELETE FROM cloud_inventory_reminder WHERE `id` = #{id}
+	</delete>
+
+	<!--删除属性-->
+	<delete id="deleteById" parameterType="long">
+		DELETE FROM cloud_inventory_reminder WHERE `id` = #{id}
+	</delete>
+</mapper>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.OrderItemMapper">
+	<resultMap id="OrderItemMap" type="com.cloud.model.order.OrderItem">
+		<id property="itemId" column="item_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderId" column="order_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderNo" column="order_no" javaType="long" jdbcType="BIGINT" />
+		<result property="catId" column="cat_id" javaType="long" jdbcType="BIGINT" />
+		<result property="brandId" column="brand_id" javaType="long" jdbcType="BIGINT" />
+		<result property="productId" column="product_id" javaType="long" jdbcType="BIGINT" />
+		<result property="skuId" column="sku_id" javaType="long" jdbcType="BIGINT" />
+		<result property="skuCode" column="sku_code" />
+		<result property="skuName" column="sku_name" />
+		<result property="imageUrl" column="image_url" />
+		<result property="unitPrice" column="unit_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+		<result property="quantity" column="quantity" />
+		<result property="couponAmount" column="coupon_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL"/>
+		<result property="activityAmount" column="activity_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+		<result property="subTotalAmount" column="sub_total_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		`item_id`,`order_id`,`order_no`,`cat_id`,`brand_id`,`product_id`,
+		`sku_id`,`sku_code`,`sku_name`,`image_url`,`unit_price`,`quantity`,
+        `coupon_amount`, `activity_amount`,`sub_total_amount`,`deleted`,`create_time`,`update_time`
+	</sql>
+
+	<!-- 根据订单项id查询订单项信息 -->
+	<select id="findOrderItemById" parameterType="long" resultMap="OrderItemMap">
+		SELECT
+		<include refid="Base_Column_List" />
+	  	FROM cloud_order_item
+		WHERE `order_id` = #{orderId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单id查询订单项信息 -->
+	<select id="findOrderItemByOrderId" parameterType="long" resultMap="OrderItemMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_item
+		WHERE `order_id` = #{orderId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单号查询订单项信息 -->
+	<select id="findOrderItemByOrderNo" parameterType="long" resultMap="OrderItemMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_item
+		WHERE `order_no` = #{orderNo} AND `deleted` = 0
+	</select>
+
+
+
+	<!-- 保存订单项 -->
+	<insert id="save" parameterType="OrderItem">
+		INSERT INTO cloud_order_item (<include refid="Base_Column_List" />)
+		VALUES
+		(
+			#{itemId},
+			#{orderId},
+			#{orderNo},
+			#{catId},
+			#{brandId},
+			#{productId},
+			#{skuId},
+			#{skuCode},
+			#{skuName},
+			#{imageUrl},
+			#{unitPrice},
+			#{quantity},
+			#{couponAmount},
+			#{activityAmount},
+			#{subTotalAmount},
+			#{deleted},
+			#{createTime},
+			#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存订单项 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_order_item (<include refid="Base_Column_List" />)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.itemId},
+					#{element.orderId},
+					#{element.orderNo},
+					#{element.catId},
+					#{element.brandId},
+					#{element.productId},
+					#{element.skuId},
+					#{element.skuCode},
+					#{element.skuName},
+					#{element.imageUrl},
+					#{element.unitPrice},
+					#{element.quantity},
+					#{element.couponAmount},
+					#{element.activityAmount},
+					#{element.subTotalAmount},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+
+	<!-- 更新订单项 -->
+	<update id="update" parameterType="Order">
+		UPDATE cloud_order_item
+		<set>
+			<if test="itemId != null">`item_id` = #{itemId},</if>
+			<if test="orderId != null">`order_id` = #{orderId},</if>
+			<if test="orderNo != null">`order_no` = #{orderNo},</if>
+			<if test="catId != null">`cat_id` = #{catId},</if>
+			<if test="brandId != null">`brand_id` = #{brandId},</if>
+			<if test="productId != null">`product_id` = #{productId},</if>
+			<if test="skuId != null">`sku_id` = #{skuId},</if>
+            <if test="skuCode != null">`sku_code` = #{skuCode},</if>
+            <if test="skuName != null">`sku_name` = #{skuName},</if>
+			<if test="imageUrl != null">`image_url` = #{imageUrl},</if>
+			<if test="unitPrice != null">`unit_price` = #{unitPrice},</if>
+			<if test="quantity != null">`quantity` = #{quantity},</if>
+			<if test="couponAmount != null">`coupon_amount` = #{couponAmount},</if>
+			<if test="activityAmount != null">`activity_amount` = #{activityAmount},</if>
+			<if test="subTotalAmount != null">`sub_total_amount` = #{subTotalAmount},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `item_id` = #{itemId}
+	</update>
+
+	<!-- 逻辑删除指定的订单项 -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_order_item SET `deleted` = 1 WHERE `item_id` = #{itemId} AND `deleted` = 0
+	</delete>
+</mapper>

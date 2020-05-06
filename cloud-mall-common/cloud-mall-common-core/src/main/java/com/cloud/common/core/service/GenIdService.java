@@ -1,6 +1,6 @@
 package com.cloud.common.core.service;
 
-import com.cloud.api.service.IdGenService;
+import com.cloud.service.IdGenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

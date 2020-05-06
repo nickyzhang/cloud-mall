@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.CouponTemplateBrandMapper">
+	<resultMap id="CouponTemplateBrandMap" type="CouponTemplateBrand">
+		<result property="brandId" column="brand_id" javaType="long" jdbcType="BIGINT" />
+		<result property="templateId" column="template_id" javaType="long" jdbcType="BIGINT" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!-- 根据优惠券 ID查询 -->
+	<select id="findByTemplateId" parameterType="long" resultMap="CouponTemplateBrandMap">
+		SELECT * FROM cloud_coupon_template_brand WHERE `template_id` = #{templateId}
+	</select>
+
+	<!-- 根据品牌的ID查询 -->
+	<select id="findByBrandId" parameterType="long" resultMap="CouponTemplateBrandMap">
+		SELECT * FROM cloud_coupon_template_brand WHERE `brand_id` = #{brandId}
+	</select>
+
+	<!-- 保存优惠券和品牌的关系 -->
+	<insert id="saveCouponTemplateBrand" parameterType="CouponTemplateBrand">
+		INSERT INTO
+		cloud_coupon_template_brand(`brand_id`,`template_id`,`deleted`,`create_time`,`update_time`)
+		VALUES
+		(#{brandId},#{templateId},#{deleted},#{createTime},#{updateTime})
+	</insert>
+
+	<!-- 删除优惠券和品牌的关系-->
+	<delete id="deleteCouponTemplateBrand" parameterType="java.util.Map">
+		UPDATE cloud_coupon_template_brand SET `deleted` = 1 WHERE `brand_id` = #{brandId} AND `template_id` = #{templateId}
+	</delete>
+
+	<!-- 删除优惠券和品牌的关系 -->
+	<delete id="deleteCouponTemplateBrandBySkuId" parameterType="long">
+		UPDATE cloud_coupon_template_brand SET `deleted` = 1  WHERE `brand_id` = #{brandId}
+	</delete>
+
+	<!-- 删除优惠券和品牌的关系 -->
+	<delete id="deleteCouponTemplateBrandByTemplateId" parameterType="long">
+		UPDATE cloud_coupon_template_brand SET `deleted` = 1 WHERE `template_id` = #{templateId}
+	</delete>
+</mapper>

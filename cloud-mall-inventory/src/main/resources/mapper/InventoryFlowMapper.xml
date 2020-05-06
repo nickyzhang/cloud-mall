@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.InventoryFlowMapper">
+	<resultMap id="inventoryFlowMap" type="com.cloud.model.inventory.InventoryFlow">
+		<id property="id" column="id" javaType="long" jdbcType="BIGINT"/>
+		<result property="skuId" column="sku_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderId" column="order_id" javaType="long" jdbcType="BIGINT" />
+		<result property="stockNumBefore" column="stock_num_before" />
+		<result property="stockNumAfter" column="stock_num_after" />
+		<result property="stockNumDiff" column="stock_num_diff" />
+		<result property="availableNumBefore" column="available_num_before" />
+		<result property="availableNumAfter" column="available_num_after" />
+		<result property="availableNumDiff" column="available_num_diff" />
+		<result property="orderOccupiedNumBefore" column="order_occupied_num_before" />
+		<result property="orderOccupiedNumAfter" column="order_occupied_num_after" />
+		<result property="orderOccupiedNumDiff" column="order_occupied_num_diff" />
+		<result property="lockedNumBefore" column="locked_num_before" />
+		<result property="lockedNumAfter" column="locked_num_after" />
+		<result property="lockedNumDiff" column="locked_num_diff" />
+		<result property="actionType" column="action_type" />
+		<result property="stockFrom" column="stock_from" />
+		<result property="deleted" column="deleted" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		`id`,
+		`sku_id`,
+		`order_id`,
+		`stock_num_before`,
+		`stock_num_after`,
+		`stock_num_diff`,
+		`available_num_before`,
+		`available_num_after`,
+		`available_num_diff`,
+		`order_occupied_num_before`,
+		`order_occupied_num_after`,
+		`order_occupied_num_diff`,
+		`locked_num_before`,
+		`locked_num_after`,
+		`locked_num_diff`,
+		`action_type`,
+		`stock_from`,
+		`deleted`,
+		`createDate`,
+		`updateDate`
+	</sql>
+
+	<!-- 根据id查询属性名 -->
+	<select id="findById" parameterType="long" resultMap="inventoryFlowMap">
+		SELECT
+			<include refid="Base_Column_List" />
+		FROM cloud_inventory_flow
+		WHERE `id` = #{id} AND `deleted` = 0
+	</select>
+
+	<!-- 根据所有属性名 -->
+	<select id="findBySkuId" parameterType="long" resultMap="inventoryFlowMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_inventory_flow
+		WHERE `sku_id` = #{skuId} AND `deleted` = 0
+	</select>
+
+	<!-- 添加属性 -->
+	<insert id="save" parameterType="InventoryFlow">
+		INSERT INTO cloud_inventory_flow
+		<include refid="Base_Column_List" />
+		VALUES (
+			#{element.id},
+			#{element.skuId},
+			#{element.orderId},
+			#{element.stockNumBefore},
+			#{element.stockNumAfter},
+			#{element.stockNumDiff},
+			#{element.availableNumBefore},
+			#{element.availableNumAfter},
+			#{element.availableNumDiff},
+			#{element.orderOccupiedNumBefore},
+			#{element.orderOccupiedNumAfter},
+			#{element.orderOccupiedNumDiff},
+			#{element.lockedNumBefore},
+			#{element.lockedNumAfter},
+			#{element.lockedNumDiff},
+			#{element.actionType},
+			#{element.stockFrom},
+			#{element.deleted},
+			#{element.createDate},
+			#{element.updateDate}
+		)
+	</insert>
+
+	<!-- 更新属性 -->
+	<update id="update" parameterType="InventoryFlow">
+		UPDATE cloud_inventory_flow
+		<set>
+			<if test="id != null">`id` = #{id},</if>
+			<if test="skuId != null">`sku_id` = #{skuId},</if>
+			<if test="orderId != null">`order_id` = #{orderId},</if>
+			<if test="stockNumBefore != null">`stock_num_before` = #{stockNumBefore},</if>
+			<if test="stockNumAfter != null">`available_num_after` = #{stockNumAfter},</if>
+			<if test="stockNumDiff != null">`available_num_diff` = #{stockNumDiff},</if>
+			<if test="availableNumBefore != null">`available_num_before` = #{availableNumBefore},</if>
+			<if test="availableNumAfter != null">`available_num_after` = #{availableNumAfter},</if>
+			<if test="availableNumDiff != null">`available_num_diff` = #{availableNumDiff},</if>
+			<if test="orderOccupiedNumBefore != null">`order_occupied_num_before` = #{orderOccupiedNumBefore},</if>
+			<if test="orderOccupiedNumAfter != null">`order_occupied_num_after` = #{orderOccupiedNumAfter},</if>
+			<if test="orderOccupiedNumDiff != null">`order_occupied_num_diff` = #{orderOccupiedNumDiff},</if>
+			<if test="lockedNumBefore != null">`locked_num_before` = #{lockedNumBefore},</if>
+			<if test="lockedNumAfter != null">`locked_num_after` = #{lockedNumAfter},</if>
+			<if test="lockedNumDiff != null">`locked_num_diff` = #{lockedNumDiff},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>,
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `id` = #{id}
+	</update>
+
+	<!--删除属性-->
+	<delete id="delete" parameterType="InventoryFlow">
+		DELETE FROM cloud_inventory_flow WHERE `id` = #{id}
+	</delete>
+
+	<!--删除属性-->
+	<delete id="deleteById" parameterType="long">
+		DELETE FROM cloud_inventory_flow WHERE `id` = #{id}
+	</delete>
+</mapper>

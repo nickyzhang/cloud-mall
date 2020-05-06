@@ -14,9 +14,8 @@
     <module>cloud-mall-common-redis</module>
     <module>cloud-mall-common-mq</module>
     <module>cloud-mall-common-session</module>
-    <module>cloud-mall-common-notification</module>
     <module>cloud-mall-common-cache</module>
-      <module>cloud-mall-common-model</module>
+    <module>cloud-mall-common-rest</module>
   </modules>
   <modelVersion>4.0.0</modelVersion>
 

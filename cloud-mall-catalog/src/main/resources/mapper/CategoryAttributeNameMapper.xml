@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.CategoryAttributeNameMapper">
+    <resultMap id="CategoryAttributeNameMap" type="CategoryAttributeName">
+        <result property="categoryId" column="cat_id" javaType="long" jdbcType="BIGINT" />
+        <result property="attributeNameId" column="attr_name_id" javaType="long" jdbcType="BIGINT"  />
+        <result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+        <result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+        <result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <!--根据category id查询category信息 -->
+    <select id="findByCatId" parameterType="long" resultMap="CategoryAttributeNameMap">
+        SELECT * FROM cloud_cat_attr_name WHERE `cat_id` = #{catId} AND `deleted` = 0
+    </select>
+
+    <!--根据brand id查询category信息 -->
+    <select id="findByAttributeNameId" parameterType="long" resultMap="CategoryAttributeNameMap">
+        SELECT * FROM cloud_cat_attr_name WHERE `attr_name_id` = #{attributeNameId} AND `deleted` = 0
+    </select>
+
+    <!-- 保存category和AttributeName的关系 -->
+    <insert id="saveCategoryAttributeName" parameterType="CategoryAttributeName">
+        INSERT INTO
+            cloud_cat_attr_name(`cat_id`,`attr_name_id`,`deletd`,`create_time`,`update_time`)
+        VALUES
+            (#{categoryId},#{attributeNameId},#{deleted},#{createTime},#{updateTime})
+    </insert>
+
+    <!--删除attribute name 和 category 之间关系-->
+    <delete id="deleteCategoryAttributeName" parameterType="java.util.Map">
+        UPDATE cloud_cat_attr_name SET `deleted` = 1 WHERE `cat_id` = #{catId} AND `attr_name_id` = #{attributeNameId}
+    </delete>
+
+    <delete id="deleteCategoryAttributeNameByCatId" parameterType="long">
+        UPDATE cloud_cat_attr_name SET `deleted` = 1 WHERE `cat_id` = #{catId}
+    </delete>
+
+    <delete id="deleteCategoryAttributeNameByAttributeNameId" parameterType="long">
+        UPDATE cloud_cat_attr_name SET `deleted` = 1 WHERE `attr_name_id` = #{attributeNameId}
+    </delete>
+</mapper>

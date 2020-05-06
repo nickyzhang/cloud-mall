@@ -1,9 +1,19 @@
 package com.cloud.common.redis.service;
 
+import io.lettuce.core.SetArgs;
+import io.lettuce.core.api.async.RedisAsyncCommands;
+import io.lettuce.core.cluster.api.async.RedisAdvancedClusterAsyncCommands;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.connection.RedisStringCommands;
+import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.types.Expiration;
+import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -88,6 +98,7 @@ public class RedisService {
             return false;
         }
     }
+
     /**
      * 普通缓存放入并设置时间
      * @param key 键
@@ -489,5 +500,60 @@ public class RedisService {
             e.printStackTrace();
             return 0;
         }
+    }
+
+    /**
+     * 当不存在某key的时候，才设置
+     * @param key
+     * @param value
+     * @param timeout
+     * @return
+     */
+    public boolean setIfAbsent(String key, Object value, Long timeout) {
+        boolean status = Boolean.FALSE;
+        try {
+            status = this.redisTemplate.execute((RedisCallback<Boolean>) connection -> {
+                Object nativeConnection = connection.getNativeConnection();
+                RedisSerializer keySerializer = this.redisTemplate.getKeySerializer();
+                RedisSerializer valueSerializer = this.redisTemplate.getValueSerializer();
+                byte[] rawKey = keySerializer.serialize(key);
+                byte[] rawValue = valueSerializer.serialize(value);
+                String result = "";
+                if (nativeConnection instanceof RedisAsyncCommands) {
+                    RedisAsyncCommands commands = (RedisAsyncCommands)nativeConnection;
+                    result = commands.getStatefulConnection()
+                            .sync()
+                            .set(rawKey,rawValue, SetArgs.Builder.nx().ex(timeout));
+                } else if (nativeConnection instanceof RedisAdvancedClusterAsyncCommands) {
+                    RedisAdvancedClusterAsyncCommands clusterAsyncCommands = (RedisAdvancedClusterAsyncCommands) nativeConnection;
+                    result = clusterAsyncCommands.getStatefulConnection()
+                            .sync()
+                            .set(rawKey,rawValue, SetArgs.Builder.nx().ex(timeout));
+                }
+                return "OK".equalsIgnoreCase(result);
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+
+    /**
+     * 当不存在某key的时候，才设置
+     * @param key
+     * @param value
+     * @param timeout
+     * @param unit
+     * @return
+     */
+    public boolean setIfAbsent(String key, Object value, Long timeout, TimeUnit unit) {
+        RedisSerializer keySerializer = this.redisTemplate.getKeySerializer();
+        RedisSerializer valueSerializer = this.redisTemplate.getValueSerializer();
+        byte[] rawKey = keySerializer.serialize(key);
+        Expiration expiration = Expiration.from(timeout, unit);
+        byte[] rawValue = valueSerializer.serialize(value);
+        return this.redisTemplate.execute((connection) -> {
+            return connection.set(rawKey,rawValue,expiration, RedisStringCommands.SetOption.ifAbsent());
+        },true);
     }
 }

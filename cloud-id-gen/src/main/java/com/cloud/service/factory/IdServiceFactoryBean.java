@@ -1,6 +1,6 @@
 package com.cloud.service.factory;
 
-import com.cloud.api.service.IdGenService;
+import com.cloud.service.IdGenService;
 import com.cloud.service.impl.IdGenServiceImpl;
 import com.cloud.service.provider.DbMachineIdProvider;
 import com.cloud.service.provider.IpConfigurableMachineIdProvider;

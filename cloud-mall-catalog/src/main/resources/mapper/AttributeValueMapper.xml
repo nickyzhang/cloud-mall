@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.AttributeValueMapper">
+	<resultMap id="attributeValueMap" type="AttributeValue">
+		<id property="id" column="attr_val_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="value" column="attr_val" />
+		<result property="displayOrder" column="display_order" />
+        <result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<association property="name" column="attr_name_id" select="com.cloud.mapper.AttributeNameMapper.find" />
+	</resultMap>
+
+	<select id="find" parameterType="long" resultMap="attributeValueMap">
+		SELECT * FROM cloud_attr_val WHERE `attr_val_id` = #{id} AND deleted = 0
+	</select>
+
+	<select id="findAll" resultMap="attributeValueMap">
+		SELECT * FROM cloud_attr_val WHERE deleted = 0
+	</select>
+
+	<!-- 根据某一个属性名查找其下所有的属性值 -->
+	<select id="findAttributeValueListByAttributeNameId" parameterType="long" resultMap="attributeValueMap">
+		SELECT * FROM cloud_attr_val WHERE `attr_name_id` = #{id} AND deleted = 0
+	</select>
+
+	<!--查找某一个category下的所有属性-->
+	<select id="findAttributeValueListByProductId" parameterType="long" resultMap="attributeValueMap">
+		SELECT * FROM cloud_attr_val
+		WHERE deleted = 0 AND attr_val_id
+		IN (
+			SELECT attr_val_id
+			FROM cloud_product_properties
+			WHERE product_id= #{productId} AND deleted = 0
+		)
+	</select>
+
+	<!--查找某一个category下的所有属性-->
+	<select id="findAttributeValueListBySkuId" parameterType="long" resultMap="attributeValueMap">
+		SELECT * FROM cloud_attr_val
+		WHERE deleted = 0 AND attr_val_id
+		IN (
+			SELECT attr_val_id
+			FROM cloud_sku_properties
+			WHERE sku_id= #{skuId} AND deleted = 0
+		)
+	</select>
+
+	<!-- 添加属性 -->
+	<insert id="save" parameterType="AttributeValue">
+		INSERT INTO cloud_attr_val(
+			`attr_val_id`,`attr_val`,`display_order`,`deleted`,
+			`create_time`,`update_time`,`attr_name_id`
+		)
+		VALUES (#{id},#{value},#{displayOrder},#{deleted},#{createTime},#{updateTime},#{name.id})
+	</insert>
+
+	<!-- 批量添加属性 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_attr_val(
+			`attr_val_id`,
+			`attr_val`,
+			`display_order`,
+			`deleted`,
+			`create_time`,
+			`update_time`,
+			`attr_name_id`
+		)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.id},
+					#{element.value},
+					#{element.displayOrder},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime},
+					#{element.name.id}
+				)
+			</foreach>
+	</insert>
+
+
+	<!-- 更新属性 -->
+	<update id="update" parameterType="AttributeValue">
+		UPDATE cloud_attr_val
+		<set>
+			<if test="id != null">`attr_val_id` = #{id},</if>
+			<if test="value != null">`attr_val` = #{value},</if>
+			<if test="displayOrder != null">`display_order` = #{displayOrder},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime},</if>
+			<if test="name != null">`attr_name_id` = #{name.id}</if>
+		</set>
+		WHERE `attr_val_id` = #{id}
+	</update>
+
+	<!--删除属性-->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_attr_val SET `deleted` = 1 WHERE `attr_val_id` = #{id}
+	</delete>
+
+	<select id="count" resultType="long">
+		SELECT COUNT(1) FROM cloud_attr_val WHERE `deleted` = 0
+	</select>
+</mapper>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false">
+    <springProperty scope="context" name="APP_NAME" source="spring.application.name"/>
+    <springProperty scope="context" name="LOG_FILE" source="spring.application.log.path"/>
+    <!-- 彩色日志格式 -->
+    <property name="CONSOLE_LOG_PATTERN" value="%blue([%d{yyyy-MM-dd HH:mm:ss.SSS}]) %green([%-5level]) %yellow(%X{X-B3-TraceId}),%green(%X{X-B3-SpanId}),%blue(%X{X-B3-ParentSpanId}) %red([%thread]) %black(%logger{36}) %cyan(%msg%n)"/>
+
+    <!-- 普通日志格式 -->
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-B3-ParentSpanId} [%thread] %logger{36} -%msg%n"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="FILE_DAILY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}</fileNamePattern>
+            <!-- 日志文件保留天数  -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <!-- 对日志级别进行拦截,比如只记录info级别的日志，有的只记录error级别的日志 -->
+        <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+        <!--<level>INFO</level>             &lt;!&ndash; 设置拦截的对象为INFO级别日志 &ndash;&gt;-->
+        <!--<onMatch>ACCEPT</onMatch>       &lt;!&ndash; 当遇到了INFO级别时，启用该段配置 &ndash;&gt;-->
+        <!--<onMismatch>DENY</onMismatch>   &lt;!&ndash; 没有遇到INFO级别日志时，屏蔽该段配置 &ndash;&gt;-->
+        <!--</filter>-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+        <!-- 日志文件最大的大小 -->
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <!-- 生产环境最大1个G-->
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <!-- Logstash 集成 Logback -->
+    <!--<appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+        <!--<destination>192.168.3.101:5000</destination>-->
+        <!--<encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder">-->
+            <!--<customFields>{"appname":"${APP_NAME}"}</customFields>-->
+        <!--</encoder>-->
+    <!--</appender>-->
+
+    <!--<appender name="KafkaAppender" class="com.github.danielwegener.logback.kafka.KafkaAppender">-->
+        <!--<encoder>-->
+            <!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+        <!--</encoder>-->
+        <!--<topic>cloud-logs</topic>-->
+        <!--<keyingStrategy class="com.github.danielwegener.logback.kafka.keying.NoKeyKeyingStrategy" />-->
+        <!--&lt;!&ndash; 消息不可用的时候，就不交给kafka了 &ndash;&gt;-->
+        <!--<deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy" />-->
+        <!--<partition>3</partition>-->
+
+        <!--&lt;!&ndash; Optional parameter to include log timestamps into the kafka message &ndash;&gt;-->
+        <!--&lt;!&ndash; <appendTimestamp>true</appendTimestamp> &ndash;&gt;-->
+        <!--<producerConfig>bootstrap.servers=192.168.3.101:9092,192.168.3.102:9092,192.168.3.103:9092</producerConfig>-->
+    <!--</appender>-->
+
+    <!-- 日志输出级别，OFF level > FATAL > ERROR > WARN > INFO > DEBUG > ALL level -->
+    <logger name="com.cloud" level="INFO"/>
+
+    <!-- 开发环境：打印控制台和输出到文件 -->
+    <!-- 由application.yml中的spring.profiles.active配置 -->
+    <springProfile name="dev">
+        <root level="INFO">
+            <appender-ref ref="FILE_DAILY"/>
+        </root>
+    </springProfile>
+    <!-- 测试环境：打印控制台和输出到文件 -->
+    <!-- 由application.yml中的spring.profiles.active配置 -->
+    <springProfile name="uat">
+        <root level="DEBUG">
+            <appender-ref ref="FILE_DAILY"/>
+        </root>
+    </springProfile>
+    <!-- 生产环境：打印控制台和输出到文件 -->
+    <!-- 由application.yml中的spring.profiles.active配置 -->
+    <springProfile name="prod">
+        <root level="INFO">
+            <appender-ref ref="FILE_DAILY"/>
+        </root>
+    </springProfile>
+</configuration>

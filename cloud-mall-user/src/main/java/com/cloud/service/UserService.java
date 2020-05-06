@@ -1,37 +1,42 @@
 package com.cloud.service;
 
+import com.cloud.dto.user.UserDTO;
 import com.cloud.model.user.User;
-import javax.servlet.http.HttpServletRequest;
+
 import java.util.List;
 import java.util.Map;
 
 public interface UserService {
 
-    public int save(User user);
+    public int save(UserDTO user);
 
-    public int update(User user);
+    public int saveList(List<User> userList);
 
-    public User find(Long userId);
+    public int update(UserDTO user);
 
-    public List<User> find(Map<String, Object> conditions);
+    public UserDTO find(Long userId);
 
-    public User findByUserName(String username, String password);
+    public List<Long> findAll();
 
-    public User findByEmail(String email, String password);
+    public List<Long> findUserListByRange(Long start, Long end);
 
-    public User findByPhone(String phone, String password);
+    public List<Long> findUserListByLimit(Long start, Long offset);
 
-    public User findByPhone(String phone);
+    public List<UserDTO> find(Map<String, Object> map);
 
-    public int count(Map<String, Object> conditions);
+    public UserDTO findByUserName(String account, String password);
 
-    public void sendSmsCode(HttpServletRequest request, String phone, String code) throws Exception;
+    public UserDTO findByEmail(String email, String password);
 
-    public void sendMailCode(HttpServletRequest request, String to, String subejct, String code) throws Exception;
+    public UserDTO findByEmail(String email);
 
-    public boolean checkSmsCode(HttpServletRequest request, String code);
+    public UserDTO findByPhone(String phone, String password);
 
-    public boolean checkMailCode(HttpServletRequest request, String code);
+    public UserDTO findByPhone(String phone);
 
-    public boolean updatePassword(HttpServletRequest request, String newPasswd, String authCode);
+    public int setUserToken(String token, Long userId);
+
+    public Long getUserByToken(String token);
+
+    public int removeToken(String token);
 }

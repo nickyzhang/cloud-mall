@@ -7,6 +7,7 @@ import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.CustomExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import java.util.HashMap;
@@ -15,19 +16,20 @@ import java.util.Map;
 @Getter
 @Setter
 @Configuration
+@RefreshScope
 public class RabbitDelayConfig {
 
-    @Value("${user.password.queue.name}")
+    @Value("${user.password.queue}")
     private String queue;
 
-    @Value("${user.password.exchange.name}")
+    @Value("${user.password.exchange}")
     private String exchange;
 
-    @Value("${user.password.route.key}")
+    @Value("${user.password.key}")
     private String routeKey;
 
     @Bean
-    public Queue immediateQueue() {
+    public Queue delayQueue() {
         return new Queue(this.queue,true);
     }
 
@@ -40,7 +42,7 @@ public class RabbitDelayConfig {
     }
 
     @Bean
-    public Binding bindingNotify() {
-        return BindingBuilder.bind(immediateQueue()).to(delayExchange()).with(this.routeKey).noargs();
+    public Binding delayBinding() {
+        return BindingBuilder.bind(delayQueue()).to(delayExchange()).with(this.routeKey).noargs();
     }
 }

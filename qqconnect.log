@@ -1,1042 +1,249 @@
-88840 DEBUG [2019-08-05 14:57:33]  >> DiscoveryIdentity-Id: 192.168.3.24
-88840 DEBUG [2019-08-05 14:57:33]  >> Accept-Encoding: gzip
-88840 DEBUG [2019-08-05 14:57:33]  >> Content-Length: 0
-88840 DEBUG [2019-08-05 14:57:33]  >> Host: 192.168.3.24:20000
-88841 DEBUG [2019-08-05 14:57:33]  >> Connection: Keep-Alive
-88841 DEBUG [2019-08-05 14:57:33]  >> User-Agent: Java-EurekaClient/v1.9.3
-88841 DEBUG [2019-08-05 14:57:33]   << "HTTP/1.1 200 [\r][\n]"
-88841 DEBUG [2019-08-05 14:57:33]   << "Content-Type: application/xml[\r][\n]"
-88842 DEBUG [2019-08-05 14:57:33]   << "Content-Length: 0[\r][\n]"
-88842 DEBUG [2019-08-05 14:57:33]   << "Date: Mon, 05 Aug 2019 06:57:33 GMT[\r][\n]"
-88842 DEBUG [2019-08-05 14:57:33]   << "[\r][\n]"
-88857 DEBUG [2019-08-05 14:57:33]  Receiving response: HTTP/1.1 200 
-88857 DEBUG [2019-08-05 14:57:33]  << HTTP/1.1 200 
-88857 DEBUG [2019-08-05 14:57:33]  << Content-Type: application/xml
-88857 DEBUG [2019-08-05 14:57:33]  << Content-Length: 0
-88857 DEBUG [2019-08-05 14:57:33]  << Date: Mon, 05 Aug 2019 06:57:33 GMT
-88858 DEBUG [2019-08-05 14:57:33]  Connection can be kept alive indefinitely
-88858 DEBUG [2019-08-05 14:57:33]  Released connection is reusable.
-88858 DEBUG [2019-08-05 14:57:33]  Releasing connection [{}->http://192.168.3.24:20000][null]
-88858 DEBUG [2019-08-05 14:57:33]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-88858 DEBUG [2019-08-05 14:57:33]  Notifying no-one, there are no waiting threads
-93859 DEBUG [2019-08-05 14:57:38]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-93859 DEBUG [2019-08-05 14:57:38]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-93859 DEBUG [2019-08-05 14:57:38]  Getting free connection [{}->http://192.168.3.24:20000][null]
-93859 DEBUG [2019-08-05 14:57:38]  Stale connection check
-93861 DEBUG [2019-08-05 14:57:38]  CookieSpec selected: default
-93861 DEBUG [2019-08-05 14:57:38]  Auth cache not set in the context
-93861 DEBUG [2019-08-05 14:57:38]  Target auth state: UNCHALLENGED
-93861 DEBUG [2019-08-05 14:57:38]  Proxy auth state: UNCHALLENGED
-93861 DEBUG [2019-08-05 14:57:38]  Attempt 1 to execute request
-93861 DEBUG [2019-08-05 14:57:38]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-93861 DEBUG [2019-08-05 14:57:38]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-93861 DEBUG [2019-08-05 14:57:38]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-93861 DEBUG [2019-08-05 14:57:38]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-93861 DEBUG [2019-08-05 14:57:38]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-93861 DEBUG [2019-08-05 14:57:38]   >> "Accept-Encoding: gzip[\r][\n]"
-93861 DEBUG [2019-08-05 14:57:38]   >> "Content-Length: 0[\r][\n]"
-93861 DEBUG [2019-08-05 14:57:38]   >> "Host: 192.168.3.24:20000[\r][\n]"
-93861 DEBUG [2019-08-05 14:57:38]   >> "Connection: Keep-Alive[\r][\n]"
-93861 DEBUG [2019-08-05 14:57:38]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-93861 DEBUG [2019-08-05 14:57:38]   >> "[\r][\n]"
-93861 DEBUG [2019-08-05 14:57:38]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-93861 DEBUG [2019-08-05 14:57:38]  >> DiscoveryIdentity-Name: DefaultClient
-93861 DEBUG [2019-08-05 14:57:38]  >> DiscoveryIdentity-Version: 1.4
-93861 DEBUG [2019-08-05 14:57:38]  >> DiscoveryIdentity-Id: 192.168.3.24
-93861 DEBUG [2019-08-05 14:57:38]  >> Accept-Encoding: gzip
-93861 DEBUG [2019-08-05 14:57:38]  >> Content-Length: 0
-93861 DEBUG [2019-08-05 14:57:38]  >> Host: 192.168.3.24:20000
-93861 DEBUG [2019-08-05 14:57:38]  >> Connection: Keep-Alive
-93861 DEBUG [2019-08-05 14:57:38]  >> User-Agent: Java-EurekaClient/v1.9.3
-93862 DEBUG [2019-08-05 14:57:38]   << "HTTP/1.1 200 [\r][\n]"
-93863 DEBUG [2019-08-05 14:57:38]   << "Content-Type: application/xml[\r][\n]"
-93863 DEBUG [2019-08-05 14:57:38]   << "Content-Length: 0[\r][\n]"
-93863 DEBUG [2019-08-05 14:57:38]   << "Date: Mon, 05 Aug 2019 06:57:38 GMT[\r][\n]"
-93863 DEBUG [2019-08-05 14:57:38]   << "[\r][\n]"
-93863 DEBUG [2019-08-05 14:57:38]  Receiving response: HTTP/1.1 200 
-93863 DEBUG [2019-08-05 14:57:38]  << HTTP/1.1 200 
-93863 DEBUG [2019-08-05 14:57:38]  << Content-Type: application/xml
-93863 DEBUG [2019-08-05 14:57:38]  << Content-Length: 0
-93863 DEBUG [2019-08-05 14:57:38]  << Date: Mon, 05 Aug 2019 06:57:38 GMT
-93863 DEBUG [2019-08-05 14:57:38]  Connection can be kept alive indefinitely
-93863 DEBUG [2019-08-05 14:57:38]  Released connection is reusable.
-93863 DEBUG [2019-08-05 14:57:38]  Releasing connection [{}->http://192.168.3.24:20000][null]
-93863 DEBUG [2019-08-05 14:57:38]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-93863 DEBUG [2019-08-05 14:57:38]  Notifying no-one, there are no waiting threads
-98865 DEBUG [2019-08-05 14:57:43]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-98865 DEBUG [2019-08-05 14:57:43]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-98865 DEBUG [2019-08-05 14:57:43]  Getting free connection [{}->http://192.168.3.24:20000][null]
-98865 DEBUG [2019-08-05 14:57:43]  Stale connection check
-98866 DEBUG [2019-08-05 14:57:43]  CookieSpec selected: default
-98866 DEBUG [2019-08-05 14:57:43]  Auth cache not set in the context
-98866 DEBUG [2019-08-05 14:57:43]  Target auth state: UNCHALLENGED
-98866 DEBUG [2019-08-05 14:57:43]  Proxy auth state: UNCHALLENGED
-98866 DEBUG [2019-08-05 14:57:43]  Attempt 1 to execute request
-98866 DEBUG [2019-08-05 14:57:43]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-98866 DEBUG [2019-08-05 14:57:43]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-98866 DEBUG [2019-08-05 14:57:43]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-98866 DEBUG [2019-08-05 14:57:43]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-98866 DEBUG [2019-08-05 14:57:43]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-98866 DEBUG [2019-08-05 14:57:43]   >> "Accept-Encoding: gzip[\r][\n]"
-98866 DEBUG [2019-08-05 14:57:43]   >> "Content-Length: 0[\r][\n]"
-98866 DEBUG [2019-08-05 14:57:43]   >> "Host: 192.168.3.24:20000[\r][\n]"
-98867 DEBUG [2019-08-05 14:57:43]   >> "Connection: Keep-Alive[\r][\n]"
-98867 DEBUG [2019-08-05 14:57:43]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-98867 DEBUG [2019-08-05 14:57:43]   >> "[\r][\n]"
-98867 DEBUG [2019-08-05 14:57:43]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-98867 DEBUG [2019-08-05 14:57:43]  >> DiscoveryIdentity-Name: DefaultClient
-98867 DEBUG [2019-08-05 14:57:43]  >> DiscoveryIdentity-Version: 1.4
-98867 DEBUG [2019-08-05 14:57:43]  >> DiscoveryIdentity-Id: 192.168.3.24
-98867 DEBUG [2019-08-05 14:57:43]  >> Accept-Encoding: gzip
-98867 DEBUG [2019-08-05 14:57:43]  >> Content-Length: 0
-98867 DEBUG [2019-08-05 14:57:43]  >> Host: 192.168.3.24:20000
-98867 DEBUG [2019-08-05 14:57:43]  >> Connection: Keep-Alive
-98867 DEBUG [2019-08-05 14:57:43]  >> User-Agent: Java-EurekaClient/v1.9.3
-99015 DEBUG [2019-08-05 14:57:43]   << "HTTP/1.1 200 [\r][\n]"
-99016 DEBUG [2019-08-05 14:57:43]   << "Content-Type: application/xml[\r][\n]"
-99016 DEBUG [2019-08-05 14:57:43]   << "Content-Length: 0[\r][\n]"
-99016 DEBUG [2019-08-05 14:57:43]   << "Date: Mon, 05 Aug 2019 06:57:43 GMT[\r][\n]"
-99016 DEBUG [2019-08-05 14:57:43]   << "[\r][\n]"
-99016 DEBUG [2019-08-05 14:57:43]  Receiving response: HTTP/1.1 200 
-99016 DEBUG [2019-08-05 14:57:43]  << HTTP/1.1 200 
-99016 DEBUG [2019-08-05 14:57:43]  << Content-Type: application/xml
-99016 DEBUG [2019-08-05 14:57:43]  << Content-Length: 0
-99016 DEBUG [2019-08-05 14:57:43]  << Date: Mon, 05 Aug 2019 06:57:43 GMT
-99016 DEBUG [2019-08-05 14:57:43]  Connection can be kept alive indefinitely
-99016 DEBUG [2019-08-05 14:57:43]  Released connection is reusable.
-99016 DEBUG [2019-08-05 14:57:43]  Releasing connection [{}->http://192.168.3.24:20000][null]
-99016 DEBUG [2019-08-05 14:57:43]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-99016 DEBUG [2019-08-05 14:57:43]  Notifying no-one, there are no waiting threads
-102933 DEBUG [2019-08-05 14:57:47]  Closing connections idle longer than 30000 SECONDS
-102934 DEBUG [2019-08-05 14:57:47]  Closing connections idle longer than 30000 SECONDS
-103671 DEBUG [2019-08-05 14:57:47]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-103671 DEBUG [2019-08-05 14:57:47]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-103671 DEBUG [2019-08-05 14:57:47]  Getting free connection [{}->http://192.168.3.24:20000][null]
-103671 DEBUG [2019-08-05 14:57:47]  Stale connection check
-103673 DEBUG [2019-08-05 14:57:47]  CookieSpec selected: default
-103673 DEBUG [2019-08-05 14:57:47]  Auth cache not set in the context
-103673 DEBUG [2019-08-05 14:57:47]  Target auth state: UNCHALLENGED
-103673 DEBUG [2019-08-05 14:57:47]  Proxy auth state: UNCHALLENGED
-103673 DEBUG [2019-08-05 14:57:47]  Attempt 1 to execute request
-103673 DEBUG [2019-08-05 14:57:47]  Sending request: GET /eureka/apps/delta HTTP/1.1
-103673 DEBUG [2019-08-05 14:57:47]   >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
-103673 DEBUG [2019-08-05 14:57:47]   >> "Accept: application/json[\r][\n]"
-103674 DEBUG [2019-08-05 14:57:47]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-103674 DEBUG [2019-08-05 14:57:47]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-103674 DEBUG [2019-08-05 14:57:47]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-103674 DEBUG [2019-08-05 14:57:47]   >> "Accept-Encoding: gzip[\r][\n]"
-103674 DEBUG [2019-08-05 14:57:47]   >> "Host: 192.168.3.24:20000[\r][\n]"
-103674 DEBUG [2019-08-05 14:57:47]   >> "Connection: Keep-Alive[\r][\n]"
-103674 DEBUG [2019-08-05 14:57:47]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-103674 DEBUG [2019-08-05 14:57:47]   >> "[\r][\n]"
-103674 DEBUG [2019-08-05 14:57:47]  >> GET /eureka/apps/delta HTTP/1.1
-103674 DEBUG [2019-08-05 14:57:47]  >> Accept: application/json
-103674 DEBUG [2019-08-05 14:57:47]  >> DiscoveryIdentity-Name: DefaultClient
-103674 DEBUG [2019-08-05 14:57:47]  >> DiscoveryIdentity-Version: 1.4
-103674 DEBUG [2019-08-05 14:57:47]  >> DiscoveryIdentity-Id: 192.168.3.24
-103674 DEBUG [2019-08-05 14:57:47]  >> Accept-Encoding: gzip
-103674 DEBUG [2019-08-05 14:57:47]  >> Host: 192.168.3.24:20000
-103674 DEBUG [2019-08-05 14:57:47]  >> Connection: Keep-Alive
-103674 DEBUG [2019-08-05 14:57:47]  >> User-Agent: Java-EurekaClient/v1.9.3
-103678 DEBUG [2019-08-05 14:57:47]   << "HTTP/1.1 200 [\r][\n]"
-103678 DEBUG [2019-08-05 14:57:47]   << "Content-Encoding: gzip[\r][\n]"
-103678 DEBUG [2019-08-05 14:57:47]   << "Content-Type: application/json[\r][\n]"
-103678 DEBUG [2019-08-05 14:57:47]   << "Content-Length: 557[\r][\n]"
-103678 DEBUG [2019-08-05 14:57:47]   << "Date: Mon, 05 Aug 2019 06:57:47 GMT[\r][\n]"
-103678 DEBUG [2019-08-05 14:57:47]   << "[\r][\n]"
-103678 DEBUG [2019-08-05 14:57:47]  Receiving response: HTTP/1.1 200 
-103678 DEBUG [2019-08-05 14:57:47]  << HTTP/1.1 200 
-103678 DEBUG [2019-08-05 14:57:47]  << Content-Encoding: gzip
-103678 DEBUG [2019-08-05 14:57:47]  << Content-Type: application/json
-103679 DEBUG [2019-08-05 14:57:47]  << Content-Length: 557
-103679 DEBUG [2019-08-05 14:57:47]  << Date: Mon, 05 Aug 2019 06:57:47 GMT
-103679 DEBUG [2019-08-05 14:57:47]  Connection can be kept alive indefinitely
-103679 DEBUG [2019-08-05 14:57:47]   << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]SM[0x8f][0xda]0[0x10][0xfd]/[0xd6][0x1e]!$[0xe1];[0xa7]Ed[0xf][0xa8],[0xa0][0xa5]i[0xf]U[0x85]\g n[0x1d];[0xb2][0x1d]v[0x11][0xe2][0xbf]w[0x1c]7[0xdb][0xc2][0xae][0xaa]V9[0xc4][0x9e]y[0xf3]f[0xe6][0xcd][0xf8]LhU[0x9][0xce][0xa8][0xe5]J[0x1a][0x92][0x9c][0xc9][0x11][0xb4]q[0xe7][0xdd].[0x7]a)I[0xc8]p@:[0xe][0x86][0xa6][0x82][0x9a][0x82][0xa9][0x1c][0xd0][0x9a]mv[0xd1][0xce];[0xda]x[0x92]|9[0x13]IK[0xe7][0x9e]/[0xd7]Y[0xda]}[0x9c]-[0x97][0xdd]l[0xfb][0xf0][0x84]@.[0x8d][0xa5][0x92]A[0x83]j/[0x8b][0x1c][0xb1]B1*[0x2]&T[0x9d][0x7]L[0x95]Is[0xea][0x96]T[0x88]nm@'Q[0x18]F!2[0x14][0xca][0xd8][0x95][0xa7][0xbf][0x9][0xf1]u[0xbc][0x9f][0xb6][0x9a][0xe5][0xb9]FW4[0x8d][0x83]h4[0x9][0xfa]A[0xec][0x1a][0xc2][0xfc][0xb6]6M#xS[0xd8][0xb6][0xe6]y[0xe]r[0xfb]j_}X[0xad]?[0xaf][0xd0]Y)m[0x9d]4w[0xc4][0x97][0xd2]![0xf7] [0xe9]7[0x1][0xae]x[0xab]k [0x17][0xe4][0x3]Vk[0xd8][0xfc][0x86][0xe][0x6][0xfd]+[0xe0][0x9e][\n]"
-103679 DEBUG [2019-08-05 14:57:47]   << "[0xd3] [0x99][0xaa][0xa5][0xd5]'[0xd7]z[0xd4]!9[0xb5]t[0xe][0xd2][0x82]^[0xc8][0xbd]r[0xb1][0xf7]LP[0xe3]*[0xc0][0xc6][0x2][0x9]v/[0xf8]K[0x80][0xed]q[0xf4][0x7][0x8b]V8[0xbc][0xdc][0xa5][0xb0][0xa7][0xb5][0xb0][0xe9]5E[0xa7][0x9d][0xc1][0xe3]i[0xfd],]F[0x1][0xd4]@K[0xaf]A[0xc2]3[0x15][0xb][0x87]?[0xba][0xff][0x16][0x18]f[0x1b]b)[0xb5]n[0xe6][0xd8][0x9a]"[0xb4]i8pc[0xbd][0xfd]#/[0x1][0xb3][0x97][0x95]s[0x8d][0x6][0xd3][0xc9]$[0x1a]OFa[0x8c][0x9][0xa8][0xb1]O[0x9e][0xf7]-([0xe][0xfb][0xf1][0x8][0xa9][0xe0][0xc8][0xd9][\r]M[0xe8]t[0xd3]h[0x87][0xac]z[0x13]8[0x1e][0xf7][0x87][0xd3]i[0x88][0xf5][0x97]`[0xa9][0xd3][0xc9][0x95]_RI[0xf]Pb[0xbb][0x81][0x9f][0xb]i[0xd7][0xe3]{[0xf9][0xd2][0x9a]F1[0xaa][0xef]:/T[0x9][0x1b][0xc4]gZ[0xa0][0xb9][0xb0][0xb6]Jz[0xbd][0xdb]}k[0x8]z[0xaf];[0xf1][0x8f]x[0xca]lM[0xad][0xd2]=[0xee]E/[0x80][\n]"
-103679 DEBUG [2019-08-05 14:57:47]   << "[[0xcc][0xb]`?[0xfe]'[0xda][0x87]a[0xfc][0xd1]o*[0xf8][0xd1]_?[0x1][0xd2][0xee][0xd7][0xa7][0xbf][0x83][0xb8][0x99]+[0xa5]s.q^[0xf2][0x90]r[0xc3][0xdc]b[0x9f][0xb6][0xa8]1[0xe8][0xd7][0x1d][0xf4][0xf3][0xca]*[0x94][0x14][0xf2]?d'WS[0xfd][0x5]K[0xb9][0xb6][0xa7]wA[0xe3][0xf1]`[0xea][0x1e][0x9e][0x1f][0xea][0xa9]r+7K[0xd3][0x87][0x94]\[0xbe][0xe2]w[0xf9][0x9].[0xd2][0xc3][0xdc]\[0x4][0x0][0x0]"
-103681 DEBUG [2019-08-05 14:57:47]  Released connection is reusable.
-103681 DEBUG [2019-08-05 14:57:47]  Releasing connection [{}->http://192.168.3.24:20000][null]
-103681 DEBUG [2019-08-05 14:57:47]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-103681 DEBUG [2019-08-05 14:57:47]  Notifying no-one, there are no waiting threads
-104018 DEBUG [2019-08-05 14:57:48]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-104018 DEBUG [2019-08-05 14:57:48]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-104018 DEBUG [2019-08-05 14:57:48]  Getting free connection [{}->http://192.168.3.24:20000][null]
-104018 DEBUG [2019-08-05 14:57:48]  Stale connection check
-104019 DEBUG [2019-08-05 14:57:48]  CookieSpec selected: default
-104020 DEBUG [2019-08-05 14:57:48]  Auth cache not set in the context
-104020 DEBUG [2019-08-05 14:57:48]  Target auth state: UNCHALLENGED
-104020 DEBUG [2019-08-05 14:57:48]  Proxy auth state: UNCHALLENGED
-104020 DEBUG [2019-08-05 14:57:48]  Attempt 1 to execute request
-104020 DEBUG [2019-08-05 14:57:48]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-104020 DEBUG [2019-08-05 14:57:48]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-104020 DEBUG [2019-08-05 14:57:48]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-104020 DEBUG [2019-08-05 14:57:48]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-104020 DEBUG [2019-08-05 14:57:48]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-104020 DEBUG [2019-08-05 14:57:48]   >> "Accept-Encoding: gzip[\r][\n]"
-104020 DEBUG [2019-08-05 14:57:48]   >> "Content-Length: 0[\r][\n]"
-104020 DEBUG [2019-08-05 14:57:48]   >> "Host: 192.168.3.24:20000[\r][\n]"
-104020 DEBUG [2019-08-05 14:57:48]   >> "Connection: Keep-Alive[\r][\n]"
-104020 DEBUG [2019-08-05 14:57:48]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-104021 DEBUG [2019-08-05 14:57:48]   >> "[\r][\n]"
-104021 DEBUG [2019-08-05 14:57:48]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-104021 DEBUG [2019-08-05 14:57:48]  >> DiscoveryIdentity-Name: DefaultClient
-104021 DEBUG [2019-08-05 14:57:48]  >> DiscoveryIdentity-Version: 1.4
-104021 DEBUG [2019-08-05 14:57:48]  >> DiscoveryIdentity-Id: 192.168.3.24
-104021 DEBUG [2019-08-05 14:57:48]  >> Accept-Encoding: gzip
-104021 DEBUG [2019-08-05 14:57:48]  >> Content-Length: 0
-104021 DEBUG [2019-08-05 14:57:48]  >> Host: 192.168.3.24:20000
-104021 DEBUG [2019-08-05 14:57:48]  >> Connection: Keep-Alive
-104021 DEBUG [2019-08-05 14:57:48]  >> User-Agent: Java-EurekaClient/v1.9.3
-104022 DEBUG [2019-08-05 14:57:48]   << "HTTP/1.1 200 [\r][\n]"
-104022 DEBUG [2019-08-05 14:57:48]   << "Content-Type: application/xml[\r][\n]"
-104022 DEBUG [2019-08-05 14:57:48]   << "Content-Length: 0[\r][\n]"
-104022 DEBUG [2019-08-05 14:57:48]   << "Date: Mon, 05 Aug 2019 06:57:47 GMT[\r][\n]"
-104022 DEBUG [2019-08-05 14:57:48]   << "[\r][\n]"
-104022 DEBUG [2019-08-05 14:57:48]  Receiving response: HTTP/1.1 200 
-104022 DEBUG [2019-08-05 14:57:48]  << HTTP/1.1 200 
-104022 DEBUG [2019-08-05 14:57:48]  << Content-Type: application/xml
-104022 DEBUG [2019-08-05 14:57:48]  << Content-Length: 0
-104022 DEBUG [2019-08-05 14:57:48]  << Date: Mon, 05 Aug 2019 06:57:47 GMT
-104023 DEBUG [2019-08-05 14:57:48]  Connection can be kept alive indefinitely
-104023 DEBUG [2019-08-05 14:57:48]  Released connection is reusable.
-104023 DEBUG [2019-08-05 14:57:48]  Releasing connection [{}->http://192.168.3.24:20000][null]
-104023 DEBUG [2019-08-05 14:57:48]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-104023 DEBUG [2019-08-05 14:57:48]  Notifying no-one, there are no waiting threads
-109023 DEBUG [2019-08-05 14:57:53]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-109024 DEBUG [2019-08-05 14:57:53]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-109024 DEBUG [2019-08-05 14:57:53]  Getting free connection [{}->http://192.168.3.24:20000][null]
-109024 DEBUG [2019-08-05 14:57:53]  Stale connection check
-109025 DEBUG [2019-08-05 14:57:53]  CookieSpec selected: default
-109025 DEBUG [2019-08-05 14:57:53]  Auth cache not set in the context
-109025 DEBUG [2019-08-05 14:57:53]  Target auth state: UNCHALLENGED
-109025 DEBUG [2019-08-05 14:57:53]  Proxy auth state: UNCHALLENGED
-109025 DEBUG [2019-08-05 14:57:53]  Attempt 1 to execute request
-109025 DEBUG [2019-08-05 14:57:53]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-109025 DEBUG [2019-08-05 14:57:53]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-109025 DEBUG [2019-08-05 14:57:53]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-109025 DEBUG [2019-08-05 14:57:53]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-109025 DEBUG [2019-08-05 14:57:53]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-109025 DEBUG [2019-08-05 14:57:53]   >> "Accept-Encoding: gzip[\r][\n]"
-109025 DEBUG [2019-08-05 14:57:53]   >> "Content-Length: 0[\r][\n]"
-109025 DEBUG [2019-08-05 14:57:53]   >> "Host: 192.168.3.24:20000[\r][\n]"
-109025 DEBUG [2019-08-05 14:57:53]   >> "Connection: Keep-Alive[\r][\n]"
-109025 DEBUG [2019-08-05 14:57:53]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-109025 DEBUG [2019-08-05 14:57:53]   >> "[\r][\n]"
-109025 DEBUG [2019-08-05 14:57:53]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-109025 DEBUG [2019-08-05 14:57:53]  >> DiscoveryIdentity-Name: DefaultClient
-109025 DEBUG [2019-08-05 14:57:53]  >> DiscoveryIdentity-Version: 1.4
-109025 DEBUG [2019-08-05 14:57:53]  >> DiscoveryIdentity-Id: 192.168.3.24
-109025 DEBUG [2019-08-05 14:57:53]  >> Accept-Encoding: gzip
-109025 DEBUG [2019-08-05 14:57:53]  >> Content-Length: 0
-109025 DEBUG [2019-08-05 14:57:53]  >> Host: 192.168.3.24:20000
-109025 DEBUG [2019-08-05 14:57:53]  >> Connection: Keep-Alive
-109025 DEBUG [2019-08-05 14:57:53]  >> User-Agent: Java-EurekaClient/v1.9.3
-109027 DEBUG [2019-08-05 14:57:53]   << "HTTP/1.1 200 [\r][\n]"
-109027 DEBUG [2019-08-05 14:57:53]   << "Content-Type: application/xml[\r][\n]"
-109027 DEBUG [2019-08-05 14:57:53]   << "Content-Length: 0[\r][\n]"
-109027 DEBUG [2019-08-05 14:57:53]   << "Date: Mon, 05 Aug 2019 06:57:53 GMT[\r][\n]"
-109027 DEBUG [2019-08-05 14:57:53]   << "[\r][\n]"
-109027 DEBUG [2019-08-05 14:57:53]  Receiving response: HTTP/1.1 200 
-109027 DEBUG [2019-08-05 14:57:53]  << HTTP/1.1 200 
-109027 DEBUG [2019-08-05 14:57:53]  << Content-Type: application/xml
-109027 DEBUG [2019-08-05 14:57:53]  << Content-Length: 0
-109027 DEBUG [2019-08-05 14:57:53]  << Date: Mon, 05 Aug 2019 06:57:53 GMT
-109027 DEBUG [2019-08-05 14:57:53]  Connection can be kept alive indefinitely
-109027 DEBUG [2019-08-05 14:57:53]  Released connection is reusable.
-109027 DEBUG [2019-08-05 14:57:53]  Releasing connection [{}->http://192.168.3.24:20000][null]
-109027 DEBUG [2019-08-05 14:57:53]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-109027 DEBUG [2019-08-05 14:57:53]  Notifying no-one, there are no waiting threads
-114029 DEBUG [2019-08-05 14:57:58]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-114029 DEBUG [2019-08-05 14:57:58]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-114029 DEBUG [2019-08-05 14:57:58]  Getting free connection [{}->http://192.168.3.24:20000][null]
-114029 DEBUG [2019-08-05 14:57:58]  Stale connection check
-114031 DEBUG [2019-08-05 14:57:58]  CookieSpec selected: default
-114031 DEBUG [2019-08-05 14:57:58]  Auth cache not set in the context
-114031 DEBUG [2019-08-05 14:57:58]  Target auth state: UNCHALLENGED
-114031 DEBUG [2019-08-05 14:57:58]  Proxy auth state: UNCHALLENGED
-114031 DEBUG [2019-08-05 14:57:58]  Attempt 1 to execute request
-114031 DEBUG [2019-08-05 14:57:58]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-114031 DEBUG [2019-08-05 14:57:58]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-114031 DEBUG [2019-08-05 14:57:58]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-114031 DEBUG [2019-08-05 14:57:58]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-114031 DEBUG [2019-08-05 14:57:58]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-114031 DEBUG [2019-08-05 14:57:58]   >> "Accept-Encoding: gzip[\r][\n]"
-114031 DEBUG [2019-08-05 14:57:58]   >> "Content-Length: 0[\r][\n]"
-114032 DEBUG [2019-08-05 14:57:58]   >> "Host: 192.168.3.24:20000[\r][\n]"
-114032 DEBUG [2019-08-05 14:57:58]   >> "Connection: Keep-Alive[\r][\n]"
-114032 DEBUG [2019-08-05 14:57:58]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-114032 DEBUG [2019-08-05 14:57:58]   >> "[\r][\n]"
-114032 DEBUG [2019-08-05 14:57:58]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-114032 DEBUG [2019-08-05 14:57:58]  >> DiscoveryIdentity-Name: DefaultClient
-114032 DEBUG [2019-08-05 14:57:58]  >> DiscoveryIdentity-Version: 1.4
-114032 DEBUG [2019-08-05 14:57:58]  >> DiscoveryIdentity-Id: 192.168.3.24
-114032 DEBUG [2019-08-05 14:57:58]  >> Accept-Encoding: gzip
-114032 DEBUG [2019-08-05 14:57:58]  >> Content-Length: 0
-114032 DEBUG [2019-08-05 14:57:58]  >> Host: 192.168.3.24:20000
-114032 DEBUG [2019-08-05 14:57:58]  >> Connection: Keep-Alive
-114032 DEBUG [2019-08-05 14:57:58]  >> User-Agent: Java-EurekaClient/v1.9.3
-114033 DEBUG [2019-08-05 14:57:58]   << "HTTP/1.1 200 [\r][\n]"
-114033 DEBUG [2019-08-05 14:57:58]   << "Content-Type: application/xml[\r][\n]"
-114033 DEBUG [2019-08-05 14:57:58]   << "Content-Length: 0[\r][\n]"
-114033 DEBUG [2019-08-05 14:57:58]   << "Date: Mon, 05 Aug 2019 06:57:58 GMT[\r][\n]"
-114034 DEBUG [2019-08-05 14:57:58]   << "[\r][\n]"
-114034 DEBUG [2019-08-05 14:57:58]  Receiving response: HTTP/1.1 200 
-114034 DEBUG [2019-08-05 14:57:58]  << HTTP/1.1 200 
-114034 DEBUG [2019-08-05 14:57:58]  << Content-Type: application/xml
-114034 DEBUG [2019-08-05 14:57:58]  << Content-Length: 0
-114034 DEBUG [2019-08-05 14:57:58]  << Date: Mon, 05 Aug 2019 06:57:58 GMT
-114034 DEBUG [2019-08-05 14:57:58]  Connection can be kept alive indefinitely
-114034 DEBUG [2019-08-05 14:57:58]  Released connection is reusable.
-114034 DEBUG [2019-08-05 14:57:58]  Releasing connection [{}->http://192.168.3.24:20000][null]
-114034 DEBUG [2019-08-05 14:57:58]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-114034 DEBUG [2019-08-05 14:57:58]  Notifying no-one, there are no waiting threads
-115800 DEBUG [2019-08-05 14:58:00]  Returning cached instance of singleton bean 'sessionRepository'
-115800 DEBUG [2019-08-05 14:58:00]  Cleaning up sessions expiring at Mon Aug 05 14:58:00 CST 2019
-115800 DEBUG [2019-08-05 14:58:00]  Opening RedisConnection
-115802 DEBUG [2019-08-05 14:58:00]  Closing Redis Connection
-115802 DEBUG [2019-08-05 14:58:00]  Opening RedisConnection
-115803 DEBUG [2019-08-05 14:58:00]  Closing Redis Connection
-119036 DEBUG [2019-08-05 14:58:03]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-119036 DEBUG [2019-08-05 14:58:03]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-119036 DEBUG [2019-08-05 14:58:03]  Getting free connection [{}->http://192.168.3.24:20000][null]
-119036 DEBUG [2019-08-05 14:58:03]  Stale connection check
-119037 DEBUG [2019-08-05 14:58:03]  CookieSpec selected: default
-119038 DEBUG [2019-08-05 14:58:03]  Auth cache not set in the context
-119038 DEBUG [2019-08-05 14:58:03]  Target auth state: UNCHALLENGED
-119038 DEBUG [2019-08-05 14:58:03]  Proxy auth state: UNCHALLENGED
-119038 DEBUG [2019-08-05 14:58:03]  Attempt 1 to execute request
-119038 DEBUG [2019-08-05 14:58:03]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-119038 DEBUG [2019-08-05 14:58:03]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-119038 DEBUG [2019-08-05 14:58:03]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-119038 DEBUG [2019-08-05 14:58:03]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-119038 DEBUG [2019-08-05 14:58:03]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-119038 DEBUG [2019-08-05 14:58:03]   >> "Accept-Encoding: gzip[\r][\n]"
-119038 DEBUG [2019-08-05 14:58:03]   >> "Content-Length: 0[\r][\n]"
-119038 DEBUG [2019-08-05 14:58:03]   >> "Host: 192.168.3.24:20000[\r][\n]"
-119038 DEBUG [2019-08-05 14:58:03]   >> "Connection: Keep-Alive[\r][\n]"
-119038 DEBUG [2019-08-05 14:58:03]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-119038 DEBUG [2019-08-05 14:58:03]   >> "[\r][\n]"
-119038 DEBUG [2019-08-05 14:58:03]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-119038 DEBUG [2019-08-05 14:58:03]  >> DiscoveryIdentity-Name: DefaultClient
-119038 DEBUG [2019-08-05 14:58:03]  >> DiscoveryIdentity-Version: 1.4
-119038 DEBUG [2019-08-05 14:58:03]  >> DiscoveryIdentity-Id: 192.168.3.24
-119038 DEBUG [2019-08-05 14:58:03]  >> Accept-Encoding: gzip
-119038 DEBUG [2019-08-05 14:58:03]  >> Content-Length: 0
-119038 DEBUG [2019-08-05 14:58:03]  >> Host: 192.168.3.24:20000
-119038 DEBUG [2019-08-05 14:58:03]  >> Connection: Keep-Alive
-119038 DEBUG [2019-08-05 14:58:03]  >> User-Agent: Java-EurekaClient/v1.9.3
-119039 DEBUG [2019-08-05 14:58:03]   << "HTTP/1.1 200 [\r][\n]"
-119040 DEBUG [2019-08-05 14:58:03]   << "Content-Type: application/xml[\r][\n]"
-119040 DEBUG [2019-08-05 14:58:03]   << "Content-Length: 0[\r][\n]"
-119040 DEBUG [2019-08-05 14:58:03]   << "Date: Mon, 05 Aug 2019 06:58:03 GMT[\r][\n]"
-119040 DEBUG [2019-08-05 14:58:03]   << "[\r][\n]"
-119040 DEBUG [2019-08-05 14:58:03]  Receiving response: HTTP/1.1 200 
-119040 DEBUG [2019-08-05 14:58:03]  << HTTP/1.1 200 
-119040 DEBUG [2019-08-05 14:58:03]  << Content-Type: application/xml
-119040 DEBUG [2019-08-05 14:58:03]  << Content-Length: 0
-119040 DEBUG [2019-08-05 14:58:03]  << Date: Mon, 05 Aug 2019 06:58:03 GMT
-119040 DEBUG [2019-08-05 14:58:03]  Connection can be kept alive indefinitely
-119040 DEBUG [2019-08-05 14:58:03]  Released connection is reusable.
-119040 DEBUG [2019-08-05 14:58:03]  Releasing connection [{}->http://192.168.3.24:20000][null]
-119040 DEBUG [2019-08-05 14:58:03]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-119040 DEBUG [2019-08-05 14:58:03]  Notifying no-one, there are no waiting threads
-124042 DEBUG [2019-08-05 14:58:08]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-124042 DEBUG [2019-08-05 14:58:08]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-124042 DEBUG [2019-08-05 14:58:08]  Getting free connection [{}->http://192.168.3.24:20000][null]
-124042 DEBUG [2019-08-05 14:58:08]  Stale connection check
-124044 DEBUG [2019-08-05 14:58:08]  CookieSpec selected: default
-124044 DEBUG [2019-08-05 14:58:08]  Auth cache not set in the context
-124044 DEBUG [2019-08-05 14:58:08]  Target auth state: UNCHALLENGED
-124044 DEBUG [2019-08-05 14:58:08]  Proxy auth state: UNCHALLENGED
-124044 DEBUG [2019-08-05 14:58:08]  Attempt 1 to execute request
-124044 DEBUG [2019-08-05 14:58:08]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-124044 DEBUG [2019-08-05 14:58:08]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-124044 DEBUG [2019-08-05 14:58:08]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-124044 DEBUG [2019-08-05 14:58:08]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-124044 DEBUG [2019-08-05 14:58:08]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-124044 DEBUG [2019-08-05 14:58:08]   >> "Accept-Encoding: gzip[\r][\n]"
-124044 DEBUG [2019-08-05 14:58:08]   >> "Content-Length: 0[\r][\n]"
-124044 DEBUG [2019-08-05 14:58:08]   >> "Host: 192.168.3.24:20000[\r][\n]"
-124045 DEBUG [2019-08-05 14:58:08]   >> "Connection: Keep-Alive[\r][\n]"
-124045 DEBUG [2019-08-05 14:58:08]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-124045 DEBUG [2019-08-05 14:58:08]   >> "[\r][\n]"
-124045 DEBUG [2019-08-05 14:58:08]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-124045 DEBUG [2019-08-05 14:58:08]  >> DiscoveryIdentity-Name: DefaultClient
-124045 DEBUG [2019-08-05 14:58:08]  >> DiscoveryIdentity-Version: 1.4
-124045 DEBUG [2019-08-05 14:58:08]  >> DiscoveryIdentity-Id: 192.168.3.24
-124045 DEBUG [2019-08-05 14:58:08]  >> Accept-Encoding: gzip
-124045 DEBUG [2019-08-05 14:58:08]  >> Content-Length: 0
-124045 DEBUG [2019-08-05 14:58:08]  >> Host: 192.168.3.24:20000
-124045 DEBUG [2019-08-05 14:58:08]  >> Connection: Keep-Alive
-124045 DEBUG [2019-08-05 14:58:08]  >> User-Agent: Java-EurekaClient/v1.9.3
-124046 DEBUG [2019-08-05 14:58:08]   << "HTTP/1.1 200 [\r][\n]"
-124046 DEBUG [2019-08-05 14:58:08]   << "Content-Type: application/xml[\r][\n]"
-124046 DEBUG [2019-08-05 14:58:08]   << "Content-Length: 0[\r][\n]"
-124046 DEBUG [2019-08-05 14:58:08]   << "Date: Mon, 05 Aug 2019 06:58:08 GMT[\r][\n]"
-124046 DEBUG [2019-08-05 14:58:08]   << "[\r][\n]"
-124046 DEBUG [2019-08-05 14:58:08]  Receiving response: HTTP/1.1 200 
-124046 DEBUG [2019-08-05 14:58:08]  << HTTP/1.1 200 
-124046 DEBUG [2019-08-05 14:58:08]  << Content-Type: application/xml
-124046 DEBUG [2019-08-05 14:58:08]  << Content-Length: 0
-124047 DEBUG [2019-08-05 14:58:08]  << Date: Mon, 05 Aug 2019 06:58:08 GMT
-124047 DEBUG [2019-08-05 14:58:08]  Connection can be kept alive indefinitely
-124047 DEBUG [2019-08-05 14:58:08]  Released connection is reusable.
-124047 DEBUG [2019-08-05 14:58:08]  Releasing connection [{}->http://192.168.3.24:20000][null]
-124047 DEBUG [2019-08-05 14:58:08]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-124047 DEBUG [2019-08-05 14:58:08]  Notifying no-one, there are no waiting threads
-129048 DEBUG [2019-08-05 14:58:13]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-129048 DEBUG [2019-08-05 14:58:13]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-129048 DEBUG [2019-08-05 14:58:13]  Getting free connection [{}->http://192.168.3.24:20000][null]
-129048 DEBUG [2019-08-05 14:58:13]  Stale connection check
-129049 DEBUG [2019-08-05 14:58:13]  CookieSpec selected: default
-129050 DEBUG [2019-08-05 14:58:13]  Auth cache not set in the context
-129050 DEBUG [2019-08-05 14:58:13]  Target auth state: UNCHALLENGED
-129050 DEBUG [2019-08-05 14:58:13]  Proxy auth state: UNCHALLENGED
-129050 DEBUG [2019-08-05 14:58:13]  Attempt 1 to execute request
-129050 DEBUG [2019-08-05 14:58:13]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-129050 DEBUG [2019-08-05 14:58:13]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-129050 DEBUG [2019-08-05 14:58:13]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-129050 DEBUG [2019-08-05 14:58:13]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-129050 DEBUG [2019-08-05 14:58:13]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-129050 DEBUG [2019-08-05 14:58:13]   >> "Accept-Encoding: gzip[\r][\n]"
-129050 DEBUG [2019-08-05 14:58:13]   >> "Content-Length: 0[\r][\n]"
-129050 DEBUG [2019-08-05 14:58:13]   >> "Host: 192.168.3.24:20000[\r][\n]"
-129050 DEBUG [2019-08-05 14:58:13]   >> "Connection: Keep-Alive[\r][\n]"
-129050 DEBUG [2019-08-05 14:58:13]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-129050 DEBUG [2019-08-05 14:58:13]   >> "[\r][\n]"
-129050 DEBUG [2019-08-05 14:58:13]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-129050 DEBUG [2019-08-05 14:58:13]  >> DiscoveryIdentity-Name: DefaultClient
-129050 DEBUG [2019-08-05 14:58:13]  >> DiscoveryIdentity-Version: 1.4
-129050 DEBUG [2019-08-05 14:58:13]  >> DiscoveryIdentity-Id: 192.168.3.24
-129050 DEBUG [2019-08-05 14:58:13]  >> Accept-Encoding: gzip
-129050 DEBUG [2019-08-05 14:58:13]  >> Content-Length: 0
-129050 DEBUG [2019-08-05 14:58:13]  >> Host: 192.168.3.24:20000
-129050 DEBUG [2019-08-05 14:58:13]  >> Connection: Keep-Alive
-129050 DEBUG [2019-08-05 14:58:13]  >> User-Agent: Java-EurekaClient/v1.9.3
-129171 DEBUG [2019-08-05 14:58:13]   << "HTTP/1.1 200 [\r][\n]"
-129171 DEBUG [2019-08-05 14:58:13]   << "Content-Type: application/xml[\r][\n]"
-129171 DEBUG [2019-08-05 14:58:13]   << "Content-Length: 0[\r][\n]"
-129171 DEBUG [2019-08-05 14:58:13]   << "Date: Mon, 05 Aug 2019 06:58:13 GMT[\r][\n]"
-129171 DEBUG [2019-08-05 14:58:13]   << "[\r][\n]"
-129171 DEBUG [2019-08-05 14:58:13]  Receiving response: HTTP/1.1 200 
-129171 DEBUG [2019-08-05 14:58:13]  << HTTP/1.1 200 
-129171 DEBUG [2019-08-05 14:58:13]  << Content-Type: application/xml
-129171 DEBUG [2019-08-05 14:58:13]  << Content-Length: 0
-129171 DEBUG [2019-08-05 14:58:13]  << Date: Mon, 05 Aug 2019 06:58:13 GMT
-129171 DEBUG [2019-08-05 14:58:13]  Connection can be kept alive indefinitely
-129171 DEBUG [2019-08-05 14:58:13]  Released connection is reusable.
-129171 DEBUG [2019-08-05 14:58:13]  Releasing connection [{}->http://192.168.3.24:20000][null]
-129171 DEBUG [2019-08-05 14:58:13]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-129171 DEBUG [2019-08-05 14:58:13]  Notifying no-one, there are no waiting threads
-132934 DEBUG [2019-08-05 14:58:17]  Closing connections idle longer than 30000 SECONDS
-132934 DEBUG [2019-08-05 14:58:17]  Closing connections idle longer than 30000 SECONDS
-133682 DEBUG [2019-08-05 14:58:17]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-133682 DEBUG [2019-08-05 14:58:17]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-133682 DEBUG [2019-08-05 14:58:17]  Getting free connection [{}->http://192.168.3.24:20000][null]
-133682 DEBUG [2019-08-05 14:58:17]  Stale connection check
-133684 DEBUG [2019-08-05 14:58:17]  CookieSpec selected: default
-133684 DEBUG [2019-08-05 14:58:17]  Auth cache not set in the context
-133684 DEBUG [2019-08-05 14:58:17]  Target auth state: UNCHALLENGED
-133684 DEBUG [2019-08-05 14:58:17]  Proxy auth state: UNCHALLENGED
-133684 DEBUG [2019-08-05 14:58:17]  Attempt 1 to execute request
-133684 DEBUG [2019-08-05 14:58:17]  Sending request: GET /eureka/apps/delta HTTP/1.1
-133684 DEBUG [2019-08-05 14:58:17]   >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
-133684 DEBUG [2019-08-05 14:58:17]   >> "Accept: application/json[\r][\n]"
-133684 DEBUG [2019-08-05 14:58:17]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-133684 DEBUG [2019-08-05 14:58:17]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-133684 DEBUG [2019-08-05 14:58:17]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-133685 DEBUG [2019-08-05 14:58:17]   >> "Accept-Encoding: gzip[\r][\n]"
-133685 DEBUG [2019-08-05 14:58:17]   >> "Host: 192.168.3.24:20000[\r][\n]"
-133685 DEBUG [2019-08-05 14:58:17]   >> "Connection: Keep-Alive[\r][\n]"
-133685 DEBUG [2019-08-05 14:58:17]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-133685 DEBUG [2019-08-05 14:58:17]   >> "[\r][\n]"
-133685 DEBUG [2019-08-05 14:58:17]  >> GET /eureka/apps/delta HTTP/1.1
-133685 DEBUG [2019-08-05 14:58:17]  >> Accept: application/json
-133685 DEBUG [2019-08-05 14:58:17]  >> DiscoveryIdentity-Name: DefaultClient
-133685 DEBUG [2019-08-05 14:58:17]  >> DiscoveryIdentity-Version: 1.4
-133685 DEBUG [2019-08-05 14:58:17]  >> DiscoveryIdentity-Id: 192.168.3.24
-133685 DEBUG [2019-08-05 14:58:17]  >> Accept-Encoding: gzip
-133685 DEBUG [2019-08-05 14:58:17]  >> Host: 192.168.3.24:20000
-133685 DEBUG [2019-08-05 14:58:17]  >> Connection: Keep-Alive
-133685 DEBUG [2019-08-05 14:58:17]  >> User-Agent: Java-EurekaClient/v1.9.3
-133688 DEBUG [2019-08-05 14:58:17]   << "HTTP/1.1 200 [\r][\n]"
-133688 DEBUG [2019-08-05 14:58:17]   << "Content-Encoding: gzip[\r][\n]"
-133688 DEBUG [2019-08-05 14:58:17]   << "Content-Type: application/json[\r][\n]"
-133688 DEBUG [2019-08-05 14:58:17]   << "Content-Length: 557[\r][\n]"
-133688 DEBUG [2019-08-05 14:58:17]   << "Date: Mon, 05 Aug 2019 06:58:17 GMT[\r][\n]"
-133688 DEBUG [2019-08-05 14:58:17]   << "[\r][\n]"
-133688 DEBUG [2019-08-05 14:58:17]  Receiving response: HTTP/1.1 200 
-133688 DEBUG [2019-08-05 14:58:17]  << HTTP/1.1 200 
-133688 DEBUG [2019-08-05 14:58:17]  << Content-Encoding: gzip
-133689 DEBUG [2019-08-05 14:58:17]  << Content-Type: application/json
-133689 DEBUG [2019-08-05 14:58:17]  << Content-Length: 557
-133689 DEBUG [2019-08-05 14:58:17]  << Date: Mon, 05 Aug 2019 06:58:17 GMT
-133689 DEBUG [2019-08-05 14:58:17]  Connection can be kept alive indefinitely
-133689 DEBUG [2019-08-05 14:58:17]   << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]SM[0x8f][0xda]0[0x10][0xfd]/[0xd6][0x1e]!$[0xe1];[0xa7]Ed[0xf][0xa8],[0xa0][0xa5]i[0xf]U[0x85]\g n[0x1d];[0xb2][0x1d]v[0x11][0xe2][0xbf]w[0x1c]7[0xdb][0xc2][0xae][0xaa]V9[0xc4][0x9e]y[0xf3]f[0xe6][0xcd][0xf8]LhU[0x9][0xce][0xa8][0xe5]J[0x1a][0x92][0x9c][0xc9][0x11][0xb4]q[0xe7][0xdd].[0x7]a)I[0xc8]p@:[0xe][0x86][0xa6][0x82][0x9a][0x82][0xa9][0x1c][0xd0][0x9a]mv[0xd1][0xce];[0xda]x[0x92]|9[0x13]IK[0xe7][0x9e]/[0xd7]Y[0xda]}[0x9c]-[0x97][0xdd]l[0xfb][0xf0][0x84]@.[0x8d][0xa5][0x92]A[0x83]j/[0x8b][0x1c][0xb1]B1*[0x2]&T[0x9d][0x7]L[0x95]Is[0xea][0x96]T[0x88]nm@'Q[0x18]F!2[0x14][0xca][0xd8][0x95][0xa7][0xbf][0x9][0xf1]u[0xbc][0x9f][0xb6][0x9a][0xe5][0xb9]FW4[0x8d][0x83]h4[0x9][0xfa]A[0xec][0x1a][0xc2][0xfc][0xb6]6M#xS[0xd8][0xb6][0xe6]y[0xe]r[0xfb]j_}X[0xad]?[0xaf][0xd0]Y)m[0x9d]4w[0xc4][0x97][0xd2]![0xf7] [0xe9]7[0x1][0xae]x[0xab]k [0x17][0xe4][0x3]Vk[0xd8][0xfc][0x86][0xe][0x6][0xfd]+[0xe0][0x9e][\n]"
-133689 DEBUG [2019-08-05 14:58:17]   << "[0xd3] [0x99][0xaa][0xa5][0xd5]'[0xd7]z[0xd4]!9[0xb5]t[0xe][0xd2][0x82]^[0xc8][0xbd]r[0xb1][0xf7]LP[0xe3]*[0xc0][0xc6][0x2][0x9]v/[0xf8]K[0x80][0xed]q[0xf4][0x7][0x8b]V8[0xbc][0xdc][0xa5][0xb0][0xa7][0xb5][0xb0][0xe9]5E[0xa7][0x9d][0xc1][0xe3]i[0xfd],]F[0x1][0xd4]@K[0xaf]A[0xc2]3[0x15][0xb][0x87]?[0xba][0xff][0x16][0x18]f[0x1b]b)[0xb5]n[0xe6][0xd8][0x9a]"[0xb4]i8pc[0xbd][0xfd]#/[0x1][0xb3][0x97][0x95]s[0x8d][0x6][0xd3][0xc9]$[0x1a]OFa[0x8c][0x9][0xa8][0xb1]O[0x9e][0xf7]-([0xe][0xfb][0xf1][0x8][0xa9][0xe0][0xc8][0xd9][\r]M[0xe8]t[0xd3]h[0x87][0xac]z[0x13]8[0x1e][0xf7][0x87][0xd3]i[0x88][0xf5][0x97]`[0xa9][0xd3][0xc9][0x95]_RI[0xf]Pb[0xbb][0x81][0x9f][0xb]i[0xd7][0xe3]{[0xf9][0xd2][0x9a]F1[0xaa][0xef]:/T[0x9][0x1b][0xc4]gZ[0xa0][0xb9][0xb0][0xb6]Jz[0xbd][0xdb]}k[0x8]z[0xaf];[0xf1][0x8f]x[0xca]lM[0xad][0xd2]=[0xee]E/[0x80][\n]"
-133689 DEBUG [2019-08-05 14:58:17]   << "[[0xcc][0xb]`?[0xfe]'[0xda][0x87]a[0xfc][0xd1]o*[0xf8][0xd1]_?[0x1][0xd2][0xee][0xd7][0xa7][0xbf][0x83][0xb8][0x99]+[0xa5]s.q^[0xf2][0x90]r[0xc3][0xdc]b[0x9f][0xb6][0xa8]1[0xe8][0xd7][0x1d][0xf4][0xf3][0xca]*[0x94][0x14][0xf2]?d'WS[0xfd][0x5]K[0xb9][0xb6][0xa7]wA[0xe3][0xf1]`[0xea][0x1e][0x9e][0x1f][0xea][0xa9]r+7K[0xd3][0x87][0x94]\[0xbe][0xe2]w[0xf9][0x9].[0xd2][0xc3][0xdc]\[0x4][0x0][0x0]"
-133690 DEBUG [2019-08-05 14:58:17]  Released connection is reusable.
-133690 DEBUG [2019-08-05 14:58:17]  Releasing connection [{}->http://192.168.3.24:20000][null]
-133691 DEBUG [2019-08-05 14:58:17]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-133691 DEBUG [2019-08-05 14:58:17]  Notifying no-one, there are no waiting threads
-134173 DEBUG [2019-08-05 14:58:18]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-134174 DEBUG [2019-08-05 14:58:18]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-134174 DEBUG [2019-08-05 14:58:18]  Getting free connection [{}->http://192.168.3.24:20000][null]
-134174 DEBUG [2019-08-05 14:58:18]  Stale connection check
-134175 DEBUG [2019-08-05 14:58:18]  CookieSpec selected: default
-134176 DEBUG [2019-08-05 14:58:18]  Auth cache not set in the context
-134176 DEBUG [2019-08-05 14:58:18]  Target auth state: UNCHALLENGED
-134176 DEBUG [2019-08-05 14:58:18]  Proxy auth state: UNCHALLENGED
-134176 DEBUG [2019-08-05 14:58:18]  Attempt 1 to execute request
-134176 DEBUG [2019-08-05 14:58:18]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-134176 DEBUG [2019-08-05 14:58:18]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-134176 DEBUG [2019-08-05 14:58:18]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-134176 DEBUG [2019-08-05 14:58:18]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-134176 DEBUG [2019-08-05 14:58:18]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-134176 DEBUG [2019-08-05 14:58:18]   >> "Accept-Encoding: gzip[\r][\n]"
-134176 DEBUG [2019-08-05 14:58:18]   >> "Content-Length: 0[\r][\n]"
-134176 DEBUG [2019-08-05 14:58:18]   >> "Host: 192.168.3.24:20000[\r][\n]"
-134176 DEBUG [2019-08-05 14:58:18]   >> "Connection: Keep-Alive[\r][\n]"
-134176 DEBUG [2019-08-05 14:58:18]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-134176 DEBUG [2019-08-05 14:58:18]   >> "[\r][\n]"
-134176 DEBUG [2019-08-05 14:58:18]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-134176 DEBUG [2019-08-05 14:58:18]  >> DiscoveryIdentity-Name: DefaultClient
-134176 DEBUG [2019-08-05 14:58:18]  >> DiscoveryIdentity-Version: 1.4
-134176 DEBUG [2019-08-05 14:58:18]  >> DiscoveryIdentity-Id: 192.168.3.24
-134176 DEBUG [2019-08-05 14:58:18]  >> Accept-Encoding: gzip
-134176 DEBUG [2019-08-05 14:58:18]  >> Content-Length: 0
-134176 DEBUG [2019-08-05 14:58:18]  >> Host: 192.168.3.24:20000
-134176 DEBUG [2019-08-05 14:58:18]  >> Connection: Keep-Alive
-134176 DEBUG [2019-08-05 14:58:18]  >> User-Agent: Java-EurekaClient/v1.9.3
-134178 DEBUG [2019-08-05 14:58:18]   << "HTTP/1.1 200 [\r][\n]"
-134178 DEBUG [2019-08-05 14:58:18]   << "Content-Type: application/xml[\r][\n]"
-134178 DEBUG [2019-08-05 14:58:18]   << "Content-Length: 0[\r][\n]"
-134178 DEBUG [2019-08-05 14:58:18]   << "Date: Mon, 05 Aug 2019 06:58:17 GMT[\r][\n]"
-134178 DEBUG [2019-08-05 14:58:18]   << "[\r][\n]"
-134178 DEBUG [2019-08-05 14:58:18]  Receiving response: HTTP/1.1 200 
-134178 DEBUG [2019-08-05 14:58:18]  << HTTP/1.1 200 
-134178 DEBUG [2019-08-05 14:58:18]  << Content-Type: application/xml
-134178 DEBUG [2019-08-05 14:58:18]  << Content-Length: 0
-134178 DEBUG [2019-08-05 14:58:18]  << Date: Mon, 05 Aug 2019 06:58:17 GMT
-134178 DEBUG [2019-08-05 14:58:18]  Connection can be kept alive indefinitely
-134178 DEBUG [2019-08-05 14:58:18]  Released connection is reusable.
-134178 DEBUG [2019-08-05 14:58:18]  Releasing connection [{}->http://192.168.3.24:20000][null]
-134178 DEBUG [2019-08-05 14:58:18]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-134178 DEBUG [2019-08-05 14:58:18]  Notifying no-one, there are no waiting threads
-139179 DEBUG [2019-08-05 14:58:23]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-139179 DEBUG [2019-08-05 14:58:23]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-139179 DEBUG [2019-08-05 14:58:23]  Getting free connection [{}->http://192.168.3.24:20000][null]
-139179 DEBUG [2019-08-05 14:58:23]  Stale connection check
-139180 DEBUG [2019-08-05 14:58:23]  CookieSpec selected: default
-139181 DEBUG [2019-08-05 14:58:23]  Auth cache not set in the context
-139181 DEBUG [2019-08-05 14:58:23]  Target auth state: UNCHALLENGED
-139181 DEBUG [2019-08-05 14:58:23]  Proxy auth state: UNCHALLENGED
-139181 DEBUG [2019-08-05 14:58:23]  Attempt 1 to execute request
-139181 DEBUG [2019-08-05 14:58:23]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-139181 DEBUG [2019-08-05 14:58:23]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-139181 DEBUG [2019-08-05 14:58:23]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-139181 DEBUG [2019-08-05 14:58:23]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-139181 DEBUG [2019-08-05 14:58:23]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-139181 DEBUG [2019-08-05 14:58:23]   >> "Accept-Encoding: gzip[\r][\n]"
-139181 DEBUG [2019-08-05 14:58:23]   >> "Content-Length: 0[\r][\n]"
-139181 DEBUG [2019-08-05 14:58:23]   >> "Host: 192.168.3.24:20000[\r][\n]"
-139181 DEBUG [2019-08-05 14:58:23]   >> "Connection: Keep-Alive[\r][\n]"
-139181 DEBUG [2019-08-05 14:58:23]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-139181 DEBUG [2019-08-05 14:58:23]   >> "[\r][\n]"
-139181 DEBUG [2019-08-05 14:58:23]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-139181 DEBUG [2019-08-05 14:58:23]  >> DiscoveryIdentity-Name: DefaultClient
-139181 DEBUG [2019-08-05 14:58:23]  >> DiscoveryIdentity-Version: 1.4
-139181 DEBUG [2019-08-05 14:58:23]  >> DiscoveryIdentity-Id: 192.168.3.24
-139181 DEBUG [2019-08-05 14:58:23]  >> Accept-Encoding: gzip
-139181 DEBUG [2019-08-05 14:58:23]  >> Content-Length: 0
-139181 DEBUG [2019-08-05 14:58:23]  >> Host: 192.168.3.24:20000
-139181 DEBUG [2019-08-05 14:58:23]  >> Connection: Keep-Alive
-139181 DEBUG [2019-08-05 14:58:23]  >> User-Agent: Java-EurekaClient/v1.9.3
-139185 DEBUG [2019-08-05 14:58:23]   << "HTTP/1.1 200 [\r][\n]"
-139185 DEBUG [2019-08-05 14:58:23]   << "Content-Type: application/xml[\r][\n]"
-139185 DEBUG [2019-08-05 14:58:23]   << "Content-Length: 0[\r][\n]"
-139185 DEBUG [2019-08-05 14:58:23]   << "Date: Mon, 05 Aug 2019 06:58:23 GMT[\r][\n]"
-139185 DEBUG [2019-08-05 14:58:23]   << "[\r][\n]"
-139185 DEBUG [2019-08-05 14:58:23]  Receiving response: HTTP/1.1 200 
-139185 DEBUG [2019-08-05 14:58:23]  << HTTP/1.1 200 
-139185 DEBUG [2019-08-05 14:58:23]  << Content-Type: application/xml
-139185 DEBUG [2019-08-05 14:58:23]  << Content-Length: 0
-139185 DEBUG [2019-08-05 14:58:23]  << Date: Mon, 05 Aug 2019 06:58:23 GMT
-139185 DEBUG [2019-08-05 14:58:23]  Connection can be kept alive indefinitely
-139185 DEBUG [2019-08-05 14:58:23]  Released connection is reusable.
-139185 DEBUG [2019-08-05 14:58:23]  Releasing connection [{}->http://192.168.3.24:20000][null]
-139185 DEBUG [2019-08-05 14:58:23]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-139186 DEBUG [2019-08-05 14:58:23]  Notifying no-one, there are no waiting threads
-144187 DEBUG [2019-08-05 14:58:28]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-144187 DEBUG [2019-08-05 14:58:28]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-144187 DEBUG [2019-08-05 14:58:28]  Getting free connection [{}->http://192.168.3.24:20000][null]
-144187 DEBUG [2019-08-05 14:58:28]  Stale connection check
-144189 DEBUG [2019-08-05 14:58:28]  CookieSpec selected: default
-144189 DEBUG [2019-08-05 14:58:28]  Auth cache not set in the context
-144189 DEBUG [2019-08-05 14:58:28]  Target auth state: UNCHALLENGED
-144189 DEBUG [2019-08-05 14:58:28]  Proxy auth state: UNCHALLENGED
-144189 DEBUG [2019-08-05 14:58:28]  Attempt 1 to execute request
-144189 DEBUG [2019-08-05 14:58:28]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-144189 DEBUG [2019-08-05 14:58:28]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-144189 DEBUG [2019-08-05 14:58:28]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-144189 DEBUG [2019-08-05 14:58:28]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-144189 DEBUG [2019-08-05 14:58:28]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-144189 DEBUG [2019-08-05 14:58:28]   >> "Accept-Encoding: gzip[\r][\n]"
-144189 DEBUG [2019-08-05 14:58:28]   >> "Content-Length: 0[\r][\n]"
-144189 DEBUG [2019-08-05 14:58:28]   >> "Host: 192.168.3.24:20000[\r][\n]"
-144189 DEBUG [2019-08-05 14:58:28]   >> "Connection: Keep-Alive[\r][\n]"
-144190 DEBUG [2019-08-05 14:58:28]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-144190 DEBUG [2019-08-05 14:58:28]   >> "[\r][\n]"
-144190 DEBUG [2019-08-05 14:58:28]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-144190 DEBUG [2019-08-05 14:58:28]  >> DiscoveryIdentity-Name: DefaultClient
-144190 DEBUG [2019-08-05 14:58:28]  >> DiscoveryIdentity-Version: 1.4
-144190 DEBUG [2019-08-05 14:58:28]  >> DiscoveryIdentity-Id: 192.168.3.24
-144190 DEBUG [2019-08-05 14:58:28]  >> Accept-Encoding: gzip
-144190 DEBUG [2019-08-05 14:58:28]  >> Content-Length: 0
-144190 DEBUG [2019-08-05 14:58:28]  >> Host: 192.168.3.24:20000
-144190 DEBUG [2019-08-05 14:58:28]  >> Connection: Keep-Alive
-144190 DEBUG [2019-08-05 14:58:28]  >> User-Agent: Java-EurekaClient/v1.9.3
-144191 DEBUG [2019-08-05 14:58:28]   << "HTTP/1.1 200 [\r][\n]"
-144191 DEBUG [2019-08-05 14:58:28]   << "Content-Type: application/xml[\r][\n]"
-144191 DEBUG [2019-08-05 14:58:28]   << "Content-Length: 0[\r][\n]"
-144191 DEBUG [2019-08-05 14:58:28]   << "Date: Mon, 05 Aug 2019 06:58:28 GMT[\r][\n]"
-144191 DEBUG [2019-08-05 14:58:28]   << "[\r][\n]"
-144191 DEBUG [2019-08-05 14:58:28]  Receiving response: HTTP/1.1 200 
-144191 DEBUG [2019-08-05 14:58:28]  << HTTP/1.1 200 
-144191 DEBUG [2019-08-05 14:58:28]  << Content-Type: application/xml
-144191 DEBUG [2019-08-05 14:58:28]  << Content-Length: 0
-144191 DEBUG [2019-08-05 14:58:28]  << Date: Mon, 05 Aug 2019 06:58:28 GMT
-144191 DEBUG [2019-08-05 14:58:28]  Connection can be kept alive indefinitely
-144191 DEBUG [2019-08-05 14:58:28]  Released connection is reusable.
-144191 DEBUG [2019-08-05 14:58:28]  Releasing connection [{}->http://192.168.3.24:20000][null]
-144191 DEBUG [2019-08-05 14:58:28]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-144191 DEBUG [2019-08-05 14:58:28]  Notifying no-one, there are no waiting threads
-149193 DEBUG [2019-08-05 14:58:33]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-149193 DEBUG [2019-08-05 14:58:33]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-149193 DEBUG [2019-08-05 14:58:33]  Getting free connection [{}->http://192.168.3.24:20000][null]
-149193 DEBUG [2019-08-05 14:58:33]  Stale connection check
-149194 DEBUG [2019-08-05 14:58:33]  CookieSpec selected: default
-149194 DEBUG [2019-08-05 14:58:33]  Auth cache not set in the context
-149194 DEBUG [2019-08-05 14:58:33]  Target auth state: UNCHALLENGED
-149194 DEBUG [2019-08-05 14:58:33]  Proxy auth state: UNCHALLENGED
-149194 DEBUG [2019-08-05 14:58:33]  Attempt 1 to execute request
-149194 DEBUG [2019-08-05 14:58:33]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-149195 DEBUG [2019-08-05 14:58:33]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-149195 DEBUG [2019-08-05 14:58:33]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-149195 DEBUG [2019-08-05 14:58:33]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-149195 DEBUG [2019-08-05 14:58:33]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-149195 DEBUG [2019-08-05 14:58:33]   >> "Accept-Encoding: gzip[\r][\n]"
-149195 DEBUG [2019-08-05 14:58:33]   >> "Content-Length: 0[\r][\n]"
-149195 DEBUG [2019-08-05 14:58:33]   >> "Host: 192.168.3.24:20000[\r][\n]"
-149195 DEBUG [2019-08-05 14:58:33]   >> "Connection: Keep-Alive[\r][\n]"
-149195 DEBUG [2019-08-05 14:58:33]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-149195 DEBUG [2019-08-05 14:58:33]   >> "[\r][\n]"
-149195 DEBUG [2019-08-05 14:58:33]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-149195 DEBUG [2019-08-05 14:58:33]  >> DiscoveryIdentity-Name: DefaultClient
-149195 DEBUG [2019-08-05 14:58:33]  >> DiscoveryIdentity-Version: 1.4
-149195 DEBUG [2019-08-05 14:58:33]  >> DiscoveryIdentity-Id: 192.168.3.24
-149195 DEBUG [2019-08-05 14:58:33]  >> Accept-Encoding: gzip
-149195 DEBUG [2019-08-05 14:58:33]  >> Content-Length: 0
-149195 DEBUG [2019-08-05 14:58:33]  >> Host: 192.168.3.24:20000
-149195 DEBUG [2019-08-05 14:58:33]  >> Connection: Keep-Alive
-149195 DEBUG [2019-08-05 14:58:33]  >> User-Agent: Java-EurekaClient/v1.9.3
-149196 DEBUG [2019-08-05 14:58:33]   << "HTTP/1.1 200 [\r][\n]"
-149196 DEBUG [2019-08-05 14:58:33]   << "Content-Type: application/xml[\r][\n]"
-149196 DEBUG [2019-08-05 14:58:33]   << "Content-Length: 0[\r][\n]"
-149196 DEBUG [2019-08-05 14:58:33]   << "Date: Mon, 05 Aug 2019 06:58:33 GMT[\r][\n]"
-149196 DEBUG [2019-08-05 14:58:33]   << "[\r][\n]"
-149196 DEBUG [2019-08-05 14:58:33]  Receiving response: HTTP/1.1 200 
-149196 DEBUG [2019-08-05 14:58:33]  << HTTP/1.1 200 
-149196 DEBUG [2019-08-05 14:58:33]  << Content-Type: application/xml
-149196 DEBUG [2019-08-05 14:58:33]  << Content-Length: 0
-149196 DEBUG [2019-08-05 14:58:33]  << Date: Mon, 05 Aug 2019 06:58:33 GMT
-149196 DEBUG [2019-08-05 14:58:33]  Connection can be kept alive indefinitely
-149196 DEBUG [2019-08-05 14:58:33]  Released connection is reusable.
-149197 DEBUG [2019-08-05 14:58:33]  Releasing connection [{}->http://192.168.3.24:20000][null]
-149197 DEBUG [2019-08-05 14:58:33]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-149197 DEBUG [2019-08-05 14:58:33]  Notifying no-one, there are no waiting threads
-154199 DEBUG [2019-08-05 14:58:38]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-154199 DEBUG [2019-08-05 14:58:38]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-154199 DEBUG [2019-08-05 14:58:38]  Getting free connection [{}->http://192.168.3.24:20000][null]
-154199 DEBUG [2019-08-05 14:58:38]  Stale connection check
-154201 DEBUG [2019-08-05 14:58:38]  CookieSpec selected: default
-154201 DEBUG [2019-08-05 14:58:38]  Auth cache not set in the context
-154201 DEBUG [2019-08-05 14:58:38]  Target auth state: UNCHALLENGED
-154201 DEBUG [2019-08-05 14:58:38]  Proxy auth state: UNCHALLENGED
-154201 DEBUG [2019-08-05 14:58:38]  Attempt 1 to execute request
-154202 DEBUG [2019-08-05 14:58:38]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-154202 DEBUG [2019-08-05 14:58:38]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-154202 DEBUG [2019-08-05 14:58:38]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-154202 DEBUG [2019-08-05 14:58:38]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-154202 DEBUG [2019-08-05 14:58:38]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-154202 DEBUG [2019-08-05 14:58:38]   >> "Accept-Encoding: gzip[\r][\n]"
-154202 DEBUG [2019-08-05 14:58:38]   >> "Content-Length: 0[\r][\n]"
-154202 DEBUG [2019-08-05 14:58:38]   >> "Host: 192.168.3.24:20000[\r][\n]"
-154202 DEBUG [2019-08-05 14:58:38]   >> "Connection: Keep-Alive[\r][\n]"
-154202 DEBUG [2019-08-05 14:58:38]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-154202 DEBUG [2019-08-05 14:58:38]   >> "[\r][\n]"
-154202 DEBUG [2019-08-05 14:58:38]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-154202 DEBUG [2019-08-05 14:58:38]  >> DiscoveryIdentity-Name: DefaultClient
-154202 DEBUG [2019-08-05 14:58:38]  >> DiscoveryIdentity-Version: 1.4
-154202 DEBUG [2019-08-05 14:58:38]  >> DiscoveryIdentity-Id: 192.168.3.24
-154202 DEBUG [2019-08-05 14:58:38]  >> Accept-Encoding: gzip
-154202 DEBUG [2019-08-05 14:58:38]  >> Content-Length: 0
-154202 DEBUG [2019-08-05 14:58:38]  >> Host: 192.168.3.24:20000
-154202 DEBUG [2019-08-05 14:58:38]  >> Connection: Keep-Alive
-154202 DEBUG [2019-08-05 14:58:38]  >> User-Agent: Java-EurekaClient/v1.9.3
-154204 DEBUG [2019-08-05 14:58:38]   << "HTTP/1.1 200 [\r][\n]"
-154204 DEBUG [2019-08-05 14:58:38]   << "Content-Type: application/xml[\r][\n]"
-154204 DEBUG [2019-08-05 14:58:38]   << "Content-Length: 0[\r][\n]"
-154204 DEBUG [2019-08-05 14:58:38]   << "Date: Mon, 05 Aug 2019 06:58:38 GMT[\r][\n]"
-154204 DEBUG [2019-08-05 14:58:38]   << "[\r][\n]"
-154204 DEBUG [2019-08-05 14:58:38]  Receiving response: HTTP/1.1 200 
-154204 DEBUG [2019-08-05 14:58:38]  << HTTP/1.1 200 
-154204 DEBUG [2019-08-05 14:58:38]  << Content-Type: application/xml
-154204 DEBUG [2019-08-05 14:58:38]  << Content-Length: 0
-154204 DEBUG [2019-08-05 14:58:38]  << Date: Mon, 05 Aug 2019 06:58:38 GMT
-154204 DEBUG [2019-08-05 14:58:38]  Connection can be kept alive indefinitely
-154205 DEBUG [2019-08-05 14:58:38]  Released connection is reusable.
-154205 DEBUG [2019-08-05 14:58:38]  Releasing connection [{}->http://192.168.3.24:20000][null]
-154205 DEBUG [2019-08-05 14:58:38]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-154205 DEBUG [2019-08-05 14:58:38]  Notifying no-one, there are no waiting threads
-159206 DEBUG [2019-08-05 14:58:43]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-159206 DEBUG [2019-08-05 14:58:43]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-159206 DEBUG [2019-08-05 14:58:43]  Getting free connection [{}->http://192.168.3.24:20000][null]
-159206 DEBUG [2019-08-05 14:58:43]  Stale connection check
-159208 DEBUG [2019-08-05 14:58:43]  CookieSpec selected: default
-159208 DEBUG [2019-08-05 14:58:43]  Auth cache not set in the context
-159208 DEBUG [2019-08-05 14:58:43]  Target auth state: UNCHALLENGED
-159208 DEBUG [2019-08-05 14:58:43]  Proxy auth state: UNCHALLENGED
-159208 DEBUG [2019-08-05 14:58:43]  Attempt 1 to execute request
-159208 DEBUG [2019-08-05 14:58:43]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-159208 DEBUG [2019-08-05 14:58:43]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-159208 DEBUG [2019-08-05 14:58:43]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-159208 DEBUG [2019-08-05 14:58:43]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-159208 DEBUG [2019-08-05 14:58:43]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-159208 DEBUG [2019-08-05 14:58:43]   >> "Accept-Encoding: gzip[\r][\n]"
-159208 DEBUG [2019-08-05 14:58:43]   >> "Content-Length: 0[\r][\n]"
-159208 DEBUG [2019-08-05 14:58:43]   >> "Host: 192.168.3.24:20000[\r][\n]"
-159208 DEBUG [2019-08-05 14:58:43]   >> "Connection: Keep-Alive[\r][\n]"
-159208 DEBUG [2019-08-05 14:58:43]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-159208 DEBUG [2019-08-05 14:58:43]   >> "[\r][\n]"
-159208 DEBUG [2019-08-05 14:58:43]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-159208 DEBUG [2019-08-05 14:58:43]  >> DiscoveryIdentity-Name: DefaultClient
-159208 DEBUG [2019-08-05 14:58:43]  >> DiscoveryIdentity-Version: 1.4
-159208 DEBUG [2019-08-05 14:58:43]  >> DiscoveryIdentity-Id: 192.168.3.24
-159208 DEBUG [2019-08-05 14:58:43]  >> Accept-Encoding: gzip
-159208 DEBUG [2019-08-05 14:58:43]  >> Content-Length: 0
-159208 DEBUG [2019-08-05 14:58:43]  >> Host: 192.168.3.24:20000
-159208 DEBUG [2019-08-05 14:58:43]  >> Connection: Keep-Alive
-159208 DEBUG [2019-08-05 14:58:43]  >> User-Agent: Java-EurekaClient/v1.9.3
-159347 DEBUG [2019-08-05 14:58:43]   << "HTTP/1.1 200 [\r][\n]"
-159347 DEBUG [2019-08-05 14:58:43]   << "Content-Type: application/xml[\r][\n]"
-159347 DEBUG [2019-08-05 14:58:43]   << "Content-Length: 0[\r][\n]"
-159347 DEBUG [2019-08-05 14:58:43]   << "Date: Mon, 05 Aug 2019 06:58:43 GMT[\r][\n]"
-159347 DEBUG [2019-08-05 14:58:43]   << "[\r][\n]"
-159347 DEBUG [2019-08-05 14:58:43]  Receiving response: HTTP/1.1 200 
-159347 DEBUG [2019-08-05 14:58:43]  << HTTP/1.1 200 
-159347 DEBUG [2019-08-05 14:58:43]  << Content-Type: application/xml
-159347 DEBUG [2019-08-05 14:58:43]  << Content-Length: 0
-159347 DEBUG [2019-08-05 14:58:43]  << Date: Mon, 05 Aug 2019 06:58:43 GMT
-159347 DEBUG [2019-08-05 14:58:43]  Connection can be kept alive indefinitely
-159347 DEBUG [2019-08-05 14:58:43]  Released connection is reusable.
-159347 DEBUG [2019-08-05 14:58:43]  Releasing connection [{}->http://192.168.3.24:20000][null]
-159347 DEBUG [2019-08-05 14:58:43]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-159347 DEBUG [2019-08-05 14:58:43]  Notifying no-one, there are no waiting threads
-162935 DEBUG [2019-08-05 14:58:47]  Closing connections idle longer than 30000 SECONDS
-162935 DEBUG [2019-08-05 14:58:47]  Closing connections idle longer than 30000 SECONDS
-163692 DEBUG [2019-08-05 14:58:47]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-163693 DEBUG [2019-08-05 14:58:47]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-163693 DEBUG [2019-08-05 14:58:47]  Getting free connection [{}->http://192.168.3.24:20000][null]
-163693 DEBUG [2019-08-05 14:58:47]  Stale connection check
-163694 DEBUG [2019-08-05 14:58:47]  CookieSpec selected: default
-163694 DEBUG [2019-08-05 14:58:47]  Auth cache not set in the context
-163694 DEBUG [2019-08-05 14:58:47]  Target auth state: UNCHALLENGED
-163694 DEBUG [2019-08-05 14:58:47]  Proxy auth state: UNCHALLENGED
-163694 DEBUG [2019-08-05 14:58:47]  Attempt 1 to execute request
-163694 DEBUG [2019-08-05 14:58:47]  Sending request: GET /eureka/apps/delta HTTP/1.1
-163694 DEBUG [2019-08-05 14:58:47]   >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
-163695 DEBUG [2019-08-05 14:58:47]   >> "Accept: application/json[\r][\n]"
-163695 DEBUG [2019-08-05 14:58:47]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-163695 DEBUG [2019-08-05 14:58:47]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-163695 DEBUG [2019-08-05 14:58:47]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-163695 DEBUG [2019-08-05 14:58:47]   >> "Accept-Encoding: gzip[\r][\n]"
-163695 DEBUG [2019-08-05 14:58:47]   >> "Host: 192.168.3.24:20000[\r][\n]"
-163695 DEBUG [2019-08-05 14:58:47]   >> "Connection: Keep-Alive[\r][\n]"
-163695 DEBUG [2019-08-05 14:58:47]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-163695 DEBUG [2019-08-05 14:58:47]   >> "[\r][\n]"
-163695 DEBUG [2019-08-05 14:58:47]  >> GET /eureka/apps/delta HTTP/1.1
-163695 DEBUG [2019-08-05 14:58:47]  >> Accept: application/json
-163695 DEBUG [2019-08-05 14:58:47]  >> DiscoveryIdentity-Name: DefaultClient
-163695 DEBUG [2019-08-05 14:58:47]  >> DiscoveryIdentity-Version: 1.4
-163695 DEBUG [2019-08-05 14:58:47]  >> DiscoveryIdentity-Id: 192.168.3.24
-163695 DEBUG [2019-08-05 14:58:47]  >> Accept-Encoding: gzip
-163695 DEBUG [2019-08-05 14:58:47]  >> Host: 192.168.3.24:20000
-163695 DEBUG [2019-08-05 14:58:47]  >> Connection: Keep-Alive
-163695 DEBUG [2019-08-05 14:58:47]  >> User-Agent: Java-EurekaClient/v1.9.3
-163697 DEBUG [2019-08-05 14:58:47]   << "HTTP/1.1 200 [\r][\n]"
-163697 DEBUG [2019-08-05 14:58:47]   << "Content-Encoding: gzip[\r][\n]"
-163697 DEBUG [2019-08-05 14:58:47]   << "Content-Type: application/json[\r][\n]"
-163697 DEBUG [2019-08-05 14:58:47]   << "Content-Length: 557[\r][\n]"
-163697 DEBUG [2019-08-05 14:58:47]   << "Date: Mon, 05 Aug 2019 06:58:47 GMT[\r][\n]"
-163697 DEBUG [2019-08-05 14:58:47]   << "[\r][\n]"
-163697 DEBUG [2019-08-05 14:58:47]  Receiving response: HTTP/1.1 200 
-163697 DEBUG [2019-08-05 14:58:47]  << HTTP/1.1 200 
-163697 DEBUG [2019-08-05 14:58:47]  << Content-Encoding: gzip
-163697 DEBUG [2019-08-05 14:58:47]  << Content-Type: application/json
-163697 DEBUG [2019-08-05 14:58:47]  << Content-Length: 557
-163697 DEBUG [2019-08-05 14:58:47]  << Date: Mon, 05 Aug 2019 06:58:47 GMT
-163697 DEBUG [2019-08-05 14:58:47]  Connection can be kept alive indefinitely
-163697 DEBUG [2019-08-05 14:58:47]   << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]SM[0x8f][0xda]0[0x10][0xfd]/[0xd6][0x1e]!$[0xe1];[0xa7]Ed[0xf][0xa8],[0xa0][0xa5]i[0xf]U[0x85]\g n[0x1d];[0xb2][0x1d]v[0x11][0xe2][0xbf]w[0x1c]7[0xdb][0xc2][0xae][0xaa]V9[0xc4][0x9e]y[0xf3]f[0xe6][0xcd][0xf8]LhU[0x9][0xce][0xa8][0xe5]J[0x1a][0x92][0x9c][0xc9][0x11][0xb4]q[0xe7][0xdd].[0x7]a)I[0xc8]p@:[0xe][0x86][0xa6][0x82][0x9a][0x82][0xa9][0x1c][0xd0][0x9a]mv[0xd1][0xce];[0xda]x[0x92]|9[0x13]IK[0xe7][0x9e]/[0xd7]Y[0xda]}[0x9c]-[0x97][0xdd]l[0xfb][0xf0][0x84]@.[0x8d][0xa5][0x92]A[0x83]j/[0x8b][0x1c][0xb1]B1*[0x2]&T[0x9d][0x7]L[0x95]Is[0xea][0x96]T[0x88]nm@'Q[0x18]F!2[0x14][0xca][0xd8][0x95][0xa7][0xbf][0x9][0xf1]u[0xbc][0x9f][0xb6][0x9a][0xe5][0xb9]FW4[0x8d][0x83]h4[0x9][0xfa]A[0xec][0x1a][0xc2][0xfc][0xb6]6M#xS[0xd8][0xb6][0xe6]y[0xe]r[0xfb]j_}X[0xad]?[0xaf][0xd0]Y)m[0x9d]4w[0xc4][0x97][0xd2]![0xf7] [0xe9]7[0x1][0xae]x[0xab]k [0x17][0xe4][0x3]Vk[0xd8][0xfc][0x86][0xe][0x6][0xfd]+[0xe0][0x9e][\n]"
-163697 DEBUG [2019-08-05 14:58:47]   << "[0xd3] [0x99][0xaa][0xa5][0xd5]'[0xd7]z[0xd4]!9[0xb5]t[0xe][0xd2][0x82]^[0xc8][0xbd]r[0xb1][0xf7]LP[0xe3]*[0xc0][0xc6][0x2][0x9]v/[0xf8]K[0x80][0xed]q[0xf4][0x7][0x8b]V8[0xbc][0xdc][0xa5][0xb0][0xa7][0xb5][0xb0][0xe9]5E[0xa7][0x9d][0xc1][0xe3]i[0xfd],]F[0x1][0xd4]@K[0xaf]A[0xc2]3[0x15][0xb][0x87]?[0xba][0xff][0x16][0x18]f[0x1b]b)[0xb5]n[0xe6][0xd8][0x9a]"[0xb4]i8pc[0xbd][0xfd]#/[0x1][0xb3][0x97][0x95]s[0x8d][0x6][0xd3][0xc9]$[0x1a]OFa[0x8c][0x9][0xa8][0xb1]O[0x9e][0xf7]-([0xe][0xfb][0xf1][0x8][0xa9][0xe0][0xc8][0xd9][\r]M[0xe8]t[0xd3]h[0x87][0xac]z[0x13]8[0x1e][0xf7][0x87][0xd3]i[0x88][0xf5][0x97]`[0xa9][0xd3][0xc9][0x95]_RI[0xf]Pb[0xbb][0x81][0x9f][0xb]i[0xd7][0xe3]{[0xf9][0xd2][0x9a]F1[0xaa][0xef]:/T[0x9][0x1b][0xc4]gZ[0xa0][0xb9][0xb0][0xb6]Jz[0xbd][0xdb]}k[0x8]z[0xaf];[0xf1][0x8f]x[0xca]lM[0xad][0xd2]=[0xee]E/[0x80][\n]"
-163698 DEBUG [2019-08-05 14:58:47]   << "[[0xcc][0xb]`?[0xfe]'[0xda][0x87]a[0xfc][0xd1]o*[0xf8][0xd1]_?[0x1][0xd2][0xee][0xd7][0xa7][0xbf][0x83][0xb8][0x99]+[0xa5]s.q^[0xf2][0x90]r[0xc3][0xdc]b[0x9f][0xb6][0xa8]1[0xe8][0xd7][0x1d][0xf4][0xf3][0xca]*[0x94][0x14][0xf2]?d'WS[0xfd][0x5]K[0xb9][0xb6][0xa7]wA[0xe3][0xf1]`[0xea][0x1e][0x9e][0x1f][0xea][0xa9]r+7K[0xd3][0x87][0x94]\[0xbe][0xe2]w[0xf9][0x9].[0xd2][0xc3][0xdc]\[0x4][0x0][0x0]"
-163698 DEBUG [2019-08-05 14:58:47]  Released connection is reusable.
-163698 DEBUG [2019-08-05 14:58:47]  Releasing connection [{}->http://192.168.3.24:20000][null]
-163698 DEBUG [2019-08-05 14:58:47]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-163698 DEBUG [2019-08-05 14:58:47]  Notifying no-one, there are no waiting threads
-164348 DEBUG [2019-08-05 14:58:48]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-164349 DEBUG [2019-08-05 14:58:48]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-164349 DEBUG [2019-08-05 14:58:48]  Getting free connection [{}->http://192.168.3.24:20000][null]
-164349 DEBUG [2019-08-05 14:58:48]  Stale connection check
-164350 DEBUG [2019-08-05 14:58:48]  CookieSpec selected: default
-164351 DEBUG [2019-08-05 14:58:48]  Auth cache not set in the context
-164351 DEBUG [2019-08-05 14:58:48]  Target auth state: UNCHALLENGED
-164351 DEBUG [2019-08-05 14:58:48]  Proxy auth state: UNCHALLENGED
-164351 DEBUG [2019-08-05 14:58:48]  Attempt 1 to execute request
-164351 DEBUG [2019-08-05 14:58:48]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-164351 DEBUG [2019-08-05 14:58:48]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-164351 DEBUG [2019-08-05 14:58:48]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-164351 DEBUG [2019-08-05 14:58:48]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-164351 DEBUG [2019-08-05 14:58:48]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-164351 DEBUG [2019-08-05 14:58:48]   >> "Accept-Encoding: gzip[\r][\n]"
-164351 DEBUG [2019-08-05 14:58:48]   >> "Content-Length: 0[\r][\n]"
-164351 DEBUG [2019-08-05 14:58:48]   >> "Host: 192.168.3.24:20000[\r][\n]"
-164351 DEBUG [2019-08-05 14:58:48]   >> "Connection: Keep-Alive[\r][\n]"
-164351 DEBUG [2019-08-05 14:58:48]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-164351 DEBUG [2019-08-05 14:58:48]   >> "[\r][\n]"
-164351 DEBUG [2019-08-05 14:58:48]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-164351 DEBUG [2019-08-05 14:58:48]  >> DiscoveryIdentity-Name: DefaultClient
-164351 DEBUG [2019-08-05 14:58:48]  >> DiscoveryIdentity-Version: 1.4
-164351 DEBUG [2019-08-05 14:58:48]  >> DiscoveryIdentity-Id: 192.168.3.24
-164351 DEBUG [2019-08-05 14:58:48]  >> Accept-Encoding: gzip
-164351 DEBUG [2019-08-05 14:58:48]  >> Content-Length: 0
-164351 DEBUG [2019-08-05 14:58:48]  >> Host: 192.168.3.24:20000
-164351 DEBUG [2019-08-05 14:58:48]  >> Connection: Keep-Alive
-164351 DEBUG [2019-08-05 14:58:48]  >> User-Agent: Java-EurekaClient/v1.9.3
-164353 DEBUG [2019-08-05 14:58:48]   << "HTTP/1.1 200 [\r][\n]"
-164353 DEBUG [2019-08-05 14:58:48]   << "Content-Type: application/xml[\r][\n]"
-164353 DEBUG [2019-08-05 14:58:48]   << "Content-Length: 0[\r][\n]"
-164353 DEBUG [2019-08-05 14:58:48]   << "Date: Mon, 05 Aug 2019 06:58:47 GMT[\r][\n]"
-164353 DEBUG [2019-08-05 14:58:48]   << "[\r][\n]"
-164353 DEBUG [2019-08-05 14:58:48]  Receiving response: HTTP/1.1 200 
-164353 DEBUG [2019-08-05 14:58:48]  << HTTP/1.1 200 
-164353 DEBUG [2019-08-05 14:58:48]  << Content-Type: application/xml
-164353 DEBUG [2019-08-05 14:58:48]  << Content-Length: 0
-164353 DEBUG [2019-08-05 14:58:48]  << Date: Mon, 05 Aug 2019 06:58:47 GMT
-164353 DEBUG [2019-08-05 14:58:48]  Connection can be kept alive indefinitely
-164353 DEBUG [2019-08-05 14:58:48]  Released connection is reusable.
-164353 DEBUG [2019-08-05 14:58:48]  Releasing connection [{}->http://192.168.3.24:20000][null]
-164354 DEBUG [2019-08-05 14:58:48]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-164354 DEBUG [2019-08-05 14:58:48]  Notifying no-one, there are no waiting threads
-169356 DEBUG [2019-08-05 14:58:53]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-169356 DEBUG [2019-08-05 14:58:53]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-169356 DEBUG [2019-08-05 14:58:53]  Getting free connection [{}->http://192.168.3.24:20000][null]
-169356 DEBUG [2019-08-05 14:58:53]  Stale connection check
-169357 DEBUG [2019-08-05 14:58:53]  CookieSpec selected: default
-169358 DEBUG [2019-08-05 14:58:53]  Auth cache not set in the context
-169358 DEBUG [2019-08-05 14:58:53]  Target auth state: UNCHALLENGED
-169358 DEBUG [2019-08-05 14:58:53]  Proxy auth state: UNCHALLENGED
-169358 DEBUG [2019-08-05 14:58:53]  Attempt 1 to execute request
-169358 DEBUG [2019-08-05 14:58:53]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-169358 DEBUG [2019-08-05 14:58:53]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-169358 DEBUG [2019-08-05 14:58:53]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-169358 DEBUG [2019-08-05 14:58:53]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-169358 DEBUG [2019-08-05 14:58:53]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-169358 DEBUG [2019-08-05 14:58:53]   >> "Accept-Encoding: gzip[\r][\n]"
-169358 DEBUG [2019-08-05 14:58:53]   >> "Content-Length: 0[\r][\n]"
-169359 DEBUG [2019-08-05 14:58:53]   >> "Host: 192.168.3.24:20000[\r][\n]"
-169359 DEBUG [2019-08-05 14:58:53]   >> "Connection: Keep-Alive[\r][\n]"
-169359 DEBUG [2019-08-05 14:58:53]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-169359 DEBUG [2019-08-05 14:58:53]   >> "[\r][\n]"
-169359 DEBUG [2019-08-05 14:58:53]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-169359 DEBUG [2019-08-05 14:58:53]  >> DiscoveryIdentity-Name: DefaultClient
-169359 DEBUG [2019-08-05 14:58:53]  >> DiscoveryIdentity-Version: 1.4
-169359 DEBUG [2019-08-05 14:58:53]  >> DiscoveryIdentity-Id: 192.168.3.24
-169359 DEBUG [2019-08-05 14:58:53]  >> Accept-Encoding: gzip
-169359 DEBUG [2019-08-05 14:58:53]  >> Content-Length: 0
-169359 DEBUG [2019-08-05 14:58:53]  >> Host: 192.168.3.24:20000
-169359 DEBUG [2019-08-05 14:58:53]  >> Connection: Keep-Alive
-169359 DEBUG [2019-08-05 14:58:53]  >> User-Agent: Java-EurekaClient/v1.9.3
-169364 DEBUG [2019-08-05 14:58:53]   << "HTTP/1.1 200 [\r][\n]"
-169364 DEBUG [2019-08-05 14:58:53]   << "Content-Type: application/xml[\r][\n]"
-169364 DEBUG [2019-08-05 14:58:53]   << "Content-Length: 0[\r][\n]"
-169364 DEBUG [2019-08-05 14:58:53]   << "Date: Mon, 05 Aug 2019 06:58:53 GMT[\r][\n]"
-169364 DEBUG [2019-08-05 14:58:53]   << "[\r][\n]"
-169364 DEBUG [2019-08-05 14:58:53]  Receiving response: HTTP/1.1 200 
-169364 DEBUG [2019-08-05 14:58:53]  << HTTP/1.1 200 
-169364 DEBUG [2019-08-05 14:58:53]  << Content-Type: application/xml
-169364 DEBUG [2019-08-05 14:58:53]  << Content-Length: 0
-169364 DEBUG [2019-08-05 14:58:53]  << Date: Mon, 05 Aug 2019 06:58:53 GMT
-169365 DEBUG [2019-08-05 14:58:53]  Connection can be kept alive indefinitely
-169365 DEBUG [2019-08-05 14:58:53]  Released connection is reusable.
-169365 DEBUG [2019-08-05 14:58:53]  Releasing connection [{}->http://192.168.3.24:20000][null]
-169365 DEBUG [2019-08-05 14:58:53]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-169365 DEBUG [2019-08-05 14:58:53]  Notifying no-one, there are no waiting threads
-174366 DEBUG [2019-08-05 14:58:58]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-174366 DEBUG [2019-08-05 14:58:58]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-174366 DEBUG [2019-08-05 14:58:58]  Getting free connection [{}->http://192.168.3.24:20000][null]
-174366 DEBUG [2019-08-05 14:58:58]  Stale connection check
-174368 DEBUG [2019-08-05 14:58:58]  CookieSpec selected: default
-174368 DEBUG [2019-08-05 14:58:58]  Auth cache not set in the context
-174368 DEBUG [2019-08-05 14:58:58]  Target auth state: UNCHALLENGED
-174368 DEBUG [2019-08-05 14:58:58]  Proxy auth state: UNCHALLENGED
-174368 DEBUG [2019-08-05 14:58:58]  Attempt 1 to execute request
-174368 DEBUG [2019-08-05 14:58:58]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-174368 DEBUG [2019-08-05 14:58:58]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-174368 DEBUG [2019-08-05 14:58:58]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-174368 DEBUG [2019-08-05 14:58:58]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-174368 DEBUG [2019-08-05 14:58:58]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-174368 DEBUG [2019-08-05 14:58:58]   >> "Accept-Encoding: gzip[\r][\n]"
-174368 DEBUG [2019-08-05 14:58:58]   >> "Content-Length: 0[\r][\n]"
-174368 DEBUG [2019-08-05 14:58:58]   >> "Host: 192.168.3.24:20000[\r][\n]"
-174368 DEBUG [2019-08-05 14:58:58]   >> "Connection: Keep-Alive[\r][\n]"
-174368 DEBUG [2019-08-05 14:58:58]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-174368 DEBUG [2019-08-05 14:58:58]   >> "[\r][\n]"
-174368 DEBUG [2019-08-05 14:58:58]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-174368 DEBUG [2019-08-05 14:58:58]  >> DiscoveryIdentity-Name: DefaultClient
-174368 DEBUG [2019-08-05 14:58:58]  >> DiscoveryIdentity-Version: 1.4
-174368 DEBUG [2019-08-05 14:58:58]  >> DiscoveryIdentity-Id: 192.168.3.24
-174368 DEBUG [2019-08-05 14:58:58]  >> Accept-Encoding: gzip
-174369 DEBUG [2019-08-05 14:58:58]  >> Content-Length: 0
-174369 DEBUG [2019-08-05 14:58:58]  >> Host: 192.168.3.24:20000
-174369 DEBUG [2019-08-05 14:58:58]  >> Connection: Keep-Alive
-174369 DEBUG [2019-08-05 14:58:58]  >> User-Agent: Java-EurekaClient/v1.9.3
-174370 DEBUG [2019-08-05 14:58:58]   << "HTTP/1.1 200 [\r][\n]"
-174370 DEBUG [2019-08-05 14:58:58]   << "Content-Type: application/xml[\r][\n]"
-174370 DEBUG [2019-08-05 14:58:58]   << "Content-Length: 0[\r][\n]"
-174370 DEBUG [2019-08-05 14:58:58]   << "Date: Mon, 05 Aug 2019 06:58:58 GMT[\r][\n]"
-174370 DEBUG [2019-08-05 14:58:58]   << "[\r][\n]"
-174370 DEBUG [2019-08-05 14:58:58]  Receiving response: HTTP/1.1 200 
-174370 DEBUG [2019-08-05 14:58:58]  << HTTP/1.1 200 
-174370 DEBUG [2019-08-05 14:58:58]  << Content-Type: application/xml
-174370 DEBUG [2019-08-05 14:58:58]  << Content-Length: 0
-174370 DEBUG [2019-08-05 14:58:58]  << Date: Mon, 05 Aug 2019 06:58:58 GMT
-174370 DEBUG [2019-08-05 14:58:58]  Connection can be kept alive indefinitely
-174370 DEBUG [2019-08-05 14:58:58]  Released connection is reusable.
-174370 DEBUG [2019-08-05 14:58:58]  Releasing connection [{}->http://192.168.3.24:20000][null]
-174370 DEBUG [2019-08-05 14:58:58]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-174370 DEBUG [2019-08-05 14:58:58]  Notifying no-one, there are no waiting threads
-175799 DEBUG [2019-08-05 14:59:00]  Returning cached instance of singleton bean 'sessionRepository'
-175799 DEBUG [2019-08-05 14:59:00]  Cleaning up sessions expiring at Mon Aug 05 14:59:00 CST 2019
-175799 DEBUG [2019-08-05 14:59:00]  Opening RedisConnection
-175802 DEBUG [2019-08-05 14:59:00]  Closing Redis Connection
-175802 DEBUG [2019-08-05 14:59:00]  Opening RedisConnection
-175805 DEBUG [2019-08-05 14:59:00]  Closing Redis Connection
-179371 DEBUG [2019-08-05 14:59:03]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-179371 DEBUG [2019-08-05 14:59:03]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-179371 DEBUG [2019-08-05 14:59:03]  Getting free connection [{}->http://192.168.3.24:20000][null]
-179371 DEBUG [2019-08-05 14:59:03]  Stale connection check
-179372 DEBUG [2019-08-05 14:59:03]  CookieSpec selected: default
-179373 DEBUG [2019-08-05 14:59:03]  Auth cache not set in the context
-179373 DEBUG [2019-08-05 14:59:03]  Target auth state: UNCHALLENGED
-179373 DEBUG [2019-08-05 14:59:03]  Proxy auth state: UNCHALLENGED
-179373 DEBUG [2019-08-05 14:59:03]  Attempt 1 to execute request
-179373 DEBUG [2019-08-05 14:59:03]  Sending request: PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-179373 DEBUG [2019-08-05 14:59:03]   >> "PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1[\r][\n]"
-179373 DEBUG [2019-08-05 14:59:03]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-179373 DEBUG [2019-08-05 14:59:03]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-179373 DEBUG [2019-08-05 14:59:03]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
-179373 DEBUG [2019-08-05 14:59:03]   >> "Accept-Encoding: gzip[\r][\n]"
-179373 DEBUG [2019-08-05 14:59:03]   >> "Content-Length: 0[\r][\n]"
-179373 DEBUG [2019-08-05 14:59:03]   >> "Host: 192.168.3.24:20000[\r][\n]"
-179373 DEBUG [2019-08-05 14:59:03]   >> "Connection: Keep-Alive[\r][\n]"
-179373 DEBUG [2019-08-05 14:59:03]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
-179373 DEBUG [2019-08-05 14:59:03]   >> "[\r][\n]"
-179374 DEBUG [2019-08-05 14:59:03]  >> PUT /eureka/apps/CLOUD-MALL-USER/local.cloud.com:cloud-mall-user:10010?status=UP&lastDirtyTimestamp=1564988177749 HTTP/1.1
-179374 DEBUG [2019-08-05 14:59:03]  >> DiscoveryIdentity-Name: DefaultClient
-179374 DEBUG [2019-08-05 14:59:03]  >> DiscoveryIdentity-Version: 1.4
-179374 DEBUG [2019-08-05 14:59:03]  >> DiscoveryIdentity-Id: 192.168.3.24
-179374 DEBUG [2019-08-05 14:59:03]  >> Accept-Encoding: gzip
-179374 DEBUG [2019-08-05 14:59:03]  >> Content-Length: 0
-179374 DEBUG [2019-08-05 14:59:03]  >> Host: 192.168.3.24:20000
-179374 DEBUG [2019-08-05 14:59:03]  >> Connection: Keep-Alive
-179374 DEBUG [2019-08-05 14:59:03]  >> User-Agent: Java-EurekaClient/v1.9.3
-179375 DEBUG [2019-08-05 14:59:03]   << "HTTP/1.1 200 [\r][\n]"
-179375 DEBUG [2019-08-05 14:59:03]   << "Content-Type: application/xml[\r][\n]"
-179375 DEBUG [2019-08-05 14:59:03]   << "Content-Length: 0[\r][\n]"
-179375 DEBUG [2019-08-05 14:59:03]   << "Date: Mon, 05 Aug 2019 06:59:03 GMT[\r][\n]"
-179375 DEBUG [2019-08-05 14:59:03]   << "[\r][\n]"
-179375 DEBUG [2019-08-05 14:59:03]  Receiving response: HTTP/1.1 200 
-179375 DEBUG [2019-08-05 14:59:03]  << HTTP/1.1 200 
-179375 DEBUG [2019-08-05 14:59:03]  << Content-Type: application/xml
-179375 DEBUG [2019-08-05 14:59:03]  << Content-Length: 0
-179375 DEBUG [2019-08-05 14:59:03]  << Date: Mon, 05 Aug 2019 06:59:03 GMT
-179376 DEBUG [2019-08-05 14:59:03]  Connection can be kept alive indefinitely
-179376 DEBUG [2019-08-05 14:59:03]  Released connection is reusable.
-179376 DEBUG [2019-08-05 14:59:03]  Releasing connection [{}->http://192.168.3.24:20000][null]
-179376 DEBUG [2019-08-05 14:59:03]  Pooling connection [{}->http://192.168.3.24:20000][null]; keep alive indefinitely
-179376 DEBUG [2019-08-05 14:59:03]  Notifying no-one, there are no waiting threads
-184376 DEBUG [2019-08-05 14:59:08]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-184377 DEBUG [2019-08-05 14:59:08]  [{}->http://192.168.3.24:20000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-184377 DEBUG [2019-08-05 14:59:08]  Getting free connection [{}->http://192.168.3.24:20000][null]
-184377 DEBUG [2019-08-05 14:59:08]  Stale connection check
-184377 DEBUG [2019-08-05 14:59:08]  Stale connection detected
-184377 DEBUG [2019-08-05 14:59:08]  Connection 0.0.0.0:62485<->192.168.3.24:20000 closed
-184377 DEBUG [2019-08-05 14:59:08]  Connecting to 192.168.3.24:20000
-185378 DEBUG [2019-08-05 14:59:09]  Connection 0.0.0.0:62485<->192.168.3.24:20000 closed
-185380 DEBUG [2019-08-05 14:59:09]  Connection 0.0.0.0:62485<->192.168.3.24:20000 shut down
-185380 DEBUG [2019-08-05 14:59:09]  Released connection is not reusable.
-185380 DEBUG [2019-08-05 14:59:09]  Releasing connection [{}->http://192.168.3.24:20000][null]
-185380 DEBUG [2019-08-05 14:59:09]  Connection 0.0.0.0:62485<->192.168.3.24:20000 closed
-185380 DEBUG [2019-08-05 14:59:09]  Notifying no-one, there are no waiting threads
-185388 DEBUG [2019-08-05 14:59:09]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-185388 DEBUG [2019-08-05 14:59:09]  [{}->http://192.168.3.24:20000] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
-185388 DEBUG [2019-08-05 14:59:09]  Getting free connection [{}->http://192.168.3.24:20000][null]
-185388 DEBUG [2019-08-05 14:59:09]  Stale connection check
-185388 DEBUG [2019-08-05 14:59:09]  Stale connection detected
-185389 DEBUG [2019-08-05 14:59:09]  Connection 0.0.0.0:62528<->192.168.3.24:20000 closed
-185389 DEBUG [2019-08-05 14:59:09]  Connecting to 192.168.3.24:20000
-186400 DEBUG [2019-08-05 14:59:10]  Connection 0.0.0.0:62528<->192.168.3.24:20000 closed
-186400 DEBUG [2019-08-05 14:59:10]  Connection 0.0.0.0:62528<->192.168.3.24:20000 shut down
-186400 DEBUG [2019-08-05 14:59:10]  Released connection is not reusable.
-186400 DEBUG [2019-08-05 14:59:10]  Releasing connection [{}->http://192.168.3.24:20000][null]
-186400 DEBUG [2019-08-05 14:59:10]  Connection 0.0.0.0:62528<->192.168.3.24:20000 closed
-186400 DEBUG [2019-08-05 14:59:10]  Notifying no-one, there are no waiting threads
-191405 DEBUG [2019-08-05 14:59:15]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-191405 DEBUG [2019-08-05 14:59:15]  [{}->http://192.168.3.24:20000] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
-191405 DEBUG [2019-08-05 14:59:15]  No free connections [{}->http://192.168.3.24:20000][null]
-191405 DEBUG [2019-08-05 14:59:15]  Available capacity: 50 out of 50 [{}->http://192.168.3.24:20000][null]
-191406 DEBUG [2019-08-05 14:59:15]  Creating new connection [{}->http://192.168.3.24:20000]
-191406 DEBUG [2019-08-05 14:59:15]  Connecting to 192.168.3.24:20000
-192406 DEBUG [2019-08-05 14:59:16]  Connection org.apache.http.impl.conn.DefaultClientConnection@45dda35a closed
-192407 DEBUG [2019-08-05 14:59:16]  Connection org.apache.http.impl.conn.DefaultClientConnection@45dda35a shut down
-192407 DEBUG [2019-08-05 14:59:16]  Released connection is not reusable.
-192407 DEBUG [2019-08-05 14:59:16]  Releasing connection [{}->http://192.168.3.24:20000][null]
-192407 DEBUG [2019-08-05 14:59:16]  Connection org.apache.http.impl.conn.DefaultClientConnection@45dda35a closed
-192407 DEBUG [2019-08-05 14:59:16]  Notifying no-one, there are no waiting threads
-192935 DEBUG [2019-08-05 14:59:17]  Closing connections idle longer than 30000 SECONDS
-192935 DEBUG [2019-08-05 14:59:17]  Closing connections idle longer than 30000 SECONDS
-193700 DEBUG [2019-08-05 14:59:17]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-193700 DEBUG [2019-08-05 14:59:17]  [{}->http://192.168.3.24:20000] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
-193700 DEBUG [2019-08-05 14:59:17]  No free connections [{}->http://192.168.3.24:20000][null]
-193700 DEBUG [2019-08-05 14:59:17]  Available capacity: 50 out of 50 [{}->http://192.168.3.24:20000][null]
-193700 DEBUG [2019-08-05 14:59:17]  Creating new connection [{}->http://192.168.3.24:20000]
-193700 DEBUG [2019-08-05 14:59:17]  Connecting to 192.168.3.24:20000
-194713 DEBUG [2019-08-05 14:59:18]  Connection org.apache.http.impl.conn.DefaultClientConnection@5851a563 closed
-194713 DEBUG [2019-08-05 14:59:18]  Connection org.apache.http.impl.conn.DefaultClientConnection@5851a563 shut down
-194713 DEBUG [2019-08-05 14:59:18]  Released connection is not reusable.
-194713 DEBUG [2019-08-05 14:59:18]  Releasing connection [{}->http://192.168.3.24:20000][null]
-194714 DEBUG [2019-08-05 14:59:18]  Connection org.apache.http.impl.conn.DefaultClientConnection@5851a563 closed
-194714 DEBUG [2019-08-05 14:59:18]  Notifying no-one, there are no waiting threads
-194717 DEBUG [2019-08-05 14:59:18]  Get connection: {}->http://192.168.3.24:20000, timeout = 5000
-194717 DEBUG [2019-08-05 14:59:18]  [{}->http://192.168.3.24:20000] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
-194717 DEBUG [2019-08-05 14:59:18]  No free connections [{}->http://192.168.3.24:20000][null]
-194717 DEBUG [2019-08-05 14:59:18]  Available capacity: 50 out of 50 [{}->http://192.168.3.24:20000][null]
-194717 DEBUG [2019-08-05 14:59:18]  Creating new connection [{}->http://192.168.3.24:20000]
-194717 DEBUG [2019-08-05 14:59:18]  Connecting to 192.168.3.24:20000
-195718 DEBUG [2019-08-05 14:59:19]  Connection org.apache.http.impl.conn.DefaultClientConnection@3a26c7be closed
-195718 DEBUG [2019-08-05 14:59:19]  Connection org.apache.http.impl.conn.DefaultClientConnection@3a26c7be shut down
-195718 DEBUG [2019-08-05 14:59:19]  Released connection is not reusable.
-195718 DEBUG [2019-08-05 14:59:19]  Releasing connection [{}->http://192.168.3.24:20000][null]
-195718 DEBUG [2019-08-05 14:59:19]  Connection org.apache.http.impl.conn.DefaultClientConnection@3a26c7be closed
-195718 DEBUG [2019-08-05 14:59:19]  Notifying no-one, there are no waiting threads
+102213 DEBUG [2019-10-15 10:17:10]   << "HTTP/1.1 200 [\r][\n]"
+102218 DEBUG [2019-10-15 10:17:10]  Attempt 1 to execute request
+102218 DEBUG [2019-10-15 10:17:10]   << "Content-Type: application/xml[\r][\n]"
+102219 DEBUG [2019-10-15 10:17:10]  Sending request: GET /eureka/apps/delta HTTP/1.1
+102219 DEBUG [2019-10-15 10:17:10]   << "Content-Length: 0[\r][\n]"
+102219 DEBUG [2019-10-15 10:17:10]   >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+102219 DEBUG [2019-10-15 10:17:10]   << "Date: Mon, 14 Oct 2019 17:41:02 GMT[\r][\n]"
+102219 DEBUG [2019-10-15 10:17:10]   << "[\r][\n]"
+102219 DEBUG [2019-10-15 10:17:10]   >> "Accept: application/json[\r][\n]"
+102219 DEBUG [2019-10-15 10:17:10]  Receiving response: HTTP/1.1 200 
+102220 DEBUG [2019-10-15 10:17:10]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+102220 DEBUG [2019-10-15 10:17:10]  << HTTP/1.1 200 
+102220 DEBUG [2019-10-15 10:17:10]  << Content-Type: application/xml
+102220 DEBUG [2019-10-15 10:17:10]  << Content-Length: 0
+102220 DEBUG [2019-10-15 10:17:10]  << Date: Mon, 14 Oct 2019 17:41:02 GMT
+102220 DEBUG [2019-10-15 10:17:10]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+102221 DEBUG [2019-10-15 10:17:10]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+102221 DEBUG [2019-10-15 10:17:10]   >> "Accept-Encoding: gzip[\r][\n]"
+102221 DEBUG [2019-10-15 10:17:10]  Connection can be kept alive indefinitely
+102221 DEBUG [2019-10-15 10:17:10]   >> "Host: cloud-shop-02:10000[\r][\n]"
+102221 DEBUG [2019-10-15 10:17:10]   >> "Connection: Keep-Alive[\r][\n]"
+102221 DEBUG [2019-10-15 10:17:10]  Released connection is reusable.
+102221 DEBUG [2019-10-15 10:17:10]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+102221 DEBUG [2019-10-15 10:17:10]   >> "[\r][\n]"
+102221 DEBUG [2019-10-15 10:17:10]  Releasing connection [{}->http://cloud-shop-02:10000][null]
+102221 DEBUG [2019-10-15 10:17:10]  Pooling connection [{}->http://cloud-shop-02:10000][null]; keep alive indefinitely
+102221 DEBUG [2019-10-15 10:17:10]  Notifying no-one, there are no waiting threads
+102221 DEBUG [2019-10-15 10:17:10]  >> GET /eureka/apps/delta HTTP/1.1
+102222 DEBUG [2019-10-15 10:17:10]  >> Accept: application/json
+102222 DEBUG [2019-10-15 10:17:10]  >> DiscoveryIdentity-Name: DefaultClient
+102222 DEBUG [2019-10-15 10:17:10]  >> DiscoveryIdentity-Version: 1.4
+102222 DEBUG [2019-10-15 10:17:10]  >> DiscoveryIdentity-Id: 192.168.3.24
+102222 DEBUG [2019-10-15 10:17:10]  >> Accept-Encoding: gzip
+102222 DEBUG [2019-10-15 10:17:10]  >> Host: cloud-shop-02:10000
+102222 DEBUG [2019-10-15 10:17:10]  >> Connection: Keep-Alive
+102222 DEBUG [2019-10-15 10:17:10]  >> User-Agent: Java-EurekaClient/v1.9.3
+102224 DEBUG [2019-10-15 10:17:10]   << "HTTP/1.1 200 [\r][\n]"
+102224 DEBUG [2019-10-15 10:17:10]   << "Content-Encoding: gzip[\r][\n]"
+102224 DEBUG [2019-10-15 10:17:10]   << "Content-Type: application/json[\r][\n]"
+102224 DEBUG [2019-10-15 10:17:10]   << "Content-Length: 640[\r][\n]"
+102224 DEBUG [2019-10-15 10:17:10]   << "Date: Mon, 14 Oct 2019 17:41:02 GMT[\r][\n]"
+102224 DEBUG [2019-10-15 10:17:10]   << "[\r][\n]"
+102224 DEBUG [2019-10-15 10:17:10]  Receiving response: HTTP/1.1 200 
+102224 DEBUG [2019-10-15 10:17:10]  << HTTP/1.1 200 
+102224 DEBUG [2019-10-15 10:17:10]  << Content-Encoding: gzip
+102224 DEBUG [2019-10-15 10:17:10]  << Content-Type: application/json
+102224 DEBUG [2019-10-15 10:17:10]  << Content-Length: 640
+102224 DEBUG [2019-10-15 10:17:10]  << Date: Mon, 14 Oct 2019 17:41:02 GMT
+102224 DEBUG [2019-10-15 10:17:10]  Connection can be kept alive indefinitely
+102225 DEBUG [2019-10-15 10:17:10]   << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xed]SMo[0xda]@[0x10][0xfd]/[0xab][0x1c][0xc1][0xac]m[0x88]mN[0xa1][0x18][0xa9][0xa8][0x9]D[0xa1]4[0x87]*B[0x9b][0xf5][0x10][0xaf][0xba]^[[0xeb]5)[0x8a][0xf8][0xef][0x9d][0xb5][0xe3][0xa4][0xa4]B[0x90]([0xc7][0x9e][0xec][0x9d]y[0xf3][0xf5]f[0xde][0x13]aE![0x5]gF[0xe4][0xaa]$[0xc3]'[0xb2][0x1]][0xda][0xff][0xd5]*[0x1]i[0x18][0x19][0x12][0xdf][0xf7]I[0xc7][0xe2][0xd0][0x96][0xb2]2[0xe5]y[0x2]h^^[0xaf]\[0xba]j<m[0x6]2[0xfc][0xf9]D[0x14][0xcb][0xac]|9_[0xc6][0xdd][0xab][0xd1][0xe5]e[0xf7]v[0xf2][0xa5][0xbb]\Ln[0x10],Ti[0x98][0xe2]P#[0xdb][0xc7]4A<+[0x84][0xc3]e^%[0xe][0xcf][0xb3]a[0xfd][0xd7][0xcd][0x98][0x94][0xdd]G[0xb8][0xef]V%[0xe8]aHC[0x17]S[0xa4]yifM[0x8d][0xbd][0x98][0xa6][0x95][0xc3][0x95][0x8b]Q[0x92]ht[0xbb][0x91][0xe7][0xb8][0xe7][0xa1][0xe3];^[0x1f][0xed][0xd8][0x82][0xa9][0xca]z |[0xe5]8[0xbf][0x16]I[0x2]j[0xf1]b[0x9f]}[0x9b][0xcd]og[0xe8],rm,Gg[0xa4][0xee][0xa5]C.@[0xb1]{[0x9][0xb6]}[0xa3]+ ;L[0x7][0xbc][0xd2]p[0xfd][0x8a][0xec][0xf7][0xfd]=[0xe0][0x9a][0xc9][0xb2]F[0xf2][0xbc]RFo[0xed][0xf0][0x98]*a[0x86][0x8d]A[0x19][0xd0]S[0xb5][0xce]m[0xec][0x5][0x97][0xac][0xb4][\r][0xe0]l[0x8e][0x2][0xb3][0x96][0xe2][0xb7][0x83][0x13][\n]"
+102225 DEBUG [2019-10-15 10:17:10]   << "[0xf4];[0xd3][0x96]:|[0x9c][0xc5][0xb0]f[0x95]4[0xf1]~[0x8a]N[0xbb][0x89][0xab][0xed][0xfc]Q[0xd9][0x8a][0x12]X[0x9]mz[\r][\n]"
+102225 DEBUG [2019-10-15 10:17:10]   << "[0x1e][0x99][0x9c]Z[0xfc][0xc6]~[0x17][0xc0][0xb1][0x9a]O[0xb1][0x97]J[0xd7][0xeb]lm[0x11][0xda]4<[0x88][0xd2]4[0xf6][0xef]"[0x3],[0x9f]![0xd9][0xee] pi[0xd0][0xf][0x2]/<[0xc7]9[0xb1]cs[0xd3]$>[0xc][0x82][0x8d][0xe0]o[0xd2]PK[0x9c]F;,[0x8b]C[0x81]8@[0x6][0x86]Y[0xa2]l[0xff][0x19]S[0xec][0x1]2[0x9c][0xd7]i[0xf6]B[0xea][0xfb][0xd8][0xd9][0x3][0xc9][0xe0][0x1a]}K-[0xd1][0x9a][0x1a]S[0xc]{[0xbd][0xfd][0xf3][0xb2][0xd0][0xde][0xcb][0xf2]O[0x1]3n*fr[0xdd][0x13][\r][0xb7])0i[0xd2]q[\n]"
+102225 DEBUG [2019-10-15 10:17:10]   << "[0xfc][0xd7][0xc9][0xa1]M[0xc][0x6]o[0x9a]c[0x84]f[0xbd][0xff][0x9e]:i[0xef][0xe8][0xc7]q[0xa0]([0xc7]y[0xae][0x13][0xa1]p5[0xea]![0x16]%[0xb7]7[0xbc]] [0x9d][0xa0]_[0xee][0xad]Y[0xcd][0xb2]@[0xf6] [0xf9][0x8b]a[0xb2]G[0xf1]3,[0x16][0xda]l[0xdf][0x82]\:[0x8][0xfa]4[0xa4][0x3][0xab][0xb3]f[0xdb][0xc2][0x9e][0xd7]([0x8e]'1[0xd9][0xdd][0xed]:[0x87][0xb4][0xff]u~5[0xf9][0xb8][0xf6][0xed]:-[0x91][0xf4][0x3][0xda]o+[0xb6][0xf6][0xe9][0xed][0xbf][0xaa]s[0x10]EA[0xff][0x88][0xf6][0xc3] [0x8a][0xfc][0xf7]k[0xdf]s[0xa3][0xc8][\r]][0xf7][0x14][0xed][0xd3][0xd3][0xb5]O[0xdf][0xa3]}[0xfa]q[0xed][0xd3]wj[0xdf]v[0x92][0xf6][0x9f][0x81][0x9f][0xa4][0xfd]z[0x81][0xc7][0xb4][0xef][0x5][0x91][0xe7][0x1d][0xd4][0xfe][0xdd]n[0xf7][0x7][0x8e][0xe8],[0xcf]L[0x8][0x0][0x0]"
+102228 DEBUG [2019-10-15 10:17:10]  Released connection is reusable.
+102228 DEBUG [2019-10-15 10:17:10]  Releasing connection [{}->http://cloud-shop-02:10000][null]
+102228 DEBUG [2019-10-15 10:17:10]  Pooling connection [{}->http://cloud-shop-02:10000][null]; keep alive indefinitely
+102228 DEBUG [2019-10-15 10:17:10]  Notifying no-one, there are no waiting threads
+131359 DEBUG [2019-10-15 10:17:39]  Closing connections idle longer than 30000 SECONDS
+131360 DEBUG [2019-10-15 10:17:39]  Closing connections idle longer than 30000 SECONDS
+132224 DEBUG [2019-10-15 10:17:40]  Get connection: {}->http://cloud-shop-02:10000, timeout = 5000
+132224 DEBUG [2019-10-15 10:17:40]  [{}->http://cloud-shop-02:10000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+132224 DEBUG [2019-10-15 10:17:40]  Getting free connection [{}->http://cloud-shop-02:10000][null]
+132224 DEBUG [2019-10-15 10:17:40]  Stale connection check
+132226 DEBUG [2019-10-15 10:17:40]  CookieSpec selected: default
+132226 DEBUG [2019-10-15 10:17:40]  Auth cache not set in the context
+132226 DEBUG [2019-10-15 10:17:40]  Target auth state: UNCHALLENGED
+132226 DEBUG [2019-10-15 10:17:40]  Proxy auth state: UNCHALLENGED
+132226 DEBUG [2019-10-15 10:17:40]  Attempt 1 to execute request
+132226 DEBUG [2019-10-15 10:17:40]  Sending request: PUT /eureka/apps/CLOUD-MALL-WEB-USER/api.cloud.com:cloud-mall-web-user:8081?status=UP&lastDirtyTimestamp=1571105740805 HTTP/1.1
+132226 DEBUG [2019-10-15 10:17:40]   >> "PUT /eureka/apps/CLOUD-MALL-WEB-USER/api.cloud.com:cloud-mall-web-user:8081?status=UP&lastDirtyTimestamp=1571105740805 HTTP/1.1[\r][\n]"
+132226 DEBUG [2019-10-15 10:17:40]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+132227 DEBUG [2019-10-15 10:17:40]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+132227 DEBUG [2019-10-15 10:17:40]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+132227 DEBUG [2019-10-15 10:17:40]   >> "Accept-Encoding: gzip[\r][\n]"
+132227 DEBUG [2019-10-15 10:17:40]   >> "Content-Length: 0[\r][\n]"
+132227 DEBUG [2019-10-15 10:17:40]   >> "Host: cloud-shop-02:10000[\r][\n]"
+132227 DEBUG [2019-10-15 10:17:40]   >> "Connection: Keep-Alive[\r][\n]"
+132227 DEBUG [2019-10-15 10:17:40]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+132227 DEBUG [2019-10-15 10:17:40]   >> "[\r][\n]"
+132227 DEBUG [2019-10-15 10:17:40]  >> PUT /eureka/apps/CLOUD-MALL-WEB-USER/api.cloud.com:cloud-mall-web-user:8081?status=UP&lastDirtyTimestamp=1571105740805 HTTP/1.1
+132227 DEBUG [2019-10-15 10:17:40]  >> DiscoveryIdentity-Name: DefaultClient
+132227 DEBUG [2019-10-15 10:17:40]  >> DiscoveryIdentity-Version: 1.4
+132227 DEBUG [2019-10-15 10:17:40]  >> DiscoveryIdentity-Id: 192.168.3.24
+132227 DEBUG [2019-10-15 10:17:40]  >> Accept-Encoding: gzip
+132227 DEBUG [2019-10-15 10:17:40]  >> Content-Length: 0
+132227 DEBUG [2019-10-15 10:17:40]  >> Host: cloud-shop-02:10000
+132228 DEBUG [2019-10-15 10:17:40]  >> Connection: Keep-Alive
+132228 DEBUG [2019-10-15 10:17:40]  >> User-Agent: Java-EurekaClient/v1.9.3
+132229 DEBUG [2019-10-15 10:17:40]   << "HTTP/1.1 200 [\r][\n]"
+132229 DEBUG [2019-10-15 10:17:40]   << "Content-Type: application/xml[\r][\n]"
+132229 DEBUG [2019-10-15 10:17:40]   << "Content-Length: 0[\r][\n]"
+132229 DEBUG [2019-10-15 10:17:40]   << "Date: Mon, 14 Oct 2019 17:41:32 GMT[\r][\n]"
+132230 DEBUG [2019-10-15 10:17:40]   << "[\r][\n]"
+132230 DEBUG [2019-10-15 10:17:40]  Receiving response: HTTP/1.1 200 
+132230 DEBUG [2019-10-15 10:17:40]  << HTTP/1.1 200 
+132230 DEBUG [2019-10-15 10:17:40]  Get connection: {}->http://cloud-shop-02:10000, timeout = 5000
+132230 DEBUG [2019-10-15 10:17:40]  << Content-Type: application/xml
+132230 DEBUG [2019-10-15 10:17:40]  [{}->http://cloud-shop-02:10000] total kept alive: 1, total issued: 1, total allocated: 2 out of 200
+132230 DEBUG [2019-10-15 10:17:40]  << Content-Length: 0
+132230 DEBUG [2019-10-15 10:17:40]  << Date: Mon, 14 Oct 2019 17:41:32 GMT
+132230 DEBUG [2019-10-15 10:17:40]  Getting free connection [{}->http://cloud-shop-02:10000][null]
+132231 DEBUG [2019-10-15 10:17:40]  Stale connection check
+132231 DEBUG [2019-10-15 10:17:40]  Connection can be kept alive indefinitely
+132231 DEBUG [2019-10-15 10:17:40]  Released connection is reusable.
+132232 DEBUG [2019-10-15 10:17:40]  Releasing connection [{}->http://cloud-shop-02:10000][null]
+132232 DEBUG [2019-10-15 10:17:40]  Pooling connection [{}->http://cloud-shop-02:10000][null]; keep alive indefinitely
+132232 DEBUG [2019-10-15 10:17:40]  Notifying no-one, there are no waiting threads
+132232 DEBUG [2019-10-15 10:17:40]  CookieSpec selected: default
+132232 DEBUG [2019-10-15 10:17:40]  Auth cache not set in the context
+132232 DEBUG [2019-10-15 10:17:40]  Target auth state: UNCHALLENGED
+132232 DEBUG [2019-10-15 10:17:40]  Proxy auth state: UNCHALLENGED
+132232 DEBUG [2019-10-15 10:17:40]  Attempt 1 to execute request
+132232 DEBUG [2019-10-15 10:17:40]  Sending request: GET /eureka/apps/delta HTTP/1.1
+132233 DEBUG [2019-10-15 10:17:40]   >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+132233 DEBUG [2019-10-15 10:17:40]   >> "Accept: application/json[\r][\n]"
+132233 DEBUG [2019-10-15 10:17:40]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+132233 DEBUG [2019-10-15 10:17:40]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+132233 DEBUG [2019-10-15 10:17:40]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+132233 DEBUG [2019-10-15 10:17:40]   >> "Accept-Encoding: gzip[\r][\n]"
+132233 DEBUG [2019-10-15 10:17:40]   >> "Host: cloud-shop-02:10000[\r][\n]"
+132233 DEBUG [2019-10-15 10:17:40]   >> "Connection: Keep-Alive[\r][\n]"
+132233 DEBUG [2019-10-15 10:17:40]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+132233 DEBUG [2019-10-15 10:17:40]   >> "[\r][\n]"
+132233 DEBUG [2019-10-15 10:17:40]  >> GET /eureka/apps/delta HTTP/1.1
+132233 DEBUG [2019-10-15 10:17:40]  >> Accept: application/json
+132233 DEBUG [2019-10-15 10:17:40]  >> DiscoveryIdentity-Name: DefaultClient
+132233 DEBUG [2019-10-15 10:17:40]  >> DiscoveryIdentity-Version: 1.4
+132233 DEBUG [2019-10-15 10:17:40]  >> DiscoveryIdentity-Id: 192.168.3.24
+132233 DEBUG [2019-10-15 10:17:40]  >> Accept-Encoding: gzip
+132233 DEBUG [2019-10-15 10:17:40]  >> Host: cloud-shop-02:10000
+132233 DEBUG [2019-10-15 10:17:40]  >> Connection: Keep-Alive
+132233 DEBUG [2019-10-15 10:17:40]  >> User-Agent: Java-EurekaClient/v1.9.3
+132235 DEBUG [2019-10-15 10:17:40]   << "HTTP/1.1 200 [\r][\n]"
+132235 DEBUG [2019-10-15 10:17:40]   << "Content-Encoding: gzip[\r][\n]"
+132235 DEBUG [2019-10-15 10:17:40]   << "Content-Type: application/json[\r][\n]"
+132235 DEBUG [2019-10-15 10:17:40]   << "Content-Length: 640[\r][\n]"
+132235 DEBUG [2019-10-15 10:17:40]   << "Date: Mon, 14 Oct 2019 17:41:32 GMT[\r][\n]"
+132235 DEBUG [2019-10-15 10:17:40]   << "[\r][\n]"
+132236 DEBUG [2019-10-15 10:17:40]  Receiving response: HTTP/1.1 200 
+132236 DEBUG [2019-10-15 10:17:40]  << HTTP/1.1 200 
+132236 DEBUG [2019-10-15 10:17:40]  << Content-Encoding: gzip
+132236 DEBUG [2019-10-15 10:17:40]  << Content-Type: application/json
+132236 DEBUG [2019-10-15 10:17:40]  << Content-Length: 640
+132236 DEBUG [2019-10-15 10:17:40]  << Date: Mon, 14 Oct 2019 17:41:32 GMT
+132236 DEBUG [2019-10-15 10:17:40]  Connection can be kept alive indefinitely
+132236 DEBUG [2019-10-15 10:17:40]   << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xed]SMo[0xda]@[0x10][0xfd]/[0xab][0x1c][0xc1][0xac]m[0x88]mN[0xa1][0x18][0xa9][0xa8][0x9]D[0xa1]4[0x87]*B[0x9b][0xf5][0x10][0xaf][0xba]^[[0xeb]5)[0x8a][0xf8][0xef][0x9d][0xb5][0xe3][0xa4][0xa4]B[0x90]([0xc7][0x9e][0xec][0x9d]y[0xf3][0xf5]f[0xde][0x13]aE![0x5]gF[0xe4][0xaa]$[0xc3]'[0xb2][0x1]][0xda][0xff][0xd5]*[0x1]i[0x18][0x19][0x12][0xdf][0xf7]I[0xc7][0xe2][0xd0][0x96][0xb2]2[0xe5]y[0x2]h^^[0xaf]\[0xba]j<m[0x6]2[0xfc][0xf9]D[0x14][0xcb][0xac]|9_[0xc6][0xdd][0xab][0xd1][0xe5]e[0xf7]v[0xf2][0xa5][0xbb]\Ln[0x10],Ti[0x98][0xe2]P#[0xdb][0xc7]4A<+[0x84][0xc3]e^%[0xe][0xcf][0xb3]a[0xfd][0xd7][0xcd][0x98][0x94][0xdd]G[0xb8][0xef]V%[0xe8]aHC[0x17]S[0xa4]yifM[0x8d][0xbd][0x98][0xa6][0x95][0xc3][0x95][0x8b]Q[0x92]ht[0xbb][0x91][0xe7][0xb8][0xe7][0xa1][0xe3];^[0x1f][0xed][0xd8][0x82][0xa9][0xca]z |[0xe5]8[0xbf][0x16]I[0x2]j[0xf1]b[0x9f]}[0x9b][0xcd]og[0xe8],rm,Gg[0xa4][0xee][0xa5]C.@[0xb1]{[0x9][0xb6]}[0xa3]+ ;L[0x7][0xbc][0xd2]p[0xfd][0x8a][0xec][0xf7][0xfd]=[0xe0][0x9a][0xc9][0xb2]F[0xf2][0xbc]RFo[0xed][0xf0][0x98]*a[0x86][0x8d]A[0x19][0xd0]S[0xb5][0xce]m[0xec][0x5][0x97][0xac][0xb4][\r][0xe0]l[0x8e][0x2][0xb3][0x96][0xe2][0xb7][0x83][0x13][\n]"
+132236 DEBUG [2019-10-15 10:17:40]   << "[0xf4];[0xd3][0x96]:|[0x9c][0xc5][0xb0]f[0x95]4[0xf1]~[0x8a]N[0xbb][0x89][0xab][0xed][0xfc]Q[0xd9][0x8a][0x12]X[0x9]mz[\r][\n]"
+132236 DEBUG [2019-10-15 10:17:40]   << "[0x1e][0x99][0x9c]Z[0xfc][0xc6]~[0x17][0xc0][0xb1][0x9a]O[0xb1][0x97]J[0xd7][0xeb]lm[0x11][0xda]4<[0x88][0xd2]4[0xf6][0xef]"[0x3],[0x9f]![0xd9][0xee] pi[0xd0][0xf][0x2]/<[0xc7]9[0xb1]cs[0xd3]$>[0xc][0x82][0x8d][0xe0]o[0xd2]PK[0x9c]F;,[0x8b]C[0x81]8@[0x6][0x86]Y[0xa2]l[0xff][0x19]S[0xec][0x1]2[0x9c][0xd7]i[0xf6]B[0xea][0xfb][0xd8][0xd9][0x3][0xc9][0xe0][0x1a]}K-[0xd1][0x9a][0x1a]S[0xc]{[0xbd][0xfd][0xf3][0xb2][0xd0][0xde][0xcb][0xf2]O[0x1]3n*fr[0xdd][0x13][\r][0xb7])0i[0xd2]q[\n]"
+132237 DEBUG [2019-10-15 10:17:40]   << "[0xfc][0xd7][0xc9][0xa1]M[0xc][0x6]o[0x9a]c[0x84]f[0xbd][0xff][0x9e]:i[0xef][0xe8][0xc7]q[0xa0]([0xc7]y[0xae][0x13][0xa1]p5[0xea]![0x16]%[0xb7]7[0xbc]] [0x9d][0xa0]_[0xee][0xad]Y[0xcd][0xb2]@[0xf6] [0xf9][0x8b]a[0xb2]G[0xf1]3,[0x16][0xda]l[0xdf][0x82]\:[0x8][0xfa]4[0xa4][0x3][0xab][0xb3]f[0xdb][0xc2][0x9e][0xd7]([0x8e]'1[0xd9][0xdd][0xed]:[0x87][0xb4][0xff]u~5[0xf9][0xb8][0xf6][0xed]:-[0x91][0xf4][0x3][0xda]o+[0xb6][0xf6][0xe9][0xed][0xbf][0xaa]s[0x10]EA[0xff][0x88][0xf6][0xc3] [0x8a][0xfc][0xf7]k[0xdf]s[0xa3][0xc8][\r]][0xf7][0x14][0xed][0xd3][0xd3][0xb5]O[0xdf][0xa3]}[0xfa]q[0xed][0xd3]wj[0xdf]v[0x92][0xf6][0x9f][0x81][0x9f][0xa4][0xfd]z[0x81][0xc7][0xb4][0xef][0x5][0x91][0xe7][0x1d][0xd4][0xfe][0xdd]n[0xf7][0x7][0x8e][0xe8],[0xcf]L[0x8][0x0][0x0]"
+132240 DEBUG [2019-10-15 10:17:40]  Released connection is reusable.
+132240 DEBUG [2019-10-15 10:17:40]  Releasing connection [{}->http://cloud-shop-02:10000][null]
+132240 DEBUG [2019-10-15 10:17:40]  Pooling connection [{}->http://cloud-shop-02:10000][null]; keep alive indefinitely
+132240 DEBUG [2019-10-15 10:17:40]  Notifying no-one, there are no waiting threads
+161361 DEBUG [2019-10-15 10:18:09]  Closing connections idle longer than 30000 SECONDS
+161361 DEBUG [2019-10-15 10:18:09]  Closing connections idle longer than 30000 SECONDS
+162234 DEBUG [2019-10-15 10:18:10]  Get connection: {}->http://cloud-shop-02:10000, timeout = 5000
+162234 DEBUG [2019-10-15 10:18:10]  [{}->http://cloud-shop-02:10000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+162234 DEBUG [2019-10-15 10:18:10]  Getting free connection [{}->http://cloud-shop-02:10000][null]
+162234 DEBUG [2019-10-15 10:18:10]  Stale connection check
+162236 DEBUG [2019-10-15 10:18:10]  CookieSpec selected: default
+162237 DEBUG [2019-10-15 10:18:10]  Auth cache not set in the context
+162237 DEBUG [2019-10-15 10:18:10]  Target auth state: UNCHALLENGED
+162237 DEBUG [2019-10-15 10:18:10]  Proxy auth state: UNCHALLENGED
+162237 DEBUG [2019-10-15 10:18:10]  Attempt 1 to execute request
+162237 DEBUG [2019-10-15 10:18:10]  Sending request: PUT /eureka/apps/CLOUD-MALL-WEB-USER/api.cloud.com:cloud-mall-web-user:8081?status=UP&lastDirtyTimestamp=1571105740805 HTTP/1.1
+162237 DEBUG [2019-10-15 10:18:10]   >> "PUT /eureka/apps/CLOUD-MALL-WEB-USER/api.cloud.com:cloud-mall-web-user:8081?status=UP&lastDirtyTimestamp=1571105740805 HTTP/1.1[\r][\n]"
+162237 DEBUG [2019-10-15 10:18:10]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+162237 DEBUG [2019-10-15 10:18:10]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+162237 DEBUG [2019-10-15 10:18:10]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+162237 DEBUG [2019-10-15 10:18:10]   >> "Accept-Encoding: gzip[\r][\n]"
+162237 DEBUG [2019-10-15 10:18:10]   >> "Content-Length: 0[\r][\n]"
+162238 DEBUG [2019-10-15 10:18:10]   >> "Host: cloud-shop-02:10000[\r][\n]"
+162238 DEBUG [2019-10-15 10:18:10]   >> "Connection: Keep-Alive[\r][\n]"
+162238 DEBUG [2019-10-15 10:18:10]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+162238 DEBUG [2019-10-15 10:18:10]   >> "[\r][\n]"
+162238 DEBUG [2019-10-15 10:18:10]  >> PUT /eureka/apps/CLOUD-MALL-WEB-USER/api.cloud.com:cloud-mall-web-user:8081?status=UP&lastDirtyTimestamp=1571105740805 HTTP/1.1
+162238 DEBUG [2019-10-15 10:18:10]  >> DiscoveryIdentity-Name: DefaultClient
+162238 DEBUG [2019-10-15 10:18:10]  >> DiscoveryIdentity-Version: 1.4
+162238 DEBUG [2019-10-15 10:18:10]  >> DiscoveryIdentity-Id: 192.168.3.24
+162238 DEBUG [2019-10-15 10:18:10]  >> Accept-Encoding: gzip
+162238 DEBUG [2019-10-15 10:18:10]  >> Content-Length: 0
+162238 DEBUG [2019-10-15 10:18:10]  >> Host: cloud-shop-02:10000
+162238 DEBUG [2019-10-15 10:18:10]  >> Connection: Keep-Alive
+162238 DEBUG [2019-10-15 10:18:10]  >> User-Agent: Java-EurekaClient/v1.9.3
+162240 DEBUG [2019-10-15 10:18:10]   << "HTTP/1.1 200 [\r][\n]"
+162240 DEBUG [2019-10-15 10:18:10]   << "Content-Type: application/xml[\r][\n]"
+162240 DEBUG [2019-10-15 10:18:10]   << "Content-Length: 0[\r][\n]"
+162240 DEBUG [2019-10-15 10:18:10]   << "Date: Mon, 14 Oct 2019 17:42:02 GMT[\r][\n]"
+162240 DEBUG [2019-10-15 10:18:10]   << "[\r][\n]"
+162240 DEBUG [2019-10-15 10:18:10]  Receiving response: HTTP/1.1 200 
+162240 DEBUG [2019-10-15 10:18:10]  << HTTP/1.1 200 
+162240 DEBUG [2019-10-15 10:18:10]  << Content-Type: application/xml
+162240 DEBUG [2019-10-15 10:18:10]  << Content-Length: 0
+162240 DEBUG [2019-10-15 10:18:10]  << Date: Mon, 14 Oct 2019 17:42:02 GMT
+162241 DEBUG [2019-10-15 10:18:10]  Connection can be kept alive indefinitely
+162241 DEBUG [2019-10-15 10:18:10]  Released connection is reusable.
+162241 DEBUG [2019-10-15 10:18:10]  Releasing connection [{}->http://cloud-shop-02:10000][null]
+162241 DEBUG [2019-10-15 10:18:10]  Pooling connection [{}->http://cloud-shop-02:10000][null]; keep alive indefinitely
+162241 DEBUG [2019-10-15 10:18:10]  Notifying no-one, there are no waiting threads
+162242 DEBUG [2019-10-15 10:18:10]  Get connection: {}->http://cloud-shop-02:10000, timeout = 5000
+162242 DEBUG [2019-10-15 10:18:10]  [{}->http://cloud-shop-02:10000] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+162242 DEBUG [2019-10-15 10:18:10]  Getting free connection [{}->http://cloud-shop-02:10000][null]
+162242 DEBUG [2019-10-15 10:18:10]  Stale connection check
+162244 DEBUG [2019-10-15 10:18:10]  CookieSpec selected: default
+162244 DEBUG [2019-10-15 10:18:10]  Auth cache not set in the context
+162244 DEBUG [2019-10-15 10:18:10]  Target auth state: UNCHALLENGED
+162244 DEBUG [2019-10-15 10:18:10]  Proxy auth state: UNCHALLENGED
+162244 DEBUG [2019-10-15 10:18:10]  Attempt 1 to execute request
+162244 DEBUG [2019-10-15 10:18:10]  Sending request: GET /eureka/apps/delta HTTP/1.1
+162245 DEBUG [2019-10-15 10:18:10]   >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+162245 DEBUG [2019-10-15 10:18:10]   >> "Accept: application/json[\r][\n]"
+162245 DEBUG [2019-10-15 10:18:10]   >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+162245 DEBUG [2019-10-15 10:18:10]   >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+162245 DEBUG [2019-10-15 10:18:10]   >> "DiscoveryIdentity-Id: 192.168.3.24[\r][\n]"
+162245 DEBUG [2019-10-15 10:18:10]   >> "Accept-Encoding: gzip[\r][\n]"
+162245 DEBUG [2019-10-15 10:18:10]   >> "Host: cloud-shop-02:10000[\r][\n]"
+162245 DEBUG [2019-10-15 10:18:10]   >> "Connection: Keep-Alive[\r][\n]"
+162245 DEBUG [2019-10-15 10:18:10]   >> "User-Agent: Java-EurekaClient/v1.9.3[\r][\n]"
+162245 DEBUG [2019-10-15 10:18:10]   >> "[\r][\n]"
+162245 DEBUG [2019-10-15 10:18:10]  >> GET /eureka/apps/delta HTTP/1.1
+162245 DEBUG [2019-10-15 10:18:10]  >> Accept: application/json
+162245 DEBUG [2019-10-15 10:18:10]  >> DiscoveryIdentity-Name: DefaultClient
+162245 DEBUG [2019-10-15 10:18:10]  >> DiscoveryIdentity-Version: 1.4
+162245 DEBUG [2019-10-15 10:18:10]  >> DiscoveryIdentity-Id: 192.168.3.24
+162245 DEBUG [2019-10-15 10:18:10]  >> Accept-Encoding: gzip
+162245 DEBUG [2019-10-15 10:18:10]  >> Host: cloud-shop-02:10000
+162245 DEBUG [2019-10-15 10:18:10]  >> Connection: Keep-Alive
+162245 DEBUG [2019-10-15 10:18:10]  >> User-Agent: Java-EurekaClient/v1.9.3
+162247 DEBUG [2019-10-15 10:18:10]   << "HTTP/1.1 200 [\r][\n]"
+162247 DEBUG [2019-10-15 10:18:10]   << "Content-Encoding: gzip[\r][\n]"
+162247 DEBUG [2019-10-15 10:18:10]   << "Content-Type: application/json[\r][\n]"
+162247 DEBUG [2019-10-15 10:18:10]   << "Content-Length: 640[\r][\n]"
+162247 DEBUG [2019-10-15 10:18:10]   << "Date: Mon, 14 Oct 2019 17:42:02 GMT[\r][\n]"
+162247 DEBUG [2019-10-15 10:18:10]   << "[\r][\n]"
+162247 DEBUG [2019-10-15 10:18:10]  Receiving response: HTTP/1.1 200 
+162247 DEBUG [2019-10-15 10:18:10]  << HTTP/1.1 200 
+162248 DEBUG [2019-10-15 10:18:10]  << Content-Encoding: gzip
+162248 DEBUG [2019-10-15 10:18:10]  << Content-Type: application/json
+162248 DEBUG [2019-10-15 10:18:10]  << Content-Length: 640
+162248 DEBUG [2019-10-15 10:18:10]  << Date: Mon, 14 Oct 2019 17:42:02 GMT
+162248 DEBUG [2019-10-15 10:18:10]  Connection can be kept alive indefinitely
+162248 DEBUG [2019-10-15 10:18:10]   << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xed]SMo[0xda]@[0x10][0xfd]/[0xab][0x1c][0xc1][0xac]m[0x88]mN[0xa1][0x18][0xa9][0xa8][0x9]D[0xa1]4[0x87]*B[0x9b][0xf5][0x10][0xaf][0xba]^[[0xeb]5)[0x8a][0xf8][0xef][0x9d][0xb5][0xe3][0xa4][0xa4]B[0x90]([0xc7][0x9e][0xec][0x9d]y[0xf3][0xf5]f[0xde][0x13]aE![0x5]gF[0xe4][0xaa]$[0xc3]'[0xb2][0x1]][0xda][0xff][0xd5]*[0x1]i[0x18][0x19][0x12][0xdf][0xf7]I[0xc7][0xe2][0xd0][0x96][0xb2]2[0xe5]y[0x2]h^^[0xaf]\[0xba]j<m[0x6]2[0xfc][0xf9]D[0x14][0xcb][0xac]|9_[0xc6][0xdd][0xab][0xd1][0xe5]e[0xf7]v[0xf2][0xa5][0xbb]\Ln[0x10],Ti[0x98][0xe2]P#[0xdb][0xc7]4A<+[0x84][0xc3]e^%[0xe][0xcf][0xb3]a[0xfd][0xd7][0xcd][0x98][0x94][0xdd]G[0xb8][0xef]V%[0xe8]aHC[0x17]S[0xa4]yifM[0x8d][0xbd][0x98][0xa6][0x95][0xc3][0x95][0x8b]Q[0x92]ht[0xbb][0x91][0xe7][0xb8][0xe7][0xa1][0xe3];^[0x1f][0xed][0xd8][0x82][0xa9][0xca]z |[0xe5]8[0xbf][0x16]I[0x2]j[0xf1]b[0x9f]}[0x9b][0xcd]og[0xe8],rm,Gg[0xa4][0xee][0xa5]C.@[0xb1]{[0x9][0xb6]}[0xa3]+ ;L[0x7][0xbc][0xd2]p[0xfd][0x8a][0xec][0xf7][0xfd]=[0xe0][0x9a][0xc9][0xb2]F[0xf2][0xbc]RFo[0xed][0xf0][0x98]*a[0x86][0x8d]A[0x19][0xd0]S[0xb5][0xce]m[0xec][0x5][0x97][0xac][0xb4][\r][0xe0]l[0x8e][0x2][0xb3][0x96][0xe2][0xb7][0x83][0x13][\n]"
+162248 DEBUG [2019-10-15 10:18:10]   << "[0xf4];[0xd3][0x96]:|[0x9c][0xc5][0xb0]f[0x95]4[0xf1]~[0x8a]N[0xbb][0x89][0xab][0xed][0xfc]Q[0xd9][0x8a][0x12]X[0x9]mz[\r][\n]"
+162249 DEBUG [2019-10-15 10:18:10]   << "[0x1e][0x99][0x9c]Z[0xfc][0xc6]~[0x17][0xc0][0xb1][0x9a]O[0xb1][0x97]J[0xd7][0xeb]lm[0x11][0xda]4<[0x88][0xd2]4[0xf6][0xef]"[0x3],[0x9f]![0xd9][0xee] pi[0xd0][0xf][0x2]/<[0xc7]9[0xb1]cs[0xd3]$>[0xc][0x82][0x8d][0xe0]o[0xd2]PK[0x9c]F;,[0x8b]C[0x81]8@[0x6][0x86]Y[0xa2]l[0xff][0x19]S[0xec][0x1]2[0x9c][0xd7]i[0xf6]B[0xea][0xfb][0xd8][0xd9][0x3][0xc9][0xe0][0x1a]}K-[0xd1][0x9a][0x1a]S[0xc]{[0xbd][0xfd][0xf3][0xb2][0xd0][0xde][0xcb][0xf2]O[0x1]3n*fr[0xdd][0x13][\r][0xb7])0i[0xd2]q[\n]"
+162249 DEBUG [2019-10-15 10:18:10]   << "[0xfc][0xd7][0xc9][0xa1]M[0xc][0x6]o[0x9a]c[0x84]f[0xbd][0xff][0x9e]:i[0xef][0xe8][0xc7]q[0xa0]([0xc7]y[0xae][0x13][0xa1]p5[0xea]![0x16]%[0xb7]7[0xbc]] [0x9d][0xa0]_[0xee][0xad]Y[0xcd][0xb2]@[0xf6] [0xf9][0x8b]a[0xb2]G[0xf1]3,[0x16][0xda]l[0xdf][0x82]\:[0x8][0xfa]4[0xa4][0x3][0xab][0xb3]f[0xdb][0xc2][0x9e][0xd7]([0x8e]'1[0xd9][0xdd][0xed]:[0x87][0xb4][0xff]u~5[0xf9][0xb8][0xf6][0xed]:-[0x91][0xf4][0x3][0xda]o+[0xb6][0xf6][0xe9][0xed][0xbf][0xaa]s[0x10]EA[0xff][0x88][0xf6][0xc3] [0x8a][0xfc][0xf7]k[0xdf]s[0xa3][0xc8][\r]][0xf7][0x14][0xed][0xd3][0xd3][0xb5]O[0xdf][0xa3]}[0xfa]q[0xed][0xd3]wj[0xdf]v[0x92][0xf6][0x9f][0x81][0x9f][0xa4][0xfd]z[0x81][0xc7][0xb4][0xef][0x5][0x91][0xe7][0x1d][0xd4][0xfe][0xdd]n[0xf7][0x7][0x8e][0xe8],[0xcf]L[0x8][0x0][0x0]"
+162252 DEBUG [2019-10-15 10:18:10]  Released connection is reusable.
+162252 DEBUG [2019-10-15 10:18:10]  Releasing connection [{}->http://cloud-shop-02:10000][null]
+162252 DEBUG [2019-10-15 10:18:10]  Pooling connection [{}->http://cloud-shop-02:10000][null]; keep alive indefinitely
+162252 DEBUG [2019-10-15 10:18:10]  Notifying no-one, there are no waiting threads

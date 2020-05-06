@@ -12,9 +12,9 @@
   <artifactId>cloud-mall-registry</artifactId>
   <dependencies>
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-    </dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+  </dependency>
   </dependencies>
 
   <build>
@@ -22,6 +22,10 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <fork>false</fork>
+          <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+        </configuration>
       </plugin>
     </plugins>
   </build>

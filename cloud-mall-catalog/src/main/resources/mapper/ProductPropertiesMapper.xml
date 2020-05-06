@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.ProductPropertiesMapper">
+	<resultMap id="ProductPropertiesMap" type="ProductProperties">
+		<result property="productId" column="product_id" javaType="long" jdbcType="BIGINT" />
+		<result property="attributeValueId" column="attr_val_id" javaType="long" jdbcType="BIGINT"  />
+        <result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+        <result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!--根据attribute value 和 product信息 -->
+    <select id="findByProductId" parameterType="long" resultMap="ProductPropertiesMap">
+        SELECT * FROM cloud_product_properties WHERE `product_id` = #{productId} AND `deleted` = 0
+    </select>
+
+    <!--根据attribute value 和 product信息 -->
+    <select id="findByAttributeValueId" parameterType="long" resultMap="ProductPropertiesMap">
+        SELECT * FROM cloud_product_properties WHERE `attr_val_id` = #{attributeValueId} AND `deleted` = 0
+    </select>
+
+    <!-- 保存category和AttributeName的关系 -->
+    <insert id="saveProductProperties" parameterType="ProductProperties">
+      INSERT INTO
+          cloud_product_properties(`product_id`,`attr_val_id`,`deleted`,`create_time`,`update_time`)
+      VALUES
+          (#{productId},#{attributeValueId},#{deleted},#{createTime},#{updateTime})
+    </insert>
+
+    <!--删除attribute value 和 product之间关系-->
+    <delete id="deleteProductProperties" parameterType="long">
+        UPDATE cloud_product_properties SET `deleted` = 1  WHERE `product_id` = #{productId}
+    </delete>
+
+    <!--删除attribute value 和 product 之间关系-->
+    <delete id="deleteProductPropertiesByProductId" parameterType="long">
+        UPDATE cloud_product_properties SET `deleted` = 1  WHERE `product_id` = #{productId}
+    </delete>
+
+    <!--删除attribute value 和 product 之间关系-->
+    <delete id="deleteProductPropertiesByByAttributeValueId" parameterType="long">
+        UPDATE cloud_product_properties SET `deleted` = 1  WHERE `attr_val_id` = #{attributeValueId}
+    </delete>
+</mapper>

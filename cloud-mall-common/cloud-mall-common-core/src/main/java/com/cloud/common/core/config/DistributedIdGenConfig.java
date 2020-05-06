@@ -1,6 +1,6 @@
 package com.cloud.common.core.config;
 
-import com.cloud.api.service.IdGenService;
+import com.cloud.service.IdGenService;
 import com.cloud.service.factory.IdServiceFactoryBean;
 import com.cloud.service.provider.PropertyMachineIdProvider;
 import org.apache.commons.lang3.StringUtils;

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.OrderAfterSalesMapper">
+	<resultMap id="OrderAfterSalesMap" type="OrderAfterSales">
+		<id property="serviceId" column="service_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderId" column="order_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderNo" column="order_no" javaType="long" jdbcType="BIGINT" />
+		<result property="afterStatus" column="after_status" />
+		<result property="applyType" column="apply_type" />
+		<result property="skuName" column="sku_name" />
+		<result property="imageUrl" column="image_url" />
+		<result property="submitCount" column="submit_count" />
+		<result property="returnMethod" column="return_method" />
+		<result property="takeAddress" column="take_address" />
+		<result property="takeTime" column="take_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="receiverAddress" column="receiver_address" />
+		<result property="customerName" column="customer_name" />
+		<result property="mobile" column="mobile" />
+		<result property="handlingWay" column="handling_way" />
+		<result property="reason" column="reason" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		`service_id`,`order_id`,`order_no`,`after_status`,`apply_type`,`sku_name`,
+		`image_url`,`submit_count`,`return_method`,`take_address`,`take_time`,`receiver_address`,
+		`customer_name`,`mobile`,`handling_way`,`reason`,`deleted`,`create_time`,`update_time`
+	</sql>
+
+	<!-- 根据服务ID查询服务 -->
+	<select id="findAfterServicesById" parameterType="long" resultMap="OrderAfterSalesMap">
+		SELECT
+		<include refid="Base_Column_List" />
+	  	FROM cloud_order_after_sales
+		WHERE `service_id` = #{serviceId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单ID查询服务 -->
+	<select id="findAfterServicesByOrderId" parameterType="long" resultMap="OrderAfterSalesMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_after_sales
+		WHERE `order_id` = #{orderId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单号查询服务 -->
+	<select id="findAfterServicesByNo" parameterType="long" resultMap="OrderAfterSalesMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_after_sales
+		WHERE `order_no` = #{orderNo} AND `deleted` = 0
+	</select>
+
+	<!-- 保存服务 -->
+	<insert id="save" parameterType="OrderAfterSales">
+		INSERT INTO cloud_order_after_sales (<include refid="Base_Column_List" />)
+		VALUES
+		(
+			#{serviceId},
+			#{orderId},
+			#{orderNo},
+			#{afterStatus},
+			#{applyType},
+			#{skuName},
+			#{imageUrl},
+			#{submitCount},
+			#{returnMethod},
+			#{takeAddress},
+			#{takeTime},
+			#{receiverAddress},
+			#{customerName},
+			#{mobile},
+			#{handlingWay},
+			#{reason},
+			#{deleted},
+			#{createTime},
+			#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存服务 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_activity (<include refid="Base_Column_List" />)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.serviceId},
+					#{element.orderId},
+					#{element.orderNo},
+					#{element.afterStatus},
+					#{element.applyType},
+					#{element.skuName},
+					#{element.imageUrl},
+					#{element.submitCount},
+					#{element.returnMethod},
+					#{element.takeAddress},
+					#{element.takeTime},
+					#{element.receiverAddress},
+					#{element.customerName},
+					#{element.mobile},
+					#{element.handlingWay},
+					#{element.reason},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+	<!-- 更新服务 -->
+	<update id="update" parameterType="OrderAfterSales">
+		UPDATE cloud_order_after_sales
+		<set>
+			<if test="serviceId != null">`service_id` = #{serviceId},</if>
+			<if test="orderId != null">`order_id` = #{orderId},</if>
+			<if test="orderNo != null">`order_no` = #{orderNo},</if>
+			<if test="afterStatus != null">`after_status` = #{afterStatus},</if>
+			<if test="applyType != null">`apply_type` = #{applyType},</if>
+			<if test="skuName != null">`sku_name` = #{skuName},</if>
+			<if test="imageUrl != null">`image_url` = #{imageUrl},</if>
+			<if test="submitCount != null">`submit_count` = #{submitCount},</if>
+			<if test="returnMethod != null">`return_method` = #{returnMethod},</if>
+			<if test="takeAddress != null">`take_address` = #{takeAddress},</if>
+			<if test="takeTime != null">`take_time` = #{takeTime},</if>
+			<if test="receiverAddress != null">`receiver_address` = #{receiverAddress},</if>
+			<if test="customerName != null">`customer_name` = #{customerName},</if>
+			<if test="mobile != null">`mobile` = #{mobile},</if>
+			<if test="handlingWay != null">`handling_way` = #{handlingWay},</if>
+			<if test="reason != null">`reason` = #{reason},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `service_id` = #{serviceId}
+	</update>
+
+	<!-- 逻辑删除指定的服务 -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_order_after_sales SET `deleted` = 1 WHERE `service_id` = #{serviceId} AND `deleted` = 0
+	</delete>
+</mapper>

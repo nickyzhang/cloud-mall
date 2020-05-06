@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.CouponUseRecordMapper">
+	<resultMap id="CouponUseRecordMap" type="CouponUseRecord">
+		<id property="id" column="id" javaType="long" jdbcType="BIGINT"/>
+		<result property="userId" column="user_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="templateId" column="template_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="couponId" column="coupon_id" javaType="long" jdbcType="BIGINT" />
+		<result property="couponNo" column="coupon_no" />
+		<result property="orderId" column="order_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderNo" column="order_no" />
+		<result property="usedAmount" column="used_amount" javaType="java.math.BigDecimal" jdbcType="DECIMAL"/>
+		<result property="useTime" column="use_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+	<sql id="Base_Column_List">
+		`id`,`user_id`,`template_id`,`coupon_id`,`coupon_no`,`order_id`,`order_no`,
+		`used_amount`,`use_time`,`deleted`,`create_time`,`update_time`
+	</sql>
+
+	<!--根据id查询优惠券信息 -->
+	<select id="find" parameterType="long" resultMap="CouponUseRecordMap">
+		SELECT * FROM cloud_coupon_use_record WHERE `id` = #{id} AND `deleted` = 0
+	</select>
+
+	<!-- 根据coupon no查询使用记录 -->
+	<select id="findUseRecordByCouponNo" parameterType="string" resultMap="CouponUseRecordMap">
+		SELECT * FROM cloud_coupon_use_record WHERE `coupon_no` = #{couponNo} AND `deleted` = 0
+	</select>
+
+	<!-- 根据优惠券id查询使用记录 -->
+	<select id="findUseRecordByCouponId" parameterType="long" resultMap="CouponUseRecordMap">
+		SELECT * FROM cloud_coupon_use_record WHERE `coupon_id` = #{couponId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据user id查询使用记录 -->
+	<select id="findUseRecordListByUserId" parameterType="long" resultMap="CouponUseRecordMap">
+		SELECT * FROM cloud_coupon_use_record WHERE `user_id` = #{userId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据user id查询使用记录 -->
+	<select id="findUseRecordListByOrderId" parameterType="long" resultMap="CouponUseRecordMap">
+		SELECT * FROM cloud_coupon_use_record WHERE `order_id` = #{orderId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据order no查询使用记录 -->
+	<select id="findUseRecordByOrderNo" parameterType="string" resultMap="CouponUseRecordMap">
+		SELECT * FROM cloud_coupon_use_record WHERE `order_no` = #{orderNo} AND `deleted` = 0
+	</select>
+
+	<!-- 查询所有已经使用的优惠券 -->
+	<select id="findAll" resultMap="CouponUseRecordMap">
+		SELECT * FROM cloud_coupon_use_record WHERE `deleted` = 0
+	</select>
+
+	<!-- 统计某模板下已经使用的优惠券数量 -->
+	<select id="getUseNumByTemplateId" parameterType="long" resultType="long">
+		SELECT COUNT(1) FROM cloud_coupon_use_record WHERE `deleted` = 0 AND `template_id` = #{templateId}
+	</select>
+
+	<!-- 保存优惠券信息 -->
+	<insert id="save" parameterType="Coupon">
+		INSERT INTO cloud_coupon_use_record
+		(<include refid="Base_Column_List" />)
+		VALUES
+		(
+			#{id},#{userId},#{templateId},#{couponId},#{couponN},#{orderId},#{orderNo},
+			#{usedAmount},#{usedTime},#{deleted},#{createTime},#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存优惠券信息 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_coupon_use_record
+		(<include refid="Base_Column_List" />)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.id},
+					#{element.userId},
+					#{element.templateId},
+					#{element.couponId},
+					#{element.couponNo},
+					#{element.orderId},
+					#{element.orderNo},
+					#{element.usedAmount},
+					#{element.usedTime},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+
+	<!-- 更新优惠券信息 -->
+	<update id="update" parameterType="Coupon">
+		UPDATE cloud_coupon_use_record
+		<set>
+			<if test="id != null">`id` = #{id},</if>
+			<if test="userId != null">`user_id` = #{userId},</if>
+			<if test="templateId != null">`template_id` = #{templateId},</if>
+			<if test="couponId != null">`coupon_id` = #{couponId},</if>
+			<if test="couponNo != null">`coupon_no` = #{couponNo},</if>
+			<if test="orderId != null">`order_id` = #{orderId},</if>
+			<if test="orderNo != null">`order_no` = #{orderNo},</if>
+			<if test="usedAmount != null">`used_amount` = #{usedAmount},</if>
+			<if test="usedTime != null">`used_time` = #{usedTime},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `id` = #{id}
+	</update>
+
+	<!-- 删除优惠券 -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_coupon_use_record SET `deleted` = 1
+		WHERE `id` = #{id} AND `deleted` = 0
+	</delete>
+
+	<!-- 删除优惠券 -->
+	<delete id="deleteUseRecordByUserId" parameterType="long">
+		UPDATE cloud_coupon_use_record SET `deleted` = 1
+		WHERE `user_id` = #{userId} AND `deleted` = 0
+	</delete>
+
+	<!-- 删除优惠券 -->
+	<delete id="deleteUseRecordByCouponId" parameterType="long">
+		UPDATE cloud_coupon_use_record SET `deleted` = 1
+		WHERE `coupon_id` = #{couponId} AND `deleted` = 0
+	</delete>
+</mapper>

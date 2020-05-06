@@ -9,7 +9,6 @@
 		<module>cloud-mall-registry</module>
 		<module>cloud-mall-user</module>
 		<module>cloud-mall-config</module>
-		<module>cloud-mall-apollo</module>
 		<module>cloud-mall-catalog</module>
 		<module>cloud-mall-cart</module>
 		<module>cloud-mall-order</module>
@@ -17,6 +16,15 @@
 		<module>cloud-mall-promotion</module>
 		<module>cloud-mall-inventory</module>
 		<module>cloud-mall-web</module>
+		<module>cloud-mall-auth</module>
+		<module>cloud-mall-gateway</module>
+		<module>cloud-mall-api-model</module>
+        <module>cloud-mall-notification</module>
+        <module>cloud-mall-transaction</module>
+		<module>cloud-mall-search</module>
+		<module>cloud-mall-product-details</module>
+		<module>cloud-mall-review</module>
+		<module>cloud-mall-databus</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -69,18 +77,18 @@
 	<distributionManagement>
 		<repository>
 			<id>release</id>
-			<url>http://192.168.3.101:9999/repository/cloud-release/</url>
+			<url>http://cloud-shop-02:2222/repository/cloud-release/</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshot</id>
-			<url>http://192.168.3.101:9999/repository/cloud-snapshot/</url>
+			<url>http://cloud-shop-02:2222/repository/cloud-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<repositories>
 		<repository>
 			<id>release</id>
 			<name>Cloud Nexus Release</name>
-			<url>http://192.168.3.101:9999/repository/cloud-release/</url>
+			<url>http://cloud-shop-02:2222/repository/cloud-release/</url>
 			<layout>default</layout>
 			<releases>
 				<enabled>true</enabled>
@@ -93,7 +101,7 @@
 		<repository>
 			<id>snapshot</id>
 			<name>Cloud Nexus Snapshot</name>
-			<url>http://192.168.3.101:9999/repository/cloud-snapshot/</url>
+			<url>http://cloud-shop-02:2222/repository/cloud-snapshot/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -110,10 +118,29 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.mweirauch</groupId>
+			<artifactId>micrometer-jvm-extras</artifactId>
+			<version>0.1.2</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
-			<optional>true</optional>
+			<optional>false</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -127,6 +154,10 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<!--
+			spring-boot-starter-logging 和 spring-boot-starter-test(引入spring-boot-starter)
+			会引入slf4j-api，logback-classic,logback-core，所以并不需要单独引入以下Maven配置
+        -->
 
 		<!--日志依赖-->
 		<!--<dependency>-->
@@ -158,7 +189,6 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.8.0</version>
 		</dependency>
-
 		<!--Wiremock依赖-->
 		<dependency>
 			<groupId>com.github.tomakehurst</groupId>

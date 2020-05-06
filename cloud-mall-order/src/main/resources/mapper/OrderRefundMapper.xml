@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.OrderRefundMapper">
+	<resultMap id="OrderRefundMap" type="OrderRefund">
+		<id property="refundId" column="refund_id" javaType="long" jdbcType="BIGINT" />
+		<result property="serviceId" column="service_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderId" column="order_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderNo" column="order_no" javaType="long" jdbcType="BIGINT" />
+		<result property="refundAmount" column="refund_amount" />
+		<result property="refundStatus" column="refund_status" />
+		<result property="arriveTime" column="arrive_time" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		`refund_id`,`service_id`,`order_id`,`order_no`,`refund_amount`,
+		`refund_status`,`arrive_time`,`deleted`,`create_time`,`update_time`
+	</sql>
+
+	<!-- 根据ID查询订单退款信息 -->
+	<select id="findOrderRefundById" parameterType="long" resultMap="OrderRefundMap">
+		SELECT
+		<include refid="Base_Column_List" />
+	  	FROM cloud_order_refund
+		WHERE `refund_id` = #{refundId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单ID查询订单退款信息 -->
+	<select id="findOrderRefundByOrderId" parameterType="long" resultMap="OrderRefundMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_refund
+		WHERE `order_id` = #{orderId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单号查询订单退款信息 -->
+	<select id="findOrderRefundByOrderNo" parameterType="long" resultMap="OrderRefundMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_refund
+		WHERE `order_no` = #{orderNo} AND `deleted` = 0
+	</select>
+
+	<!-- 根据服务号查询订单退款信息 -->
+	<select id="findOrderRefundByServiceId" parameterType="long" resultMap="OrderRefundMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_refund
+		WHERE `serviceId` = #{serviceId} AND `deleted` = 0
+	</select>
+
+	<!-- 保存退库记录 -->
+	<insert id="save" parameterType="OrderRefund">
+		INSERT INTO cloud_order_refund (<include refid="Base_Column_List" />)
+		VALUES
+		(
+			#{refundId},
+			#{serviceId},
+			#{orderId},
+			#{orderNo},
+			#{type},
+			#{orderStatus},
+			#{desc},
+			#{operator},
+			#{operateTime},
+			#{deleted},
+			#{createTime},
+			#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存购退款记录 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_activity (<include refid="Base_Column_List" />)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.refundId},
+					#{element.serviceId},
+					#{element.orderId},
+					#{element.orderNo},
+					#{element.type},
+					#{element.orderStatus},
+					#{element.desc},
+					#{element.operator},
+					#{element.operateTime},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+	<!-- 更新退款记录 -->
+	<update id="update" parameterType="OrderRefund">
+		UPDATE cloud_order_refund
+		<set>
+			<if test="refundId != null">`refund_id` = #{refundId},</if>
+			<if test="serviceId != null">`service_id` = #{serviceId},</if>
+			<if test="orderId != null">`order_id` = #{orderId},</if>
+			<if test="orderNo != null">`order_no` = #{orderNo},</if>
+			<if test="type != null">`type` = #{type},</if>
+			<if test="orderStatus != null">`order_status` = #{orderStatus},</if>
+			<if test="desc != null">`desc` = #{desc},</if>
+			<if test="operator != null">`operator` = #{operator},</if>
+			<if test="operateTime != null">`operate_time` = #{operateTime},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `refund_id` = #{refundId}
+	</update>
+
+	<!-- 逻辑删除指定的退款记录 -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_order_refund SET `deleted` = 1 WHERE `refund_id` = #{refundId} AND `deleted` = 0
+	</delete>
+</mapper>

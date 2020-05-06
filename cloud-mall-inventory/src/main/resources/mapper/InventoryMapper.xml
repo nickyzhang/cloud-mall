@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.InventoryMapper">
+	<resultMap id="inventoryMap" type="com.cloud.model.inventory.Inventory">
+		<id property="id" column="id" javaType="long" jdbcType="BIGINT"/>
+		<result property="skuId" column="sku_id" javaType="long" jdbcType="BIGINT" />
+		<result property="stockName" column="stock_name" />
+		<result property="totalStock" column="total_stock" />
+		<result property="availableStock" column="available_stock" />
+		<result property="frozenStock" column="frozen_stock" />
+		<result property="stockThreshold" column="stock_threshold" />
+		<result property="deleted" column="deleted" />
+		<result property="version" column="version" javaType="long" jdbcType="BIGINT"/>
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!-- 根据id查询属性名 -->
+	<select id="findById" parameterType="long" resultMap="inventoryMap">
+		SELECT * FROM cloud_inventory WHERE `id` = #{id}
+	</select>
+
+	<!-- 根据所有属性名 -->
+	<select id="findBySkuId" parameterType="long" resultMap="inventoryMap">
+		SELECT * FROM cloud_inventory WHERE `sku_id` = #{skuId}
+	</select>
+
+	<!-- 添加属性 -->
+	<insert id="save" parameterType="Inventory">
+		INSERT INTO cloud_inventory(
+			`id`,
+			`sku_id`,
+			`stock_name`,
+			`total_stock`,
+			`available_stock`,
+			`frozen_stock`,
+			`stock_threshold`,
+			`deleted`,
+			`create_time`,
+			`update_time`)
+		VALUES (
+			#{id},#{skuId},#{stockName},#{totalStock},#{availableStock},#{frozenStock},
+			#{stockThreshold},#{deleted},#{createTime},#{updateTime})
+	</insert>
+
+	<!-- 批量添加属性 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_inventory(
+			`id`,
+			`sku_id`,
+			`stock_name`,
+			`total_stock`,
+			`available_stock`,
+			`frozen_stock`,
+			`stock_threshold`,
+			`deleted`,
+			`create_time`,
+			`update_time`)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.id},
+					#{element.skuId},
+					#{element.stockName},
+					#{element.totalStock},
+					#{element.availableStock},
+					#{element.frozenStock},
+					#{element.stockThreshold},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+	<!-- 更新属性 -->
+	<update id="update" parameterType="Inventory">
+		UPDATE cloud_inventory
+		<set>
+			<if test="id != null">`id` = #{id},</if>
+			<if test="skuId != null">`sku_id` = #{skuId},</if>
+			<if test="stockName != null">`stock_name` = #{stockName},</if>
+			<if test="totalStock != null">`total_stock` = #{totalStock},</if>
+			<if test="availableStock != null">`available_stock` = #{availableStock},</if>
+			<if test="frozenStock != null">`frozen_stock` = #{frozenStock},</if>
+			<if test="stockThreshold != null">`stock_threshold` = #{stockThreshold},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="version != null">`version` = #{version}+1,</if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>,
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `id` = #{id} AND `version` = #{version}
+	</update>
+
+	<!-- 幂等更新可用库存 -->
+	<update id="deductAvailableStock" parameterType="Map">
+		UPDATE cloud_inventory SET available_stock = #{availableStock},frozen_stock = #{frozenStock},version = version+1 WHERE `id`=#{id} AND `version` = #{version}
+	</update>
+
+	<!-- 幂等更新总库存 -->
+	<update id="deductTotalStock" parameterType="Map">
+		UPDATE cloud_inventory SET total_stock = #{totalStock},frozen_stock = #{frozenStock},version = version+1 WHERE `id`=#{id} AND `version` = #{version}
+	</update>
+
+
+	<!--删除属性-->
+	<delete id="delete" parameterType="long">
+		DELETE FROM cloud_inventory WHERE `id` = #{id}
+	</delete>
+
+	<!--删除属性-->
+	<delete id="deleteById" parameterType="long">
+		DELETE FROM cloud_inventory WHERE `id` = #{id}
+	</delete>
+</mapper>

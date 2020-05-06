@@ -1,33 +1,32 @@
 package com.cloud.service;
 
+import com.cloud.common.core.bean.QQUserInfo;
 import com.cloud.common.core.bean.SocialToken;
-import com.cloud.common.core.bean.SocialUserInfo;
+import com.cloud.common.core.bean.WechatUserInfo;
+import com.cloud.dto.user.SocialUserDTO;
 import com.cloud.model.user.SocialUser;
-import com.cloud.model.user.User;
-import com.cloud.model.user.UserDetail;
-import java.util.Map;
+
+import java.util.List;
 
 public interface SocialUserService {
 
-    public void save(SocialUser user);
+    public int save(SocialUserDTO socialUserDTO);
 
-    public void deleteSocialUser(SocialUser user);
+    public int saveList(List<SocialUser> socialUserList);
 
-    public void deleteSocialUserById(Long id);
+    public int deleteSocialUserById(Long id);
 
-    public void deleteSocialUserByUserId(Long userId);
+    public int deleteSocialUserByUserId(Long userId);
 
-    public void update(SocialUser user);
+    public int update(SocialUserDTO socialUserDTO);
 
-    public SocialUser findSocialUserById(Long id);
+    public SocialUserDTO findSocialUserById(Long id);
 
-    public SocialUser findSocialUserByOpenId(String openId);
-
-    public Map<String,Object> execute(String url);
+    public SocialUserDTO findSocialUserByOpenId(String openId);
 
     public SocialToken getSocialToken(String url);
 
-    public SocialUserInfo getUserInfo(String userInfoUrl);
+    public QQUserInfo getQQUserInfo(String userInfoUrl);
 
-    public void bindSocialUser(User user, SocialUser socialUser, UserDetail userDetail);
+    public WechatUserInfo getWechatUserInfo(String userInfoUrl);
 }

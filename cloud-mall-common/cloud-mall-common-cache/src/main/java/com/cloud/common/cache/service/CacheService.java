@@ -2,9 +2,9 @@ package com.cloud.common.cache.service;
 
 public interface CacheService {
 
-    public Object cacheResult(String cacheName, String key);
+    public <V> V get(String cacheName, String key);
 
-    public <V> void cachePut(String cacheName, String key, V value);
+    public <V> void put(String cacheName, String key, V value);
 
-    public void cacheRemove(String cacheName, String key);
+    public void remove(String cacheName, String key);
 }

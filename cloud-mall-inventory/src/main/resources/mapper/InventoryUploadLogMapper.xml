@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.InventoryUploadLogMapper">
+	<resultMap id="inventoryUploadLogMap" type="com.cloud.model.inventory.InventoryUploadLog">
+		<id property="id" column="id" javaType="long" jdbcType="BIGINT"/>
+		<result property="uploadType" column="upload_type" />
+		<result property="uploadStatus" column="upload_status" />
+		<result property="startTime" column="start_time" />
+		<result property="endTime" column="end_time" />
+		<result property="deleted" column="deleted" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="UploadLog_Base_Column_List">
+		`id`,
+		`upload_type`,
+		`upload_status`,
+		`start_time`,
+		`end_time`,
+		`deleted`,
+		`create_date`,
+		`update_date`
+	</sql>
+
+	<!-- 根据id查询属性名 -->
+	<select id="findById" parameterType="long" resultMap="inventoryUploadLogMap">
+		SELECT
+			<include refid="UploadLog_Base_Column_List" />
+		FROM cloud_inventory_upload_log
+		WHERE `id` = #{id} AND `deleted` = 0
+	</select>
+
+	<!-- 添加属性 -->
+	<insert id="save" parameterType="com.cloud.model.inventory.InventoryUploadLog">
+		INSERT INTO cloud_inventory_upload_log
+		<include refid="UploadLog_Base_Column_List" />
+		VALUES (
+			#{element.id},
+			#{element.uploadType},
+			#{element.uploadStatus},
+			#{element.startTime},
+			#{element.endTime},
+			#{element.deleted},
+			#{element.createDate},
+			#{element.updateDate}
+		)
+	</insert>
+
+	<!-- 更新属性 -->
+	<update id="update" parameterType="com.cloud.model.inventory.InventoryUploadLog">
+		UPDATE cloud_inventory_upload_log
+		<set>
+			<if test="id != null">`id` = #{id},</if>
+			<if test="uploadType != null">`sku_id` = #{uploadType},</if>
+			<if test="uploadStatus != null">`stock_name` = #{uploadStatus},</if>
+			<if test="startTime != null">`current_stock` = #{startTime},</if>
+			<if test="endTime != null">`available_stock` = #{endTime},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>,
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `id` = #{id}
+	</update>
+
+	<!--删除属性-->
+	<delete id="delete" parameterType="com.cloud.model.inventory.InventoryUploadLog">
+		DELETE FROM cloud_inventory_upload_log WHERE `id` = #{id}
+	</delete>
+
+	<!--删除属性-->
+	<delete id="deleteById" parameterType="long">
+		DELETE FROM cloud_inventory_upload_log WHERE `id` = #{id}
+	</delete>
+</mapper>

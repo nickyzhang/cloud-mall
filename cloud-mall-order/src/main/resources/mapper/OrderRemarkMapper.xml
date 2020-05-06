@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.OrderRemarkMapper">
+	<resultMap id="OrderRemarkMap" type="OrderRemark">
+		<id property="remarkId" column="remark_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderId" column="order_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderNo" column="order_no" javaType="long" jdbcType="BIGINT" />
+		<result property="packageScore" column="package_score" />
+		<result property="deliveryScore" column="delivery_score" />
+		<result property="attitudeScore" column="attitude_score" />
+		<result property="goodsScore" column="goods_score" />
+		<result property="remarkTime" column="remark_time" />
+		<result property="remark" column="remark" />
+		<result property="pictures" column="pictures" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		`remark_id`,`order_id`,`order_no`,`package_score`,`delivery_score`,`attitude_score`,
+		`goods_score`,`remark_time`,`remark`,`pictures`,`deleted`,`create_time`,`update_time`
+	</sql>
+
+	<!-- 根据评价ID查询评价信息 -->
+	<select id="findOrderRemarkById" parameterType="long" resultMap="OrderRemarkMap">
+		SELECT
+		<include refid="Base_Column_List" />
+	  	FROM cloud_order_remark
+		WHERE `remark_id` = #{remarkId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单ID查询评价信息 -->
+	<select id="findOrderRemarkByOrderId" parameterType="long" resultMap="OrderRemarkMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_remark
+		WHERE `order_id` = #{orderId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单号查询评价信息 -->
+	<select id="findOrderRemarkByNo" parameterType="long" resultMap="OrderRemarkMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_remark
+		WHERE `order_no` = #{orderNo} AND `deleted` = 0
+	</select>
+
+	<!-- 保存评价 -->
+	<insert id="save" parameterType="OrderRemark">
+		INSERT INTO cloud_order_remark (<include refid="Base_Column_List" />)
+		VALUES
+		(
+			#{remarkId},
+			#{orderId},
+			#{orderNo},
+			#{packageScore},
+			#{deliveryScore},
+			#{attitudeScore},
+			#{goodsScore},
+			#{remarkTime},
+			#{remark},
+			#{pictures},
+			#{deleted},
+			#{createTime},
+			#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存评价信息 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_activity (<include refid="Base_Column_List" />)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.remarkId},
+					#{element.orderId},
+					#{element.orderNo},
+					#{element.packageScore},
+					#{element.deliveryScore},
+					#{element.attitudeScore},
+					#{element.goodsScore},
+					#{element.remarkTime},
+					#{element.remark},
+					#{element.pictures},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+	<!-- 更新评价 -->
+	<update id="update" parameterType="OrderRemark">
+		UPDATE cloud_order_remark
+		<set>
+			<if test="remarkId != null">`remark_id` = #{remarkId},</if>
+			<if test="orderId != null">`order_id` = #{orderId},</if>
+			<if test="orderNo != null">`order_no` = #{orderNo},</if>
+			<if test="packageScore != null">`package_score` = #{packageScore},</if>
+			<if test="deliveryScore != null">`delivery_score` = #{deliveryScore},</if>
+			<if test="attitudeScore != null">`attitude_score` = #{attitudeScore},</if>
+			<if test="goodsScore != null">`goods_score` = #{goodsScore},</if>
+			<if test="remarkTime != null">`remark_time` = #{remarkTime},</if>
+			<if test="remark != null">`remark` = #{remark},</if>
+			<if test="pictures != null">`pictures` = #{pictures},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `remark_id` = #{remarkId}
+	</update>
+
+	<!-- 逻辑删除指定的评价 -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_order_remark SET `deleted` = 1 WHERE `remark_id` = #{remarkId} AND `deleted` = 0
+	</delete>
+</mapper>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.OrderOperateLogMapper">
+	<resultMap id="OrderOperateLogMap" type="OrderOperateLog">
+		<id property="logId" column="log_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderId" column="order_id" javaType="long" jdbcType="BIGINT" />
+		<result property="orderNo" column="order_no" javaType="long" jdbcType="BIGINT" />
+		<result property="type" column="type" />
+		<result property="orderStatus" column="order_status" />
+		<result property="desc" column="desc" />
+		<result property="operator" column="operator" />
+		<result property="operateTime" column="operate_time" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		`log_id`,`order_id`,`order_no`,`type`,`order_status`,`desc`,
+		`operator`,`operate_time`,`deleted`,`create_time`,`update_time`
+	</sql>
+
+	<!-- 根据ID查询订单操作日志信息 -->
+	<select id="findOrderLogById" parameterType="long" resultMap="OrderOperateLogMap">
+		SELECT
+		<include refid="Base_Column_List" />
+	  	FROM cloud_order_operate_log
+		WHERE `log_id` = #{logId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单ID查询订单操作日志信息 -->
+	<select id="findOrderLogByOrderId" parameterType="long" resultMap="OrderOperateLogMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_operate_log
+		WHERE `order_id` = #{orderId} AND `deleted` = 0
+	</select>
+
+	<!-- 根据订单号查询订单操作日志信息 -->
+	<select id="findOrderLogByOrderNo" parameterType="long" resultMap="OrderOperateLogMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM cloud_order_operate_log
+		WHERE `order_no` = #{orderNo} AND `deleted` = 0
+	</select>
+
+	<!-- 保存订单操作日志 -->
+	<insert id="save" parameterType="OrderOperateLog">
+		INSERT INTO cloud_order_operate_log (<include refid="Base_Column_List" />)
+		VALUES
+		(
+			#{logId},
+			#{orderId},
+			#{orderNo},
+			#{type},
+			#{orderStatus},
+			#{desc},
+			#{operator},
+			#{operateTime},
+			#{deleted},
+			#{createTime},
+			#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存订单操作日志 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_activity (<include refid="Base_Column_List" />)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.logId},
+					#{element.orderId},
+					#{element.orderNo},
+					#{element.type},
+					#{element.orderStatus},
+					#{element.desc},
+					#{element.operator},
+					#{element.operateTime},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+	<!-- 更新订单操作日志 -->
+	<update id="update" parameterType="OrderOperateLog">
+		UPDATE cloud_order_operate_log
+		<set>
+			<if test="logId != null">`log_id` = #{logId},</if>
+			<if test="orderId != null">`order_id` = #{orderId},</if>
+			<if test="orderNo != null">`order_no` = #{orderNo},</if>
+			<if test="type != null">`type` = #{type},</if>
+			<if test="orderStatus != null">`order_status` = #{orderStatus},</if>
+			<if test="desc != null">`desc` = #{desc},</if>
+			<if test="operator != null">`operator` = #{operator},</if>
+			<if test="operateTime != null">`operate_time` = #{operateTime},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `log_id` = #{logId}
+	</update>
+
+	<!-- 逻辑删除指定的订单操作日志 -->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_order_operate_log SET `deleted` = 1 WHERE `log_id` = #{logId} AND `deleted` = 0
+	</delete>
+</mapper>

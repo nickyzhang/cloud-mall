@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.BundleMapper">
+	<resultMap id="bundleMap" type="Bundle">
+		<id property="id" column="bundle_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="name" column="bundle_name" />
+		<result property="description" column="bundle_desc" />
+		<result property="quantity" column="quantity" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!--根据id查询bundle信息-->
+	<select id="find" parameterType="long" resultMap="bundleMap">
+		SELECT * FROM cloud_bundle WHERE `bundle_id` = #{id} AND `deleted` = 0
+	</select>
+
+	<!--根据名字查询bundle信息-->
+	<select id="findByName" resultMap="bundleMap">
+		SELECT * FROM cloud_bundle WHERE `bundle_name` = #{name} AND `deleted` = 0
+	</select>
+
+	<!-- 查询所有bundle -->
+	<select id="findAll" resultMap="bundleMap">
+		SELECT * FROM cloud_brand WHERE `deleted` = 0
+	</select>
+
+
+	<!--根据sku id查询bundle信息-->
+	<select id="findBundleListBySkuId" parameterType="long" resultMap="bundleMap">
+		SELECT *
+		FROM cloud_bundle
+		WHERE `deleted` = 0 AND bundle_id
+		IN (
+			SELECT bundle_id
+			FROM cloud_sku_bundle
+			WHERE sku_id = #{skuId} AND `deleted` = 0
+		)
+	</select>
+
+	<!-- 添加bundle -->
+	<insert id="save" parameterType="Bundle">
+		INSERT INTO
+			cloud_bundle(`bundle_id`,`bundle_name`,`bundle_desc`,`quantity`,`deleted`,`create_time`,`update_time`)
+		VALUES
+			(#{id},#{name},#{description},#{quantity},#{deleted},#{createTime},#{updateTime})
+	</insert>
+
+	<!-- 批量添加Bundle -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO
+			cloud_bundle(`bundle_id`,`bundle_name`,`bundle_desc`,`quantity`,`deleted`,`create_time`,`update_time`)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.id},
+					#{element.name},
+					#{element.description},
+					#{element.quantity},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+	<!-- 更新bundle -->
+	<update id="update" parameterType="Bundle">
+		UPDATE cloud_bundle
+		<set>
+			<if test="id != null">`bundle_id` = #{id},</if>
+			<if test="name != null">`bundle_name` = #{name},</if>
+			<if test="description != null">`bundle_desc` = #{description},</if>
+			<if test="quantity != null">`quantity` = #{quantity},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>,
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `bundle_id` = #{id}
+	</update>
+
+	<!--删除bundle-->
+	<delete id="delete" parameterType="long">
+		UPDATE cloud_bundle SET `deleted` = 1 WHERE `bundle_id` = #{id}
+	</delete>
+
+	<select id="count" resultType="long">
+		SELECT COUNT(1) FROM cloud_bundle WHERE `deleted` = 0
+	</select>
+</mapper>

@@ -20,27 +20,22 @@
     </dependency>
     <dependency>
       <groupId>com.cloud</groupId>
-      <artifactId>cloud-mall-common-model</artifactId>
+      <artifactId>cloud-mall-api-model</artifactId>
       <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.cloud</groupId>
-      <artifactId>cloud-mall-common-session</artifactId>
+      <artifactId>cloud-mall-common-redis</artifactId>
       <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.cloud</groupId>
-      <artifactId>cloud-mall-common-mq</artifactId>
+      <artifactId>cloud-mall-common-mq-rabbitmq</artifactId>
       <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.cloud</groupId>
       <artifactId>cloud-mall-common-httpclient</artifactId>
-      <version>1.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.cloud</groupId>
-      <artifactId>cloud-mall-common-notification</artifactId>
       <version>1.0.0</version>
     </dependency>
 
@@ -57,7 +52,14 @@
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
     </dependency>
-
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-config-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+    </dependency>
     <!--数据库连接相关-->
     <!-- JDBC连接数据库，因为要用HikariCP，所以需要将SpringBoot中的tomcat-jdbc排除 -->
     <dependency>
@@ -95,13 +97,6 @@
       <artifactId>pagehelper-spring-boot-starter</artifactId>
       <version>1.2.5</version>
     </dependency>-->
-
-    <!--QQ依赖-->
-    <dependency>
-      <groupId>net.gplatform</groupId>
-      <artifactId>Sdk4J</artifactId>
-      <version>2.0</version>
-    </dependency>
   </dependencies>
 
   <build>
@@ -109,6 +104,10 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <fork>false</fork>
+          <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+        </configuration>
       </plugin>
     </plugins>
   </build>

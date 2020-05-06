@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.SocialUserMapper">
+	<resultMap id="SocialUserMap" type="com.cloud.model.user.SocialUser">
+		<id property="id" column="id" javaType="long" jdbcType="BIGINT"/>
+		<result property="userId" column="user_id" javaType="long" jdbcType="BIGINT" />
+		<result property="openId" column="open_id" />
+		<result property="providerId" column="open_type" />
+		<result property="createDate" column="create_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateDate" column="update_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!-- 根据ID查询社交用户-->
+	<select id="findSocialUserById" parameterType="long" resultMap="SocialUserMap">
+		SELECT * FROM cloud_user_auth WHERE `id` = #{id}
+	</select>
+
+	<!-- 根据open id查询社交用户 -->
+	<select id="findSocialUserByOpenId" parameterType="long" resultMap="SocialUserMap">
+		SELECT * FROM cloud_user_auth WHERE `open_id` = #{openId}
+	</select>
+
+	<!-- 根据用户ID查询社交用户-->
+	<select id="findSocialUserByUserId" parameterType="long" resultMap="SocialUserMap">
+		SELECT * FROM cloud_user_auth WHERE `user_id` = #{userId}
+	</select>
+
+	<!-- 添加属性 -->
+	<insert id="save" parameterType="SocialUser">
+		INSERT INTO cloud_user_auth(`id`,`user_id`,`open_id`,`open_type`,`create_date`,`update_date`)
+		VALUES (#{id},#{userId},#{openId},#{providerId},#{createDate},#{updateDate})
+	</insert>
+
+	<!-- 批量添加属性 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_user_auth(`id`,`user_id`,`open_id`,`open_type`,`create_date`,`update_date`)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.id},
+					#{element.userId},
+					#{element.openId},
+					#{element.providerId},
+					#{element.createDate},
+					#{element.updateDate}
+				)
+			</foreach>
+	</insert>
+
+	<!-- 更新属性 -->
+	<update id="update" parameterType="SocialUser">
+		UPDATE cloud_inventory
+		<set>
+			<if test="id != null">`id` = #{id},</if>
+			<if test="userId != null">`user_id` = #{userId},</if>
+			<if test="openId != null">`open_id` = #{openId},</if>
+			<if test="providerId != null">`open_type` = #{providerId},</if>
+			<if test="createDate != null">`create_date` = #{createDate}</if>,
+			<if test="updateDate != null">`update_date` = #{updateDate}</if>
+		</set>
+		WHERE `id` = #{id}
+	</update>
+
+	<!--删除属性-->
+	<delete id="deleteSocialUserByOpenId" parameterType="long">
+		DELETE FROM cloud_user_auth WHERE `open_id` = #{open_id}
+	</delete>
+
+	<!--删除属性-->
+	<delete id="deleteSocialUserByUserId" parameterType="long">
+		DELETE FROM cloud_user_auth WHERE `user_id` = #{userId}
+	</delete>
+
+	<!--删除属性-->
+	<delete id="deleteSocialUserById" parameterType="long">
+		DELETE FROM cloud_user_auth WHERE `id` = #{id}
+	</delete>
+</mapper>

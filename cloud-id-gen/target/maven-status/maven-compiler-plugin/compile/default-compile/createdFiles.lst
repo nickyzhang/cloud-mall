@@ -4,7 +4,6 @@ com\cloud\service\converter\IdConverter.class
 com\cloud\service\model\IdType$1.class
 com\cloud\service\populater\ResetPopulator.class
 com\cloud\service\model\IdMeta.class
-com\cloud\api\service\IdGenService.class
 com\cloud\service\impl\IdGenServiceImpl.class
 com\cloud\service\impl\MachineIdsIdGenServiceImpl.class
 com\cloud\service\provider\MachineIdProvider.class

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.SkuPropertiesMapper">
+	<resultMap id="SkuPropertiesMap" type="SkuProperties">
+		<result property="skuId" column="sku_id" javaType="long" jdbcType="BIGINT" />
+		<result property="attributeValueId" column="attr_val_id" javaType="long" jdbcType="BIGINT"  />
+        <result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+        <result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!--根据category id查询category信息 -->
+    <select id="findBySkuId" parameterType="long" resultMap="SkuPropertiesMap">
+        SELECT * FROM cloud_sku_properties WHERE `sku_id` = #{skuId} AND `deleted` = 0
+    </select>
+
+    <!--根据attribute value 和 sku信息 -->
+    <select id="findByAttributeValueId" parameterType="long" resultMap="SkuPropertiesMap">
+        SELECT * FROM cloud_sku_properties WHERE `attr_val_id` = #{attributeValueId} AND `deleted` = 0
+    </select>
+
+    <!-- 保存attribute value 和 sku的关系 -->
+    <insert id="saveSkuProperties" parameterType="SkuProperties">
+      INSERT INTO
+          cloud_sku_properties(`sku_id`,`attr_val_id`,`deleted`,`create_time`,`update_time`)
+      VALUES
+          (#{skuId},#{attributeValueId},#{deleted},#{createTime},#{updateTime})
+    </insert>
+
+    <!--删除attribute value 和 sku 之间关系-->
+    <delete id="deleteSkuProperties" parameterType="java.util.Map">
+        UPDATE cloud_sku_properties SET `deleted` = 1 WHERE `sku_id` = #{skuId} AND `attr_val_id` = #{attributeValueId}
+    </delete>
+
+    <!--删除attribute value 和 sku 之间关系-->
+    <delete id="deleteSkuPropertiesBySkuId" parameterType="long">
+        UPDATE cloud_sku_properties SET `deleted` = 1  WHERE `sku_id` = #{skuId}
+    </delete>
+
+    <!--删除attribute value 和 sku 之间关系-->
+    <delete id="deleteSkuPropertiesByAttributeValueId" parameterType="long">
+        UPDATE cloud_sku_properties SET `deleted` = 1  WHERE `attr_val_id` = #{attributeValueId}
+    </delete>
+
+    <!-- 批量删除attribute value 和 sku 之间关系-->
+    <delete id="batchDeleteSkuPropertiesBySkuList" parameterType="java.util.List">
+        UPDATE cloud_sku_properties SET `deleted` = 1  WHERE `sku_id` IN
+        <foreach collection="list" item="element" open="(" separator="," close=")"  >
+            #{element.id}
+        </foreach>
+    </delete>
+</mapper>

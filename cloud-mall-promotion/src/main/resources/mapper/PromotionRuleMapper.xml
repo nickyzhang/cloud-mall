@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cloud.mapper.PromotionRuleMapper">
+	<resultMap id="PromotionRuleMap" type="PromotionRule">
+		<id property="ruleId" column="rule_id" javaType="long" jdbcType="BIGINT"/>
+		<result property="ruleName" column="rule_name" />
+		<result property="ruleType" column="rule_type" />
+		<result property="ladderSpendMoney" column="ladder_spend_money" />
+		<result property="perSpendMoney" column="per_spend_money" />
+		<result property="ladderQuantity" column="ladder_quantity" />
+		<result property="moneyOff" column="money_off" />
+		<result property="discountOff" column="discount_off" />
+		<result property="numOff" column="num_off" />
+		<result property="freeShip" column="free_ship" javaType="boolean" jdbcType="TINYINT" />
+		<result property="freightOff" column="freight_off" />
+		<result property="freeGift" column="free_gift" javaType="boolean" jdbcType="TINYINT" />
+		<result property="deleted" column="deleted" javaType="boolean" jdbcType="TINYINT" />
+		<result property="createTime" column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+		<result property="updateTime" column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!--根据规则ID查询促销规则信息 -->
+	<select id="find" parameterType="long" resultMap="PromotionRuleMap">
+		SELECT * FROM cloud_promotion_rule
+		WHERE `rule_id` = #{ruleId} AND `deleted` = 0
+	</select>
+
+	<!--根据规则类型查询促销规则信息 -->
+	<select id="findRuleListByType" parameterType="int" resultMap="PromotionRuleMap">
+		SELECT * FROM cloud_promotion_rule
+		WHERE `rule_type` = #{ruleType} AND `deleted` = 0
+	</select>
+
+	<!--根据coupon id查询规则信息 -->
+	<select id="findRuleByTemplateId" parameterType="long" resultMap="PromotionRuleMap">
+		SELECT * FROM cloud_promotion_rule
+		WHERE `deleted` = 0 AND `rule_id` = (
+			SELECT rule_id FROM cloud_coupon_template
+			WHERE `template_id` = #{templateId} AND `deleted` = 0
+		)
+	</select>
+
+	<!--根据activity id查询规则信息 -->
+	<select id="findRuleByActivityId" parameterType="long" resultMap="PromotionRuleMap">
+		SELECT * FROM cloud_promotion_rule
+		WHERE `deleted` = 0 AND `rule_id` = (
+			SELECT rule_id FROM cloud_activity
+			WHERE `activity_id` = #{activityId} AND `deleted` = 0
+		)
+	</select>
+
+	<!--查询所有规则 -->
+	<select id="findAll" resultMap="PromotionRuleMap">
+		SELECT * FROM cloud_promotion_rule WHERE `deleted` = 0
+	</select>
+
+	<!--统计所有规则数量 -->
+	<select id="count" resultType="long">
+		SELECT COUNT(1) FROM cloud_promotion_rule WHERE `deleted` = 0
+	</select>
+
+	<!-- 保存规则信息 -->
+	<insert id="save" parameterType="PromotionRule">
+		INSERT INTO cloud_promotion_rule
+		(
+			`rule_id`,`rule_name`,`rule_type`,`ladder_spend_money`,`per_spend_money`,`ladder_quantity`,`money_off`,
+			`discount_off`,`num_off`,`free_ship`,`freight_off`,`free_gift`,`deleted`,`create_time`,`update_time`
+		)
+		VALUES
+		(
+			#{ruleId},#{ruleName},#{ruleType},#{ladderSpendMoney},#{perSpendMoney},#{ladderQuantity},#{moneyOff},
+			#{discountOff},#{numOff},#{freeShip},#{freightOff},#{freeGift},#{deleted},#{createTime},#{updateTime}
+		)
+	</insert>
+
+	<!-- 批量保存规则信息 -->
+	<insert id="saveList" parameterType="java.util.ArrayList">
+		INSERT INTO cloud_promotion_rule
+		(
+		`rule_id`,`rule_name`,`rule_type`,`ladder_spend_money`,`per_spend_money`,`ladder_quantity`,`money_off`,
+		`discount_off`,`num_off`,`free_ship`,`freight_off`,`free_gift`,`deleted`,`create_time`,`update_time`
+		)
+		VALUES
+			<foreach collection="list" item="element" separator=",">
+				(
+					#{element.ruleId},
+					#{element.ruleName},
+					#{element.ruleType},
+					#{element.ladderSpendMoney},
+					#{element.perSpendMoney},
+					#{element.ladderQuantity},
+					#{element.moneyOff},
+					#{element.discountOff},
+					#{element.numOff},
+					#{element.freeShip},
+					#{element.freightOff},
+					#{element.freeGift},
+					#{element.deleted},
+					#{element.createTime},
+					#{element.updateTime}
+				)
+			</foreach>
+	</insert>
+
+
+	<!-- 更新规则信息 -->
+	<update id="update" parameterType="PromotionRule">
+		UPDATE cloud_promotion_rule
+		<set>
+			<if test="ruleId != null">`rule_id` = #{ruleId},</if>
+			<if test="ruleName != null">`rule_name` = #{ruleName},</if>
+			<if test="ruleType != null">`rule_type` = #{ruleType},</if>
+			<if test="ladderSpendMoney != null">`ladder_spend_money` = #{ladderSpendMoney},</if>
+			<if test="perSpendMoney != null">`per_spend_money` = #{perSpendMoney},</if>
+			<if test="ladderQuantity != null">`ladder_quantity` = #{ladderQuantity},</if>
+			<if test="moneyOff != null">`money_off` = #{moneyOff},</if>
+			<if test="discountOff != null">`discount_off` = #{discountOff},</if>
+			<if test="numOff != null">`num_off` = #{numOff},</if>
+			<if test="freeShip != null">`free_ship` = #{freeShip},</if>
+			<if test="freightOff != null">`freight_off` = #{freightOff},</if>
+			<if test="freeGift != null">`free_gift` = #{freeGift},</if>
+			<if test="deleted != null">`deleted` = #{deleted},</if>
+			<if test="createTime != null">`create_time` = #{createTime},</if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE `rule_id` = #{ruleId}
+	</update>
+
+	<!-- 删除促销规则 -->
+	<delete id="delete" parameterType="long">
+		UPDTE cloud_promotion_rule SET `deleted` = 1 WHERE `rule_id` = #{ruleId} AND `deleted` = 0
+	</delete>
+
+</mapper>
