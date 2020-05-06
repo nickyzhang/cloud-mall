@@ -54,8 +54,8 @@
                 <charset>utf8</charset>
             </encoder>
         </appender>
-        <logger name="com.cloud" level="info" />
-        <root level="info">
+            <logger name="com.cloud" level="INFO" />
+        <root level="DEBUG">
             <appender-ref ref="STDOUT" />
             <appender-ref ref="FILE" />
         </root>

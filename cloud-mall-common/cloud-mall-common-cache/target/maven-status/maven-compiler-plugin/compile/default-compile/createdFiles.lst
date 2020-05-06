@@ -1,1 +1,4 @@
 com\cloud\common\cache\service\CacheService.class
+com\cloud\common\cache\service\config\CacheConfig.class
+com\cloud\common\cache\service\impl\AbstractCacheService.class
+com\cloud\common\cache\service\impl\LocalCacheService.class

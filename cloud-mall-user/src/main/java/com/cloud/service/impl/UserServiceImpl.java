@@ -3,12 +3,12 @@ package com.cloud.service.impl;
 import com.cloud.common.core.enums.ResultCodeEnum;
 import com.cloud.common.core.utils.BeanUtils;
 import com.cloud.common.core.utils.EncryptUtils;
-import com.cloud.common.mq.service.MessageSender;
 import com.cloud.common.redis.service.RedisService;
 import com.cloud.dto.user.UserDTO;
 import com.cloud.exception.UserBizException;
 import com.cloud.mapper.UserMapper;
 import com.cloud.model.user.User;
+import com.cloud.mq.rabbitmq.service.RabbitSender;
 import com.cloud.service.UserService;
 import com.cloud.vo.notification.MailParam;
 import org.apache.commons.collections.CollectionUtils;
@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Autowired
-    private MessageSender sender;
+    private RabbitSender sender;
 
     @Autowired
     RedisService redisService;

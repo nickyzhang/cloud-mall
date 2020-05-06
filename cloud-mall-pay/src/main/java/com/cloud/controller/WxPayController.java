@@ -6,6 +6,7 @@ import com.cloud.common.core.utils.ServletUtils;
 import com.cloud.common.httpclient.service.HttpClientService;
 import com.cloud.config.WeiXinPayConfig;
 import com.cloud.enums.SignType;
+import com.cloud.exceptions.PaymentBizException;
 import com.cloud.model.order.Order;
 import com.cloud.utils.WXPayUtil;
 import org.springframework.beans.factory.annotation.Autowired;

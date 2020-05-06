@@ -17,7 +17,6 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -111,7 +110,7 @@ public class ShoppingCartController {
             List<Activity> activities = activityResults.getData();
             if (CollectionUtils.isNotEmpty(activities)) {
                 shoppingCartInfo.setActivityList(activities);
-                ResponseResult savedMoneyResult = this.promotionService.calcActivityRule(shoppingCartInfo.getUnitPrice(),shoppingCartInfo.getQuantity(),
+                ResponseResult savedMoneyResult = this.promotionService.getActSavedAmount(shoppingCartInfo.getUnitPrice(),shoppingCartInfo.getQuantity(),
                         activities.get(0).getActivityId());
                 if (savedMoneyResult.getCode() == 200) {
                     shoppingCartInfo.setActSavedMoney((BigDecimal) savedMoneyResult.getData());

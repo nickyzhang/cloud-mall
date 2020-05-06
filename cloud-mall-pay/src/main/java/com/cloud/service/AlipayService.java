@@ -1,9 +1,8 @@
 package com.cloud.service;
 
 import com.alipay.api.AlipayApiException;
-import com.cloud.shop.dto.pay.OrderDTO;
+import com.cloud.dto.pay.OrderDTO;
 import com.cloud.model.order.Order;
-
 import java.util.Map;
 
 public interface AlipayService {

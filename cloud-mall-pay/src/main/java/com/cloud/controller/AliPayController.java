@@ -5,6 +5,7 @@ import com.alipay.api.AlipayClient;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.cloud.common.core.enums.ResultCodeEnum;
 import com.cloud.config.AlipayConfig;
+import com.cloud.dto.pay.OrderDTO;
 import com.cloud.exceptions.PaymentBizException;
 import com.cloud.service.AlipayService;
 import com.cloud.model.order.Order;
