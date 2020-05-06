@@ -1,6 +1,0 @@
-com\cloud\common\redis\service\RedisLock2X.class
-com\cloud\common\redis\config\RedissonManager.class
-com\cloud\common\redis\service\RedissionLock.class
-com\cloud\common\redis\config\RedisConfig.class
-com\cloud\common\redis\service\RedisLock1X.class
-com\cloud\common\redis\service\RedisService.class

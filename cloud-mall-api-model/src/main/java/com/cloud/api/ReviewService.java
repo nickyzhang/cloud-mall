@@ -8,9 +8,9 @@ import java.util.List;
 
 @FeignClient(name = "/catalogcloud-mall-review")
 public interface ReviewService {
-    @RequestMapping(value = "/catalog/review/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/review/{id}",method = RequestMethod.GET)
     public ResponseResult<Review> findByReviewId(@PathVariable("id") Long reviewId);
 
-    @RequestMapping(value = "/catalog/review/sku",method = RequestMethod.GET)
+    @RequestMapping(value = "/review/sku",method = RequestMethod.GET)
     public ResponseResult<List<Review>> findBySkuId(@RequestParam("skuId") Long skuId);
 }

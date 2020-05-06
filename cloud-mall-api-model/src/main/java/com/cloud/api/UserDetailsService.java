@@ -8,24 +8,24 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient(name = "/catalogcloud-mall-user")
 public interface UserDetailsService {
 
-    @RequestMapping(value = "/catalog/user/detail/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/detail/add", method = RequestMethod.POST)
     public ResponseResult save(@RequestBody UserDetailVO userDetailVO);
 
-    @RequestMapping(value = "/catalog/user/detail/update", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/detail/update", method = RequestMethod.POST)
     public ResponseResult update(@RequestBody UserDetailVO userDetailVO);
 
-    @RequestMapping(value = "/catalog/user/detail/delete/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/detail/delete/{id}", method = RequestMethod.POST)
     public ResponseResult delete(@PathVariable("id") Long id);
 
-    @RequestMapping(value = "/catalog/user/detail/findByUserId", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/detail/findByUserId", method = RequestMethod.GET)
     public ResponseResult findByUserId(@RequestParam("userId") Long userId);
 
-    @RequestMapping(value = "/catalog/user/detail/find/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/detail/find/{id}", method = RequestMethod.GET)
     public ResponseResult find(@PathVariable("id") Long id);
 
-    @RequestMapping(value = "/catalog/findAllUserId",method = RequestMethod.GET)
+    @RequestMapping(value = "/findAllUserId",method = RequestMethod.GET)
     public ResponseResult findAllUserId();
 
-    @RequestMapping(value = "/catalog/findUserIdListByGender",method = RequestMethod.GET)
+    @RequestMapping(value = "/findUserIdListByGender",method = RequestMethod.GET)
     public ResponseResult findUserIdListByGender(@RequestParam("gender") String gender);
 }

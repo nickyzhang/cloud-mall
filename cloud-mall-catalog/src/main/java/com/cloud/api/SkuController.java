@@ -8,7 +8,6 @@ import com.cloud.common.core.utils.BeanUtils;
 import com.cloud.common.core.utils.CacheTimeUtils;
 import com.cloud.common.core.utils.JSONUtils;
 import com.cloud.common.redis.service.RedisService;
-import com.cloud.config.InstanceConfig;
 import com.cloud.dto.catalog.SkuDto;
 import com.cloud.model.catalog.Sku;
 import com.cloud.model.inventory.Inventory;
@@ -18,9 +17,7 @@ import com.cloud.vo.catalog.SkuVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -48,13 +45,6 @@ public class SkuController {
     @Autowired
     RedisService redisService;
 
-    @Autowired
-    InstanceConfig instanceConfig;
-
-    @GetMapping("/server-info")
-    public ResponseResult info() {
-        return new ResponseResult<String>().success("服务器端口: "+instanceConfig.getPort()+" ======= foo: "+instanceConfig.getFoo());
-    }
     /** 分布式事务*/
     @PostMapping("/add")
     public ResponseResult save(@RequestBody SkuVo skuVo){

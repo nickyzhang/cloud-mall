@@ -25,6 +25,7 @@
 		<module>cloud-mall-product-details</module>
 		<module>cloud-mall-review</module>
 		<module>cloud-mall-databus</module>
+		<module>cloud-mall-test</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

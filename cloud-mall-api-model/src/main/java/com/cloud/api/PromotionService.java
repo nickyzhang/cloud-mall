@@ -18,19 +18,19 @@ import java.util.Map;
 @FeignClient(name="cloud-mall-promotion")
 public interface PromotionService {
 
-    @RequestMapping(value = "/catalog/promotion/getActSavedAmount",method = RequestMethod.GET)
+    @RequestMapping(value = "/promotion/getActSavedAmount",method = RequestMethod.GET)
     public ResponseResult<BigDecimal> getActSavedAmount(@RequestParam("amount") BigDecimal amount,
                                            @RequestParam("pieces") int pieces,
                                            @RequestParam("activityId") Long activityId);
 
-    @RequestMapping(value = "/catalog/promotion/getActListSavedAmount",method = RequestMethod.POST)
+    @RequestMapping(value = "/promotion/getActListSavedAmount",method = RequestMethod.POST)
     public ResponseResult<BigDecimal> getActListSavedAmount(@RequestBody CalculateActivityParam param);
 
-    @RequestMapping(value = "/catalog/promotion/getCouponSavedAmount",method = RequestMethod.GET)
+    @RequestMapping(value = "/promotion/getCouponSavedAmount",method = RequestMethod.GET)
     public ResponseResult<BigDecimal> getCouponSavedAmount(@RequestParam("amount") BigDecimal amount,
                                            @RequestParam("templateId") Long templateId);
 
-    @RequestMapping(value = "/catalog/promotion/getComposedCouponSavedAmount", method = RequestMethod.POST)
+    @RequestMapping(value = "/promotion/getComposedCouponSavedAmount", method = RequestMethod.POST)
     public ResponseResult<List<CouponCaclVO>> getAvailableCouponInfo(@RequestBody List<CalculateCouponParam> paramList);
 
 

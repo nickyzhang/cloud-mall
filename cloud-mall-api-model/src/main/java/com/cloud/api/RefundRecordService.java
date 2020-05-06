@@ -16,32 +16,32 @@ import java.util.List;
 
 @FeignClient("cloud-mall-pay")
 public interface RefundRecordService {
-    @RequestMapping(value = "/catalog/trade/refund/add",method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/refund/add",method = RequestMethod.POST)
     public ResponseResult save(@RequestBody RefundRecordVO refundRecordVO);
 
-    @RequestMapping(value = "/catalog/trade/refund/update",method = RequestMethod.PUT)
+    @RequestMapping(value = "/trade/refund/update",method = RequestMethod.PUT)
     public ResponseResult update(@RequestBody RefundRecordVO refundRecordVO);
 
-    @RequestMapping(value = "/catalog/trade/refund/deleteById",method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/refund/deleteById",method = RequestMethod.POST)
     public ResponseResult deleteById(@RequestParam("id") Long id);
 
-    @RequestMapping(value = "/catalog/trade/refund/deleteByOrderId",method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/refund/deleteByOrderId",method = RequestMethod.POST)
     public ResponseResult deleteByOrderId(@RequestParam("orderId") Long orderId);
-    @RequestMapping(value = "/catalog/trade/refund/deleteByOrderNo",method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/refund/deleteByOrderNo",method = RequestMethod.POST)
     public ResponseResult deleteByOrderNo(@RequestParam("orderNo") Long orderNo);
 
-    @RequestMapping(value = "/catalog/trade/refund/findByTradeNo",method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/refund/findByTradeNo",method = RequestMethod.GET)
     public ResponseResult<RefundRecordVO> findByTradeNo(@RequestParam("tradeNo") String tradeNo);
 
-    @RequestMapping(value = "/catalog/trade/refund/findById",method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/refund/findById",method = RequestMethod.GET)
     public ResponseResult<RefundRecordVO> findById(@RequestParam("id") Long id);
 
-    @RequestMapping(value = "/catalog/trade/refund/findByOrderId",method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/refund/findByOrderId",method = RequestMethod.GET)
     public ResponseResult<RefundRecordVO> findByOrderId(@RequestParam("orderId") Long orderId);
 
-    @RequestMapping(value = "/catalog/trade/refund/findByOrderNo",method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/refund/findByOrderNo",method = RequestMethod.GET)
     public ResponseResult<RefundRecordVO> findByOrderNo(@RequestParam("orderNo") Long orderNo);
 
-    @RequestMapping(value = "/catalog/trade/refund/findByBuyerId",method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/refund/findByBuyerId",method = RequestMethod.GET)
     public ResponseResult<List<RefundRecord>> findByBuyerId(@RequestParam("buyerId") Long buyerId);
 }

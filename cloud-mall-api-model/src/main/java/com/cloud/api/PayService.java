@@ -14,33 +14,33 @@ import java.util.List;
 @FeignClient("cloud-mall-pay")
 public interface PayService {
 
-    @RequestMapping(value = "/catalog/trade/add",method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/add",method = RequestMethod.POST)
     public ResponseResult save(@RequestBody PayRecordParam payRecordParam);
 
-    @RequestMapping(value = "/catalog/trade/update",method = RequestMethod.PUT)
+    @RequestMapping(value = "/trade/update",method = RequestMethod.PUT)
     public ResponseResult update(@RequestBody PayRecordVO payRecordVO);
 
-    @RequestMapping(value = "/catalog/trade/deleteById",method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/deleteById",method = RequestMethod.POST)
     public ResponseResult deleteById(@RequestParam("tradeId") Long tradeId);
 
-    @RequestMapping(value = "/catalog/trade/deleteByOrderId",method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/deleteByOrderId",method = RequestMethod.POST)
     public ResponseResult deleteByOrderId(@RequestParam("orderId") Long orderId);
 
-    @RequestMapping(value = "/catalog/trade/deleteByOrderNo",method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/deleteByOrderNo",method = RequestMethod.POST)
     public ResponseResult deleteByOrderNo(@RequestParam("orderNo") Long orderNo);
 
-    @RequestMapping(value = "/catalog/trade/findByTradeNo",method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/findByTradeNo",method = RequestMethod.GET)
     public ResponseResult<PayRecordVO> findByTradeNo(@RequestParam("tradeNo") String tradeNo);
 
-    @RequestMapping(value = "/catalog/trade/findById",method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/findById",method = RequestMethod.GET)
     public ResponseResult<PayRecordVO> findById(@RequestParam("tradeId") Long tradeId);
 
-    @RequestMapping(value = "/catalog/trade/findByOrderId",method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/findByOrderId",method = RequestMethod.GET)
     public ResponseResult<PayRecordVO> findByOrderId(@RequestParam("orderId") Long orderId);
 
-    @RequestMapping(value = "/catalog/trade/findByOrderNo",method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/findByOrderNo",method = RequestMethod.GET)
     public ResponseResult<PayRecordVO> findByOrderNo(@RequestParam("orderNo") Long orderNo);
 
-    @RequestMapping(value = "/catalog/trade/findByBuyerId",method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/findByBuyerId",method = RequestMethod.GET)
     public ResponseResult<List<PayRecord>> findByBuyerId(@RequestParam("buyerId") Long buyerId);
 }

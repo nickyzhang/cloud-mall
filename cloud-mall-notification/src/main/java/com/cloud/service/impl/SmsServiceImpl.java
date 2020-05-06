@@ -33,7 +33,7 @@ public class SmsServiceImpl implements SmsService {
         log.info("[sendVerifyCode] 向{}发送验证码{},状态:{}",phone,code,response.getHttpStatus());
         StringBuilder sb = new StringBuilder();
         sb.append(source).append(SymbolConstants.COLON_SYMBOL).append(phone);
-        this.cacheService.cachePut("SmsCodeCache",sb.toString(),code);
+        this.cacheService.put("SmsCodeCache",sb.toString(),code);
     }
 
     /**
@@ -73,7 +73,7 @@ public class SmsServiceImpl implements SmsService {
     public boolean checkVerifyCode(String source, String phone, String code) {
         StringBuilder sb = new StringBuilder();
         sb.append(source).append(SymbolConstants.COLON_SYMBOL).append(phone);
-        String verifyCode = (String)this.cacheService.cacheResult("SmsCodeCache",sb.toString());
+        String verifyCode = (String)this.cacheService.get("SmsCodeCache",sb.toString());
         return code.equals(verifyCode);
     }
 
@@ -86,7 +86,7 @@ public class SmsServiceImpl implements SmsService {
     public void validateVerifyCode(String source, String phone) {
         StringBuilder sb = new StringBuilder();
         sb.append(source).append(SymbolConstants.COLON_SYMBOL).append(phone);
-        this.cacheService.cacheRemove("SmsCodeCache",sb.toString());
+        this.cacheService.remove("SmsCodeCache",sb.toString());
     }
 
     /**

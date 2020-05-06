@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "/catalogcloud-mall-order")
+@FeignClient(value = "cloud-mall-order")
 public interface OrderService {
 
-    @RequestMapping(value = "/catalog/order/createOrder",method = RequestMethod.POST)
+    @RequestMapping(value = "/order/createOrder",method = RequestMethod.POST)
     public ResponseResult createOrder(@RequestBody OrderDTO orderDTO);
 
-    @RequestMapping(value = "/catalog/order/findOrderById", method = RequestMethod.GET)
+    @RequestMapping(value = "/order/findOrderById", method = RequestMethod.GET)
     public ResponseResult<OrderVO> findOrderById(@RequestParam("orderId") Long orderId);
 }

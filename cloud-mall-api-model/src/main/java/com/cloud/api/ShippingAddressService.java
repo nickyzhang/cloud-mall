@@ -16,19 +16,19 @@ import java.util.List;
 @FeignClient(name = "/catalogcloud-mall-user")
 public interface ShippingAddressService {
 
-    @RequestMapping(value = "/catalog/user/address/add",method = RequestMethod.POST)
+    @RequestMapping(value = "/user/address/add",method = RequestMethod.POST)
     public ResponseResult save(@RequestBody ShippingAddress address);
 
-    @RequestMapping(value = "/catalog/user/address/batchAdd",method = RequestMethod.POST)
+    @RequestMapping(value = "/user/address/batchAdd",method = RequestMethod.POST)
     public ResponseResult saveList();
 
 
-    @RequestMapping(value = "/catalog/user/address/update",method = RequestMethod.PUT)
+    @RequestMapping(value = "/user/address/update",method = RequestMethod.PUT)
     public ResponseResult update(@RequestBody ShippingAddress address);
 
-    @RequestMapping(value = "/catalog/user/address/findShippingAddressByAddressId",method = RequestMethod.GET)
+    @RequestMapping(value = "/user/address/findShippingAddressByAddressId",method = RequestMethod.GET)
     public ResponseResult<ShippingAddress> findShippingAddressByAddressId(@RequestParam("addressId") Long addressId);
 
-    @RequestMapping(value = "/catalog/user/address/findShippingAddressListByUserId",method = RequestMethod.GET)
+    @RequestMapping(value = "/user/address/findShippingAddressListByUserId",method = RequestMethod.GET)
     public ResponseResult<List<ShippingAddress>> findShippingAddressListByUserId(@RequestParam("userId") Long userId);
 }

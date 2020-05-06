@@ -11,42 +11,42 @@ import java.util.List;
 @FeignClient(name="cloud-mall-promotion")
 public interface CouponService {
 
-    @RequestMapping(value = "/catalog/coupon/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/coupon/add", method = RequestMethod.POST)
     public ResponseResult save(@RequestBody CouponVO couponVO);
 
-    @RequestMapping(value = "/catalog/coupon/batchAdd", method = RequestMethod.POST)
+    @RequestMapping(value = "/coupon/batchAdd", method = RequestMethod.POST)
     public ResponseResult batchAdd(@RequestBody List<Coupon> couponList);
 
-    @RequestMapping(value = "/catalog/coupon/preUseCoupon", method = RequestMethod.POST)
+    @RequestMapping(value = "/coupon/preUseCoupon", method = RequestMethod.POST)
     public ResponseResult preUseCoupon(@RequestBody List<Coupon> couponList);
 
-    @RequestMapping(value = "/catalog/coupon/update", method = RequestMethod.PUT)
+    @RequestMapping(value = "/coupon/update", method = RequestMethod.PUT)
     public ResponseResult update(@RequestBody CouponVO couponVO);
 
-    @RequestMapping(value = "/catalog/coupon/delete/{couponId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/coupon/delete/{couponId}", method = RequestMethod.POST)
     public ResponseResult delete(@PathVariable("couponId") Long couponId);
 
-    @RequestMapping(value = "/catalog/coupon/deleteUnavailableCouponList", method = RequestMethod.POST)
+    @RequestMapping(value = "/coupon/deleteUnavailableCouponList", method = RequestMethod.POST)
     public ResponseResult deleteUnavailableCouponList();
 
-    @RequestMapping(value = "/catalog/coupon/deleteUnavailableCouponListByUserId", method = RequestMethod.POST)
+    @RequestMapping(value = "/coupon/deleteUnavailableCouponListByUserId", method = RequestMethod.POST)
     public ResponseResult deleteUnavailableCouponListByUserId(@RequestParam("userId") Long userId);
 
-    @RequestMapping(value = "/catalog/coupon/list/{couponId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/coupon/list/{couponId}", method = RequestMethod.GET)
     public ResponseResult<CouponVO> find(@PathVariable("couponId") Long couponId);
 
-    @RequestMapping(value = "/catalog/coupon/findAll", method = RequestMethod.GET)
+    @RequestMapping(value = "/coupon/findAll", method = RequestMethod.GET)
     public ResponseResult<List<Coupon>> findAll();
 
-    @RequestMapping(value = "/catalog/coupon/findCouponListByUserId", method = RequestMethod.GET)
+    @RequestMapping(value = "/coupon/findCouponListByUserId", method = RequestMethod.GET)
     public ResponseResult<List<Coupon>> findCouponListByUserId(@RequestParam("userId") Long userId);
 
-    @RequestMapping(value = "/catalog/coupon/findUnavailableCouponListByUserId", method = RequestMethod.GET)
+    @RequestMapping(value = "/coupon/findUnavailableCouponListByUserId", method = RequestMethod.GET)
     public ResponseResult<List<Coupon>> findUnavailableCouponListByUserId(@RequestParam("userId") Long userId);
 
-    @RequestMapping(value = "/catalog/coupon/findCouponListByCatId", method = RequestMethod.GET)
+    @RequestMapping(value = "/coupon/findCouponListByCatId", method = RequestMethod.GET)
     public ResponseResult<List<Coupon>> findCouponListByCatId(@RequestParam("catId") Long catId);
 
-    @RequestMapping(value = "/catalog/coupon/findCouponListByBrandId", method = RequestMethod.GET)
+    @RequestMapping(value = "/coupon/findCouponListByBrandId", method = RequestMethod.GET)
     public ResponseResult<List<Coupon>> findCouponListByBrandId(@RequestParam("brandId") Long brandId);
 }

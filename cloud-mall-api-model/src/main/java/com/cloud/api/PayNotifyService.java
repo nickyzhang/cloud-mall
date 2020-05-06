@@ -13,20 +13,20 @@ import java.util.List;
 @FeignClient("cloud-mall-pay")
 public interface PayNotifyService {
 
-    @RequestMapping(value = "/catalog/trade/notify/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/notify/add", method = RequestMethod.POST)
     public ResponseResult save(@RequestBody PayNotifyVO payNotifyVO);
-    @RequestMapping(value = "/catalog/trade/notify/update", method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/notify/update", method = RequestMethod.POST)
     public ResponseResult update(@RequestBody  PayNotifyVO payNotifyVO);
 
-    @RequestMapping(value = "/catalog/trade/notify/deleteById", method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/notify/deleteById", method = RequestMethod.POST)
     public ResponseResult deleteById(@RequestParam("id") Long id);
 
-    @RequestMapping(value = "/catalog/trade/notify/deleteByOrderId", method = RequestMethod.POST)
+    @RequestMapping(value = "/trade/notify/deleteByOrderId", method = RequestMethod.POST)
     public ResponseResult deleteByOrderId(@RequestParam("orderId") Long orderId);
 
-    @RequestMapping(value = "/catalog/trade/notify/findById", method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/notify/findById", method = RequestMethod.GET)
     public ResponseResult<PayNotifyVO> findById(@RequestParam("id") Long id);
 
-    @RequestMapping(value = "/catalog/trade/notify/findByOrderId", method = RequestMethod.GET)
+    @RequestMapping(value = "/trade/notify/findByOrderId", method = RequestMethod.GET)
     public ResponseResult<List<PayNotify>> findByOrderId(@RequestParam("orderId") Long orderId);
 }

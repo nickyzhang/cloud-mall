@@ -59,7 +59,7 @@ public class MailServiceImpl implements MailService {
         this.send(email,subject,code,Boolean.FALSE);
         StringBuilder sb = new StringBuilder();
         sb.append(source).append(SymbolConstants.COLON_SYMBOL).append(email);
-        this.cacheService.cachePut("MailCodeCache",sb.toString(),code);
+        this.cacheService.put("MailCodeCache",sb.toString(),code);
     }
 
     /**
@@ -73,7 +73,7 @@ public class MailServiceImpl implements MailService {
     public boolean checkVerifyCode(String source, String email, String code) {
         StringBuilder sb = new StringBuilder();
         sb.append(source).append(SymbolConstants.COLON_SYMBOL).append(email);
-        String verifyCode = (String)this.cacheService.cacheResult("MailCodeCache",sb.toString());
+        String verifyCode = (String)this.cacheService.get("MailCodeCache",sb.toString());
         return code.equals(verifyCode);
     }
 
@@ -86,6 +86,6 @@ public class MailServiceImpl implements MailService {
     public void validateVerifyCode(String source, String email) {
         StringBuilder sb = new StringBuilder();
         sb.append(source).append(SymbolConstants.COLON_SYMBOL).append(email);
-        this.cacheService.cacheRemove("MailCodeCache",sb.toString());
+        this.cacheService.remove("MailCodeCache",sb.toString());
     }
 }

@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "/catalogcloud-mall-details")
 public interface ProductDetailService {
 
-    @RequestMapping(value = "/catalog/details/{skuId}",method = RequestMethod.GET)
+    @RequestMapping(value = "/details/{skuId}",method = RequestMethod.GET)
     public ResponseResult<DetailsInfo> findProductDetails(@PathVariable("skuId") Long skuId);
 }

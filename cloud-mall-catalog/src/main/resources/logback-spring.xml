@@ -67,8 +67,8 @@
     <!-- 开发环境：打印控制台和输出到文件 -->
     <!-- 由application.yml中的spring.profiles.active配置 -->
     <springProfile name="dev">
-        <root level="INFO">
-            <appender-ref ref="FILE_DAILY"/>
+        <root level="DEBUG">
+            <appender-ref ref="STDOUT"/>
         </root>
     </springProfile>
     <!-- 测试环境：打印控制台和输出到文件 -->
@@ -81,7 +81,7 @@
     <!-- 生产环境：打印控制台和输出到文件 -->
     <!-- 由application.yml中的spring.profiles.active配置 -->
     <springProfile name="prod">
-        <root level="INFO">
+        <root level="DEBUG">
             <appender-ref ref="FILE_DAILY"/>
         </root>
     </springProfile>
